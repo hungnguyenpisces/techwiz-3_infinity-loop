@@ -16,6 +16,32 @@
 
 </head>
 @section('content')
+{{--    Route--}}
+{{--    Route::get('/test',[App\Http\Controllers\test::class,'index']);--}}
+{{--    Route::get("/show",[\App\Http\Controllers\test::class,'show'])->name('show');--}}
+
+{{--Controlerr--}}
+{{--public function index()--}}
+{{--{--}}
+{{--//--}}
+{{--$date = Carbon::today();--}}
+{{--$appointment = appointmentTest::all();--}}
+{{--$slMonth = $date->month;--}}
+{{--$slYear = $date->year;--}}
+{{--return view('web.timeTable', compact('date','appointment','slMonth','slYear'));--}}
+{{--}--}}
+{{--public function show(Request $request)--}}
+{{--{--}}
+{{--//--}}
+{{--$date = Carbon::createFromDate($request->input('year'),$request->input('month'),1);--}}
+{{--$slMonth = $date->month;--}}
+{{--$slYear = $date->year;--}}
+{{--$appointment = appointmentTest::all();--}}
+{{--return view('web.timeTable', compact('date','appointment','slMonth','slYear'));--}}
+{{--}--}}
+
+
+
     <?php
     use Carbon\Carbon;
     ?>
