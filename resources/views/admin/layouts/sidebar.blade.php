@@ -1,302 +1,278 @@
-<div id="layoutSidenav">
-    <div id="layoutSidenav_nav">
-        <nav class="sidenav shadow-right sidenav-light">
-            <div class="sidenav-menu">
-                <div class="nav accordion" id="accordionSidenav">
-                    <div class="sidenav-menu-heading">Accounts Management</div>
-                    <!-- Sidenav Accordion (Dashboard)-->
-                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAuth" aria-expanded="false" aria-controls="collapseAuth">
-                        <div class="nav-link-icon"><i class="fa-solid fa-user-shield"></i></div>
-                        Auth
-                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseAuth" data-bs-parent="#accordionSidenav">
-                        <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                            <a class="nav-link" href="{{ url('admin.users.index') }}">
-                                Users
-                            </a>
-                            <a class="nav-link" href="{{ url('admin.roles.index') }}">Roles</a>
-                            <a class="nav-link" href="{{ url('admin.permissions.index') }}">Permissions</a>
-                        </nav>
+<section>
+    <aside id="leftsidebar" class="sidebar">
+
+        <div class="user-info">
+            <div class="admin-image"> <img src="/assets/images/random-avatar7.jpg" alt=""> </div>
+            <div class="admin-action-info"> <span>Welcome</span>
+                <h3>Dr. John</h3>
+                <ul>
+                    <li><a href="#" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a href="#" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
+                    <li><a href="#" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings"></i></a></li>
+                    <li><a href="{{route('admin.logout.perform')}}" title="sign out"><i class="zmdi zmdi-sign-in"></i></a></li>
+                </ul>
+            </div>
+            <div class="quick-stats">
+                <h5>Today Report</h5>
+                <ul>
+                    <li><span>16<i>Patient</i></span></li>
+                    <li><span>20<i>Panding</i></span></li>
+                    <li><span>04<i>Visit</i></span></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="menu">
+            <ul class="list">
+                <li class="header">MAIN NAVIGATION</li>
+                <li class="side_link_parent"> <a href="/admin/dashboard"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                    <ul class="ml-menu">
+                        <li class="side_link"> <a href="/admin/dashboard">Doctor Schedule</a></li>
+                        <li class="side_link"> <a href="#">Book Appointment</a></li>
+                    </ul>
+                </li>
+                <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
+                    <ul class="ml-menu">
+                        <li class="side_link"> <a href="#">All Doctors</a></li>
+                        <li class="side_link"> <a href="add-#">Add Doctor</a></li>
+                        <li class="side_link"> <a href="#">Doctor Profile</a></li>
+                    </ul>
+                </li>
+                <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
+                    <ul class="ml-menu">
+                        <li class="side_link"> <a href="#">All Patients</a></li>
+                        <li class="side_link"> <a href="#">Add Patient</a></li>
+                        <li class="side_link"> <a href="#">Patient Profile</a></li>
+                        <li class="side_link"> <a href="#">Patient Invoice</a></li>
+                    </ul>
+                </li>
+                <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-balance-wallet"></i><span>Payments</span> </a>
+                    <ul class="ml-menu">
+                        <li class="side_link"> <a href="#">Payments</a></li>
+                        <li class="side_link"> <a href="#">Add Payment</a></li>
+                        <li class="side_link"> <a href="#">Patient Invoice</a></li>
+                    </ul>
+                </li>
+                <li class="side_link_parent"><a href="#"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
+                <li class="side_link_parent"><a href="#"><i class="zmdi zmdi-delicious"></i><span>Widgets</span></a></li>
+                <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Extra Pages</span> </a>
+                    <ul class="ml-menu">
+                        <li class="side_link"> <a href="#">Sign In</a> </li>
+                        <li class="side_link"> <a href="#">Sign Up</a> </li>
+                        <li class="side_link"> <a href="#">Forgot Password</a> </li>
+                        <li class="side_link"> <a href="#">Page 404</a> </li>
+                        <li class="side_link"> <a href="#">Page 500</a> </li>
+                        <li class="side_link"> <a href="#">Page Offline</a> </li>
+                        <li class="side_link"> <a href="#">Locked Screen</a> </li>
+                        <li class="side_link"> <a href="#">Blank Page</a> </li>
+                    </ul>
+                </li>
+                @role('Super-Admin')
+                <li class="header">SUPER ADMIN SECTION</li>
+                <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-accounts-alt"></i><span>User Management</span> </a>
+                    <ul class="ml-menu">
+                        <li class="side_link"> <a href="#">List All User</a> </li>
+                        <li class="side_link"> <a href="#">Add New User</a></li>
+                    </ul>
+                </li>
+                <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-accounts-alt"></i><span>Role Management</span> </a>
+                    <ul class="ml-menu">
+                        <li class="side_link"> <a href="#">List All Role</a> </li>
+                        <li class="side_link"> <a href="#">Add New Role</a></li>
+                    </ul>
+                </li>
+                <li class="side_link_parent"><a href="/admin/permissions"><i class="zmdi zmdi-shield-security"></i><span>Permissions</span></a></li>
+                @endrole
+                <li class="header">LABELS</li>
+                <li class="side_link_parent"> <a href="#"><i class="zmdi zmdi-chart-donut col-red"></i><span>Important</span> </a> </li>
+                <li class="side_link_parent"> <a href="#"><i class="zmdi zmdi-chart-donut col-amber"></i><span>Warning</span> </a> </li>
+                <li class="side_link_parent"> <a href="#"><i class="zmdi zmdi-chart-donut col-blue"></i><span>Information</span> </a> </li>
+            </ul>
+        </div>
+
+    </aside>
+
+    <aside id="rightsidebar" class="right-sidebar">
+        <ul class="nav nav-tabs tab-nav-right" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#">Skins</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#">Chat</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#">Setting</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane in active in active" id="skins">
+                <ul class="demo-choose-skin">
+                    <li data-theme="red">
+                        <div class="red"></div><span>Red</span>
+                    </li>
+                    <li data-theme="purple">
+                        <div class="purple"></div><span>Purple</span>
+                    </li>
+                    <li data-theme="blue">
+                        <div class="blue"></div><span>Blue</span>
+                    </li>
+                    <li data-theme="cyan" class="active">
+                        <div class="cyan"></div><span>Cyan</span>
+                    </li>
+                    <li data-theme="green">
+                        <div class="green"></div><span>Green</span>
+                    </li>
+                    <li data-theme="deep-orange">
+                        <div class="deep-orange"></div><span>Deep Orange</span>
+                    </li>
+                    <li data-theme="blue-grey">
+                        <div class="blue-grey"></div><span>Blue Grey</span>
+                    </li>
+                    <li data-theme="black">
+                        <div class="black"></div><span>Black</span>
+                    </li>
+                    <li data-theme="blush">
+                        <div class="blush"></div><span>Blush</span>
+                    </li>
+                </ul>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="chat">
+                <div class="demo-settings">
+                    <div class="search">
+                        <div class="input-group">
+                            <div class="form-line">
+                                <input type="text" class="form-control" placeholder="Search..." required autofocus>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Sidenav Heading (Custom)-->
-                    <div class="sidenav-menu-heading">Custom</div>
-                    <!-- Sidenav Accordion (Pages)-->
-                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                        <div class="nav-link-icon"><i data-feather="grid"></i></div>
-                        Pages
-                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
-                        <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
-                            <!-- Nested Sidenav Accordion (Pages -> Account)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
-                                Account
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="pagesCollapseAccount" data-bs-parent="#accordionSidenavPagesMenu">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="account-profile.html">Profile</a>
-                                    <a class="nav-link" href="account-billing.html">Billing</a>
-                                    <a class="nav-link" href="account-security.html">Security</a>
-                                    <a class="nav-link" href="account-notifications.html">Notifications</a>
-                                </nav>
+                    <h6>Recent</h6>
+                    <ul>
+                        <li class="online">
+                            <div class="media">
+                                <a href="#"><img class="media-object " src="/assets/images/xs/avatar1.jpg" alt=""></a>
+                                <div class="media-body">
+                                    <span class="name">Claire Sassu</span>
+                                    <span class="message">Can you share the</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
                             </div>
-                            <!-- Nested Sidenav Accordion (Pages -> Authentication)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                Authentication
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="pagesCollapseAuth" data-bs-parent="#accordionSidenavPagesMenu">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesAuth">
-                                    <!-- Nested Sidenav Accordion (Pages -> Authentication -> Basic)-->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuthBasic" aria-expanded="false" aria-controls="pagesCollapseAuthBasic">
-                                        Basic
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuthBasic" data-bs-parent="#accordionSidenavPagesAuth">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="auth-login-basic.html">Login</a>
-                                            <a class="nav-link" href="auth-register-basic.html">Register</a>
-                                            <a class="nav-link" href="auth-password-basic.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <!-- Nested Sidenav Accordion (Pages -> Authentication -> Social)-->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuthSocial" aria-expanded="false" aria-controls="pagesCollapseAuthSocial">
-                                        Social
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuthSocial" data-bs-parent="#accordionSidenavPagesAuth">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="auth-login-social.html">Login</a>
-                                            <a class="nav-link" href="auth-register-social.html">Register</a>
-                                            <a class="nav-link" href="auth-password-social.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                </nav>
+                        </li>
+                        <li class="online">
+                            <div class="media">
+                                <a href="#"><img class="media-object " src="/assets/images/xs/avatar2.jpg" alt=""></a>
+                                <div class="media-body">
+                                    <span class="name">Maggie jackson</span>
+                                    <span class="message">Can you share the</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
                             </div>
-                            <!-- Nested Sidenav Accordion (Pages -> Error)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                Error
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="pagesCollapseError" data-bs-parent="#accordionSidenavPagesMenu">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="error-400.html">400 Error</a>
-                                    <a class="nav-link" href="error-401.html">401 Error</a>
-                                    <a class="nav-link" href="error-403.html">403 Error</a>
-                                    <a class="nav-link" href="error-404-1.html">404 Error 1</a>
-                                    <a class="nav-link" href="error-404-2.html">404 Error 2</a>
-                                    <a class="nav-link" href="error-500.html">500 Error</a>
-                                    <a class="nav-link" href="error-503.html">503 Error</a>
-                                    <a class="nav-link" href="error-504.html">504 Error</a>
-                                </nav>
+                        </li>
+                        <li class="online">
+                            <div class="media">
+                                <a href="#"><img class="media-object " src="/assets/images/xs/avatar3.jpg" alt=""></a>
+                                <div class="media-body">
+                                    <span class="name">Joel King</span>
+                                    <span class="message">Ready for the meeti</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
                             </div>
-                            <a class="nav-link" href="pricing.html">Pricing</a>
-                            <a class="nav-link" href="invoice.html">Invoice</a>
-                        </nav>
-                    </div>
-                    <!-- Sidenav Accordion (Applications)-->
-                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseApps" aria-expanded="false" aria-controls="collapseApps">
-                        <div class="nav-link-icon"><i data-feather="globe"></i></div>
-                        Applications
-                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseApps" data-bs-parent="#accordionSidenav">
-                        <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavAppsMenu">
-                            <!-- Nested Sidenav Accordion (Apps -> Knowledge Base)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#appsCollapseKnowledgeBase" aria-expanded="false" aria-controls="appsCollapseKnowledgeBase">
-                                Knowledge Base
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="appsCollapseKnowledgeBase" data-bs-parent="#accordionSidenavAppsMenu">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="knowledge-base-home-1.html">Home 1</a>
-                                    <a class="nav-link" href="knowledge-base-home-2.html">Home 2</a>
-                                    <a class="nav-link" href="knowledge-base-category.html">Category</a>
-                                    <a class="nav-link" href="knowledge-base-article.html">Article</a>
-                                </nav>
+                        </li>
+                    </ul>
+                    <h6>Contacts</h6>
+                    <ul class="contacts_list">
+                        <li class="offline">
+                            <div class="media">
+                                <a href="#"><img class="media-object " src="/assets/images/xs/avatar4.jpg" alt=""></a>
+                                <div class="media-body">
+                                    <span class="name">Hossein Shams</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
                             </div>
-                            <!-- Nested Sidenav Accordion (Apps -> User Management)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#appsCollapseUserManagement" aria-expanded="false" aria-controls="appsCollapseUserManagement">
-                                User Management
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="appsCollapseUserManagement" data-bs-parent="#accordionSidenavAppsMenu">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="user-management-list.html">Users List</a>
-                                    <a class="nav-link" href="user-management-edit-user.html">Edit User</a>
-                                    <a class="nav-link" href="user-management-add-user.html">Add User</a>
-                                    <a class="nav-link" href="user-management-groups-list.html">Groups List</a>
-                                    <a class="nav-link" href="user-management-org-details.html">Organization
-                                        Details</a>
-                                </nav>
+                        </li>
+                        <li class="online">
+                            <div class="media">
+                                <a href="#"><img class="media-object " src="/assets/images/xs/avatar1.jpg" alt=""></a>
+                                <div class="media-body">
+                                    <span class="name">Maryam Amiri</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
                             </div>
-                            <!-- Nested Sidenav Accordion (Apps -> Posts Management)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#appsCollapsePostsManagement" aria-expanded="false" aria-controls="appsCollapsePostsManagement">
-                                Posts Management
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="appsCollapsePostsManagement" data-bs-parent="#accordionSidenavAppsMenu">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="blog-management-posts-list.html">Posts List</a>
-                                    <a class="nav-link" href="blog-management-create-post.html">Create Post</a>
-                                    <a class="nav-link" href="blog-management-edit-post.html">Edit Post</a>
-                                    <a class="nav-link" href="blog-management-posts-admin.html">Posts Admin</a>
-                                </nav>
+                        </li>
+                        <li class="offline">
+                            <div class="media">
+                                <a href="#"><img class="media-object " src="/assets/images/xs/avatar2.jpg" alt=""></a>
+                                <div class="media-body">
+                                    <span class="name">Gary Camara</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
                             </div>
-                        </nav>
-                    </div>
-                    <!-- Sidenav Accordion (Flows)-->
-                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseFlows" aria-expanded="false" aria-controls="collapseFlows">
-                        <div class="nav-link-icon"><i data-feather="repeat"></i></div>
-                        Flows
-                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseFlows" data-bs-parent="#accordionSidenav">
-                        <nav class="sidenav-menu-nested nav">
-                            <a class="nav-link" href="multi-tenant-select.html">Multi-Tenant Registration</a>
-                            <a class="nav-link" href="wizard.html">Wizard</a>
-                        </nav>
-                    </div>
-                    <!-- Sidenav Heading (UI Toolkit)-->
-                    <div class="sidenav-menu-heading">UI Toolkit</div>
-                    <!-- Sidenav Accordion (Layout)-->
-                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="nav-link-icon"><i data-feather="layout"></i></div>
-                        Layout
-                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseLayouts" data-bs-parent="#accordionSidenav">
-                        <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
-                            <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutSidenavVariations" aria-expanded="false" aria-controls="collapseLayoutSidenavVariations">
-                                Navigation
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayoutSidenavVariations" data-bs-parent="#accordionSidenavLayout">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Static Sidenav</a>
-                                    <a class="nav-link" href="layout-dark.html">Dark Sidenav</a>
-                                    <a class="nav-link" href="layout-rtl.html">RTL Layout</a>
-                                </nav>
-                            </div>
-                            <!-- Nested Sidenav Accordion (Layout -> Container Options)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutContainers" aria-expanded="false" aria-controls="collapseLayoutContainers">
-                                Container Options
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayoutContainers" data-bs-parent="#accordionSidenavLayout">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-boxed.html">Boxed Layout</a>
-                                    <a class="nav-link" href="layout-fluid.html">Fluid Layout</a>
-                                </nav>
-                            </div>
-                            <!-- Nested Sidenav Accordion (Layout -> Page Headers)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsPageHeaders" aria-expanded="false" aria-controls="collapseLayoutsPageHeaders">
-                                Page Headers
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayoutsPageHeaders" data-bs-parent="#accordionSidenavLayout">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="header-simplified.html">Simplified</a>
-                                    <a class="nav-link" href="header-compact.html">Compact</a>
-                                    <a class="nav-link" href="header-overlap.html">Content Overlap</a>
-                                    <a class="nav-link" href="header-breadcrumbs.html">Breadcrumbs</a>
-                                    <a class="nav-link" href="header-light.html">Light</a>
-                                </nav>
-                            </div>
-                            <!-- Nested Sidenav Accordion (Layout -> Starter Layouts)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsStarterTemplates" aria-expanded="false" aria-controls="collapseLayoutsStarterTemplates">
-                                Starter Layouts
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayoutsStarterTemplates" data-bs-parent="#accordionSidenavLayout">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="starter-default.html">Default</a>
-                                    <a class="nav-link" href="starter-minimal.html">Minimal</a>
-                                </nav>
-                            </div>
-                        </nav>
-                    </div>
-                    <!-- Sidenav Accordion (Components)-->
-                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
-                        <div class="nav-link-icon"><i data-feather="package"></i></div>
-                        Components
-                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseComponents" data-bs-parent="#accordionSidenav">
-                        <nav class="sidenav-menu-nested nav">
-                            <a class="nav-link" href="alerts.html">Alerts</a>
-                            <a class="nav-link" href="avatars.html">Avatars</a>
-                            <a class="nav-link" href="badges.html">Badges</a>
-                            <a class="nav-link" href="buttons.html">Buttons</a>
-                            <a class="nav-link" href="cards.html">
-                                Cards
-                                <span class="badge bg-primary-soft text-primary ms-auto">Updated</span>
-                            </a>
-                            <a class="nav-link" href="dropdowns.html">Dropdowns</a>
-                            <a class="nav-link" href="forms.html">
-                                Forms
-                                <span class="badge bg-primary-soft text-primary ms-auto">Updated</span>
-                            </a>
-                            <a class="nav-link" href="modals.html">Modals</a>
-                            <a class="nav-link" href="navigation.html">Navigation</a>
-                            <a class="nav-link" href="progress.html">Progress</a>
-                            <a class="nav-link" href="step.html">Step</a>
-                            <a class="nav-link" href="timeline.html">Timeline</a>
-                            <a class="nav-link" href="toasts.html">Toasts</a>
-                            <a class="nav-link" href="tooltips.html">Tooltips</a>
-                        </nav>
-                    </div>
-                    <!-- Sidenav Accordion (Utilities)-->
-                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
-                        <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                        Utilities
-                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseUtilities" data-bs-parent="#accordionSidenav">
-                        <nav class="sidenav-menu-nested nav">
-                            <a class="nav-link" href="animations.html">Animations</a>
-                            <a class="nav-link" href="background.html">Background</a>
-                            <a class="nav-link" href="borders.html">Borders</a>
-                            <a class="nav-link" href="lift.html">Lift</a>
-                            <a class="nav-link" href="shadows.html">Shadows</a>
-                            <a class="nav-link" href="typography.html">Typography</a>
-                        </nav>
-                    </div>
-                    <!-- Sidenav Heading (Addons)-->
-                    <div class="sidenav-menu-heading">Plugins</div>
-                    <!-- Sidenav Link (Charts)-->
-                    <a class="nav-link" href="charts.html">
-                        <div class="nav-link-icon"><i data-feather="bar-chart"></i></div>
-                        Charts
-                    </a>
-                    <!-- Sidenav Link (Tables)-->
-                    <a class="nav-link" href="tables.html">
-                        <div class="nav-link-icon"><i data-feather="filter"></i></div>
-                        Tables
-                    </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <!-- Sidenav Footer-->
-            <div class="sidenav-footer">
-                <div class="sidenav-footer-content">
-                    <div class="sidenav-footer-subtitle">Logged in as:</div>
-                    <div class="sidenav-footer-title">Valerie Luna</div>
+            <div role="tabpanel" class="tab-pane" id="settings">
+                <div class="demo-settings">
+                    <p>General settings</p>
+                    <ul class="setting-list">
+                        <li>
+                            <span>Report Panel Usage</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Email Redirect</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>System settings</p>
+                    <ul class="setting-list">
+                        <li>
+                            <span>Notifications</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Auto Updates</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>Account settings</p>
+                    <ul class="setting-list">
+                        <li>
+                            <span>Offline</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Location Permission</span>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </nav>
-    </div>
-    <div id="layoutSidenav_content">
-        <main>
-            <!-- Main page content-->
-            <div class="container-xl px-4">
-                <h2 class="mt-5 mb-0">Dashboards</h2>
-                <p>Three dashboard examples to get you started!</p>
-                <hr class="mt-0 mb-4" />
-                @yield('content')
-            </div>
-        </main>
-    </div>
-</div>
+        </div>
+    </aside>
+</section>
