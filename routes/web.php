@@ -11,6 +11,13 @@ Route::prefix('admin')->middleware(['auth', 'role:Super-Admin|Admin'])->group(fu
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/test', function () {
+    return view('web.test');
+});
+Route::get('/user', function () {
+    return view('user.profile');
+});
+
 
 Route::group(['middleware' => ['guest']], function () {
     /**

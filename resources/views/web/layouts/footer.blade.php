@@ -7,7 +7,7 @@
                     <div class="cta">
                         <h3>Need Help?</h3>
                         <p>Please feel free to contact our friendly reception staff with any medical enquiry, or
-                            call <a href="javascript:void(0)">+880 12345678901</a></p>
+                            call <a href="javascript:void(0)">0123456789</a></p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
@@ -105,13 +105,9 @@
                     <div class="single-footer last f-contact">
                         <h3>Contact</h3>
                         <ul>
-                            <li><i class="lni lni-map-marker"></i> 23 New Design Str, Lorem Upsum 10 Hudson Yards,
-                                USA</li>
-                            <li><i class="lni lni-phone"></i> Tel. +(123) 1800-567-8990 </li>
-                            <li><i class="lni lni-envelope"></i> Mail. <a
-                                    href="https://demo.graygrids.com/cdn-cgi/l/email-protection"
-                                    class="__cf_email__"
-                                    data-cfemail="a2d1d7d2d2cdd0d6e2c1cec3d1d1cbc5d0cbc6d18cc1cdcf">[email&#160;protected]</a>
+                            <li><i class="lni lni-map-marker"></i>Số 8a Tôn Thất Thuyết, Mỹ Đình, Cầu Giấy, Hà Nội, Việt Nam</li>
+                            <li><i class="lni lni-phone"></i> Tel. +(012) 3456789 </li>
+                            <li><i class="lni lni-envelope"></i> Mail.
                             </li>
                         </ul>
                     </div>
@@ -128,8 +124,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="content">
-                            <p class="copyright-text">Designed and Developed by
-                                <a href="#" rel="nofollow" target="_blank">GrayGrids</a>
+                            <p class="copyright-text">Designed and Developed by Infinity-Loop
                             </p>
                         </div>
                     </div>
