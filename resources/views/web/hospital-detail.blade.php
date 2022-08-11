@@ -181,7 +181,7 @@
                         </div>
                         <div class="content">
                             <h5>Physician Assistant</h5>
-                            <h3><a href="doctor-details.html">Dr.Paul Flavius</a></h3>
+                            <h3><a href="#">Dr.Paul Flavius</a></h3>
                         </div>
                     </div>
 
@@ -307,106 +307,6 @@
         </div>
     </section>
 
-
-    <section class="pricing-table section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3>pricing</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Pricing Plan</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-
-                    <div class="single-table wow fadeInUp" data-wow-delay=".2s">
-
-                        <div class="table-head">
-                            <h4 class="title">Basic</h4>
-                            <div class="price">
-                                <h2 class="amount">$45<span class="duration">/ Monthly</span></h2>
-                            </div>
-                        </div>
-
-
-                        <ul class="table-list">
-                            <li>Routine Checkup</li>
-                            <li>24Th Assisance</li>
-                            <li>100 Text & Treatments</li>
-                            <li>Regular Health Checkups</li>
-                        </ul>
-
-
-                        <div class="button">
-                            <a class="btn" href="javascript:void(0)">Make Payment</a>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-
-                    <div class="single-table wow fadeInUp" data-wow-delay=".4s">
-
-                        <div class="table-head">
-                            <h4 class="title">Advance</h4>
-                            <div class="price">
-                                <h2 class="amount">$204<span class="duration">/ Monthly</span></h2>
-                            </div>
-                        </div>
-
-
-                        <ul class="table-list">
-                            <li>Routine Checkup</li>
-                            <li>24Th Assisance</li>
-                            <li>100 Text & Treatments</li>
-                            <li>Regular Health Checkups</li>
-                        </ul>
-
-
-                        <div class="button">
-                            <a class="btn" href="javascript:void(0)">Make Payment</a>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-
-                    <div class="single-table wow fadeInUp" data-wow-delay=".6s">
-
-                        <div class="table-head">
-                            <h4 class="title">Premium</h4>
-                            <div class="price">
-                                <h2 class="amount">$355<span class="duration">/ Monthly</span></h2>
-                            </div>
-                        </div>
-
-
-                        <ul class="table-list">
-                            <li>Routine Checkup</li>
-                            <li>24Th Assisance</li>
-                            <li>100 Text & Treatments</li>
-                            <li>Regular Health Checkups</li>
-                        </ul>
-
-
-                        <div class="button">
-                            <a class="btn" href="javascript:void(0)">Make Payment</a>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
     <div class="client-logo-section">
         <div class="container">
             <div class="client-logo-wrapper">
@@ -438,6 +338,36 @@
     </div>
 
     @include('web.layouts.script')
+    <script type="text/javascript">
+        tns({
+            container: '.testimonial-slider',
+            items: 3,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: true,
+            controls: false,
+            controlsText: ['<i class="lni lni-arrow-left"></i>', '<i class="lni lni-arrow-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 2,
+                },
+                1170: {
+                    items: 3,
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
