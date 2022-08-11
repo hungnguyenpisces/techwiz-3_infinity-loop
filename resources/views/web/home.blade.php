@@ -1,11 +1,10 @@
 @extends('web.layouts._master')
 
 @section('content')
-
     <section class="hero-area ">
         <div class="shapes">
-            <img src="assets/images/hero/05.svg" class="shape1" alt="#">
-            <img src="assets/images/hero/01.svg" class="shape2" alt="#">
+            <img src="" class="shape1" alt="#">
+            <img src="" class="shape2" alt="#">
         </div>
         <div class="hero-slider">
 
@@ -22,8 +21,8 @@
                                         MediGrids, our teaming has been focused on
                                         building a high-qualities medicals service by MediGrids.</p>
                                     <div class="button wow fadeInLeft" data-wow-delay=".7s">
-                                        <a href="appointment.html" class="btn">Book Appointment</a>
-                                        <a href="about-us.html" class="btn">About Us</a>
+                                        <a href="#" class="btn">Book Appointment</a>
+                                        <a href="#" class="btn">About Us</a>
                                     </div>
                                 </div>
 
@@ -31,7 +30,7 @@
                         </div>
                         <div class="col-lg-6 col-md-12 col-12">
                             <div class="hero-image wow fadeInRight" data-wow-delay=".5s">
-                                <img src="assets/images/hero/02.png" alt="#">
+                                <img src="" alt="#">
                             </div>
                         </div>
                     </div>
@@ -51,8 +50,8 @@
                                         on
                                         building a high-qualities medicals service by MediGrids.</p>
                                     <div class="button">
-                                        <a href="appointment.html" class="btn">Book Appointment</a>
-                                        <a href="about-us.html" class="btn">About Us</a>
+                                        <a href="" class="btn">Book Appointment</a>
+                                        <a href="" class="btn">About Us</a>
                                     </div>
                                 </div>
 
@@ -60,7 +59,7 @@
                         </div>
                         <div class="col-lg-6 col-md-12 col-12">
                             <div class="hero-image">
-                                <img src="assets/images/hero/slider-2.png" alt="#">
+                                <img src="" alt="#">
                             </div>
                         </div>
                     </div>
@@ -80,8 +79,8 @@
                                         on
                                         building a high-qualities medicals service by MediGrids.</p>
                                     <div class="button">
-                                        <a href="appointment.html" class="btn">Book Appointment</a>
-                                        <a href="about-us.html" class="btn">About Us</a>
+                                        <a href="#" class="btn">Book Appointment</a>
+                                        <a href="#" class="btn">About Us</a>
                                     </div>
                                 </div>
 
@@ -89,7 +88,7 @@
                         </div>
                         <div class="col-lg-6 col-md-12 col-12">
                             <div class="hero-image">
-                                <img src="assets/images/hero/slider-3.png" alt="#">
+                                <img src="" alt="#">
                             </div>
                         </div>
                     </div>
@@ -158,8 +157,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="content-left wow fadeInLeft" data-wow-delay=".3s">
-                        <img src="assets/images/about/about.png" alt="#">
-                        <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
+                        <img src="" alt="#">
+                        <a href="#"
                            class="glightbox video"><i class="lni lni-play"></i></a>
                     </div>
                 </div>
@@ -189,7 +188,7 @@
                             </div>
                         </div>
                         <div class="button">
-                            <a href="about-us.html" class="btn">More About Us</a>
+                            <a href="#" class="btn">More About Us</a>
                         </div>
                     </div>
                 </div>
@@ -246,7 +245,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-12 col-12">
                                         <div class="image">
-                                            <img src="assets/images/departments/image1.jpg" alt="#">
+                                            <img src="" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-12 col-12">
@@ -280,7 +279,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="image">
-                                            <img src="assets/images/departments/image2.jpg" alt="#">
+                                            <img src="" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -314,7 +313,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="image">
-                                            <img src="assets/images/departments/image3.jpg" alt="#">
+                                            <img src="" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -348,7 +347,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="image">
-                                            <img src="assets/images/departments/image4.jpg" alt="#">
+                                            <img src="" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -383,7 +382,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="image">
-                                            <img src="assets/images/departments/image5.jpg" alt="#">
+                                            <img src="" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -475,10 +474,10 @@
 
                                 <div class="single-list custom-border-right custom-border-bottom wow fadeInUp"
                                      data-wow-delay=".2s">
-                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
-                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
+                                    <img class="shape1" src="" alt="#">
+                                    <img class="shape2" src="" alt="#">
                                     <i class="lni lni-ambulance"></i>
-                                    <h4><a href="service-single.html">Fast Ambulance</a></h4>
+                                    <h4><a href="#">Fast Ambulance</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                         have suffered.</p>
                                 </div>
@@ -488,10 +487,10 @@
 
                                 <div class="single-list custom-border-right custom-border-bottom wow fadeInUp"
                                      data-wow-delay=".4s">
-                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
-                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
+                                    <img class="shape1" src="" alt="#">
+                                    <img class="shape2" src="" alt="#">
                                     <i class="lni lni-sthethoscope"></i>
-                                    <h4><a href="service-single.html">Dental Specialist</a></h4>
+                                    <h4><a href="#">Dental Specialist</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                         have suffered.</p>
                                 </div>
@@ -500,10 +499,10 @@
                             <div class="col-lg-4 col-md-6 col-12 custom-padding-left">
 
                                 <div class="single-list custom-border-bottom wow fadeInUp" data-wow-delay=".6s">
-                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
-                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
+                                    <img class="shape1" src="" alt="#">
+                                    <img class="shape2" src="" alt="#">
                                     <i class="lni lni-microscope"></i>
-                                    <h4><a href="service-single.html">Modern Laboratory</a></h4>
+                                    <h4><a href="#">Modern Laboratory</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                         have suffered.</p>
                                 </div>
@@ -512,10 +511,10 @@
                             <div class="col-lg-4 col-md-6 col-12 custom-padding-right">
 
                                 <div class="single-list custom-border-right wow fadeInUp" data-wow-delay=".2s">
-                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
-                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
+                                    <img class="shape1" src="" alt="#">
+                                    <img class="shape2" src="" alt="#">
                                     <i class="lni lni-users"></i>
-                                    <h4><a href="service-single.html">Children Center</a></h4>
+                                    <h4><a href="#">Children Center</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                         have suffered.</p>
                                 </div>
@@ -524,10 +523,10 @@
                             <div class="col-lg-4 col-md-6 col-12 custom-padding-left custom-padding-right">
 
                                 <div class="single-list custom-border-right wow fadeInUp" data-wow-delay=".4s">
-                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
-                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
+                                    <img class="shape1" src="" alt="#">
+                                    <img class="shape2" src="" alt="#">
                                     <i class="lni lni-heart"></i>
-                                    <h4><a href="service-single.html">Heart Surgery</a></h4>
+                                    <h4><a href="#">Heart Surgery</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                         have suffered.</p>
                                 </div>
@@ -536,10 +535,10 @@
                             <div class="col-lg-4 col-md-6 col-12 custom-padding-left">
 
                                 <div class="single-list wow fadeInUp" data-wow-delay=".6s">
-                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
-                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
+                                    <img class="shape1" src="" alt="#">
+                                    <img class="shape2" src="" alt="#">
                                     <i class="lni lni-hand"></i>
-                                    <h4><a href="service-single.html">Care Advice</a></h4>
+                                    <h4><a href="#">Care Advice</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
                                         have suffered.</p>
                                 </div>
@@ -580,13 +579,13 @@
                 <div class="col-lg-4 col-md-6 grid-item diabetes">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="assets/images/portfolio/pf1.jpg" alt="#">
+                            <img src="" alt="#">
                         </div>
                         <div class="portfolio-overlay">
                             <div class="pf-content">
-                                <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                                <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
                                 <span class="category">Cardiac Surgery</span>
-                                <h4><a href="portfolio-details.html">Qualified Physicians</a></h4>
+                                <h4><a href="#">Qualified Physicians</a></h4>
                             </div>
                         </div>
                     </div>
@@ -594,60 +593,60 @@
                 <div class="col-lg-4 col-md-6 grid-item diabetes">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="assets/images/portfolio/pf2.jpg" alt="#">
+                            <img src="" alt="#">
                         </div>
                         <div class="pf-content">
-                            <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                            <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
                             <span class="category">Cloud Services</span>
-                            <h4><a href="portfolio-details.html">Personalized Medication</a></h4>
+                            <h4><a href="#">Personalized Medication</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 grid-item pediatric">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="assets/images/portfolio/pf3.jpg" alt="#">
+                            <img src="" alt="#">
                         </div>
                         <div class="pf-content">
-                            <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                            <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
                             <span class="category">Dietetics</span>
-                            <h4><a href="portfolio-details.html">Excellence And Safety</a></h4>
+                            <h4><a href="#">Excellence And Safety</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 grid-item cardiology">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="assets/images/portfolio/pf4.jpg" alt="#">
+                            <img src="" alt="#">
                         </div>
                         <div class="pf-content">
-                            <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                            <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
                             <span class="category">Eye Surgery</span>
-                            <h4><a href="portfolio-details.html">Dry Eye Surgery</a></h4>
+                            <h4><a href="#">Dry Eye Surgery</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 grid-item pediatric">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="assets/images/portfolio/pf5.jpg" alt="#">
+                            <img src="" alt="#">
                         </div>
                         <div class="pf-content">
-                            <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                            <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
                             <span class="category">Surgical</span>
-                            <h4><a href="portfolio-details.html">Surgical Procedure</a></h4>
+                            <h4><a href="#">Surgical Procedure</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 grid-item neurosurgery">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="assets/images/portfolio/pf6.jpg" alt="#">
+                            <img src="" alt="#">
                         </div>
                         <div class="pf-content">
-                            <a href="portfolio-details.html" class="detail-btn"><i class="lni lni-link"></i></a>
+                            <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
                             <span class="category">Eye Surgery</span>
-                            <h4><a href="portfolio-details.html">Dry Eye Surgery</a></h4>
+                            <h4><a href="#">Dry Eye Surgery</a></h4>
                         </div>
                     </div>
                 </div>
@@ -779,7 +778,7 @@
                                 connections."</p>
                         </div>
                         <div class="author">
-                            <img src="assets/images/testimonial/testi1.jpg" alt="#">
+                            <img src="" alt="#">
                             <h4 class="name">
                                 Jane Anderson
                                 <span class="deg">Cancer client</span>
@@ -799,7 +798,7 @@
                                 connections."</p>
                         </div>
                         <div class="author">
-                            <img src="assets/images/testimonial/testi2.jpg" alt="#">
+                            <img src="" alt="#">
                             <h4 class="name">
                                 Paul Flavius
                                 <span class="deg">Heather</span>
@@ -819,7 +818,7 @@
                                 connections."</p>
                         </div>
                         <div class="author">
-                            <img src="assets/images/testimonial/testi3.jpg" alt="#">
+                            <img src="" alt="#">
                             <h4 class="name">
                                 Harry Russel
                                 <span class="deg">Surgery client</span>
@@ -839,7 +838,7 @@
                                 connections."</p>
                         </div>
                         <div class="author">
-                            <img src="assets/images/testimonial/testi4.jpg" alt="#">
+                            <img src="" alt="#">
                             <h4 class="name">
                                 Alice Williams
                                 <span class="deg">Mother</span>
@@ -870,7 +869,7 @@
 
                     <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
                         <div class="image">
-                            <img src="assets/images/doctors/doctor1.jpg" alt="#">
+                            <img src="" alt="#">
                             <ul class="social">
                                 <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
@@ -880,7 +879,7 @@
                         </div>
                         <div class="content">
                             <h5>Cardiologist</h5>
-                            <h3><a href="doctor-details.html">Dr.Felica Queen</a></h3>
+                            <h3><a href="#">Dr.Felica Queen</a></h3>
                         </div>
                     </div>
 
@@ -889,7 +888,7 @@
 
                     <div class="single-doctor wow fadeInUp" data-wow-delay=".4s">
                         <div class="image">
-                            <img src="assets/images/doctors/doctor2.jpg" alt="#">
+                            <img src="" alt="#">
                             <ul class="social">
                                 <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
@@ -899,7 +898,7 @@
                         </div>
                         <div class="content">
                             <h5>Neurologist</h5>
-                            <h3><a href="doctor-details.html">Dr.Alice Williams</a></h3>
+                            <h3><a href="#">Dr.Alice Williams</a></h3>
                         </div>
                     </div>
 
@@ -908,7 +907,7 @@
 
                     <div class="single-doctor wow fadeInUp" data-wow-delay=".6s">
                         <div class="image">
-                            <img src="assets/images/doctors/doctor3.jpg" alt="#">
+                            <img src="" alt="#">
                             <ul class="social">
                                 <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
@@ -918,7 +917,7 @@
                         </div>
                         <div class="content">
                             <h5>Physician Assistant</h5>
-                            <h3><a href="doctor-details.html">Dr.Paul Flavius</a></h3>
+                            <h3><a href="#">Dr.Paul Flavius</a></h3>
                         </div>
                     </div>
 
@@ -937,7 +936,7 @@
                         </div>
                         <div class="content">
                             <h5>Physician Assistant</h5>
-                            <h3><a href="doctor-details.html">Dr.Michael Bean</a></h3>
+                            <h3><a href="#">Dr.Michael Bean</a></h3>
                         </div>
                     </div>
 
@@ -1010,18 +1009,18 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12 pr-0">
                                 <div class="image">
-                                    <a href="blog-single-sidebar.html"><img src="assets/images/blog/blog1.jpg"
+                                    <a href="#"><img src=""
                                                                             alt="#"></a>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-12  pl-0">
                                 <div class="content">
-                                    <h2 class="title"><a href="blog-single-sidebar.html">These blood markers may higher
+                                    <h2 class="title"><a href="#">These blood markers may higher
                                             risk of disease</a></h2>
                                     <p>The price is something not defined as financial. It could be time.</p>
                                     <ul class="meta-info">
                                         <li>
-                                            <a href="javascript:void(0)"><img src="assets/images/blog/comment1.jpg"
+                                            <a href="javascript:void(0)"><img src=""
                                                                               alt="#"> Alice
                                                 Williams</a>
                                         </li>
@@ -1039,7 +1038,7 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12 pr-0">
                                 <div class="image">
-                                    <a href="blog-single-sidebar.html"><img src="assets/images/blog/blog2.jpg"
+                                    <a href="#"><img src=""
                                                                             alt="#"></a>
                                 </div>
                             </div>
@@ -1050,7 +1049,7 @@
                                     <p>The price is something not defined as financial. It could be time.</p>
                                     <ul class="meta-info">
                                         <li>
-                                            <a href="javascript:void(0)"><img src="assets/images/blog/comment2.jpg"
+                                            <a href="javascript:void(0)"><img src=""
                                                                               alt="#"> Alrado
                                                 Deyam</a>
                                         </li>
@@ -1070,13 +1069,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="image">
-                                    <a href="blog-single-sidebar.html"><img src="assets/images/blog/blog3.jpg"
+                                    <a href="#"><img src=""
                                                                             alt="#"></a>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="content">
-                                    <h2 class="title"><a href="blog-single-sidebar.html">Using anthrax to fight cancer
+                                    <h2 class="title"><a href="#">Using anthrax to fight cancer
                                             effectively</a></h2>
                                     <p>The price is something not necessarily defined as financial. It could be time,
                                         effort and sacrifice.</p>
@@ -1100,4 +1099,3 @@
         </div>
     </div>
 @endsection
-
