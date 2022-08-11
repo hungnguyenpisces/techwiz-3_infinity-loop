@@ -36,29 +36,32 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="doctor-calendar-table table-responsive">
-                            <form action="#">
-                            <select>
-                                @for($countM = 1; $countM <= 12; $countM++)
-                                    <option
-                                        @if($countM == today()->month)
-                                            selected
-                                        @endif
-                                        value="{{$countM}}">{{Carbon::createFromDate(2022,$countM,1)->getTransLatedMonthName()}}</option>
-                                 @endfor
-                            </select>
-                            <input type="number" value="{{today()->year}}">
-                                <input type="submit" value="submit">
+                            <form method="GET" action="show">
+                                @csrf
+                                @method('get')
+                                <select name="month">
+                                    @for($countM = 1; $countM <= 12; $countM++)
+                                        <option
+                                            @if($countM == $slMonth)
+                                                selected
+                                            @endif
+                                            value="{{$countM}}">{{Carbon::createFromDate(2022,$countM,1)->getTransLatedMonthName()}}</option>
+                                     @endfor
+                                </select>
+                                <input type="number" name="year" value="{{old(today()->year,$slYear)}}">
+                                    <input type="submit" value="submit">
                             </form>
                             <?php
 
                             //truyen tham so date duoc chon
-                            $date = today();
+//                            $date = today();
                             $firstDay = Carbon::createFromDate($date->year, $date->month, 1);
                             //truyen tham so ngay cua thang vao day
                             $dayOfMonth = $date->daysInMonth;
                             $countDay = 2 - $firstDay->dayOfWeek;
                             ?>
-                            <h2>{{$date->getTranslatedMonthName()}}</h2>
+                            <h2>{{$date->getTranslatedMonthName()}}, {{$slYear}}</h2>
+
                             <table class="table">
                                 <thead>
                                 <tr>
@@ -74,19 +77,27 @@
                                 <tbody>
                                 @for($index = 0;$index <5;$index++, $add=$countDay+6)
                                 <tr>
-                                    @for($i = 0; $i<7;$i++)
-                                    <td>
+                                    @for($i = 0; $i<7;$i++,$countDay++)
+                                    <td style="width: 14.285%; height: 80px; padding-top: 0;padding-left: 0">
                                         <?php
                                         if($countDay <= $dayOfMonth && $countDay > 0){
-                                            ?>
-                                            <h1>{{$countDay}}</h1>
+                                        $todaycheck = Carbon::createFromDate($date->year, $date->month, $countDay);
+                                        ?>
+                                            <span style="float: left">{{$countDay}}</span>
+                                            @if(isset($appointment))
+                                                @foreach($appointment as $ap)
+                                                <?php
+                                                    $datacheck = Carbon::createFromDate(date_parse($ap->date)['year'], date_parse($ap->date)['month'], date_parse($ap->date)['day']);
+                                                ?>
+                                                    @if($datacheck->diffInHours($todaycheck) < 23)
+                                                        <h3 style="float: right">{{$ap->self_check_symptom}}</h3>
+                                                    @endif
+                                                @endforeach
+                                            @endif
+
                                         <?php
                                         }
                                         ?>
-                                        <?php
-                                        $countDay++; ?>
-{{--                                        <h1>{{$index+$i+$add+1}}</h1>--}}
-{{--                                        <span>Dermatologists</span>--}}
                                     </td>
                                     @endfor
                                 </tr>
