@@ -16,6 +16,7 @@
 
 </head>
 @section('content')
+    <br><br><br>
     <div class="container">
         <section class="doctors section">
             <div class="container">
@@ -24,8 +25,9 @@
                         <div class="section-title">
                             <h3>Hospital</h3>
                             <div class="newsletter-form input">
+                                <h2 class="wow fadeInUp">Search Hospital</h2>
                                 <form action="#" method="get" target="_blank" class="newsletter-form">
-                                    <input style="height: 50px; width: 70%" name="EMAIL" placeholder="What are you looking for?" type="email">
+                                    <input style="height: 50px; width: 70%" name="EMAIL" placeholder="     What are you looking for?" type="email">
                                     <label class="button">
                                         <button class="btn">Search<span class="dir-part"></span></button>
                                     </label>
