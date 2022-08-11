@@ -13,7 +13,7 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="form">
                         <h3>Subscribe Newsletter</h3>
-                        <form action="#" method="get" target="_blank" class="newsletter-form">
+                        <form action="index.html#" method="get" target="_blank" class="newsletter-form">
                             <input name="EMAIL" placeholder="Your email address" type="email">
                             <div class="button">
                                 <button class="btn">Subscribe<span class="dir-part"></span></button>
@@ -33,8 +33,8 @@
 
                     <div class="single-footer f-about">
                         <div class="logo">
-                            <a href="">
-                                <img src="" alt="#">
+                            <a href="index.html">
+                                <img src="assets/images/logo/white-logo.svg" alt="#">
                             </a>
                         </div>
                         <p>There’s nothing in this story to make us think he was dreaming about riches.</p>
@@ -126,6 +126,8 @@
                         <div class="content">
                             <p class="copyright-text">Designed and Developed by Infinity-Loop
                             </p>
+
+
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">

@@ -16,8 +16,6 @@
             </div>
         </div>
     </div>
-
-
     <section class="login registration section">
         <div class="container">
             <div class="row">
@@ -29,28 +27,30 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <ul>
-                                            <li><a href="javascript:void(0)" class="facebook"><i class="lni lni-facebook-original"></i>Import
-                                                    From
+                                            <li><a href="javascript:void(0)" class="facebook"><i
+                                                        class="lni lni-facebook-filled"></i>Import From
                                                     Facebook</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <ul>
-                                            <li><a href="javascript:void(0)" class="google"><i class="lni lni-google"></i>Import From Google
+                                            <li><a href="javascript:void(0)" class="google"><i
+                                                        class="lni lni-google"></i>Import From Google
                                                     Plus</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <ul>
-                                            <li><a href="javascript:void(0)" class="instagram"><i class="lni lni-instagram"></i>Import From
+                                            <li><a href="javascript:void(0)" class="instagram"><i
+                                                        class="lni lni-instagram"></i>Import From
                                                     Instagram</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <ul>
-                                            <li><a href="javascript:void(0)" class="linkedin"><i class="lni lni-linkedin-original"></i>Import
-                                                    From Linkedin</a>
+                                            <li><a href="javascript:void(0)" class="linkedin"><i
+                                                        class="lni lni-linkedin-original"></i>Import From Linkedin</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -75,8 +75,10 @@
                                 <div class="row align-items-center">
                                     <div class="col-12">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input width-auto" id="exampleCheck1">
-                                            <label class="form-check-label">Agree to our <a href="javascript:void(0)">Terms and
+                                            <input type="checkbox" class="form-check-input width-auto"
+                                                   id="exampleCheck1">
+                                            <label class="form-check-label">Agree to our <a href="javascript:void(0)">Terms
+                                                    and
                                                     Conditions</a></label>
                                         </div>
                                     </div>
@@ -85,7 +87,7 @@
                             <div class="button">
                                 <button type="submit" class="btn">Registration</button>
                             </div>
-                            <p class="outer-link">Already have an account? <a href="login.html"> Login Now</a>
+                            <p class="outer-link">Already have an account? <a href=""> Login Now</a>
                             </p>
                         </form>
                     </div>
@@ -93,6 +95,7 @@
             </div>
         </div>
     </section>
-
-
+</html>
 @endsection
+
+

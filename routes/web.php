@@ -19,6 +19,8 @@ Route::get('/user', function () {
 });
 
 
+
+
 Route::group(['middleware' => ['guest']], function () {
     /**
      * Register Routes
@@ -39,3 +41,4 @@ Route::group(['middleware' => ['auth']], function () {
      */
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });
+

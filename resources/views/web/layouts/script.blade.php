@@ -7,3 +7,4 @@
 <script src="{!! url('assets/js/imagesloaded.min.js') !!}"></script>
 <script src="{!! url('assets/js/isotope.min.js') !!}"></script>
 <script src="{!! url('assets/js/main.js') !!}"></script>
+
