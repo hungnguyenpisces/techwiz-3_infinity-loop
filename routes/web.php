@@ -36,3 +36,29 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/hospitalsearch',function (){
     return view('web.hospital-search');
 });
+
+Route::get('/user-bmi',function (){
+    return view('user.user-bmi');
+});
+
+Route::get('/user-history',function (){
+    return view('user.user-history');
+});
+
+
+Route::get('/user',function (){
+    return view('user.user-proile');
+});
+
+
+Route::get('/user-health-profile',function (){
+    return view('user.user-health-profile');
+});
+
+
+Route::get('/user',function (){
+    return view('user.user');
+});
+
+Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
+

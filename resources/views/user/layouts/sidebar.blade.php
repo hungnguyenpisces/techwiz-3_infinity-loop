@@ -2,7 +2,7 @@
     <header>
         <div class="image-text">
             <span class="image">
-            <i class="fa-light fa-user icon"></i>
+                <i class="fa-light fa-user icon"></i>
             </span>
 
             <div class="text logo-text">
@@ -16,48 +16,41 @@
     <div class="menu-bar">
         <div class="menu">
             <div class="search-box">
-              
+
             </div>
 
             <ul class="menu-links">
                 <li class="nav-link" id="user">
                     <a href="/user">
-                    <i class="fa-light fa-user icon"></i>
+                        <i class="fa-solid fa-user icon"></i>
                         <span class="text nav-text">Dashboard</span>
-                    </a>
-                </li>
-
-                <li class="nav-link" id="user-profile">
-                    <a href="/health-index">
-                        <i class="fa-light fa-file-waveform icon"></i>
-                        <span class="text nav-text">Health profile</span>
                     </a>
                 </li>
 
                 <li class="nav-link" id="user-bmi">
                     <a href="/user-bmi">
-                        <i class="fa-light fa-calculator icon"></i>
-                        <span class="text nav-text">BMI</span>
+                        <i class="fa-solid fa-person icon"></i>
+                        <span class="text nav-text">Your BMI</span>
                     </a>
                 </li>
 
                 <li class="nav-link" id="user-chart">
                     <a href="/user-chart">
-                        <i class="fa-regular fa-chart-line"></i>
+                        <i class="fa-solid fa-chart-line icon"></i>
                         <span class="text nav-text">Health charts</span>
                     </a>
                 </li>
 
                 <li class="nav-link" id="user-history">
                     <a href="/user-history">
-                        <i class="fa-regular fa-calendar-check"></i>
+                        <i class="fa-regular fa-calendar-check icon"></i>
                         <span class="text nav-text">Appointments</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
                     <a href="#">
-                        <i class="fa-light fa-bars icon"></i>
+                        <i class="fa-solid fa-bars icon"></i>
                         <span class="text nav-text">Setting</span>
                     </a>
                 </li>
@@ -68,7 +61,7 @@
         <div class="bottom-content">
             <li class="">
                 <a href="#">
-                    <i class="fa-light fa-bars icon"></i>
+                    <i class="fa-solid fa-arrow-right-from-bracket icon"></i>
                     <span class="text nav-text">Logout</span>
                 </a>
             </li>

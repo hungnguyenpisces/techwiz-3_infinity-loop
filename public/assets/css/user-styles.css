@@ -59,10 +59,15 @@ body.dark{
 
 .sidebar header .image,
 .sidebar .icon{
-    min-width: 60px;
+    min-width: 40px;
     border-radius: 6px;
 }
 
+li.nax-link a{
+    margin: auto;
+    text-align: center;
+    margin-left: 14px;
+}
 .sidebar .icon{
     min-width: 60px;
     border-radius: 6px;
@@ -189,16 +194,25 @@ body.dark .sidebar header .toggle{
     width: 100%;
     text-decoration: none;
     transition: var(--tran-03);
-    font-size: 30px;
+    font-size: 18px;
+    color: white;
+    margin-left: 14px;
+}
+
+.sidebar li a span {
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-size: 24px;
 }
 
 
-.sidebar li a:hover i {
-    transform: scale(1.1);
+.sidebar li a .icon {
+    width: 50px;
 }
+
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text{
-    color: white;
+    color: black;
 }
 
 
@@ -365,3 +379,4 @@ ul.menu-links li i {
     font-size: 20px;
     width: 50px;
 }
+
