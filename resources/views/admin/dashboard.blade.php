@@ -275,7 +275,7 @@ Admin
                     <div class="body">
                         <ul class="basic-list">
                             <li>Mark Otto <span class="label-danger label">21%</span></li>
-                            <li>Jacob Thornton <span class="label-purple label">50%</span></li>
+                            <li>Jacob Thornton <span class="label-warning label">50%</span></li>
                             <li>Jacob Thornton<span class="label-success label">90%</span></li>
                             <li>M. Arthur <span class="label-info label">75%</span></li>
                             <li>Jacob Thornton <span class="label-warning label">60%</span></li>
