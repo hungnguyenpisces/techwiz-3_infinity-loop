@@ -19,7 +19,7 @@ Route::withoutMiddleware(['auth', 'role:Super-Admin|Admin'])->group(function () 
     Route::post('/login', [AdminController::class, 'processLogin'])->name('admin.login.perform');
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/blank', function () {
-        return view('admin.widgets');
+        return view('admin.blank');
     });
 });
 
