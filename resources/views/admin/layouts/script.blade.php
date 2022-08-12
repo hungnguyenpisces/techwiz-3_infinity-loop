@@ -1,8 +1,9 @@
-<!-- Bootstrap 5.2.0 js -->
-<script src="{!! url('assets/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>
-
-<!-- Font Awesome 6.1.2 js -->
+<!-- common js -->
 <script src="{!! url('assets/fontawesome/js/all.min.js') !!}"></script>
 
-<!-- Custom js -->
 <script src="{!! url('assets/js/admin-scripts.js') !!}"></script>
+
+<script src="{!! url('assets/bundles/libscripts.bundle.js') !!}"></script>
+<script src="{!! url('assets/bundles/vendorscripts.bundle.js') !!}"></script>
+<script src="{!! url('assets/bundles/mainscripts.bundle.js') !!}"></script>
+<!-- end common js -->
