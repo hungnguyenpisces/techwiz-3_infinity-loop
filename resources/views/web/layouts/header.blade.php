@@ -1,6 +1,3 @@
-{{--@php(--}}
-{{--    $user = \Illuminate\Support\Facades\Auth::user()--}}
-{{--)--}}
 <header class="header navbar-area style2">
     <div class="top-bar">
         <div class="container">
@@ -9,10 +6,7 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="top-contact">
                             <ul>
-                                <li><i class="lni lni-envelope"></i><a
-                                        href="#"><span
-                                            class="__cf_email__"
-                                            data-cfemail="f39a9d959cb39e96979a94819a9780dd909c9e">Email</span></a>
+                                <li><i class="lni lni-envelope"></i><a href="#"><span class="__cf_email__" data-cfemail="f39a9d959cb39e96979a94819a9780dd909c9e">Email</span></a>
                                 </li>
                                 <li><i class="lni lni-phone"></i> 0123456789</li>
                             </ul>
@@ -23,17 +17,23 @@
                             <div class="login-button">
                                 <ul>
                                     <li>
-                                        <a href="/login"><i class="lni lni-enter"></i> Login</a>
+                                        @if(Auth::check())
+                                        <a href="/user" style="width: 100px;"><i class="lni lni-user"></i>
+                                            {{Auth::user()->first_name}} {{Auth::user()->last_name}}
+                                        </a>
+                                        <a href="{{route('logout.perform')}}" title="sign out">
+                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                        </a>
+                                        @else
                                     </li>
-{{--                                    @if(!inset($user))--}}
+                                    <a href="/login"><i class="lni lni-enter"></i> Login</a>
                                     <li>
                                         <a href="/register"><i class="lni lni-user"></i> Register</a>
                                     </li>
-{{--                                    @else--}}
-{{--                                    <li>--}}
-{{--                                        <a href="/user"><i class="lni lni-user"></i> {{$user->username}}</a>--}}
-{{--                                    </li>--}}
-{{--                                        @endif--}}
+                                    @endif
+
+                                    </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="top-social">
@@ -62,9 +62,7 @@
                         <a class="navbar-brand" href="#">
                             <img src="/assets/img/favicon.png" alt="Logo" style="height: 40px; width: 40px">
                         </a>
-                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="toggler-icon"></span>
                             <span class="toggler-icon"></span>
                             <span class="toggler-icon"></span>
@@ -72,22 +70,13 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ms-auto">
                                 <li class="nav-item">
-                                    <a class="page-scroll active dd-menu collapsed" href="/home"
-                                       data-bs-toggle="collapse" data-bs-target="#submenu-1-1"
-                                       aria-controls="navbarSupportedContent" aria-expanded="false"
-                                       aria-label="Toggle navigation">Home</a>
+                                    <a class="page-scroll active dd-menu collapsed" href="/home" data-bs-toggle="collapse" data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)"
-                                       data-bs-toggle="collapse" data-bs-target="#submenu-1-2"
-                                       aria-controls="navbarSupportedContent" aria-expanded="false"
-                                       aria-label="Toggle navigation">Hospital</a>
+                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)"
-                                       data-bs-toggle="collapse" data-bs-target="#submenu-1-3"
-                                       aria-controls="navbarSupportedContent" aria-expanded="false"
-                                       aria-label="Toggle navigation">Department</a>
+                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Department</a>
                                     <ul class="sub-menu collapse" id="submenu-1-3">
                                         <li class="nav-item"><a href="#">Musculoskeletal</a></li>
                                         <li class="nav-item"><a href="#">Neurology</a></li>
@@ -99,10 +88,7 @@
 
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)"
-                                       data-bs-toggle="collapse" data-bs-target="#submenu-1-4"
-                                       aria-controls="navbarSupportedContent" aria-expanded="false"
-                                       aria-label="Toggle navigation">Doctors</a>
+                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Doctors</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -111,15 +97,8 @@
                             </ul>
                         </div>
                         <div class="button add-list-button">
-                                <a href="#" class="btn">Book Appointment</a>
+                            <a href="{{route('appointment.index')}}" class="btn">Book Appointment</a>
                         </div>
-{{--                        <div class="button add-list-button">--}}
-
-
-{{--                            <p>{{ $user->username }}--}}
-{{--                                <a href="/user" ><i class="fa-solid fa-user"></i></a></p>--}}
-{{--                                <a href="#" ><i class="fa-solid fa-bell"></i></a></p>--}}
-{{--                        </div>--}}
                     </nav>
                 </div>
             </div>
