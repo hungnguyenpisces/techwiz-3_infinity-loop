@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('health_indices', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('users_id');
-            $table->float('height');
-            $table->float('weight');
-            $table->float('heart_rate')->nullable();
-            $table->float('blood_pressure')->nullable();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('username');
+            $table->string('email');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('health_indices');
+        Schema::dropIfExists('admins');
     }
 };

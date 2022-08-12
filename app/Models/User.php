@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -12,6 +13,22 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
+
+    public function appointment(){
+        return $this->hasMany('App\Models\Appointment');
+    }
+
+    public function health(){
+        return $this->hasOne('App\Models\HealthIndex');
+    }
+
+    public function checkout(){
+        return $this->hasMany('App\Models\CheckOutHistory');
+    }
+
+    public function comment(){
+        return $this->hasMany('App\Models\Comment');
+    }
 
     /**
      * The attributes that are mass assignable.
