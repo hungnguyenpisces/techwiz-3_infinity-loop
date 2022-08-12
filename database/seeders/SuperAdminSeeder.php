@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
-class CreateAdminUserSeeder extends Seeder
+class SuperAdminSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,7 +22,7 @@ class CreateAdminUserSeeder extends Seeder
             'last_name' => 'Super',
             'username' => 'superadmin',
             'email' => 'superadmin@email.com',
-            'password' => Hash::make('Jv3g13830')
+            'password' => Hash::make('Jv3g13830'),
         ]);
 
         $role = Role::create(['name' => 'Super-Admin']);

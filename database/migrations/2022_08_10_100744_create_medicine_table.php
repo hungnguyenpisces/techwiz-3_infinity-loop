@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('medicine', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('check_out_history_id');
+            $table->string('details');
             $table->timestamps();
         });
     }
