@@ -23,7 +23,7 @@
                         <h1 class="page-title">Registration</h1>
                     </div>
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Home</a></li>
                         <li>Registration</li>
                     </ul>
                 </div>
@@ -36,7 +36,8 @@
                 <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
                     <div class="form-head">
                         <h4 class="title">Registration</h4>
-                        <form action="registration.html#!" method="post">
+                        <form action="register" method="post">
+                            @csrf
                             <div class="socila-login">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -74,16 +75,22 @@
                                 <span>Or</span>
                             </div>
                             <div class="form-group">
-                                <input name="password" type="text" placeholder="Name">
+                                <input name="first_name" type="text" placeholder="First Name" value="{{old('first_name')}}">
                             </div>
                             <div class="form-group">
-                                <input name="email" type="email" placeholder="Email">
+                                <input name="last_name" type="text" placeholder="Last Name" value="{{old('last_name')}}">
                             </div>
                             <div class="form-group">
-                                <input name="password" type="password" placeholder="Password">
+                                <input name="username" type="text" placeholder="User Name" value="{{old('username')}}">
                             </div>
                             <div class="form-group">
-                                <input name="password" type="password" placeholder="Confirm Password">
+                                <input name="email" type="email" placeholder="Email" value="{{old('email')}}">
+                            </div>
+                            <div class="form-group">
+                                <input name="password" type="password" placeholder="Password" value="{{old('password')}}">
+                            </div>
+                            <div class="form-group">
+                                <input name="confirm-password" type="password" placeholder="Confirm Password" value="{{old('confirm-password')}}">
                             </div>
                             <div class="check-and-pass">
                                 <div class="row align-items-center">
@@ -99,7 +106,7 @@
                                 </div>
                             </div>
                             <div class="button">
-                                <button type="submit" class="btn">Registration</button>
+                                <button type="submit" class="btn" >Registration</button>
                             </div>
                             <p class="outer-link">Already have an account? <a href=""> Login Now</a>
                             </p>
