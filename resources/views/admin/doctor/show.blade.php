@@ -24,8 +24,8 @@ Custom title if need
                                 <h4 class="mb-0"><strong>Dr. John</strong> Smith</h4>
                                 <span class="text-muted col-white">Dentist</span>
                                 <div class="mt-10">
-                                    <button class="btn btn-raised btn-default bg-blush btn-sm">Follow</button>
-                                    <button class="btn btn-raised btn-default bg-green btn-sm">Message</button>
+                                    <button class="btn btn-raised btn-primary bg-blush btn-sm">Follow</button>
+                                    <button class="btn btn-raised btn-primary bg-green btn-sm">Message</button>
                                 </div>
                                 <p class="social-icon">
                                     <a title="Twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a>

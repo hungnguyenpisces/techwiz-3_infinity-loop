@@ -29,8 +29,8 @@
                 <li class="side_link_parent"> <a href="/admin/dashboard"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                     <ul class="ml-menu">
-                        <li class="side_link"> <a href="/admin/dashboard">Doctor Schedule</a></li>
-                        <li class="side_link"> <a href="#">Book Appointment</a></li>
+                        <li class="side_link"> <a href="doctor-schedule">Doctor Schedule</a></li>
+                        <li class="side_link"> <a href="appointment">Book Appointment</a></li>
                     </ul>
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
@@ -50,9 +50,9 @@
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-balance-wallet"></i><span>Payments</span> </a>
                     <ul class="ml-menu">
-                        <li class="side_link"> <a href="#">Payments</a></li>
-                        <li class="side_link"> <a href="#">Add Payment</a></li>
-                        <li class="side_link"> <a href="#">Patient Invoice</a></li>
+                        <li class="side_link"> <a href="payment">Payments</a></li>
+                        <li class="side_link"> <a href="add-payment">Add Payment</a></li>
+                        <li class="side_link"> <a href="patient-invoice">Patient Invoice</a></li>
                     </ul>
                 </li>
                 <li class="side_link_parent"><a href="report"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
