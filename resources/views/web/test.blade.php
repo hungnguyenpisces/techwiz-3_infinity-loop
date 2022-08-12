@@ -5,12 +5,10 @@
 
 @section('extraCss')
     <!-- extra css -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+
 
     <!-- end extra css -->
 @endsection
@@ -22,105 +20,91 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
                     <div class="breadcrumbs-content">
-                        <h1 class="page-title">Appointment</h1>
+                        <h1 class="page-title">Registration</h1>
                     </div>
                     <ul class="breadcrumb-nav">
-                        <li><a href="#">Home</a></li>
-                        <li>Appointment</li>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Registration</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <section class="appointment page section">
+    <section class="login registration section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                    <form action="" method="">
-                        <div class="appointment-form">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="appointment-title">
-                                        <h2>Book An Appointment</h2>
-                                        <p>Please feel welcome to contact our friendly reception staff with any general or
-                                            medical
-                                            enquiry. Our doctors will receive or return any urgent calls.</p>
+                <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
+                    <div class="form-head">
+                        <h4 class="title">Registration</h4>
+                        <form action="registration.html#!" method="post">
+                            <div class="socila-login">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <ul>
+                                            <li><a href="javascript:void(0)" class="facebook"><i
+                                                        class="lni lni-facebook-filled"></i>Import From
+                                                    Facebook</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <ul>
+                                            <li><a href="javascript:void(0)" class="google"><i
+                                                        class="lni lni-google"></i>Import From Google
+                                                    Plus</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <ul>
+                                            <li><a href="javascript:void(0)" class="instagram"><i
+                                                        class="lni lni-instagram"></i>Import From
+                                                    Instagram</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <ul>
+                                            <li><a href="javascript:void(0)" class="linkedin"><i
+                                                        class="lni lni-linkedin-original"></i>Import From Linkedin</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12 p-0">
-                                    <div class="appointment-input">
-                                        <label for="name"><i class="lni lni-user"></i></label>
-                                        <input type="text" name="name" id="name" placeholder="Your Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12 p-0">
-                                    <div class="appointment-input">
-                                        <label for="email"><i class="lni lni-envelope"></i></label>
-                                        <input type="email" name="email" id="email" placeholder="Your Email">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12 p-0">
-                                    <div class="appointment-input">
-                                        <label for="number"><i class="lni lni-phone-set"></i></label>
-                                        <input type="text" name="number" id="number" placeholder="Phone Number">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12 p-0">
-                                    <div class="appointment-input">
-                                        <label for="department"><i class="lni lni-notepad"></i></label>
-                                        <select name="department" id="department">
-                                            <option value="none" selected disabled>Department</option>
-                                            <option value="none">Musculoskeletal</option>
-                                            <option value="none">Neurology</option>
-                                            <option value="none">Gastroenterology</option>
-                                            <option value="none">Heart</option>
-                                            <option value="none">Otorhinolaryngology</option>
-                                            <option value="none">Dermatology</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12 p-0">
-                                    <div class="appointment-input">
-                                        <label for="doctor"><i class="lni lni-sthethoscope"></i></label>
-                                        <select name="doctor" id="doctor">
-                                            <option value="none" selected disabled>Hospital</option>
-                                            <option value="none">#</option>
-                                            <option value="none">#</option>
-                                            <option value="none">#</option>
-                                            <option value="none">#</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12 p-0">
-                                    <div class="appointment-input">
-                                        <label for="date"><i class="lni lni-user"></i></label>
-                                        <input type="date" name="date" id="date">
-                                    </div>
-                                </div>
-                                <div class="col-12 p-0">
-                                    <div class="appointment-input">
-                                        <textarea placeholder="Write Your Message Here....."></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12 p-0">
-                                    <div class="appointment-btn button">
-                                        <button class="btn">Get Appointment</button>
+                            <div class="alt-option">
+                                <span>Or</span>
+                            </div>
+                            <div class="form-group">
+                                <input name="password" type="text" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input name="email" type="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input name="password" type="password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <input name="password" type="password" placeholder="Confirm Password">
+                            </div>
+                            <div class="check-and-pass">
+                                <div class="row align-items-center">
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input width-auto"
+                                                   id="exampleCheck1">
+                                            <label class="form-check-label">Agree to our <a href="javascript:void(0)">Terms
+                                                    and
+                                                    Conditions</a></label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                    </form>
-
-
-
+                            <div class="button">
+                                <button type="submit" class="btn">Registration</button>
+                            </div>
+                            <p class="outer-link">Already have an account? <a href=""> Login Now</a>
+                            </p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -132,6 +116,7 @@
 
 @section('extraJs')
     <!-- extraJs -->
+
 
 
     <!-- end extraJs -->
