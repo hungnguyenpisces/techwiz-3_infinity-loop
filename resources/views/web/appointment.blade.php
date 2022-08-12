@@ -26,7 +26,7 @@
                     </div>
                     <ul class="breadcrumb-nav">
                         <li><a href="#">Home</a></li>
-                        <li>appointment</li>
+                        <li>Appointment</li>
                     </ul>
                 </div>
             </div>

@@ -3724,6 +3724,7 @@ blockquote .shape {
 .doctor-details .doctor-left-bar .single-bar .list li {
 	display: block;
 	margin-top: 12px;
+
 }
 .doctor-details .doctor-left-bar .single-bar .list li a {
 	color: #888;
@@ -3733,11 +3734,13 @@ blockquote .shape {
 }
 .doctor-details .doctor-left-bar .single-bar .opening-hour {
 	margin-top: 20px;
+
 }
 .doctor-details .doctor-left-bar .single-bar .opening-hour li {
 	overflow: hidden;
 	color: #888;
 	margin-bottom: 13px;
+
 }
 .doctor-details .doctor-left-bar .single-bar .opening-hour li i {
 	display: inline-block;

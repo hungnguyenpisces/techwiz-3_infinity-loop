@@ -33,6 +33,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });
 
-Route::get('/hospitalsearch',function (){
-    return view('web.hospital-search');
+Route::get('/test',function (){
+    return view('web.test');
+});
+Route::get('/user',function (){
+    return view('user.user-profile');
 });
