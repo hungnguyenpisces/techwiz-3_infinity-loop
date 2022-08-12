@@ -13,7 +13,13 @@
 
 <nav class="navbar clearHeader">
     <div class="col-12">
-        <div class="navbar-header"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand" href="/admin">{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}</a> </div>
+        <div class="navbar-header">
+            <a href="javascript:void(0);" class="bars"></a>
+            <!-- if Auth logined then show this -->
+            @if (Auth::check())
+            <a class="navbar-brand" href="/admin">{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}</a>
+            @endif
+        </div>
         <ul class="nav navbar-nav navbar-right">
 
             <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="zmdi zmdi-notifications"></i> <span class="label-count">7</span> </a>
