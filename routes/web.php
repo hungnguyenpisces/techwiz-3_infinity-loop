@@ -36,3 +36,8 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/hospitalsearch',function (){
     return view('web.hospital-search');
 });
+
+
+Route::get('/test',function (){
+    return view('web.home');
+});
