@@ -1,8 +1,8 @@
-<!-- Bootstrap 5.2.0 css -->
-<link rel="stylesheet" href="{!! url('assets/bootstrap/css/bootstrap.min.css') !!}">
-
-<!-- Font Awesome 6.1.2 css -->
+<!-- common style Css -->
+<link rel="stylesheet" href="{!! url('assets/plugins/bootstrap/css/bootstrap.min.css') !!}">
 <link rel="stylesheet" href="{!! url('assets/fontawesome/css/all.min.css') !!}">
 
-<!-- Custom css -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
+
 <link rel="stylesheet" href="{!! url('assets/css/admin-style.css') !!}">
+<!-- end common style Css -->
