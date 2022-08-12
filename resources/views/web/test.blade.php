@@ -1,8 +1,23 @@
 @extends('web.layouts._master')
 
+@section('title')
+
+@endsection
+
+@section('extraCss')
+    <!-- extra css -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- end extra css -->
+@endsection
+
 @section('content')
-
-
+    {{-----content-----}}
     <section class="hero-area ">
         <div class="shapes">
             <img src="assets/images/hero/05.svg" class="shape1" alt="#">
@@ -758,252 +773,111 @@
         </div>
     </section>
 
+    {{-----end content-----}}
+@endsection
 
-    <section class="doctors section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3>Doctors</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Our Outstanding Team Is Active To Help You!</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-12">
+@section('extraJs')
+    <!-- extraJs -->
+    <script type="text/javascript">
+        //======== Hero Slider
+        var slider = new tns({
+            container: '.hero-slider',
+            slideBy: 'page',
+            autoplay: true,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            gutter: 0,
+            items: 1,
+            nav: false,
+            controls: true,
+            controlsText: [
+                '<i class="lni lni-chevron-left"></i>',
+                '<i class="lni lni-chevron-right"></i>'
+            ],
+            responsive: {
+                1200: {
+                    items: 1,
+                },
+                992: {
+                    items: 1,
+                },
+                0: {
+                    items: 1,
+                }
 
-                    <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
-                        <div class="image">
-                            <img src="assets/images/doctors/doctor1.jpg" alt="#">
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5>Cardiologist</h5>
-                            <h3><a href="#">Dr.Felica Queen</a></h3>
-                        </div>
-                    </div>
+            }
+        });
+        //========= testimonial
+        tns({
+            container: '.testimonial-slider',
+            items: 3,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: true,
+            controls: false,
+            controlsText: ['<i class="lni lni-arrow-left"></i>', '<i class="lni lni-arrow-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 2,
+                },
+                1170: {
+                    items: 3,
+                }
+            }
+        });
 
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
+        //====== counter up
+        var cu = new counterUp({
+            start: 0,
+            duration: 2000,
+            intvalues: true,
+            interval: 100,
+            append: " ",
+        });
+        cu.start();
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+        //============== isotope masonry js with imagesloaded
+        // imagesLoaded('#container', function () {
+        //     var elem = document.querySelector('.grid');
+        //     var iso = new Isotope(elem, {
+        //         // options
+        //         itemSelector: '.grid-item',
+        //         masonry: {
+        //             // use outer width of grid-sizer for columnWidth
+        //             columnWidth: '.grid-item'
+        //         }
+        //     });
+        //
+        //     let filterButtons = document.querySelectorAll('.portfolio-btn-wrapper button');
+        //     filterButtons.forEach(e =>
+        //         e.addEventListener('click', () => {
+        //
+        //             let filterValue = event.target.getAttribute('data-filter');
+        //             iso.arrange({
+        //                 filter: filterValue
+        //             });
+        //         })
+        //     );
+        // });
+    </script>
 
-                    <div class="single-doctor wow fadeInUp" data-wow-delay=".4s">
-                        <div class="image">
-                            <img src="assets/images/doctors/doctor2.jpg" alt="#">
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5>Neurologist</h5>
-                            <h3><a href="#">Dr.Alice Williams</a></h3>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-
-                    <div class="single-doctor wow fadeInUp" data-wow-delay=".6s">
-                        <div class="image">
-                            <img src="assets/images/doctors/doctor3.jpg" alt="#">
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5>Physician Assistant</h5>
-                            <h3><a href="#">Dr.Paul Flavius</a></h3>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-
-                    <div class="single-doctor wow fadeInUp" data-wow-delay=".8s">
-                        <div class="image">
-                            <img src="assets/images/doctors/doctor4.jpg" alt="#">
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5>Physician Assistant</h5>
-                            <h3><a href="#">Dr.Michael Bean</a></h3>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="how-works">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-12 p-0">
-
-                    <div class="single-work first">
-                        <div class="main-icon">
-                            <i class="lni lni-agenda"></i>
-                        </div>
-                        <h3>Best Monitoring System</h3>
-                        <p>Despite advances in technology and understanding of biological systems, drug discovery is
-                            still a lengthy, expensive.</p>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-4 col-12 p-0">
-
-                    <div class="single-work middle">
-                        <div class="main-icon">
-                            <i class="lni lni-hospital"></i>
-                        </div>
-                        <h3>Advanced Operating Room</h3>
-                        <p>Despite advances in technology and understanding of biological systems, drug discovery is
-                            still a lengthy, expensive.</p>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-4 col-12 p-0">
-
-                    <div class="single-work last">
-                        <div class="main-icon">
-                            <i class="lni lni-sthethoscope"></i>
-                        </div>
-                        <h3>Only Best Doctors</h3>
-                        <p>Despite advances in technology and understanding of biological systems, drug discovery is
-                            still a lengthy, expensive.</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <div class="latest-news-area section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3>Blogs</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">latest news</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-12">
-
-                    <div class="single-news wow fadeInUp" data-wow-delay=".2s">
-                        <div class="row">
-                            <div class="col-lg-5 col-md-5 col-12 pr-0">
-                                <div class="image">
-                                    <a href="#"><img src="assets/images/blog/blog1.jpg"
-                                                     alt="#"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 col-12  pl-0">
-                                <div class="content">
-                                    <h2 class="title"><a href="#">These blood markers may higher
-                                            risk of disease</a></h2>
-                                    <p>The price is something not defined as financial. It could be time.</p>
-                                    <ul class="meta-info">
-                                        <li>
-                                            <a href="javascript:void(0)"><img src="assets/images/blog/comment1.jpg"
-                                                                              alt="#"> Alice
-                                                Williams</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">08 Mar 2023 </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="single-news wow fadeInUp" data-wow-delay=".2s">
-                        <div class="row">
-                            <div class="col-lg-5 col-md-5 col-12 pr-0">
-                                <div class="image">
-                                    <a href="#"><img src="assets/images/blog/blog2.jpg"
-                                                     alt="#"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 col-12  pl-0">
-                                <div class="content">
-                                    <h2 class="title"><a href="#">Brushing your teeth may keep
-                                            your heart healthy</a></h2>
-                                    <p>The price is something not defined as financial. It could be time.</p>
-                                    <ul class="meta-info">
-                                        <li>
-                                            <a href="javascript:void(0)"><img src="assets/images/blog/comment2.jpg"
-                                                                              alt="#"> Alrado
-                                                Deyam</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">10 Feb 2023 </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-6 col-md-12 col-12">
-
-                    <div class="single-news style2 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="image">
-                                    <a href="#"><img src="assets/images/blog/blog3.jpg"
-                                                     alt="#"></a>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="content">
-                                    <h2 class="title"><a href="#">Using anthrax to fight cancer
-                                            effectively</a></h2>
-                                    <p>The price is something not necessarily defined as financial. It could be time,
-                                        effort and sacrifice.</p>
-                                    <ul class="meta-info">
-                                        <li>
-                                            <a href="javascript:void(0)"><img src="assets/images/blog/comment3.jpg"
-                                                                              alt="#"> Zenifer
-                                                Suie</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">02 Jan 2023</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- end extraJs -->
 @endsection

@@ -1,7 +1,22 @@
 @extends('web.layouts._master')
 
-@section('content')
+@section('title')
+@endsection
 
+@section('extraCss')
+    <!-- extra css -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- end extra css -->
+@endsection
+
+@section('content')
+    {{-----content-----}}
     <div class="breadcrumbs overlay">
         <div class="container">
             <div class="row align-items-center">
@@ -58,11 +73,13 @@
                                     <div class="appointment-input">
                                         <label for="department"><i class="lni lni-notepad"></i></label>
                                         <select name="department" id="department">
-                                            <option value="none" selected disabled>Services</option>
-                                            <option value="none">#</option>
-                                            <option value="none">#</option>
-                                            <option value="none">#</option>
-                                            <option value="none">#</option>
+                                            <option value="none" selected disabled>Department</option>
+                                            <option value="none">Musculoskeletal</option>
+                                            <option value="none">Neurology</option>
+                                            <option value="none">Gastroenterology</option>
+                                            <option value="none">Heart</option>
+                                            <option value="none">Otorhinolaryngology</option>
+                                            <option value="none">Dermatology</option>
 
                                         </select>
                                     </div>
@@ -108,4 +125,14 @@
             </div>
         </div>
     </section>
+
+
+    {{-----end content-----}}
+@endsection
+
+@section('extraJs')
+    <!-- extraJs -->
+
+
+    <!-- end extraJs -->
 @endsection

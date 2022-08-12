@@ -25,15 +25,15 @@
                                     <li>
                                         <a href="/login"><i class="lni lni-enter"></i> Login</a>
                                     </li>
-                                    @if(!inset($user))
+{{--                                    @if(!inset($user))--}}
                                     <li>
                                         <a href="/register"><i class="lni lni-user"></i> Register</a>
                                     </li>
-                                    @else
-                                    <li>
-                                        <a href="/user"><i class="lni lni-user"></i> {{$user->username}}</a>
-                                    </li>
-                                        @endif
+{{--                                    @else--}}
+{{--                                    <li>--}}
+{{--                                        <a href="/user"><i class="lni lni-user"></i> {{$user->username}}</a>--}}
+{{--                                    </li>--}}
+{{--                                        @endif--}}
                                 </ul>
                             </div>
                             <div class="top-social">

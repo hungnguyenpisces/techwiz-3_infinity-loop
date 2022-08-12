@@ -1,6 +1,16 @@
 @extends('web.layouts._master')
-@section('content')
 
+@section('title')
+@endsection
+
+@section('extraCss')
+    <!-- extra css -->
+
+    <!-- end extra css -->
+@endsection
+
+@section('content')
+    {{-----content-----}}
     <div class="error-area overlay">
         <div class="d-table">
             <div class="d-table-cell">
@@ -17,4 +27,13 @@
             </div>
         </div>
     </div>
+
+
+    {{-----end content-----}}
+@endsection
+
+@section('extraJs')
+    <!-- extraJs -->
+
+    <!-- end extraJs -->
 @endsection

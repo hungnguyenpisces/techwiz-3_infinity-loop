@@ -6,4 +6,3 @@
 <link rel="stylesheet" href="{!! url('assets/css/glightbox.min.css') !!}">
 <link rel="stylesheet" href="{!! url('assets/css/main.css') !!}">
 
-<link rel="stylesheet" href="{!! url('assets/css/main.css') !!}">
