@@ -272,6 +272,8 @@ Custom title if need
 <script src="{!! url('assets/bundles/sparklinescripts.bundle.js') !!}"></script>
 <script src="{!! url('assets/js/pages/index.js') !!}"></script>
 <script src="{!! url('assets/js/pages/charts/sparkline.min.js') !!}"></script>
+<script src="{!! url('assets/plugins/jquery-countto/jquery.countTo.js') !!}"></script> 
+<script src="{!! url('assets/js/pages/widgets/infobox/infobox-1.js') !!}"></script>
 
 <!-- end extraJs -->
 @endsection

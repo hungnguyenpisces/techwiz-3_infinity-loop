@@ -35,17 +35,17 @@
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
                     <ul class="ml-menu">
-                        <li class="side_link"> <a href="#">All Doctors</a></li>
-                        <li class="side_link"> <a href="add-#">Add Doctor</a></li>
-                        <li class="side_link"> <a href="#">Doctor Profile</a></li>
+                        <li class="side_link"> <a href="doctor">All Doctors</a></li>
+                        <li class="side_link"> <a href="add-doctor">Add Doctor</a></li>
+                        <li class="side_link"> <a href="doctor-profile">Doctor Profile</a></li>
                     </ul>
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
                     <ul class="ml-menu">
-                        <li class="side_link"> <a href="#">All Patients</a></li>
-                        <li class="side_link"> <a href="#">Add Patient</a></li>
-                        <li class="side_link"> <a href="#">Patient Profile</a></li>
-                        <li class="side_link"> <a href="#">Patient Invoice</a></li>
+                        <li class="side_link"> <a href="patient">All Patients</a></li>
+                        <li class="side_link"> <a href="add-patient">Add Patient</a></li>
+                        <li class="side_link"> <a href="patient-profile">Patient Profile</a></li>
+                        <!-- <li class="side_link"> <a href="#">Patient Invoice</a></li> -->
                     </ul>
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-balance-wallet"></i><span>Payments</span> </a>
@@ -55,8 +55,8 @@
                         <li class="side_link"> <a href="#">Patient Invoice</a></li>
                     </ul>
                 </li>
-                <li class="side_link_parent"><a href="#"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
-                <li class="side_link_parent"><a href="#"><i class="zmdi zmdi-delicious"></i><span>Widgets</span></a></li>
+                <li class="side_link_parent"><a href="report"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
+                <li class="side_link_parent"><a href="widgets"><i class="zmdi zmdi-delicious"></i><span>Widgets</span></a></li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Extra Pages</span> </a>
                     <ul class="ml-menu">
                         <li class="side_link"> <a href="#">Sign In</a> </li>

@@ -591,17 +591,15 @@ Custom title if need
 @section('extraJs')
 <!-- extraJs -->
 
+<script src="{!! url('assets/bundles/chartscripts.bundle.js') !!}"></script>
 <script src="{!! url('assets/js/pages/index.js') !!}"></script>
 <script src="{!! url('assets/bundles/sparklinescripts.bundle.js') !!}"></script> 
-<!-- <script src="{!! url('assets/bundles/chartscripts.bundle.') !!}"></script>  -->
 <script src="{!! url('assets/bundles/jvectormapscripts.bundle.js') !!}"></script> 
-<!-- <script src="{!! url('assets/plugins/waitme/waitMe.js') !!}"></script>  -->
 <script src="{!! url('assets/plugins/jquery-countto/jquery.countTo.js') !!}"></script> 
 <script src="{!! url('assets/js/pages/widgets/infobox/infobox-1.js') !!}"></script>
 <script src="{!! url('assets/js/pages/maps/jvectormap.js') !!}"></script>
 <script src="{!! url('assets/js/pages/cards/basic.js') !!}"></script> 
 <script src="{!! url('assets/js/pages/charts/sparkline.min.js') !!}"></script>
-<!-- <script src="{!! url('assets/js/pages/charts/chartjs.min.js') !!}"></script> -->
 
 <!-- end extraJs -->
 ') !!}
