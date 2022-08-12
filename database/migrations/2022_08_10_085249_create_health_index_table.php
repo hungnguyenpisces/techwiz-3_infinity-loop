@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('health_index');
+        Schema::dropIfExists('health_indices');
     }
 };

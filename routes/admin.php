@@ -4,6 +4,10 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\HospitalController;
+use App\Http\Controllers\Admin\StaffController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,6 +18,9 @@ Route::withoutMiddleware(['auth', 'role:Super-Admin|Admin'])->group(function () 
     Route::get('/login', [AdminController::class, 'login'])->name('admin.login.show');
     Route::post('/login', [AdminController::class, 'processLogin'])->name('admin.login.perform');
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/blank', function () {
+        return view('admin.blank');
+    });
 });
 
 Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
@@ -43,5 +50,11 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::delete('/permissions/{id}', [PermissionController::class, 'destroy'])->name('permissions.destroy');
 
 
+    Route::resource('/doctor',DoctorController::class);
+    Route::resource('/staff',StaffController::class);
+    Route::resource('/hospital',HospitalController::class);
+    Route::resource('/department',DepartmentController::class);
+
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout.perform');
+
 });

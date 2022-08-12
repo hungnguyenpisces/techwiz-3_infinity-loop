@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('gender');
-            $table->string('date_of_birth');
-            $table->string('blood_group');
+            $table->string('gender')->nullable();
+            $table->string('date_of_birth')->nullable();
+            $table->string('blood_group')->nullable();
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('phone')->unique()->nullable();
