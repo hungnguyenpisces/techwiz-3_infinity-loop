@@ -9,11 +9,13 @@ class Hospital extends Model
 {
     use HasFactory;
 
-    public function comment(){
-        return $this->belongsToMany('App\Models\Comment');
+    public function comment()
+    {
+        return $this->belongsToMany(Comment::class);
     }
 
-    public function department(){
-        return $this->hasMany('App\Models\Department');
+    public function departmentHospital()
+    {
+        return $this->belongsToMany(Department::class, 'hospital_department');
     }
 }
