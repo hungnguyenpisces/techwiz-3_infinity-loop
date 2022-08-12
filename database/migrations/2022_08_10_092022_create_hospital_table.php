@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hospital', function (Blueprint $table) {
+        Schema::create('hospitals', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
-            $table->string('position');
-            $table->bigInteger('department_id');
+            $table->string('image')->nullable();
+            $table->string('location');
+            $table->string('description')->nullable();
+            $table->string('phone');
+            $table->string('director');
             $table->timestamps();
         });
     }

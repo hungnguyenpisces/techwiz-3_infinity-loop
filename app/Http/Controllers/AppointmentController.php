@@ -14,8 +14,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $lsAmt = Appointment::all();
-        return view('appointment.index')->with('lsAmt', $lsAmt);
+        return view('web.appointment');
     }
 
     /**
@@ -103,7 +102,7 @@ class AppointmentController extends Controller
     public function destroy($id, Request $request)
     {
         $amt = Appointment::find($id);
-        if($amt == null) {
+        if ($amt == null) {
             $request->session()->flash('danger', 'Appointment not found.');
         } else {
             $amt->delete();
