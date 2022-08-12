@@ -1,10 +1,27 @@
 @extends('web.layouts._master')
 
+@section('title')
+
+@endsection
+
+@section('extraCss')
+    <!-- extra css -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- end extra css -->
+@endsection
+
 @section('content')
+    {{-----content-----}}
     <section class="hero-area ">
         <div class="shapes">
-            <img src="" class="shape1" alt="#">
-            <img src="" class="shape2" alt="#">
+            <img src="assets/images/hero/05.svg" class="shape1" alt="#">
+            <img src="assets/images/hero/01.svg" class="shape2" alt="#">
         </div>
         <div class="hero-slider">
 
@@ -18,11 +35,10 @@
                                     <h2 class="wow fadeInLeft" data-wow-delay=".3s">Find A Doctor & <br>Book Appointment
                                     </h2>
                                     <p class="wow fadeInLeft" data-wow-delay=".5s">Since the first days of operation of
-                                        MediGrids, our teaming has been focused on
-                                        building a high-qualities medicals service by MediGrids.</p>
+                                        Infinity-Loop, our teaming has been focused on
+                                        building a high-qualities medicals service by Infinity-Loop.</p>
                                     <div class="button wow fadeInLeft" data-wow-delay=".7s">
                                         <a href="#" class="btn">Book Appointment</a>
-                                        <a href="#" class="btn">About Us</a>
                                     </div>
                                 </div>
 
@@ -30,7 +46,7 @@
                         </div>
                         <div class="col-lg-6 col-md-12 col-12">
                             <div class="hero-image wow fadeInRight" data-wow-delay=".5s">
-                                <img src="" alt="#">
+                                <img src="assets/images/hero/02.png" alt="#">
                             </div>
                         </div>
                     </div>
@@ -46,12 +62,11 @@
 
                                 <div class="section-heading">
                                     <h2>We only give <br> Best care to your eyes</h2>
-                                    <p>Since the first days of operation of MediGrids, our teaming has been focused
+                                    <p>Since the first days of operation of Infinity-Loop, our teaming has been focused
                                         on
-                                        building a high-qualities medicals service by MediGrids.</p>
+                                        building a high-qualities medicals service by Infinity-Loop.</p>
                                     <div class="button">
-                                        <a href="" class="btn">Book Appointment</a>
-                                        <a href="" class="btn">About Us</a>
+                                        <a href="#" class="btn">Book Appointment</a>
                                     </div>
                                 </div>
 
@@ -59,7 +74,7 @@
                         </div>
                         <div class="col-lg-6 col-md-12 col-12">
                             <div class="hero-image">
-                                <img src="" alt="#">
+                                <img src="assets/images/hero/slider-2.png" alt="#">
                             </div>
                         </div>
                     </div>
@@ -75,12 +90,11 @@
 
                                 <div class="section-heading">
                                     <h2>Superior solutions that <br> help you to shine.</h2>
-                                    <p>Since the first days of operation of MediGrids, our teaming has been focused
+                                    <p>Since the first days of operation of Infinity-Loop, our teaming has been focused
                                         on
-                                        building a high-qualities medicals service by MediGrids.</p>
+                                        building a high-qualities medicals service by Infinity-Loop.</p>
                                     <div class="button">
                                         <a href="#" class="btn">Book Appointment</a>
-                                        <a href="#" class="btn">About Us</a>
                                     </div>
                                 </div>
 
@@ -88,7 +102,7 @@
                         </div>
                         <div class="col-lg-6 col-md-12 col-12">
                             <div class="hero-image">
-                                <img src="" alt="#">
+                                <img src="assets/images/hero/slider-3.png" alt="#">
                             </div>
                         </div>
                     </div>
@@ -131,12 +145,12 @@
                             <label for="department"><i class="lni lni-notepad"></i></label>
                             <select name="department" id="department">
                                 <option value="none" selected disabled>Department</option>
-                                <option value="none">General Surgery</option>
-                                <option value="none">Gastroenterology</option>
-                                <option value="none">Nutrition & Dietetics</option>
-                                <option value="none">Cardiology</option>
+                                <option value="none">Musculoskeletal</option>
                                 <option value="none">Neurology</option>
-                                <option value="none">Pediatric</option>
+                                <option value="none">Gastroenterology</option>
+                                <option value="none">Heart</option>
+                                <option value="none">Otorhinolaryngology</option>
+                                <option value="none">Dermatology</option>
                             </select>
                         </div>
                     </div>
@@ -157,7 +171,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="content-left wow fadeInLeft" data-wow-delay=".3s">
-                        <img src="" alt="#">
+                        <img src="assets/images/about/about.png" alt="#">
                         <a href="#"
                            class="glightbox video"><i class="lni lni-play"></i></a>
                     </div>
@@ -203,7 +217,7 @@
                 <div class="col-12">
                     <div class="section-title">
                         <h3>Departments</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Specialities available at MediGrids</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Specialities available at Infinity-Loop</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
                             Ipsum available, but the majority have suffered alteration in some form.</p>
                     </div>
@@ -245,7 +259,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-12 col-12">
                                         <div class="image">
-                                            <img src="" alt="#">
+                                            <img src="assets/images/departments/image1.jpg" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-12 col-12">
@@ -279,7 +293,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="image">
-                                            <img src="" alt="#">
+                                            <img src="assets/images/departments/image2.jpg" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -313,7 +327,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="image">
-                                            <img src="" alt="#">
+                                            <img src="assets/images/departments/image3.jpg" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -347,7 +361,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="image">
-                                            <img src="" alt="#">
+                                            <img src="assets/images/departments/image4.jpg" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -382,7 +396,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="image">
-                                            <img src="" alt="#">
+                                            <img src="assets/images/departments/image5.jpg" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -460,7 +474,7 @@
                 <div class="col-12">
                     <div class="section-title">
                         <h3>Services</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Services Provided By MediGrids</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Services Provided By Infinity-Loop</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
                             Ipsum available, but the majority have suffered alteration in some form.</p>
                     </div>
@@ -474,8 +488,8 @@
 
                                 <div class="single-list custom-border-right custom-border-bottom wow fadeInUp"
                                      data-wow-delay=".2s">
-                                    <img class="shape1" src="" alt="#">
-                                    <img class="shape2" src="" alt="#">
+                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
+                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
                                     <i class="lni lni-ambulance"></i>
                                     <h4><a href="#">Fast Ambulance</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
@@ -487,8 +501,8 @@
 
                                 <div class="single-list custom-border-right custom-border-bottom wow fadeInUp"
                                      data-wow-delay=".4s">
-                                    <img class="shape1" src="" alt="#">
-                                    <img class="shape2" src="" alt="#">
+                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
+                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
                                     <i class="lni lni-sthethoscope"></i>
                                     <h4><a href="#">Dental Specialist</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
@@ -499,8 +513,8 @@
                             <div class="col-lg-4 col-md-6 col-12 custom-padding-left">
 
                                 <div class="single-list custom-border-bottom wow fadeInUp" data-wow-delay=".6s">
-                                    <img class="shape1" src="" alt="#">
-                                    <img class="shape2" src="" alt="#">
+                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
+                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
                                     <i class="lni lni-microscope"></i>
                                     <h4><a href="#">Modern Laboratory</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
@@ -511,8 +525,8 @@
                             <div class="col-lg-4 col-md-6 col-12 custom-padding-right">
 
                                 <div class="single-list custom-border-right wow fadeInUp" data-wow-delay=".2s">
-                                    <img class="shape1" src="" alt="#">
-                                    <img class="shape2" src="" alt="#">
+                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
+                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
                                     <i class="lni lni-users"></i>
                                     <h4><a href="#">Children Center</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
@@ -523,8 +537,8 @@
                             <div class="col-lg-4 col-md-6 col-12 custom-padding-left custom-padding-right">
 
                                 <div class="single-list custom-border-right wow fadeInUp" data-wow-delay=".4s">
-                                    <img class="shape1" src="" alt="#">
-                                    <img class="shape2" src="" alt="#">
+                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
+                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
                                     <i class="lni lni-heart"></i>
                                     <h4><a href="#">Heart Surgery</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
@@ -535,8 +549,8 @@
                             <div class="col-lg-4 col-md-6 col-12 custom-padding-left">
 
                                 <div class="single-list wow fadeInUp" data-wow-delay=".6s">
-                                    <img class="shape1" src="" alt="#">
-                                    <img class="shape2" src="" alt="#">
+                                    <img class="shape1" src="assets/images/service/shape1.svg" alt="#">
+                                    <img class="shape2" src="assets/images/service/shape2.svg" alt="#">
                                     <i class="lni lni-hand"></i>
                                     <h4><a href="#">Care Advice</a></h4>
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
@@ -579,7 +593,7 @@
                 <div class="col-lg-4 col-md-6 grid-item diabetes">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="" alt="#">
+                            <img src="assets/images/portfolio/pf1.jpg" alt="#">
                         </div>
                         <div class="portfolio-overlay">
                             <div class="pf-content">
@@ -593,7 +607,7 @@
                 <div class="col-lg-4 col-md-6 grid-item diabetes">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="" alt="#">
+                            <img src="assets/images/portfolio/pf2.jpg" alt="#">
                         </div>
                         <div class="pf-content">
                             <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
@@ -605,7 +619,7 @@
                 <div class="col-lg-4 col-md-6 grid-item pediatric">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="" alt="#">
+                            <img src="assets/images/portfolio/pf3.jpg" alt="#">
                         </div>
                         <div class="pf-content">
                             <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
@@ -617,19 +631,19 @@
                 <div class="col-lg-4 col-md-6 grid-item cardiology">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="" alt="#">
+                            <img src="assets/images/portfolio/pf4.jpg" alt="#">
                         </div>
                         <div class="pf-content">
                             <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
                             <span class="category">Eye Surgery</span>
-                            <h4><a href="#">Dry Eye Surgery</a></h4>
+                            <h4><a href="portfolio-details.html">Dry Eye Surgery</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 grid-item pediatric">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="" alt="#">
+                            <img src="assets/images/portfolio/pf5.jpg" alt="#">
                         </div>
                         <div class="pf-content">
                             <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
@@ -641,7 +655,7 @@
                 <div class="col-lg-4 col-md-6 grid-item neurosurgery">
                     <div class="portfolio-item-wrapper">
                         <div class="portfolio-img">
-                            <img src="" alt="#">
+                            <img src="assets/images/portfolio/pf6.jpg" alt="#">
                         </div>
                         <div class="pf-content">
                             <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
@@ -657,99 +671,7 @@
 
     <section class="pricing-table section">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3>pricing</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Pricing Plan</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
 
-                    <div class="single-table wow fadeInUp" data-wow-delay=".2s">
-
-                        <div class="table-head">
-                            <h4 class="title">Basic</h4>
-                            <div class="price">
-                                <h2 class="amount">$45<span class="duration">/ Monthly</span></h2>
-                            </div>
-                        </div>
-
-
-                        <ul class="table-list">
-                            <li>Routine Checkup</li>
-                            <li>24Th Assisance</li>
-                            <li>100 Text & Treatments</li>
-                            <li>Regular Health Checkups</li>
-                        </ul>
-
-
-                        <div class="button">
-                            <a class="btn" href="javascript:void(0)">Make Payment</a>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-
-                    <div class="single-table wow fadeInUp" data-wow-delay=".4s">
-
-                        <div class="table-head">
-                            <h4 class="title">Advance</h4>
-                            <div class="price">
-                                <h2 class="amount">$204<span class="duration">/ Monthly</span></h2>
-                            </div>
-                        </div>
-
-
-                        <ul class="table-list">
-                            <li>Routine Checkup</li>
-                            <li>24Th Assisance</li>
-                            <li>100 Text & Treatments</li>
-                            <li>Regular Health Checkups</li>
-                        </ul>
-
-
-                        <div class="button">
-                            <a class="btn" href="javascript:void(0)">Make Payment</a>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-
-                    <div class="single-table wow fadeInUp" data-wow-delay=".6s">
-
-                        <div class="table-head">
-                            <h4 class="title">Premium</h4>
-                            <div class="price">
-                                <h2 class="amount">$355<span class="duration">/ Monthly</span></h2>
-                            </div>
-                        </div>
-
-
-                        <ul class="table-list">
-                            <li>Routine Checkup</li>
-                            <li>24Th Assisance</li>
-                            <li>100 Text & Treatments</li>
-                            <li>Regular Health Checkups</li>
-                        </ul>
-
-
-                        <div class="button">
-                            <a class="btn" href="javascript:void(0)">Make Payment</a>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
         </div>
     </section>
 
@@ -778,7 +700,7 @@
                                 connections."</p>
                         </div>
                         <div class="author">
-                            <img src="" alt="#">
+                            <img src="assets/images/testimonial/testi1.jpg" alt="#">
                             <h4 class="name">
                                 Jane Anderson
                                 <span class="deg">Cancer client</span>
@@ -798,7 +720,7 @@
                                 connections."</p>
                         </div>
                         <div class="author">
-                            <img src="" alt="#">
+                            <img src="assets/images/testimonial/testi2.jpg" alt="#">
                             <h4 class="name">
                                 Paul Flavius
                                 <span class="deg">Heather</span>
@@ -818,7 +740,7 @@
                                 connections."</p>
                         </div>
                         <div class="author">
-                            <img src="" alt="#">
+                            <img src="assets/images/testimonial/testi3.jpg" alt="#">
                             <h4 class="name">
                                 Harry Russel
                                 <span class="deg">Surgery client</span>
@@ -838,7 +760,7 @@
                                 connections."</p>
                         </div>
                         <div class="author">
-                            <img src="" alt="#">
+                            <img src="assets/images/testimonial/testi4.jpg" alt="#">
                             <h4 class="name">
                                 Alice Williams
                                 <span class="deg">Mother</span>
@@ -851,251 +773,111 @@
         </div>
     </section>
 
+    {{-----end content-----}}
+@endsection
 
-    <section class="doctors section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3>Doctors</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Our Outstanding Team Is Active To Help You!</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-12">
+@section('extraJs')
+    <!-- extraJs -->
+    <script type="text/javascript">
+        //======== Hero Slider
+        var slider = new tns({
+            container: '.hero-slider',
+            slideBy: 'page',
+            autoplay: true,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            gutter: 0,
+            items: 1,
+            nav: false,
+            controls: true,
+            controlsText: [
+                '<i class="lni lni-chevron-left"></i>',
+                '<i class="lni lni-chevron-right"></i>'
+            ],
+            responsive: {
+                1200: {
+                    items: 1,
+                },
+                992: {
+                    items: 1,
+                },
+                0: {
+                    items: 1,
+                }
 
-                    <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
-                        <div class="image">
-                            <img src="" alt="#">
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5>Cardiologist</h5>
-                            <h3><a href="#">Dr.Felica Queen</a></h3>
-                        </div>
-                    </div>
+            }
+        });
+        //========= testimonial
+        tns({
+            container: '.testimonial-slider',
+            items: 3,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: true,
+            controls: false,
+            controlsText: ['<i class="lni lni-arrow-left"></i>', '<i class="lni lni-arrow-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 2,
+                },
+                1170: {
+                    items: 3,
+                }
+            }
+        });
 
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
+        //====== counter up
+        var cu = new counterUp({
+            start: 0,
+            duration: 2000,
+            intvalues: true,
+            interval: 100,
+            append: " ",
+        });
+        cu.start();
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+        //============== isotope masonry js with imagesloaded
+        // imagesLoaded('#container', function () {
+        //     var elem = document.querySelector('.grid');
+        //     var iso = new Isotope(elem, {
+        //         // options
+        //         itemSelector: '.grid-item',
+        //         masonry: {
+        //             // use outer width of grid-sizer for columnWidth
+        //             columnWidth: '.grid-item'
+        //         }
+        //     });
+        //
+        //     let filterButtons = document.querySelectorAll('.portfolio-btn-wrapper button');
+        //     filterButtons.forEach(e =>
+        //         e.addEventListener('click', () => {
+        //
+        //             let filterValue = event.target.getAttribute('data-filter');
+        //             iso.arrange({
+        //                 filter: filterValue
+        //             });
+        //         })
+        //     );
+        // });
+    </script>
 
-                    <div class="single-doctor wow fadeInUp" data-wow-delay=".4s">
-                        <div class="image">
-                            <img src="" alt="#">
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5>Neurologist</h5>
-                            <h3><a href="#">Dr.Alice Williams</a></h3>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-
-                    <div class="single-doctor wow fadeInUp" data-wow-delay=".6s">
-                        <div class="image">
-                            <img src="" alt="#">
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5>Physician Assistant</h5>
-                            <h3><a href="#">Dr.Paul Flavius</a></h3>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-
-                    <div class="single-doctor wow fadeInUp" data-wow-delay=".8s">
-                        <div class="image">
-                            <img src="assets/images/doctors/doctor4.jpg" alt="#">
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <h5>Physician Assistant</h5>
-                            <h3><a href="#">Dr.Michael Bean</a></h3>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="how-works">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-12 p-0">
-
-                    <div class="single-work first">
-                        <div class="main-icon">
-                            <i class="lni lni-agenda"></i>
-                        </div>
-                        <h3>Best Monitoring System</h3>
-                        <p>Despite advances in technology and understanding of biological systems, drug discovery is
-                            still a lengthy, expensive.</p>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-4 col-12 p-0">
-
-                    <div class="single-work middle">
-                        <div class="main-icon">
-                            <i class="lni lni-hospital"></i>
-                        </div>
-                        <h3>Advanced Operating Room</h3>
-                        <p>Despite advances in technology and understanding of biological systems, drug discovery is
-                            still a lengthy, expensive.</p>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-4 col-12 p-0">
-
-                    <div class="single-work last">
-                        <div class="main-icon">
-                            <i class="lni lni-sthethoscope"></i>
-                        </div>
-                        <h3>Only Best Doctors</h3>
-                        <p>Despite advances in technology and understanding of biological systems, drug discovery is
-                            still a lengthy, expensive.</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <div class="latest-news-area section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3>Blogs</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">latest news</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-12">
-
-                    <div class="single-news wow fadeInUp" data-wow-delay=".2s">
-                        <div class="row">
-                            <div class="col-lg-5 col-md-5 col-12 pr-0">
-                                <div class="image">
-                                    <a href="#"><img src=""
-                                                                            alt="#"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 col-12  pl-0">
-                                <div class="content">
-                                    <h2 class="title"><a href="#">These blood markers may higher
-                                            risk of disease</a></h2>
-                                    <p>The price is something not defined as financial. It could be time.</p>
-                                    <ul class="meta-info">
-                                        <li>
-                                            <a href="javascript:void(0)"><img src=""
-                                                                              alt="#"> Alice
-                                                Williams</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">08 Mar 2023 </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="single-news wow fadeInUp" data-wow-delay=".2s">
-                        <div class="row">
-                            <div class="col-lg-5 col-md-5 col-12 pr-0">
-                                <div class="image">
-                                    <a href="#"><img src=""
-                                                                            alt="#"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 col-12  pl-0">
-                                <div class="content">
-                                    <h2 class="title"><a href="blog-single-sidebar.html">Brushing your teeth may keep
-                                            your heart healthy</a></h2>
-                                    <p>The price is something not defined as financial. It could be time.</p>
-                                    <ul class="meta-info">
-                                        <li>
-                                            <a href="javascript:void(0)"><img src=""
-                                                                              alt="#"> Alrado
-                                                Deyam</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">10 Feb 2023 </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-6 col-md-12 col-12">
-
-                    <div class="single-news style2 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="image">
-                                    <a href="#"><img src=""
-                                                                            alt="#"></a>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="content">
-                                    <h2 class="title"><a href="#">Using anthrax to fight cancer
-                                            effectively</a></h2>
-                                    <p>The price is something not necessarily defined as financial. It could be time,
-                                        effort and sacrifice.</p>
-                                    <ul class="meta-info">
-                                        <li>
-                                            <a href="javascript:void(0)"><img src="assets/images/blog/comment3.jpg"
-                                                                              alt="#"> Zenifer
-                                                Suie</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">02 Jan 2023</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- end extraJs -->
 @endsection

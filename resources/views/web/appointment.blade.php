@@ -1,123 +1,138 @@
 @extends('web.layouts._master')
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Login</title>
-    <link rel="icon" type="image/x-icon" href="{!! url('assets/img/favicon.png') !!}" />
+@section('title')
+@endsection
 
-    @include('web.layouts.style')
+@section('extraCss')
+    <!-- extra css -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
 
-</head>
+    <!-- end extra css -->
+@endsection
 
 @section('content')
-<div class="breadcrumbs overlay">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                <div class="breadcrumbs-content">
-                    <h1 class="page-title">Appointment</h1>
+    {{-----content-----}}
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Appointment</h1>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="#">Home</a></li>
+                        <li>appointment</li>
+                    </ul>
                 </div>
-                <ul class="breadcrumb-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li>appointment</li>
-                </ul>
             </div>
         </div>
     </div>
-</div>
 
 
-<section class="appointment page section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+    <section class="appointment page section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <form action="" method="">
+                        <div class="appointment-form">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="appointment-title">
+                                        <h2>Book An Appointment</h2>
+                                        <p>Please feel welcome to contact our friendly reception staff with any general or
+                                            medical
+                                            enquiry. Our doctors will receive or return any urgent calls.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12 p-0">
+                                    <div class="appointment-input">
+                                        <label for="name"><i class="lni lni-user"></i></label>
+                                        <input type="text" name="name" id="name" placeholder="Your Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 p-0">
+                                    <div class="appointment-input">
+                                        <label for="email"><i class="lni lni-envelope"></i></label>
+                                        <input type="email" name="email" id="email" placeholder="Your Email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 p-0">
+                                    <div class="appointment-input">
+                                        <label for="number"><i class="lni lni-phone-set"></i></label>
+                                        <input type="text" name="number" id="number" placeholder="Phone Number">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 p-0">
+                                    <div class="appointment-input">
+                                        <label for="department"><i class="lni lni-notepad"></i></label>
+                                        <select name="department" id="department">
+                                            <option value="none" selected disabled>Department</option>
+                                            <option value="none">Musculoskeletal</option>
+                                            <option value="none">Neurology</option>
+                                            <option value="none">Gastroenterology</option>
+                                            <option value="none">Heart</option>
+                                            <option value="none">Otorhinolaryngology</option>
+                                            <option value="none">Dermatology</option>
 
-                <div class="appointment-form">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="appointment-title">
-                                <h2>Book An Appointment</h2>
-                                <p>Please feel welcome to contact our friendly reception staff with any general or
-                                    medical
-                                    enquiry. Our doctors will receive or return any urgent calls.</p>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 p-0">
+                                    <div class="appointment-input">
+                                        <label for="doctor"><i class="lni lni-sthethoscope"></i></label>
+                                        <select name="doctor" id="doctor">
+                                            <option value="none" selected disabled>Hospital</option>
+                                            <option value="none">#</option>
+                                            <option value="none">#</option>
+                                            <option value="none">#</option>
+                                            <option value="none">#</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 p-0">
+                                    <div class="appointment-input">
+                                        <label for="date"><i class="lni lni-user"></i></label>
+                                        <input type="date" name="date" id="date">
+                                    </div>
+                                </div>
+                                <div class="col-12 p-0">
+                                    <div class="appointment-input">
+                                        <textarea placeholder="Write Your Message Here....."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 p-0">
+                                    <div class="appointment-btn button">
+                                        <button class="btn">Get Appointment</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-12 p-0">
-                            <div class="appointment-input">
-                                <label for="name"><i class="lni lni-user"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12 p-0">
-                            <div class="appointment-input">
-                                <label for="email"><i class="lni lni-envelope"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12 p-0">
-                            <div class="appointment-input">
-                                <label for="number"><i class="lni lni-phone-set"></i></label>
-                                <input type="text" name="number" id="number" placeholder="Phone Number">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12 p-0">
-                            <div class="appointment-input">
-                                <label for="department"><i class="lni lni-notepad"></i></label>
-                                <select name="department" id="department">
-                                    <option value="none" selected disabled>Department</option>
-                                    <option value="none">General Surgery</option>
-                                    <option value="none">Gastroenterology</option>
-                                    <option value="none">Nutrition & Dietetics</option>
-                                    <option value="none">Cardiology</option>
-                                    <option value="none">Neurology</option>
-                                    <option value="none">Pediatric</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12 p-0">
-                            <div class="appointment-input">
-                                <label for="doctor"><i class="lni lni-sthethoscope"></i></label>
-                                <select name="doctor" id="doctor">
-                                    <option value="none" selected disabled>Doctor</option>
-                                    <option value="none">Dr.Felica Queen</option>
-                                    <option value="none">Dr.Alice Williams</option>
-                                    <option value="none">Dr.Michael Bean</option>
-                                    <option value="none">Dr.Harry Russell</option>
-                                    <option value="none">Dr.Mellissa Doe</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12 p-0">
-                            <div class="appointment-input">
-                                <label for="date"><i class="lni lni-user"></i></label>
-                                <input type="date" name="date" id="date">
-                            </div>
-                        </div>
-                        <div class="col-12 p-0">
-                            <div class="appointment-input">
-                                <textarea placeholder="Write Your Message Here....."></textarea>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12 p-0">
-                            <div class="appointment-btn button">
-                                <button class="btn">Get Appointment</button>
-                            </div>
-                        </div>
-                    </div>
+
+
+                    </form>
+
+
+
                 </div>
-
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-</html>
+
+    {{-----end content-----}}
+@endsection
+
+@section('extraJs')
+    <!-- extraJs -->
+
+
+    <!-- end extraJs -->
 @endsection
