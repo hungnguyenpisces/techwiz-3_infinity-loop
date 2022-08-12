@@ -73,14 +73,14 @@
                 <li class="header">SUPER ADMIN SECTION</li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-accounts-alt"></i><span>User Management</span> </a>
                     <ul class="ml-menu">
-                        <li class="side_link"> <a href="#">List All User</a> </li>
-                        <li class="side_link"> <a href="#">Add New User</a></li>
+                        <li class="side_link"> <a href="/admin/users">List All User</a> </li>
+                        <li class="side_link"> <a href="/admin/users/create">Add New User</a></li>
                     </ul>
                 </li>
-                <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-accounts-alt"></i><span>Role Management</span> </a>
+                <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-key"></i><span>Role Management</span> </a>
                     <ul class="ml-menu">
-                        <li class="side_link"> <a href="#">List All Role</a> </li>
-                        <li class="side_link"> <a href="#">Add New Role</a></li>
+                        <li class="side_link"> <a href="/admin/roles">List All Role</a> </li>
+                        <li class="side_link"> <a href="/admin/roles/create">Add New Role</a></li>
                     </ul>
                 </li>
                 <li class="side_link_parent"><a href="/admin/permissions"><i class="zmdi zmdi-shield-security"></i><span>Permissions</span></a></li>

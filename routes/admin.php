@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,7 +17,14 @@ Route::withoutMiddleware(['auth', 'role:Super-Admin|Admin'])->group(function () 
 });
 
 Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
-    
+    Route::get('/users', UserController::class . '@index')->name('users.index');
+    Route::get('/users/create', UserController::class . '@create')->name('users.create');
+    Route::post('/users/store', UserController::class . '@store')->name('users.store');
+    Route::get('/users/{user}/show', UserController::class . '@show')->name('users.show');
+    Route::get('/users/{user}/edit', UserController::class . '@edit')->name('users.edit');
+    Route::put('/users/{user}/update', UserController::class . '@update')->name('users.update');
+    Route::delete('/users/{user}/destroy', UserController::class . '@destroy')->name('users.destroy');
+
     Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
     Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
     Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
