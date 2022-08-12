@@ -12,8 +12,6 @@ Route::prefix('admin')->middleware(['auth', 'role:Super-Admin|Admin'])->group(fu
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-
-
 Route::group(['middleware' => ['guest']], function () {
     /**
      * Register Routes
@@ -35,6 +33,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });
 
-Route::get('/temp' , function() {
-    return view('web.user-profile');
+Route::get('/hospitalsearch',function (){
+    return view('web.hospital-search');
 });

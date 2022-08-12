@@ -5,3 +5,4 @@
 <link rel="stylesheet" href="{!! url('assets/css/tiny-slider.css') !!}">
 <link rel="stylesheet" href="{!! url('assets/css/glightbox.min.css') !!}">
 <link rel="stylesheet" href="{!! url('assets/css/main.css') !!}">
+
