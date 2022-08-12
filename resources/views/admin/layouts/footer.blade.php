@@ -21,6 +21,7 @@
                 $(this).parent().addClass('active open');
             }
         });
+        $('nav ul.pagination').addClass('justify-content-end');
     });
 </script>
 <!-- end footerJS -->
