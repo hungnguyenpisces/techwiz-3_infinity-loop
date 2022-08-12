@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Doctor extends Model
+class HealthIndex extends Model
 {
     use HasFactory;
+    protected $table = 'health_indices';
 
-    public function checkout(){
-        return $this->belongsTo('App\Models\CheckOutHistory');
+    public function user(){
+        return $this->hasOne('App\Models\User');
     }
 }

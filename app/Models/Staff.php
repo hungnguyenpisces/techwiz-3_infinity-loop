@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Doctor extends Model
+class Staff extends Model
 {
     use HasFactory;
 
     public function checkout(){
-        return $this->belongsTo('App\Models\CheckOutHistory');
+        return $this->hasMany('App\Models\CheckOutHistory');
     }
 }

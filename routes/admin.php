@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\HospitalController;
+use App\Http\Controllers\Admin\StaffController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,5 +21,11 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     // Route::resource('roles', RoleController::class);
     // Route::resource('users', UserController::class);
     // Route::resource('permissions', PermissionController::class);
+    Route::resource('/doctor',DoctorController::class);
+    Route::resource('/staff',StaffController::class);
+    Route::resource('/hospital',HospitalController::class);
+    Route::resource('/department',DepartmentController::class);
+
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout.perform');
+
 });

@@ -1,8 +1,12 @@
 <?php
 
-
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CheckOutHistoryController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\HealthIndexController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MedicinePillController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -10,9 +14,22 @@ Route::prefix('admin')->middleware(['auth', 'role:Super-Admin|Admin'])->group(fu
     require_once __DIR__ . '/admin.php';
 });
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::group(['middleware' => ['guest']], function () {
+
+
+    Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
+    Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+    Route::get('/service', [HomeController::class, 'service'])->name('service');
+    Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
+    Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+    Route::get('/contactus', [HomeController::class, 'contact_us'])->name('contactus');
+    Route::resource('/checkouthistory', CheckOutHistoryController::class);
+  
+   
+    
+    
+
     /**
      * Register Routes
      */
@@ -24,11 +41,37 @@ Route::group(['middleware' => ['guest']], function () {
      */
     Route::get('/login', [AuthController::class, 'login'])->name('login.show');
     Route::post('/login', [AuthController::class, 'processLogin'])->name('login.perform');
-});
 
-Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/404', function (){
+        return view('404');
+    });
+
+    Route::get('/403', function (){
+        return view('403');
+    });
+
+Route::group(['middleware' => ['auth']], function () 
+{
+    Route::get('/appointment', [HomeController::class, 'appointment'])->name('appointment');
+    Route::get('/timetable', [HomeController::class, 'time_table'])->name('timetable');
+    Route::get('/projectdetail', [HomeController::class, 'project_detail'])->name('projectdetail');
+    Route::get('/servicedetail', [HomeController::class, 'service_detail'])->name('servicedetail');
+    Route::get('/doctordetail', [HomeController::class, 'doctor_detail'])->name('doctordetail');
+    Route::get('/blogdetail', [HomeController::class, 'blog_detail'])->name('blogdetail');
+    Route::resource('/medicine', MedicinePillController::class);
+    Route::resource('/healthindex', HealthIndexController::class);
+    
+    Route::resource('/appointment', AppointmentController::class);
+    Route::resource('/comment', CommentController::class);
+    
+    
+
     /**
      * Logout Routes
      */
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

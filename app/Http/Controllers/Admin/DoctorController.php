@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use Illuminate\Http\Request;
 
 class DoctorController extends Controller
 {
@@ -46,6 +47,7 @@ class DoctorController extends Controller
         $doc = new Doctor();
         $doc->first_name = $request->first_name;
         $doc->last_name = $request->last_name;
+        $doc->image = $request->image;
         $doc->department_id = $request->department_id;
         $doc->save();
 
