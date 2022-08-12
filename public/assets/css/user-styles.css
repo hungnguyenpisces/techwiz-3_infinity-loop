@@ -36,7 +36,7 @@ body.dark{
 /* ===== Sidebar ===== */
  .sidebar{
     position: fixed;
-    top: 0;
+    top: 50px;
     left: 0;
     height: 100%;
     width: 300ox;
@@ -295,8 +295,7 @@ body.dark .switch::before{
 
 .home{
     position: absolute;
-    top: 0;
-    top: 0;
+    top: 50px;
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
@@ -380,3 +379,59 @@ ul.menu-links li i {
     width: 50px;
 }
 
+/* form css */
+
+.form-head {
+	padding: 50px;
+	border-radius: 0;
+	background-color: #fff;
+	-webkit-box-shadow: 0 1px 30px 0 rgba(124, 124, 124, 0.11);
+	box-shadow: 0 1px 30px 0 rgba(124, 124, 124, 0.11);
+	border-top: 5px solid #006838;
+}
+
+ .form-head .title {
+	font-size: 24px;
+	line-height: 1.42;
+	font-weight: 500;
+	margin-bottom: 30px;
+	text-align: center;
+}
+ .form-head form .form-group {
+	margin-bottom: 15px;
+}
+ .form-head form .form-group label {
+	display: block;
+	margin-bottom: 0.5rem;
+	color: #888;
+	font-size: 15px;
+	font-weight: 400;
+}
+.form-head form .form-group input {
+	width: 100%;
+	min-height: 50px;
+	padding: 3px 20px;
+	color: #081828;
+	border: 1px solid #eee;
+	border-radius: 0;
+	outline: 0;
+	background-color: #fff;
+	font-size: 15px;
+}
+
+.form-head {
+    /* -webkit-box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); */
+	/* box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); */
+	border-top: 4px solid #006838;
+}
+
+.sidebar {
+    -webkit-box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); 
+	box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11);
+}
+
+/* user header css */
+
+header.user-header {
+    background-color: #006838 !important;
+}

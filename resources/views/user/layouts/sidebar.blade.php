@@ -1,8 +1,8 @@
 <div class="sidebar close">
     <header>
         <div class="image-text">
-            <span class="image">
-                <i class="fa-light fa-user icon"></i>
+            <span class="image"style="margin-left: 14px;">
+                <i class="fa-solid fa-user icon"></i>
             </span>
 
             <div class="text logo-text">
@@ -68,8 +68,8 @@
 
             <li class="mode">
                 <div class="sun-moon">
-                    <i class="fa-light fa-sun icon sun"></i>
-                    <i class="fa-light fa-moon icon moon"></i>
+                    <i class="fa-solid fa-moon icon sun"></i>
+                    <i class="fa-solid fa-moon icon moon"></i>
                 </div>
                 <span class="mode-text text">Dark mode</span>
 

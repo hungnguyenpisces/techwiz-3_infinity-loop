@@ -47,7 +47,7 @@ Route::get('/user-history',function (){
 
 
 Route::get('/user',function (){
-    return view('user.user-proile');
+    return view('user.user-profile');
 });
 
 
@@ -55,10 +55,6 @@ Route::get('/user-health-profile',function (){
     return view('user.user-health-profile');
 });
 
-
-Route::get('/user',function (){
-    return view('user.user');
-});
 
 Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
