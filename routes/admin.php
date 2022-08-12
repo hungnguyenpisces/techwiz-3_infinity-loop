@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,8 +17,31 @@ Route::withoutMiddleware(['auth', 'role:Super-Admin|Admin'])->group(function () 
 });
 
 Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
-    // Route::resource('roles', RoleController::class);
-    // Route::resource('users', UserController::class);
-    // Route::resource('permissions', PermissionController::class);
+    Route::get('/users', UserController::class . '@index')->name('users.index');
+    Route::get('/users/create', UserController::class . '@create')->name('users.create');
+    Route::post('/users/store', UserController::class . '@store')->name('users.store');
+    Route::get('/users/{user}/show', UserController::class . '@show')->name('users.show');
+    Route::get('/users/{user}/edit', UserController::class . '@edit')->name('users.edit');
+    Route::put('/users/{user}/update', UserController::class . '@update')->name('users.update');
+    Route::delete('/users/{user}/destroy', UserController::class . '@destroy')->name('users.destroy');
+
+    Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
+    Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
+    Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
+    Route::get('/roles/{role}', [RoleController::class, 'show'])->name('roles.show');
+    Route::get('/roles/{id}/edit', [RoleController::class, 'edit'])->name('roles.edit');
+    Route::put('/roles/{id}', [RoleController::class, 'update'])->name('roles.update');
+    Route::delete('/roles/{id}', [RoleController::class, 'destroy'])->name('roles.destroy');
+
+    Route::resource('permissions', PermissionController::class);
+    Route::get('/permissions', [PermissionController::class, 'index'])->name('permissions.index');
+    Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
+    Route::post('/permissions', [PermissionController::class, 'store'])->name('permissions.store');
+    Route::get('/permissions/{permission}', [PermissionController::class, 'show'])->name('permissions.show');
+    Route::get('/permissions/{id}/edit', [PermissionController::class, 'edit'])->name('permissions.edit');
+    Route::put('/permissions/{id}', [PermissionController::class, 'update'])->name('permissions.update');
+    Route::delete('/permissions/{id}', [PermissionController::class, 'destroy'])->name('permissions.destroy');
+
+
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout.perform');
 });

@@ -7,7 +7,7 @@
                     <div class="cta">
                         <h3>Need Help?</h3>
                         <p>Please feel free to contact our friendly reception staff with any medical enquiry, or
-                            call <a href="javascript:void(0)">+880 12345678901</a></p>
+                            call <a href="javascript:void(0)">0123456789</a></p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
@@ -105,10 +105,10 @@
                     <div class="single-footer last f-contact">
                         <h3>Contact</h3>
                         <ul>
-                            <li><i class="lni lni-map-marker"></i> 23 New Design Str, Lorem Upsum 10 Hudson Yards,
-                                USA</li>
-                            <li><i class="lni lni-phone"></i> Tel. +(123) 1800-567-8990 </li>
-                            <li><i class="lni lni-envelope"></i> Mail. <a href="#">fptaptech@edu.vn</a></li>
+                            <li><i class="lni lni-map-marker"></i>Số 8a Tôn Thất Thuyết, Mỹ Đình, Cầu Giấy, Hà Nội, Việt Nam</li>
+                            <li><i class="lni lni-phone"></i> Tel. +(012) 3456789 </li>
+                            <li><i class="lni lni-envelope"></i> Mail.
+                            </li>
                         </ul>
                     </div>
 
@@ -124,6 +124,10 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="content">
+                            <p class="copyright-text">Designed and Developed by Infinity-Loop
+                            </p>
+
+
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
