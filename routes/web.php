@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/doctordetail', [HomeController::class, 'doctor_detail'])->name('doctordetail');
     Route::get('/blogdetail', [HomeController::class, 'blog_detail'])->name('blogdetail');
     Route::resource('/medicine', MedicinePillController::class);
-    Route::resource('/healthindex', HealthIndexController::class);
+    Route::resource('/comment', CommentController::class);
 
     // Route::resource('/appointment', AppointmentController::class);
     Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
@@ -55,7 +55,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/appointment/{id}/edit', [AppointmentController::class, 'edit'])->name('appointment.edit');
     Route::put('/appointment/{id}', [AppointmentController::class, 'update'])->name('appointment.update');
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
-    
+
     Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
 
     Route::resource('/comment', CommentController::class);
@@ -64,14 +64,22 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });
 
+
 Route::get('/hospitalsearch', function () {
     return view('web.hospital-search');
 });
 
 
-Route::get('/test', function () {
-    return view('web.home');
-});
+    Route::get('/doctor-detail', function () {
+        return view('web.doctor-detail');
+    });
+
+    Route::get('/doctor-search', function () {
+        return view('web.doctor-search');
+    });
+
+
+
 
 Route::get('/user-bmi', function () {
     return view('user.user-bmi');
@@ -79,11 +87,22 @@ Route::get('/user-bmi', function () {
 
 Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
-Route::get('/user-profile', function () {
+
+
+Route::get('/user', function () {
     return view('user.user-profile');
 });
-
-
-Route::get('/test2', function () {
-    return view('web.notification');
+Route::get('/user-health', function () {
+    return view('user.user-health');
 });
+Route::get('/user-update', function () {
+    return view('user.user-update');
+});
+Route::get('/user-history', function () {
+    return view('user.user-history');
+});
+Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
+
+
+
+
