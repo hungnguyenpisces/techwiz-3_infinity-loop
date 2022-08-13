@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('check_out_history_id');
             $table->string('details');
+            $table->string('conclusion');
             $table->timestamps();
         });
     }

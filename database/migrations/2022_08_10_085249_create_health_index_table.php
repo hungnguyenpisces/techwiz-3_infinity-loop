@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('health_index', function (Blueprint $table) {
+        Schema::create('health_indices', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('users_id');
             $table->float('height');

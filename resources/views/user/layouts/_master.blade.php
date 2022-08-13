@@ -19,35 +19,36 @@
 <body>
     @include('user.layouts.header')
 
+<div class="d-flex">
     @include('user.layouts.sidebar')
-    
-    @include('user.layouts.script')
-    @yield('extraJs')
+</div>
+@include('user.layouts.script')
+@yield('extraJs')
 
-    <script>
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('div.sidebar'),
-            toggle = body.querySelector(".toggle"),
-            searchBtn = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
+<script>
+    const body = document.querySelector('body'),
+        sidebar = body.querySelector('div.sidebar'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
 
 
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
+    toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    })
 
-        searchBtn.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
+    searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+    })
 
-        modeSwitch.addEventListener("click", () => {
-            body.classList.toggle("dark");
+    modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
 
-            if (body.classList.contains("dark")) {
-                modeText.innerText = "Light mode";
-            } else {
-                modeText.innerText = "Dark mode";
+        if (body.classList.contains("dark")) {
+            modeText.innerText = "Light mode";
+        } else {
+            modeText.innerText = "Dark mode";
 
             }
         });
