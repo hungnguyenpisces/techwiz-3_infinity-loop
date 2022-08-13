@@ -61,6 +61,11 @@ class UserSeeder extends Seeder
                 'last_name' => $faker->lastName,
                 'username' => $faker->userName,
                 'email' => $faker->email,
+                'phone' => $faker->phoneNumber,
+                'address' => $faker->city,
+                'gender' => $faker->randomElement(['Male', 'Female']),
+                'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
+                'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
                 'password' => Hash::make('12345678'),
             ]);
             $user->assignRole('User');
