@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Hospital;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class HospitalSeeder extends Seeder
@@ -14,19 +15,19 @@ class HospitalSeeder extends Seeder
      */
     public function run()
     {
-        $hospital = [
-            ['Bệnh viện Bạch Mai', 'Hà Nội', '0912345678', 'Nguyễn Văn A'],
-            ['Bệnh viện Bạch Kia', 'Hà Nội', '0912345678', 'Nguyễn Văn A'],
-            ['Bệnh viện Bạch Mot', 'Hà Nội', '0912345678', 'Nguyễn Văn A'],
-            ['Bệnh viện Hắc Mai', 'Hà Nội', '0912345678', 'Nguyễn Văn A']
-        ];
+        // name
+        // location
+        // phone
+        // director
 
-        foreach ($hospital as $h) {
+        $faker = Factory::create();
+        $limit = 10;
+        for ($i = 0; $i < $limit; $i++) {
             Hospital::create([
-                'name' => $h[0],
-                'location' => $h[1],
-                'phone' => $h[2],
-                'director' => $h[3]
+                'name' => $faker->unique()->company,
+                'location' => $faker->city,
+                'phone' => $faker->phoneNumber,
+                'director' => $faker->name
             ]);
         }
     }

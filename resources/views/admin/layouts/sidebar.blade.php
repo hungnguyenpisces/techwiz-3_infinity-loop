@@ -29,8 +29,9 @@
                 <li class="side_link_parent"> <a href="/admin/dashboard"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                     <ul class="ml-menu">
+                        <li class="side_link"> <a href="all-appointment">All Appointment</a></li>
                         <li class="side_link"> <a href="doctor-schedule">Doctor Schedule</a></li>
-                        <li class="side_link"> <a href="appointment">Book Appointment</a></li>
+                        <li class="side_link"> <a href="appointment">Create Appointment</a></li>
                     </ul>
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>

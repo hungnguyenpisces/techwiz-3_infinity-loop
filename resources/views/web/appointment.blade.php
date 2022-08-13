@@ -120,14 +120,18 @@
                                     <button type="submit" class="btn">Get Appointment</button>
                                 </div>
                             </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                @foreach(['danger', 'success', 'warning', 'info'] as $type)
+                                @if(Session::has($type))
+                                <p class="alert alert-{{$type}}">
+                                    {{Session::get($type)}}
+                                </p>
+                                @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
-
-
                 </form>
-
-
-
             </div>
         </div>
     </div>
