@@ -17,7 +17,7 @@ class AppointmentSeeder extends Seeder
     public function run()
     {
         $faker = Factory::create();
-        $limit = 50;
+        $limit = 500;
         // user->id random from 1 to 10
         // hospital_id random from 1 to 4
         // department_id random from 1 to 5
@@ -28,7 +28,7 @@ class AppointmentSeeder extends Seeder
         // status reandom (Pending, Accepted, Rejected, Cancelled)
         for ($i = 0; $i < $limit; $i++) {
             $appointment = new Appointment();
-            $appointment->user_id = rand(6, 16);
+            $appointment->user_id = rand(1, 100);
             $appointment->hospital_id = rand(1, 4);
             $appointment->department_id = rand(1, 5);
             $appointment->doctor_id = rand(1, 50);

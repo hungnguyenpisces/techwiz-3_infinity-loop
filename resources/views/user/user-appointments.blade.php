@@ -45,8 +45,10 @@
                                     <span class="badge badge-warning">{{ $appointment->status }}</span>
                                 @elseif($appointment->status == 'approved')
                                     <span class="badge badge-success">{{ $appointment->status }}</span>
-                                @elseif($appointment->status == 'rejected')
+                                @elseif($appointment->status == 'Cancelled')
                                     <span class="badge badge-danger">{{ $appointment->status }}</span>
+                                @else
+                                    <span class="text-bg-primary badge badge-primary">{{ $appointment->status }}</span>
                                 @endif
                             </td>
                             <td>
