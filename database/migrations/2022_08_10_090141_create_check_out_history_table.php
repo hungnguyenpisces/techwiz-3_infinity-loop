@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('check_out_histories', function (Blueprint $table) {
             $table->id();
-            $table->string('users_id');
+            $table->string('user_id');
             $table->string('department_id');
             $table->string('hospital_id');
             $table->string('symptoms');
