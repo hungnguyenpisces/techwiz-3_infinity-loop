@@ -83,7 +83,7 @@ Route::get('/user-history', function () {
 
 Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
-Route::get('/user-profile', function () {
+Route::get('/user', function () {
     return view('user.user-profile');
 });
 
