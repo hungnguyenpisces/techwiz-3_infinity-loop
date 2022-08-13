@@ -36,7 +36,7 @@ body.dark{
 /* ===== Sidebar ===== */
  .sidebar{
     position: fixed;
-    top: 50px;
+    top: 0px;
     left: 0;
     height: 100%;
     width: 300ox;
@@ -101,6 +101,7 @@ li.nax-link a{
 
 header .image-text {
     width: 250px;
+    top: 50px;
 }
 .sidebar header .image-text{
     display: flex;
@@ -210,10 +211,22 @@ body.dark .sidebar header .toggle{
     width: 50px;
 }
 
-.sidebar li a:hover .icon,
+.sidebar li .icon2 {
+    color: white;
+}
+
+.sidebar li  span {
+    color: white;
+}
+.sidebar li a:hover .icon2,
 .sidebar li a:hover .text{
     color: black;
 }
+
+.sidebar li:hover {
+    background-color: white;
+}
+
 
 
 body.dark .sidebar li a:hover .icon,
@@ -426,12 +439,56 @@ ul.menu-links li i {
 }
 
 .sidebar {
-    -webkit-box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); 
-	box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11);
+    /* -webkit-box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); 
+	box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); */
+    position: fixed;
+
 }
 
 /* user header css */
 
 header.user-header {
     background-color: #006838 !important;
+}
+
+/* header css */
+
+.header.style2 {
+	position: relative;
+	top: 0;
+	background-color: #fff;
+}
+.header.style2 .nav-inner {
+	background-color: #fff;
+	padding: 0;
+}
+.header .top-bar {
+	background-color: #88c250;
+}
+.header .top-bar .inner-topbar {
+	padding: 20px 0;
+}
+.header .top-bar .top-contact ul li {
+	display: inline-block;
+	margin-right: 15px;
+	color: #fff;
+}
+.header .top-bar .top-contact ul li:last-child {
+	margin: 0;
+}
+.header .top-bar .top-contact ul li i {
+	font-size: 15px;
+	display: inline-block;
+	margin-right: 4px;
+	color: #fff;
+}
+.header .top-bar .top-contact ul li a {
+	color: #fff;
+}
+.header .top-bar .top-contact ul li a:hover {
+	opacity: 0.7;
+}
+
+.nav-link i {
+    font-size: 30px;
 }
