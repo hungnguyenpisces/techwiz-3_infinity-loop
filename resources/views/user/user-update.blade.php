@@ -10,7 +10,7 @@
     <section class="gradient-custom">
         <div class="container py-5 h-100 form-head">
             <h3 class="container justify-content-center">Personal Health Information</h3>
-            <form action="{{route('user.store')}}" method="post">
+            <form action="{{route('users.store')}}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-md-6 mb-4">
