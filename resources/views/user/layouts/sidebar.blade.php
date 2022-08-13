@@ -50,7 +50,7 @@
                 </li>
 
                 <li class="nav-link" id="user-chart">
-                    <a href="/user-appointments">
+                    <a href="/user-appointment">
                         <i class="fa-solid fa-chart-line icon2"></i>
                         <span class="text nav-text">Appointments</span>
                     </a>

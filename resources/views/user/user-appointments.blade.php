@@ -30,32 +30,34 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- check_out_histories -->
-                        <?php $i = 1; ?>
-                        @foreach($check_out_histories as $check_out_history)
+                    <?php $i = 1; ?>
+
+                        @foreach($appointments as $appointment)
+
                         <tr>
                             <td><?php echo $i; ?></td>
-                            <td>{{ $check_out_history->created_at }}</td>
-                            <td>{{ $check_out_history->department_name }}</td>
-                            <td>{{ $check_out_history-> hospital_name }}</td>
-                            <td>{{ $check_out_history->doctor_first_name }}</td>
+                            <td>{{ $appointment->created_at }}</td>
+                            <td>{{ $appointment->department_name }}</td>
+                            <td>{{ $appointment->hospital_name }}</td>
+                            <td>{{ $appointment->doctor_first_name }}</td>
                             <td>
-                                <span class="badge badge-success">Approved</span>
-
-{{--                            @if($check_out_history->status == 1)--}}
-{{--                                @elseif($check_out_history->status == 2)--}}
-{{--                                <span class="badge badge-danger">Rejected</span>--}}
-{{--                                @elseif($check_out_history->status == 3)--}}
-{{--                                <span class="badge badge-warning">Pending</span>--}}
-{{--                                @endif--}}
+                                @if($appointment->status == 'pending')
+                                    <span class="badge badge-warning">{{ $appointment->status }}</span>
+                                @elseif($appointment->status == 'approved')
+                                    <span class="badge badge-success">{{ $appointment->status }}</span>
+                                @elseif($appointment->status == 'rejected')
+                                    <span class="badge badge-danger">{{ $appointment->status }}</span>
+                                @endif
                             </td>
                             <td>
                                 <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#medicineDetail">
                                     <i class="fa fa-eye"></i>
                                 </button>
                             </td>
-                        </tr>
-                        <?php $i++; ?>  @endforeach
+
+                    </tbody>
+  @endforeach
+
 @endsection
 
 @section('extraJs')

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
+use App\Models\Department;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
 class AppointmentManageController extends Controller
@@ -15,13 +17,15 @@ class AppointmentManageController extends Controller
      */
     public function index()
     {
-        // appointment join with user, hospital, department
+        // appointment join with user, hospital, department, doctor
+        $doctors = Doctor::all();
         $appointments = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
             ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
             ->join('departments', 'appointments.department_id', '=', 'departments.id')
-            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name')
+            ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
             ->get();
-        return view('admin.appointment.all-appointment', compact('appointments'));
+        return view('admin.appointment.all-appointment', compact('appointments', 'doctors'));
     }
 
     /**
@@ -53,7 +57,17 @@ class AppointmentManageController extends Controller
      */
     public function show($id)
     {
-        //
+        // appointment join with user, hospital, department, doctor
+        $appointment = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
+            ->where('appointments.id', $id)
+            ->first();
+
+        $doctors = Doctor::all();
+        return view('admin.appointment.appointment-detail', compact('appointment', 'doctors'));
     }
 
     /**
@@ -88,5 +102,16 @@ class AppointmentManageController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function reject($id)
+    {
+        //
+    }
+
+    public function approve($id)
+    {
+        dd($id);
+        return view('admin.appointment.all-appointment');
     }
 }
