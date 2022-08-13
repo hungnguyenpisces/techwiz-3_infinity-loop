@@ -22,7 +22,7 @@ Custom title if need
         <div class="row clearfix">
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class=" card patient-profile">
-                    <img src="assets/images/image-1.jpg" class="img-fluid" alt="">
+                    <img src="/assets/images/blog/sidebar-img2.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="card">
                     <div class="header">

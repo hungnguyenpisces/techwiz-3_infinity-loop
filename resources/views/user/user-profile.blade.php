@@ -7,19 +7,19 @@
 @section('content')
 
 
-    <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100 form-head">
-            <h3 class="container justify-content-center">Personal Health Information</h3>
-            <form action="">
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                            <input type="text" id="firstName" class="form-control form-control-lg" />
-                            <label class="form-label" for="firstName" placeholder="First Name">First Name</label>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6 mb-4">
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">User</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
 
                         <div class="form-outline">
                             <input type="text" id="lastName" class="form-control form-control-lg" />
@@ -132,7 +132,9 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
+                </div>
+            </div>
         </div>
-    </section>
-
+    </div>
+</section>
 @endsection

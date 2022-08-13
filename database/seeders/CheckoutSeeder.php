@@ -28,7 +28,7 @@ class CheckoutSeeder extends Seeder
 
         for ($i = 0; $i < $limit; $i++) {
             CheckOutHistory::create([
-                'user_id' => rand(6, 106),
+                'user_id' => rand(1, 100),
                 'department_id' => rand(1, 20),
                 'hospital_id' => rand(1, 10),
                 'symptoms' => $faker->sentence,

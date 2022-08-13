@@ -17,9 +17,9 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $hospital = Hospital::all();
-        $department = Department::all();
-        return view('web.appointment', compact('hospital', 'department'));
+        $hospitals = Hospital::all();
+        $departments = Department::all();
+        return view('web.appointment', compact('hospitals', 'departments'));
     }
 
     /**
@@ -42,7 +42,7 @@ class AppointmentController extends Controller
     {
         $epoch_time_curent = time();
         $epoch_time_appointment = strtotime($request->date . ' ' . $request->time);
-        
+
         if ($epoch_time_appointment < $epoch_time_curent) {
             return redirect()->back()->with('warning', 'Date and time must be greater than current date and time.');
         } else {

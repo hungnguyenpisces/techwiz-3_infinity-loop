@@ -13,9 +13,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title">
-                            <h3>Hospital</h3>
+                            <h3>Doctor</h3>
                             <div class="newsletter-form input">
-                                <h2 class="wow fadeInUp">Search Hospital</h2>
+                                <h2 class="wow fadeInUp">Search Doctor</h2>
                                 <form action="#" method="get" target="_blank" class="newsletter-form">
                                     <input style="height: 50px; width: 70%" name="searcher" placeholder="     What are you looking for?" type="text">
                                     <label class="button">
@@ -42,8 +42,8 @@
                                 </ul>
                             </div>
                             <div class="content">
-                                <h5>Hospital address</h5>
-                                <h3><a href="doctor-details.html">hospital name</a></h3>
+                                <h5>Doctor's position</h5>
+                                <h3><a href="doctor-details.html">Doctor Name</a></h3>
                             </div>
                         </div>
 

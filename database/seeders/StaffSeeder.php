@@ -37,7 +37,7 @@ class StaffSeeder extends Seeder
                 'gender' => $faker->randomElement(['Male', 'Female']),
                 'phone' => $faker->phoneNumber,
                 'address' => $faker->city,
-                'username' => $faker->userName,
+                'username' => $faker->unique()->userName,
                 'email' => $faker->email,
                 'password' => Hash::make('12345678'),
                 'date_of_birth' => $faker->dateTimeBetween('-20 years', '-18 years')

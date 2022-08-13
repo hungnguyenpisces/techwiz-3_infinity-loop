@@ -21,7 +21,7 @@
                     <h1 class="page-title">Appointment</h1>
                 </div>
                 <ul class="breadcrumb-nav">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>appointment</li>
                 </ul>
             </div>
@@ -57,7 +57,7 @@
                             <div class="col-lg-6 col-md-6 col-12 p-0">
                                 <div class="appointment-input">
                                     <label for="last_name"><i class="lni lni-user"></i></label>
-                                    <input type="text" name="last_name" id="last_name" placeholder="First name" value="{{Auth::user()->last_name}}">
+                                    <input type="text" name="last_name" id="last_name" placeholder="Last name" value="{{Auth::user()->last_name}}">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 p-0">
@@ -78,8 +78,8 @@
                                     <select name="hospital_id" id="hospital">
                                         <option value="none" selected disabled>Hospital</option>
                                         <!-- $hospital -->
-                                        @foreach($hospital as $hospital)
-                                        <option value="{{$hospital->id}}">{{$hospital->name}}</option>
+                                        @foreach($hospitals as $hospitals)
+                                        <option value="{{$hospitals->id}}">{{$hospitals->name}}</option>
                                         @endforeach
 
                                     </select>
@@ -91,8 +91,8 @@
                                     <select name="department_id" id="department">
                                         <option value="none" selected disabled>Department</option>
                                         <!-- $department -->
-                                        @foreach($department as $department)
-                                        <option value="{{$department->id}}">{{$department->name}}</option>
+                                        @foreach($departments as $departments)
+                                        <option value="{{$departments->id}}">{{$departments->name}}</option>
                                         @endforeach
 
                                     </select>
