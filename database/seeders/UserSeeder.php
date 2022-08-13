@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
     {
         $ngan = User::create([
             'first_name' => 'Ngan',
-            'last_name' => 'Ha',
+            'last_name' => 'Ga',
             'username' => 'ngan',
             'email' => 'nganha@email.com',
             'password' => Hash::make('12345678'),
@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
 
         $giang = User::create([
             'first_name' => 'Giang',
-            'last_name' => 'Ha',
+            'last_name' => 'Ga',
             'username' => 'giang',
             'email' => 'hagiang@email.com',
             'password' => Hash::make('12345678'),
@@ -37,16 +37,16 @@ class UserSeeder extends Seeder
 
         $hiep = User::create([
             'first_name' => 'Hiep',
-            'last_name' => 'Ha',
+            'last_name' => 'Ga',
             'username' => 'hiep',
-            'email' => 'hiemga@email.com',
+            'email' => 'hiepga@email.com',
             'password' => Hash::make('12345678'),
         ]);
         $hiep->assignRole('Admin');
 
         $huan = User::create([
             'first_name' => 'Huan',
-            'last_name' => 'Ha',
+            'last_name' => 'Ga',
             'username' => 'huan',
             'email' => 'huanhoahong@email.com',
             'password' => Hash::make('12345678'),
@@ -54,7 +54,7 @@ class UserSeeder extends Seeder
         $huan->assignRole('User');
 
         $faker = Factory::create();
-        $limit = 10;
+        $limit = 100;
         for ($i = 0; $i < $limit; $i++) {
             $user = User::create([
                 'first_name' => $faker->firstName,
