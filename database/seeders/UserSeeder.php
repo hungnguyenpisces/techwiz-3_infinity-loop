@@ -17,12 +17,19 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Factory::create();
+
         $ngan = User::create([
             'first_name' => 'Ngan',
             'last_name' => 'Ga',
             'username' => 'ngan',
             'email' => 'nganha@email.com',
             'password' => Hash::make('12345678'),
+            'phone' => $faker->phoneNumber,
+            'address' => $faker->city,
+            'gender' => $faker->randomElement(['Male', 'Female']),
+            'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
+            'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
         ]);
         $ngan->assignRole('Super-Admin');
 
@@ -32,6 +39,11 @@ class UserSeeder extends Seeder
             'username' => 'giang',
             'email' => 'hagiang@email.com',
             'password' => Hash::make('12345678'),
+            'phone' => $faker->phoneNumber,
+            'address' => $faker->city,
+            'gender' => $faker->randomElement(['Male', 'Female']),
+            'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
+            'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
         ]);
         $giang->assignRole('Admin');
 
@@ -41,6 +53,11 @@ class UserSeeder extends Seeder
             'username' => 'hiep',
             'email' => 'hiepga@email.com',
             'password' => Hash::make('12345678'),
+            'phone' => $faker->phoneNumber,
+            'address' => $faker->city,
+            'gender' => $faker->randomElement(['Male', 'Female']),
+            'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
+            'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
         ]);
         $hiep->assignRole('Admin');
 
@@ -50,10 +67,14 @@ class UserSeeder extends Seeder
             'username' => 'huan',
             'email' => 'huanhoahong@email.com',
             'password' => Hash::make('12345678'),
+            'phone' => $faker->phoneNumber,
+            'address' => $faker->city,
+            'gender' => $faker->randomElement(['Male', 'Female']),
+            'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
+            'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
         ]);
         $huan->assignRole('User');
 
-        $faker = Factory::create();
         $limit = 100;
         for ($i = 0; $i < $limit; $i++) {
             $user = User::create([
@@ -61,6 +82,11 @@ class UserSeeder extends Seeder
                 'last_name' => $faker->lastName,
                 'username' => $faker->userName,
                 'email' => $faker->email,
+                'phone' => $faker->phoneNumber,
+                'address' => $faker->city,
+                'gender' => $faker->randomElement(['Male', 'Female']),
+                'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
+                'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
                 'password' => Hash::make('12345678'),
             ]);
             $user->assignRole('User');
