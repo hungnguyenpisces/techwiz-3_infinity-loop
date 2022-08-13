@@ -69,7 +69,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
-                                        <li><a href="javascript:void(0)" class="facebook"><i class="lni lni-facebook-filled"></i>Login With
+                                        <li><a href="javascript:void(0)" class="facebook"><i class="lni lni-facebook-original"></i>Login With
                                                 Facebook</a></li>
                                     </ul>
                                 </div>

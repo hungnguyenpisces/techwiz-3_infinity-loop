@@ -55,6 +55,24 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::resource('/hospital',HospitalController::class);
     Route::resource('/department',DepartmentController::class);
 
+    Route::get('/add-doctor', function () {return view('admin.doctor.create');});
+    Route::get('/doctor', function () {return view('admin.doctor.index');});
+    Route::get('/doctor-profile', function () {return view('admin.doctor.show');});
+
+    Route::get('/patient', function () {return view('admin.patient.index');});
+    Route::get('/add-patient', function () {return view('admin.patient.create');});
+    Route::get('/patient-profile', function () {return view('admin.patient.show');});
+
+    Route::get('/appointment', function () {return view('admin.appointment.book-appointment');});
+    Route::get('/doctor-schedule', function () {return view('admin.appointment.doctor-schedule');});
+
+    Route::get('/payment', function () {return view('admin.payments.payments');});
+    Route::get('/add-payment', function () {return view('admin.payments.add-payments');});
+    Route::get('/patient-invoice', function () {return view('admin.payments.patient-invoice');});
+
+    Route::get('/report', function () {return view('admin.report');});
+    Route::get('/widgets', function () {return view('admin.widgets');});
+
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout.perform');
 
 });

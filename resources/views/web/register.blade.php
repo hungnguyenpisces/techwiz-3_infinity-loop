@@ -42,7 +42,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
-                                        <li><a href="javascript:void(0)" class="facebook"><i class="lni lni-facebook-filled"></i>Import From
+                                        <li><a href="javascript:void(0)" class="facebook"><i class="lni lni-facebook-original"></i>Import From
                                                 Facebook</a></li>
                                     </ul>
                                 </div>
@@ -114,9 +114,19 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Form Group (form submission)-->
-                        <div class="d-flex align-items-center justify-content-center">
-                            <button class="btn btn-success" type="submit">Create Account</button>
+                        <div class="check-and-pass">
+                            <div class="row align-items-center">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input width-auto" id="exampleCheck1">
+                                        <label class="form-check-label">Agree to our <a href="javascript:void(0)">Terms and
+                                                Conditions</a></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <button type="submit" class="btn">Registration</button>
                         </div>
                     </form>
                 </div>

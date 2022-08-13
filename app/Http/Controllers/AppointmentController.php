@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Department;
+use App\Models\Hospital;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
@@ -14,7 +17,9 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        return view('web.appointment');
+        $hospital = Hospital::all();
+        $department = Department::all();
+        return view('web.appointment', compact('hospital', 'department'));
     }
 
     /**
@@ -35,17 +40,19 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
         $amt = new Appointment();
-        $amt->users_id = $request->users_id;
+        $amt->user_id = $user->id;
         $amt->department_id = $request->department_id;
+        $amt->hospital_id = $request->hospital_id;
         $amt->self_check_symptom = $request->self_check_symptom;
         $amt->time = $request->time;
         $amt->date = $request->date;
-        $amt->status = $request->status;
+        $amt->status = 'pending';
         $amt->save();
 
         $request->session()->flash('success', 'Appointment created sucessfully.');
-        return redirect(route('appointment.index'));
+        return view('web.success');
     }
 
     /**

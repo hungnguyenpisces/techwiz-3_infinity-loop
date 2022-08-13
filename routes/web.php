@@ -26,22 +26,11 @@ Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contactus', [HomeController::class, 'contact_us'])->name('contactus');
 Route::resource('/checkouthistory', CheckOutHistoryController::class);
 
-
-
-
-
-/**
- * Register Routes
- */
 Route::get('/register', [AuthController::class, 'register'])->name('register.show');
 Route::post('/register', [AuthController::class, 'processRegister'])->name('register.perform');
 
-/**
- * Login Routes
- */
 Route::get('/login', [AuthController::class, 'login'])->name('login.show');
 Route::post('/login', [AuthController::class, 'processLogin'])->name('login.perform');
-
 
 Route::get('/404', function () {
     return view('404');
@@ -71,13 +60,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('/comment', CommentController::class);
 
 
-
-    /**
-     * Logout Routes
-     */
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });
 
 Route::get('/hospitalsearch', function () {
     return view('web.hospital-search');
+});
+
+
+Route::get('/test', function () {
+    return view('user.user-profile');
 });

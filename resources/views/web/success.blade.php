@@ -1,20 +1,35 @@
-@extends('web.layouts._master')
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
 
-@section('title')
-@endsection
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Mail Success - MediGrids Medical & Hospital HTML Template.</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="{!! url('assets/img/favicon.png') !!}" />
 
-@section('extraCss')
-    <!-- extra css -->
+
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="{!! url('assets/bootstrap/css/bootstrap.min.css') !!}" />
+    <link rel="stylesheet" href="{!! url('assets/css/LineIcons.2.0.css') !!}" />
+    <link rel="stylesheet" href="{!! url('assets/css/animate.css') !!}" />
+    <link rel="stylesheet" href="{!! url('assets/css/tiny-slider.css') !!}" />
+    <link rel="stylesheet" href="{!! url('assets/css/glightbox.min.css') !!}" />
+    <link rel="stylesheet" href="{!! url('assets/css/main.css') !!}" />
+</head>
 
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">
+          You are using an <strong>outdated</strong> browser. Please
+          <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+          your experience and security.
+        </p>
+      <![endif]-->
 
-    <!-- end extra css -->
-@endsection
-
-@section('content')
-    {{-----content-----}}
     <div class="preloader">
         <div class="preloader-inner">
             <div class="preloader-icon">
@@ -32,10 +47,18 @@
                     <div class="success-content">
                         <i class="lni lni-thumbs-up"></i>
                         <h1>Congratulations!</h1>
-                        <h2>Your Mail Sent Successfully</h2>
+                        <!-- messages -->
+                        @if(Session::has('success'))
+                        <div class="alert alert-success">
+                            <h2>
+                                <strong>Success!</strong> {{Session::get('success')}}
+                            </h2>
+                        </div>
+                        <!-- end messages -->
+                        @endif
                         <p>Thanks for contacting with us, We will get back to you asap.</p>
                         <div class="button">
-                            <a href="#" class="btn">Back to Home</a>
+                            <a href="/" class="btn">Back to Home</a>
                         </div>
                     </div>
                 </div>
@@ -44,13 +67,12 @@
     </div>
 
 
-    {{-----end content-----}}
-@endsection
-
-@section('extraJs')
-    <!-- extraJs -->
+    <script src="{!! url('assets/bootstrap/js/bootstrap.min.js') !!}"></script>
+    <script src="{!! url('assets/js/wow.min.js') !!}"></script>
+    <script src="{!! url('assets/js/tiny-slider.js') !!}"></script>
+    <script src="{!! url('assets/js/glightbox.min.js') !!}"></script>
     <script>
-        window.onload = function () {
+        window.onload = function() {
             window.setTimeout(fadeout, 500);
         }
 
@@ -59,8 +81,6 @@
             document.querySelector('.preloader').style.display = 'none';
         }
     </script>
+</body>
 
-
-
-    <!-- end extraJs -->
-@endsection
+</html>
