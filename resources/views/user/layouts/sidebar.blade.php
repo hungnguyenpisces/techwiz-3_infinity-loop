@@ -50,16 +50,16 @@
                 </li>
 
                 <li class="nav-link" id="user-chart">
-                    <a href="/user-chart">
+                    <a href="/user-appointments">
                         <i class="fa-solid fa-chart-line icon2"></i>
-                        <span class="text nav-text">Health charts</span>
+                        <span class="text nav-text">Appointments</span>
                     </a>
                 </li>
 
                 <li class="nav-link" id="user-history">
                     <a href="/user-history">
                         <i class="fa-regular fa-calendar-check icon2"></i>
-                        <span class="text nav-text">Appointments</span>
+                        <span class="text nav-text">History</span>
                     </a>
                 </li>
 

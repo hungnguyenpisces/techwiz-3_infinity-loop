@@ -17,9 +17,17 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $hospitals = Hospital::all();
-        $departments = Department::all();
-        return view('web.appointment', compact('hospitals', 'departments'));
+        if (Auth::check()) {
+            return redirect()->route('login');
+        } else {
+            $hospitals = Hospital::all();
+            $departments = Department::all();
+            $appointmennts = Appointment::all();
+            return view('user.user-appointments', compact('hospitals', 'departments'));
+        }
+//        $hospitals = Hospital::all();
+//        $departments = Department::all();
+//        return view('web.appointment', compact('hospitals', 'departments'));
     }
 
     /**
