@@ -69,28 +69,26 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
-                                        <li><a href="javascript:void(0)" class="facebook">Login
-                                                With
-                                                Facebook <i class="fa-brands fa-square-facebook"></i> </a></li>
+                                        <li><a href="javascript:void(0)" class="facebook"><i class="lni lni-facebook-original"></i>Login With
+                                                Facebook</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
-                                        <li><a href="javascript:void(0)" class="google">Login With Google
-                                                Plus <i class="fa-brands fa-square-google-plus"></i></a>
+                                        <li><a href="javascript:void(0)" class="google"><i class="lni lni-google"></i>Login With Google
+                                                Plus</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
-                                        <li><a href="javascript:void(0)" class="instagram">Login With
-                                                Instagram <i class="fa-brands fa-instagram"></i> </a></li>
+                                        <li><a href="javascript:void(0)" class="instagram"><i class="lni lni-instagram"></i>Login With
+                                                Instagram</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
-                                        <li><a href="javascript:void(0)" class="linkedin">Login
-                                                With Linkedin <i class="fa-brands fa-linkedin"></i></a>
+                                        <li><a href="javascript:void(0)" class="linkedin"><i class="lni lni-linkedin-original"></i>Login With Linkedin</a>
                                         </li>
                                     </ul>
                                 </div>
