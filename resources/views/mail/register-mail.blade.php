@@ -12,6 +12,7 @@
             padding: 15px 0px;
             color: white;
         }
+
     </style>
     <link rel="stylesheet" href="{!! url('assets/bootstrap/css/bootstrap.min.css') !!}">
 </head>
@@ -22,24 +23,13 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header2">
-                        <h3 class="card-title text-center">CONFIRMATION LETTER</h3>
+                        <h3 class="card-title text-center">WELCOME TO INFINITY-LOOP</h3>
                     </div>
                     <div class="card-body">
                         <p>Dear, Mr/Ms </p> @yield('last_name')
-                        <p>We are pleased to inform you that your appointment you booked has been confirmed. Please find below the details of your booking:</p>
-                        <div>
-                            <strong>Date:</strong> @yield('date')
-                            <br>
-                            <strong>Time:</strong>  @yield('time')
-                            <br>
-                            <strong>Department:</strong>  @yield('department')
-                            <br>
-                            <strong>Address:</strong> @yield('address')
-                            <br>
-                            <strong>Doctor:</strong> @yield('doctor')
-                            <br>
-                            <strong>Note:</strong>  @yield('note')
-                            <br>
+                        <p>Your account created successfully. Now you can log in <strong>Infinity Loop</strong> with your account</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-success mb-3">GO TO WEBSITE</a>
                         </div>
                         <p>Feel free to contact us if there is anything we can help.<br>Thank you for you belief. Your health is our happiness!</p>
                         <div>
@@ -48,7 +38,6 @@
                             <p>Infinity Loop Team</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

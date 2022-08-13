@@ -80,7 +80,7 @@ class UserSeeder extends Seeder
             $user = User::create([
                 'first_name' => $faker->firstName,
                 'last_name' => $faker->lastName,
-                'username' => $faker->userName,
+                'username' => $faker->unique()->userName,
                 'email' => $faker->email,
                 'phone' => $faker->phoneNumber,
                 'address' => $faker->city,

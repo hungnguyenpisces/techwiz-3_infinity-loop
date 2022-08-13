@@ -17,7 +17,7 @@
 </head>
 
 <body>
-@include('user.layouts.header')
+    @include('user.layouts.header')
 
     <div class="d-flex">
         @include('user.layouts.sidebar')
@@ -52,17 +52,17 @@
         } else {
             modeText.innerText = "Dark mode";
 
+            }
+        });
+        onload = function() {
+            const url = (window.location.href);
+            const index = url.search('user');
+            const _id = url.slice(index);
+            const li = document.getElementById(_id);
+            li.style.backgroundColor = '#88c250';
+            li.style.color = "white";
         }
-    });
-    onload = function() {
-        const url = (window.location.href);
-        const index = url.search('user');
-        const _id = url.slice(index);
-        const li = document.getElementById(_id);
-        li.style.backgroundColor = '#88c250';
-        li.style.color = "white";
-    }
-</script>
+    </script>
 
 </body>
 

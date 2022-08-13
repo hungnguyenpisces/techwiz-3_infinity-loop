@@ -1,4 +1,5 @@
 <script src="{!! url('assets/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>
+<script src="{!! url('assets/bootstrap/js/bootstrap.min.js') !!}"></script>
 <script src="{!! url('assets/fontawesome/js/all.min.js') !!}"></script>
 <script src="{!! url('assets/js/wow.min.js') !!}"></script>
 <script src="{!! url('assets/js/tiny-slider.js') !!}"></script>
