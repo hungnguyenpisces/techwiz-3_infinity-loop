@@ -58,6 +58,7 @@
             const _id = url.slice(index);
             const li = document.getElementById(_id);
             li.style.backgroundColor = '#88c250';
+            li.style.color = "white";
         }
     </script>
 
