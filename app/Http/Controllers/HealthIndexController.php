@@ -16,7 +16,7 @@ class HealthIndexController extends Controller
     public function index()
     {
         $lsHe = HealthIndex::all();
-        return view('web.health.index')->with('lsHe', $lsHe);
+        return view('user.user-profile')->with('lsHe', $lsHe);
     }
 
     /**
@@ -26,7 +26,7 @@ class HealthIndexController extends Controller
      */
     public function create()
     {
-        return view('web.health.create');
+        return view('user.user-profile');
     }
 
     /**
@@ -47,7 +47,7 @@ class HealthIndexController extends Controller
         $heal->save();
 
         $request->session()->flash('success', 'Health index created sucessfully.');
-        return redirect(route('healthindex.index'));
+        return redirect(route('web.success'));
     }
 
     /**
@@ -70,7 +70,7 @@ class HealthIndexController extends Controller
     public function edit($id)
     {
         $heal = HealthIndex::find($id);
-        return view('web.health.edit')->with('heal', $heal);
+        return view('user.user-profile')->with('heal', $heal);
     }
 
     /**
@@ -91,7 +91,7 @@ class HealthIndexController extends Controller
         $heal->save();
 
         $request->session()->flash('success', 'Health index updated sucessfully.');
-        return redirect(route('healthindex.index'));
+        return redirect(route('web.success'));
     }
 
     /**
@@ -109,6 +109,6 @@ class HealthIndexController extends Controller
             $heal->delete();
             $request->session()->flash('success', 'Index deleted sucessfully.');
         }
-        return redirect(route('healthindex.index'));
+        return redirect(route('user.index'));
     }
 }

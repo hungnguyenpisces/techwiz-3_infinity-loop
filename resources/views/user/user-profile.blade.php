@@ -10,11 +10,11 @@
     <section class="vh-100 gradient-custom">
         <div class="container py-5 h-100 form-head">
             <h3 class="container justify-content-center">Personal Health Information</h3>
-            <form action="">
+            <form action="{{route('user.store')}}" method="post">
                 <div class="row">
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                            <input type="text" id="firstName" class="form-control form-control-lg" />
+                            <input type="text" id="firstName" class="form-control form-control-lg" value=""/>
                             <label class="form-label" for="firstName" placeholder="First Name">First Name</label>
                         </div>
 

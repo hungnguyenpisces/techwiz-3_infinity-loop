@@ -61,40 +61,32 @@ Route::group(['middleware' => ['auth']], function () {
    
 
     //Route::resource('/healthindex', HealthIndexController::class);
-    Route::get('/healthindex',[HealthIndexController::class, 'index'])->name('health.index');
-    Route::post('/healthindex',[HealthIndexController::class, 'store'])->name('health.store');
-    Route::get('/healthindex/{id}',[HealthIndexController::class, 'show'])->name('health.show');
-    Route::get('/healthindex/{id}/edit',[HealthIndexController::class, 'edit'])->name('health.edit');
-    Route::put('/healthindex/{id}',[HealthIndexController::class, 'update'])->name('health.update');
-    Route::delete('/healthindex/{id}',[HealthIndexController::class, 'destroy'])->name('health.destroy');
+    Route::get('/user',[HealthIndexController::class, 'index'])->name('user.index');
+    Route::post('/user',[HealthIndexController::class, 'store'])->name('user.store');
+    Route::get('/user/{id}',[HealthIndexController::class, 'show'])->name('user.show');
+    Route::get('/user/{id}/edit',[HealthIndexController::class, 'edit'])->name('user.edit');
+    Route::put('/user/{id}',[HealthIndexController::class, 'update'])->name('user.update');
+    Route::delete('/user/{id}',[HealthIndexController::class, 'destroy'])->name('user.destroy');
     
-
-
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
-});
+    });
 
-Route::get('/hospitalsearch', function () {
-    return view('web.hospital-search');
-});
+    Route::get('/hospitalsearch', function () {
+        return view('web.hospital-search');
+    });
 
-Route::get('/user-bmi',function (){
-    return view('user.user-bmi');
-});
+    Route::get('/user-bmi',function (){
+        return view('user.user-bmi');
+    });
 
-Route::get('/user-history',function (){
-    return view('user.user-history');
-});
-
-
-Route::get('/user',function (){
-    return view('user.user-profile');
-});
+    Route::get('/user-history',function (){
+        return view('user.user-history');
+    });
 
 
-Route::get('/user-health-profile',function (){
-    return view('user.user-health-profile');
-});
+    // Route::get('/user',function (){
+    //     return view('user.user-profile');
+    // });
 
-
-Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
+    Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
