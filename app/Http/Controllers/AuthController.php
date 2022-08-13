@@ -14,6 +14,9 @@ class AuthController extends Controller
 {
     public function register()
     {
+        if (Auth::check()) {
+            return redirect()->route('index');
+        }
         return view('web/register');
     }
 
@@ -34,6 +37,9 @@ class AuthController extends Controller
 
     public function login()
     {
+        if (Auth::check()) {
+            return redirect()->route('index');
+        }
         return view('web/login');
     }
 
