@@ -17,22 +17,13 @@ class AppointmentController extends Controller
      */
     public function index()
     {
+        $hospitals = Hospital::all();
+        $departments = Department::all();
+        return view('web.appointment', compact('hospitals', 'departments'));
 
-            $user = Auth::user();
-            $hospitals = Hospital::all();
-            $departments = Department::all();
-            $appointments = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
-                ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
-                ->join('departments', 'appointments.department_id', '=', 'departments.id')
-                ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
-                ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
-                ->where('appointments.id', $user->id)->get();
-//            dd($appointments);
-            return view('user.user-appointments', compact('hospitals', 'departments', 'appointments'));
+
     }
-//        $hospitals = Hospital::all();
-//        $departments = Department::all();
-//        return view('web.appointment', compact('hospitals', 'departments'));
+
 
 
     /**
@@ -80,9 +71,20 @@ class AppointmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
+        $user = Auth::user();
+        $hospitals = Hospital::all();
+        $departments = Department::all();
+        $appointments = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
+            ->where('appointments.id', $user->id)->get();
+//            dd($appointments);
+        return view('user.user-appointments', compact('hospitals', 'departments', 'appointments'));
     }
 
     /**

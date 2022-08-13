@@ -50,6 +50,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('/comment', CommentController::class);
 
     // Route::resource('/appointment', AppointmentController::class);
+
     Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
     Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment.store');
     Route::get('/appointment/{id}', [AppointmentController::class, 'show'])->name('appointment.show');
@@ -57,7 +58,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/appointment/{id}', [AppointmentController::class, 'update'])->name('appointment.update');
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
     Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
-    Route::get('/user-appointment', [AppointmentController::class, 'index'])->name('appointment.index');
+    Route::get('/user-appointment', [AppointmentController::class, 'show'])->name('appointment.show');
 
 
     //Route::resource('/healthindex', HealthIndexController::class);

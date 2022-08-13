@@ -27,6 +27,7 @@
                                             <ul class="sub-menu collapse" id="submenu-1-5">
                                                 <li class="nav-item"><a href="user">Profile</a></li>
                                                 <li class="nav-item"><a href="/logout">Logout</a></li>
+                                                <li class="nav-item"><a href="/user-appointment">List Appointment</a></li>
                                             </ul>
                                         </li>
                                     </ul>
