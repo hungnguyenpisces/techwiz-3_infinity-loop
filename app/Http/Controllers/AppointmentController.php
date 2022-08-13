@@ -123,4 +123,9 @@ class AppointmentController extends Controller
         }
         return redirect(route('appointment.index'));
     }
+    public function userHistory() {
+        $user = Auth::user();
+        $appointments = Appointment::where('user_id', $user->id)->get();
+        return view('user.user-history', compact('appointments'));
+    }
 }

@@ -12,10 +12,6 @@ class HomeController extends Controller
         return view('web/index');
     }
 
-    public function appointment()
-    {
-        return view('web/appointment');
-    }
 
     public function time_table()
     {
