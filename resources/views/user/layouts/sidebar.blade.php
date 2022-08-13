@@ -11,7 +11,8 @@
             </div> -->
 
         </div>
-        <span class="toggle mt-5"> <i style="font-size: 14" class="fa-solid fa-xl fa-arrow-right-from-bracket"></i></span>
+        <span class="toggle mt-5"> <i style="font-size: 14"
+                                      class="fa-solid fa-xl fa-arrow-right-from-bracket"></i></span>
     </header>
 
     <div class="menu-bar">
@@ -50,19 +51,17 @@
                 </li>
 
                 <li class="nav-link" id="user-chart">
-                    <a href="/user-chart">
-                        <i class="fa-solid fa-chart-line icon2"></i>
-                        <span class="text nav-text">Health charts</span>
-                    </a>
-                </li>
-
-                <li class="nav-link" id="user-history">
-                    <a href="/user-history">
-                        <i class="fa-regular fa-calendar-check icon2"></i>
+                    <a href="/user-appointment">
+                        <i class="fa-solid fa-book-medical icon2"></i>
                         <span class="text nav-text">Appointments</span>
                     </a>
                 </li>
-
+                <li class="nav-link" id="user-history">
+                    <a href="/user-history">
+                        <i class="fa-regular fa-calendar-check icon2"></i>
+                        <span class="text nav-text">History</span>
+                    </a>
+                </li>
 
 
             </ul>

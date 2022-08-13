@@ -15,8 +15,7 @@ class CheckOutHistoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         //check out history  join with  hospital, department doctor
         if (!Auth::check()) {
             return redirect()->route('login');

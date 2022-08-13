@@ -56,111 +56,97 @@
                                 <p class="mb-0">{{$healthIndex->heart_rate}}</p>
                             </li>
 
+                        </ul>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-4 d-flex align-items-center">
-
-                        <div class="form-outline datepicker w-100">
-                            <input type="date" class="form-control form-control-lg" id="birthdayDate" />
-                            <label for="birthdayDate" class="form-label">Birthday</label>
+            </div>
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">First Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{Auth::user()->first_name}}</p>
+                            </div>
                         </div>
-
-                    </div>
-                    <div class="col-md-6 mb-4">
-
-                        <h6 class="mb-2 pb-1">Gender: </h6>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                                   value="option1" checked />
-                            <label class="form-check-label" for="femaleGender">Female</label>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Last Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{Auth::user()->last_name}}</p>
+                            </div>
                         </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                                   value="option2" />
-                            <label class="form-check-label" for="maleGender">Male</label>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{Auth::user()->email}}</p>
+                            </div>
                         </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                                   value="option3" />
-                            <label class="form-check-label" for="otherGender">Other</label>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Phone</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{Auth::user()->phone}}</p>
+                            </div>
                         </div>
-
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-4 pb-2">
-
-                        <div class="form-outline">
-                            <input type="email" id="emailAddress" class="form-control form-control-lg" />
-                            <label class="form-label" for="emailAddress">Email</label>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Gender</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{Auth::user()->gender}}</p>
+                            </div>
                         </div>
-
-                    </div>
-                    <div class="col-md-6 mb-4 pb-2">
-
-                        <div class="form-outline">
-                            <input type="tel" id="phoneNumber" class="form-control form-control-lg" />
-                            <label class="form-label" for="phoneNumber" placeholder="Phone Number">Phone Number</label>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Address</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{Auth::user()->address}}</p>
+                            </div>
                         </div>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-
-                        <div class="form-outline">
-                            <input type="text" id="" class="form-control form-control-lg" />
-                            <label class="form-label" placeholder="Height" >Height</label>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6 mb-4">
-
-                        <div class="form-outline">
-                            <input type="text"  class="form-control form-control-lg" />
-                            <label class="form-label" placeholder="Weight">Weight</label>
-                        </div>
-
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 mb-4">
-
-                        <div class="form-outline">
-                            <input type="text" id="" class="form-control form-control-lg" />
-                            <label class="form-label" placeholder="Blood pressure" >Blood pressure</label>
+                    <div class="col-md-10">
+                        <div class="card mb-4 mb-md-0">
+                            <div class="card-body">
+                                <p class="mb-4"><span class="text-primary font-italic me-1">Yours against the standard</span>
+                                </p>
+                                <p class="mb-1" style="font-size: .77rem;">Height</p>
+                                <div class="progress rounded" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="mt-4 mb-1" style="font-size: .77rem;">Weight</p>
+                                <div class="progress rounded" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="mt-4 mb-1" style="font-size: .77rem;">Blood pressure</p>
+                                <div class="progress rounded" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="mt-4 mb-1" style="font-size: .77rem;"> Heartbeat</p>
+                                <div class="progress rounded" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 96%" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="mt-4 mb-1" style="font-size: .77rem;">Overview</p>
+                                <div class="progress rounded mb-2" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
-                    <div class="col-md-6 mb-4">
-
-                        <div class="form-outline">
-                            <input type="text"  class="form-control form-control-lg" />
-                            <label class="form-label" placeholder="Heartbeat">Heartbeat</label>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="">Avatar</label>
-                    <input type="file" class="form-control" id="" placeholder="Avatar">
-                </div>
-                <div class="form-group">
-                    <label for="">History of drug allergy</label>
-                    <textarea class="form-control" id="" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="">Medical history</label>
-                    <textarea class="form-control" id="" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
 
                 </div>
             </div>
