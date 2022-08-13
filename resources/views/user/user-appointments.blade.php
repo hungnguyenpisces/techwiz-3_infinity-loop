@@ -51,7 +51,7 @@
                                 <td>
                                     @if($appointment->status == 'pending')
                                         <span class="text-bg-warning badge badge-warning">{{ $appointment->status }}</span>
-                                    @elseif($appointment->status == 'approved')
+                                    @elseif($appointment->status == 'Accepted')
                                         <span class="text-bg-success badge badge-success">{{ $appointment->status }}</span>
                                     @elseif($appointment->status == 'Cancelled')
                                         <span class="text-bg-danger badge badge-danger">{{ $appointment->status }}</span>
