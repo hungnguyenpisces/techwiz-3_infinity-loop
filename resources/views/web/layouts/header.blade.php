@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="right-content">
+                        <div class="right-content d-flex">
                             <div class="login-button">
                                 @if(Auth::check())
                                 <ul class="navbar-nav ms-auto">
@@ -43,12 +43,27 @@
                                 @endif
                             </div>
                             @if(Auth::check())
-                            <div class="top-social">
+                            <div class="top-social navbar-nav ms-auto" style="top: 0px;">
                                 <ul>
-                                    <li><a href="javascript:void(0)"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
+                                    <!-- <li><a href="javascript:void(0)"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
                                             <span class="badge rounded-pill bg-danger">
                                                 1
                                                 <span class="visually-hidden">unread messages</span></a></li>
+
+                                                <li class="nav-item"> -->
+                                    <li class="nav-item d-flex">
+                                        <a style="padding: 0" class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
+                                            <span class="badge rounded-pill bg-danger">
+                                                1
+                                                <span class="visually-hidden">unread messages</span></a>
+                                        <ul class="sub-menu collapse">
+                                            <li class="nav-item-customize">
+                                                <span>12:00<strong>Wednesday</strong></span>
+                                                <a href="#" class="text-success">Musculoskeletal</a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
                                 </ul>
                             </div>
                             @endif

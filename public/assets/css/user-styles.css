@@ -42,7 +42,7 @@ body.dark{
     width: 300ox;
     background: var(--sidebar-color);
     transition: var(--tran-05);
-    z-index: 100;  
+    z-index: 1;  
 }
 .sidebar.close{
     width: 88px;
@@ -85,10 +85,11 @@ li.nax-link a{
 }
 
 .sidebar .text{
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: bold;
     white-space: nowrap;
     opacity: 1;
+    color: #006838;
 }
 .sidebar.close .text{
     opacity: 0;
@@ -100,8 +101,9 @@ li.nax-link a{
 }
 
 header .image-text {
-    width: 250px;
+    width: 300px;
     top: 50px;
+    text-align: center;
 }
 .sidebar header .image-text{
     display: flex;
@@ -110,6 +112,7 @@ header .image-text {
 .sidebar header .logo-text{
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 header .image-text .name {
     margin-top: 2px;
@@ -137,10 +140,10 @@ header .image-text .profession{
 .sidebar header .toggle{
     position: absolute;
     top: 50%;
-    right: -25px;
+    right: -14px;
     transform: translateY(-50%) rotate(180deg);
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     background-color:#006838;
     color: var(--sidebar-color);
     border-radius: 50%;
@@ -206,13 +209,15 @@ body.dark .sidebar header .toggle{
     font-size: 24px;
 }
 
-
-.sidebar li a .icon {
-    width: 50px;
+.image span {
+    font-size: 20px;
 }
 
-.sidebar li .icon2 {
-    color: white;
+ .icon2 {
+    width: 50px;
+    color: #006838;
+    font-size: 30px;
+    margin-left: 14px;
 }
 
 .sidebar li  span {
@@ -226,6 +231,7 @@ body.dark .sidebar header .toggle{
 .sidebar li:hover {
     background-color: white;
 }
+
 
 
 
@@ -314,9 +320,10 @@ body.dark .switch::before{
     width: calc(100% - 250px);
     background-color: var(--body-color);
     transition: var(--tran-05);
+    z-index: -2;
 }
 .home .text{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 500;
     color: var(--text-color);
     padding: 12px 60px;
@@ -431,7 +438,9 @@ ul.menu-links li i {
 	background-color: #fff;
 	font-size: 15px;
 }
-
+.image-text {
+    padding-top: 100px;
+}
 .form-head {
     /* -webkit-box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); */
 	/* box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); */
@@ -439,10 +448,11 @@ ul.menu-links li i {
 }
 
 .sidebar {
-    /* -webkit-box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); 
-	box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); */
+    -webkit-box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11); 
+	box-shadow: 0 1px 30px 0 rgba(32, 32, 32, 0.11);
     position: fixed;
 
+    z-index:-1;
 }
 
 /* user header css */

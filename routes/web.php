@@ -71,3 +71,21 @@ Route::get('/hospitalsearch', function () {
 Route::get('/test', function () {
     return view('web.home');
 });
+
+Route::get('/user-bmi', function () {
+    return view('user.user-bmi');
+});
+
+Route::get('/user-history', function () {
+    return view('web.home');
+});
+
+Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
+
+Route::get('/user-profile', function () {
+    return view('user.user-profile');
+});
+
+Route::get('/user-history', function () {
+    return view('user.user-history');
+});

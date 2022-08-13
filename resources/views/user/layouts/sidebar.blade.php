@@ -1,16 +1,15 @@
 <div class="sidebar close">
     <header>
         <div class="image-text">
-            <span class="image"style="margin-left: 14px;">
-                <i class="fa-solid fa-user icon"></i>
+            <span class="image">
+                <i class="fa-solid fa-home icon2"></i>
             </span>
-
             <div class="text logo-text">
-                <span class="name">Username</span>
-                <span class="profession">Ho va ten</span>
+                <span class="name">BACK TO HOME</span>
             </div>
+
         </div>
-        <span class="toggle"> <i class="fa-solid fa-xl fa-arrow-right-from-bracket"></i></span>
+        <span class="toggle mt-5"> <i style="font-size: 14" class="fa-solid fa-xl fa-arrow-right-from-bracket"></i></span>
     </header>
 
     <div class="menu-bar">
@@ -22,8 +21,8 @@
             <ul class="menu-links">
                 <li class="nav-link" id="user">
                     <a href="/user">
-                        <i class="fa-solid  fa-user icon2"></i>
-                        <span class="text nav-text">Dashboard</span>
+                        <i class="fa-solid fa-user icon2"></i>
+                        <span class="text nav-text">Profile</span>
                     </a>
                 </li>
 
@@ -57,15 +56,7 @@
 
             </ul>
         </div>
-
         <div class="bottom-content">
-            <li class="">
-                <a href="#">
-                    <i class="fa-solid fa-arrow-right-from-bracket icon2"></i>
-                    <span class="text nav-text">Logout</span>
-                </a>
-            </li>
-
             <li class="mode">
                 <span class="mode-text text">Dark mode</span>
                 <div class="toggle-switch">
