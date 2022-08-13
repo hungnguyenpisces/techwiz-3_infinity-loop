@@ -40,19 +40,25 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-        $amt = new Appointment();
-        $amt->user_id = $user->id;
-        $amt->department_id = $request->department_id;
-        $amt->hospital_id = $request->hospital_id;
-        $amt->self_check_symptom = $request->self_check_symptom;
-        $amt->time = $request->time;
-        $amt->date = $request->date;
-        $amt->status = 'pending';
-        $amt->save();
-
-        $request->session()->flash('success', 'Appointment created sucessfully.');
-        return view('web.success');
+        $epoch_time_curent = time();
+        $epoch_time_appointment = strtotime($request->date . ' ' . $request->time);
+        
+        if ($epoch_time_appointment < $epoch_time_curent) {
+            return redirect()->back()->with('warning', 'Date and time must be greater than current date and time.');
+        } else {
+            $user = Auth::user();
+            $appointment = new Appointment();
+            $appointment->user_id = $user->id;
+            $appointment->hospital_id = $request->hospital_id;
+            $appointment->department_id = $request->department_id;
+            $appointment->self_check_symptom = $request->self_check_symptom;
+            $appointment->date = $request->date;
+            $appointment->time = $request->time;
+            $appointment->status = 'Pending';
+            $appointment->save();
+            $request->session()->flash('success', 'Appointment successfully created.');
+            return view('web.success');
+        }
     }
 
     /**
