@@ -1,7 +1,7 @@
 @extends('user.layouts._master')
 
 @section('content')
-<h3 style="max-width: 90%; margin: auto">Your health line graph</h3>
+<h3 style="max-width: 90%; margin: auto" class="mt-5 text-center">Your health line graph</h3>
 <canvas id="myChart" style="min-width: 300px ;max-width: 90%; margin: auto"></canvas>
 @endsection
 @section('extraJs')
