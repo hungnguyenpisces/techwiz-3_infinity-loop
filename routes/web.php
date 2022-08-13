@@ -24,7 +24,6 @@ Route::get('/service', [HomeController::class, 'service'])->name('service');
 Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contactus', [HomeController::class, 'contact_us'])->name('contactus');
-Route::resource('/checkouthistory', CheckOutHistoryController::class);
 
 Route::get('/register', [AuthController::class, 'register'])->name('register.show');
 Route::post('/register', [AuthController::class, 'processRegister'])->name('register.perform');
@@ -56,7 +55,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/appointment/{id}/edit', [AppointmentController::class, 'edit'])->name('appointment.edit');
     Route::put('/appointment/{id}', [AppointmentController::class, 'update'])->name('appointment.update');
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
-    Route::get("/user-history", [AppointmentController::class, 'userHistory'])->name('user-history');
+    
+    Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
 
     Route::resource('/comment', CommentController::class);
 
@@ -77,19 +77,12 @@ Route::get('/user-bmi', function () {
     return view('user.user-bmi');
 });
 
-Route::get('/user-history', function () {
-    return view('web.home');
-});
-
 Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
 Route::get('/user-profile', function () {
     return view('user.user-profile');
 });
 
-Route::get('/user-history', function () {
-    return view('user.user-history');
-});
 
 Route::get('/test2', function () {
     return view('web.notification');
