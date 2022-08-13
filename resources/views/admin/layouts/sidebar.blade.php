@@ -16,7 +16,7 @@
                 <h5>Today Report</h5>
                 <ul>
                     <li><span>16<i>Patient</i></span></li>
-                    <li><span>20<i>Panding</i></span></li>
+                    <li><span>20<i>Pending</i></span></li>
                     <li><span>04<i>Visit</i></span></li>
                 </ul>
             </div>
