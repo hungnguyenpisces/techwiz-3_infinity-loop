@@ -1,94 +1,40 @@
-<div class="sidebar close">
-    <header>
-        <div class="image-text">
-            <span class="image">
-            <i class="fa-light fa-user icon"></i>
-            </span>
+<div class="container">
+    <div class="row flex-nowrap">
+        <div class="bg-secondary">
+            <div class="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100">
 
-            <div class="text logo-text">
-                <span class="name">Username</span>
-                <span class="profession">Ho va ten</span>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+
+                    <li class="nav-item">
+                        <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <i class="fa-solid fa-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <i class="fa-solid fa-id-card"></i> <span class="ms-1 d-none d-sm-inline">Profile</span> </a>
+
+                    </li>
+                    <li>
+                        <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <i class="fa-solid fa-file-pen"></i> <span class="ms-1 d-none d-sm-inline">Update Health Information</span></a>
+                    </li>
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+                            <i class="fa-solid fa-person-arrow-up-from-line"></i> <span class="ms-1 d-none d-sm-inline">BMI</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu3" data-bs-toggle="collapse" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <i class="fa-solid fa-chart-line"></i> <span class="ms-1 d-none d-sm-inline">Chart</span> </a>
+                    </li>
+
+                </ul>
+                <hr>
+
             </div>
-        </div>
-        <span class="toggle"> <i class="fa-solid fa-arrow-right-from-bracket"></i></span>
-    </header>
-
-    <div class="menu-bar">
-        <div class="menu">
-            <div class="search-box">
-              
-            </div>
-
-            <ul class="menu-links">
-                <li class="nav-link" id="user">
-                    <a href="/user">
-                    <i class="fa-light fa-user icon"></i>
-                        <span class="text nav-text">Dashboard</span>
-                    </a>
-                </li>
-
-                <li class="nav-link" id="user-profile">
-                    <a href="/health-index">
-                        <i class="fa-light fa-file-waveform icon"></i>
-                        <span class="text nav-text">Health profile</span>
-                    </a>
-                </li>
-
-                <li class="nav-link" id="user-bmi">
-                    <a href="/user-bmi">
-                        <i class="fa-light fa-calculator icon"></i>
-                        <span class="text nav-text">BMI</span>
-                    </a>
-                </li>
-
-                <li class="nav-link" id="user-chart">
-                    <a href="/user-chart">
-                        <i class="fa-regular fa-chart-line"></i>
-                        <span class="text nav-text">Health charts</span>
-                    </a>
-                </li>
-
-                <li class="nav-link" id="user-history">
-                    <a href="/user-history">
-                        <i class="fa-regular fa-calendar-check"></i>
-                        <span class="text nav-text">Appointments</span>
-                    </a>
-                </li>
-
-                <li class="nav-link">
-                    <a href="#">
-                        <i class="fa-light fa-bars icon"></i>
-                        <span class="text nav-text">Setting</span>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-
-        <div class="bottom-content">
-            <li class="">
-                <a href="#">
-                    <i class="fa-light fa-bars icon"></i>
-                    <span class="text nav-text">Logout</span>
-                </a>
-            </li>
-
-            <li class="mode">
-                <div class="sun-moon">
-                    <i class="fa-light fa-sun icon sun"></i>
-                    <i class="fa-light fa-moon icon moon"></i>
-                </div>
-                <span class="mode-text text">Dark mode</span>
-
-                <div class="toggle-switch">
-                    <span class="switch"></span>
-                </div>
-            </li>
-
         </div>
     </div>
 </div>
-
-<section class="home">
-    @yield('content')
-</section>
