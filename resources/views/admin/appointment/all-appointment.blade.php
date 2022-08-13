@@ -73,8 +73,8 @@ Appointments Management
                                     <td>{{ $appointment->time }}</td>
                                     <td>{{ $appointment->status }}</td>
                                     <td>
-                                        <a href="{{ url('admin.appointment.edit', $appointment->id) }}" class="btn btn-primary waves-effect">Edit</a>
-                                        <a href="{{ url('admin.appointment.delete', $appointment->id) }}" class="btn btn-danger waves-effect">Delete</a>
+                                        <a href="{{ url('admin.appointment.edit', $appointment->id) }}" class="btn btn-primary waves-effect btn-sm">Edit</a>
+                                        <a href="{{ url('admin.appointment.delete', $appointment->id) }}" class="btn btn-danger waves-effect btn-sm">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
