@@ -56,8 +56,8 @@
 				.scrollIntoView({ behavior: 'smooth', offsetTop: 1 - 60 });
 		});
 	});
-	let navbarToggler = document.querySelector('.mobile-menu-btn');
-	navbarToggler.addEventListener('click', function () {
-		navbarToggler.classList.toggle('active');
-	});
+	// let navbarToggler = document.querySelector('.mobile-menu-btn');
+	// navbarToggler.addEventListener('click', function () {
+	// 	navbarToggler.classList.toggle('active');
+	// });
 })();

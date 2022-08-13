@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Hospital;
+use App\Models\Hospital;
 use Illuminate\Http\Request;
 
 class HospitalController extends Controller

@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('appointment', function (Blueprint $table) {
+        Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->bigInteger('department_id');
+            $table->string('user_id');
+            $table->string('department_id');
+            $table->string('hospital_id');
+            $table->string('doctor_id')->nullable();
             $table->string('self_check_symptom');
-            $table->string('time');
             $table->string('date');
+            $table->string('time');
             $table->string('status');
             $table->timestamps();
         });

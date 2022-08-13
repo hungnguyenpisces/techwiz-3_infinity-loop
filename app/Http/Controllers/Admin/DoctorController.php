@@ -16,7 +16,7 @@ class DoctorController extends Controller
     public function index()
     {
         $lsDoc = Doctor::all();
-        return view('doctor.index')->with('lsDoc', $lsDoc);
+        return view('admin.doctor.index')->with('lsDoc', $lsDoc);
     }
 
     /**
@@ -26,7 +26,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('doctor.create');
+        return view('admin.doctor.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class DoctorController extends Controller
         $doc->save();
 
         $request->session()->flash('success', 'Doctor created sucessfully.');
-        return redirect(route('doctor.index'));
+        return redirect(route('admin.doctor.index'));
     }
 
     /**
@@ -75,7 +75,7 @@ class DoctorController extends Controller
     public function edit($id)
     {
         $doc = Doctor::find($id);
-        return view('doctor.edit')->with('doc', $doc);
+        return view('admin.doctor.edit')->with('doc', $doc);
     }
 
     /**
@@ -101,7 +101,7 @@ class DoctorController extends Controller
         $doc->save();
 
         $request->session()->flash('success', 'Doctor updated sucessfully.');
-        return redirect(route('doctor.index'));
+        return redirect(route('admin.doctor.index'));
     }
 
     /**
@@ -119,6 +119,6 @@ class DoctorController extends Controller
             $doc->delete();
             $request->session()->flash('success', 'Doctor deleted sucessfully.');
         }
-        return redirect(route('doctor.index'));
+        return redirect(route('admin.doctor.index'));
     }
 }

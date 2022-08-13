@@ -1,16 +1,6 @@
 @extends('web.layouts._master')
 
-    <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Hopital search</title>
-    <link rel="icon" type="image/x-icon" href="{!! url('assets/img/favicon.png') !!}" />
 
     @include('web.layouts.style')
 
@@ -27,7 +17,7 @@
                             <div class="newsletter-form input">
                                 <h2 class="wow fadeInUp">Search Hospital</h2>
                                 <form action="#" method="get" target="_blank" class="newsletter-form">
-                                    <input style="height: 50px; width: 70%" name="EMAIL" placeholder="     What are you looking for?" type="email">
+                                    <input style="height: 50px; width: 70%" name="searcher" placeholder="     What are you looking for?" type="text">
                                     <label class="button">
                                         <button class="btn">Search<span class="dir-part"></span></button>
                                     </label>
@@ -45,10 +35,10 @@
                             <div class="image">
                                 <img src="assets/images/doctors/detail-img.jpg" alt="#">
                                 <ul class="social">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                                 </ul>
                             </div>
                             <div class="content">

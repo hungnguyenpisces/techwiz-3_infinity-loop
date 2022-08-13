@@ -38,14 +38,14 @@
 
     <ul id="f-menu" class="mfbc-br mfb-zoomin" data-mfb-toggle="hover">
         <li class="mfbc_wrap">
-            <a href="javascript:void(0);" class="mfbcb-main g-bg-cyan">
+            <a href="#" class="mfbcb-main g-bg-cyan">
                 <i class="mfbcm-icon-resting zmdi zmdi-plus"></i>
                 <i class="mfbcm-icon-active zmdi zmdi-close"></i>
             </a>
             <ul class="mfbc_list">
-                <li><a href="#" data-mfb-label="Doctor Schedule" class="mfb-child bg-blue"><i class="zmdi zmdi-calendar mfbc_icon"></i></a></li>
-                <li><a href="#" data-mfb-label="Patients List" class="mfb-child bg-orange"><i class="zmdi zmdi-account-o mfbc_icon"></i></a></li>
-                <li><a href="#" data-mfb-label="Payments" class="mfb-child bg-purple"><i class="zmdi zmdi-balance-wallet mfbc_icon"></i></a></li>
+                <li><a href="doctor-schedule" data-mfb-label="Doctor Schedule" class="mfb-child bg-blue"><i class="zmdi zmdi-calendar mfbc_icon"></i></a></li>
+                <li><a href="patient" data-mfb-label="Patients List" class="mfb-child bg-orange"><i class="zmdi zmdi-account-o mfbc_icon"></i></a></li>
+                <li><a href="payment" data-mfb-label="Payments" class="mfb-child bg-purple"><i class="zmdi zmdi-balance-wallet mfbc_icon"></i></a></li>
             </ul>
         </li>
     </ul>

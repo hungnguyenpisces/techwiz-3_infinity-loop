@@ -22,33 +22,35 @@
     <div class="d-flex">
         @include('user.layouts.sidebar')
     </div>
+
+    @include('user.layouts.footer')
     @include('user.layouts.script')
     @yield('extraJs')
 
-    <script>
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('div.sidebar'),
-            toggle = body.querySelector(".toggle"),
-            searchBtn = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
+<script>
+    const body = document.querySelector('body'),
+        sidebar = body.querySelector('div.sidebar'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
 
 
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
+    toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    })
 
-        searchBtn.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
+    searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+    })
 
-        modeSwitch.addEventListener("click", () => {
-            body.classList.toggle("dark");
+    modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
 
-            if (body.classList.contains("dark")) {
-                modeText.innerText = "Light mode";
-            } else {
-                modeText.innerText = "Dark mode";
+        if (body.classList.contains("dark")) {
+            modeText.innerText = "Light mode";
+        } else {
+            modeText.innerText = "Dark mode";
 
             }
         });
@@ -58,6 +60,7 @@
             const _id = url.slice(index);
             const li = document.getElementById(_id);
             li.style.backgroundColor = '#88c250';
+            li.style.color = "white";
         }
     </script>
 
