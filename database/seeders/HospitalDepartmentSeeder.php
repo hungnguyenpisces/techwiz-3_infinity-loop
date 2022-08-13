@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\HospitalDepartment;
+use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,33 +16,15 @@ class HospitalDepartmentSeeder extends Seeder
      */
     public function run()
     {
-        // hospital_id, department_id
-        $hospital_department = [
-            ['1', '1'],
-            ['1', '2'],
-            ['1', '3'],
-            ['1', '4'],
-            ['1', '5'],
-            ['2', '1'],
-            ['2', '2'],
-            ['2', '3'],
-            ['2', '4'],
-            ['2', '5'],
-            ['3', '1'],
-            ['3', '2'],
-            ['3', '3'],
-            ['3', '4'],
-            ['3', '5'],
-            ['4', '1'],
-            ['4', '2'],
-            ['4', '3'],
-            ['4', '4'],
-            ['4', '5'],
-        ];
-        foreach ($hospital_department as $hd) {
+        // hospital_id random from 1 to 10
+        // department_id random from 1 to 10
+
+        $faker = Factory::create();
+        $limit = 200;
+        for ($i = 0; $i < $limit; $i++) {
             HospitalDepartment::create([
-                'hospital_id' => $hd[0],
-                'department_id' => $hd[1],
+                'hospital_id' => $faker->numberBetween(1, 10),
+                'department_id' => $faker->numberBetween(1, 10),
             ]);
         }
     }
