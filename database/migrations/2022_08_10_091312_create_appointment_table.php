@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('department_id');
             $table->string('hospital_id');
+            $table->string('doctor_id')->nullable();
             $table->string('self_check_symptom');
             $table->string('date');
             $table->string('time');

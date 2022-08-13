@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CheckOutHistory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckOutHistoryController extends Controller
 {
@@ -14,9 +15,19 @@ class CheckOutHistoryController extends Controller
      */
     public function index()
     {
-
-        $lsCoh = CheckOutHistory::all();
-        return view('web.checkout.index')->with('lsCoh', $lsCoh);
+        //check out history  join with  hospital, department doctor
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        } else {
+            $user = Auth::user();
+            $check_out_histories = CheckOutHistory::join('hospitals', 'check_out_histories.hospital_id', '=', 'hospitals.id')
+                ->join('departments', 'check_out_histories.department_id', '=', 'departments.id')
+                ->join('doctors', 'check_out_histories.doctor_id', '=', 'doctors.id')
+                ->select('check_out_histories.*', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
+                ->where('check_out_histories.users_id', $user->id)
+                ->get();
+            return view('user.user-history', compact('check_out_histories'));
+        }
     }
 
     /**
@@ -105,7 +116,7 @@ class CheckOutHistoryController extends Controller
     public function destroy($id, Request $request)
     {
         $coh = CheckOutHistory::find($id);
-        if($coh == null) {
+        if ($coh == null) {
             $request->session()->flash('danger', 'History not found.');
         } else {
             $coh->delete();
