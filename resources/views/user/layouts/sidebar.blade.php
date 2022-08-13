@@ -1,40 +1,73 @@
-<div class="container">
-    <div class="row flex-nowrap">
-        <div class="bg-secondary">
-            <div class="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100">
+<div class="sidebar close">
+    <header>
+        <div class="image-text">
+            <span class="image">
+                <i class="fa-solid fa-home icon2"></i>
+            </span>
+            <div class="text logo-text">
+                <span class="name">BACK TO HOME</span>
+            </div>
 
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+        </div>
+        <span class="toggle mt-5"> <i style="font-size: 14" class="fa-solid fa-xl fa-arrow-right-from-bracket"></i></span>
+    </header>
 
-                    <li class="nav-item">
-                        <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                            <i class="fa-solid fa-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                            <i class="fa-solid fa-id-card"></i> <span class="ms-1 d-none d-sm-inline">Profile</span> </a>
-
-                    </li>
-                    <li>
-                        <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                            <i class="fa-solid fa-file-pen"></i> <span class="ms-1 d-none d-sm-inline">Update Health Information</span></a>
-                    </li>
-                    <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
-                            <i class="fa-solid fa-person-arrow-up-from-line"></i> <span class="ms-1 d-none d-sm-inline">BMI</span></a>
-                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                            <i class="fa-solid fa-chart-line"></i> <span class="ms-1 d-none d-sm-inline">Chart</span> </a>
-                    </li>
-
-                </ul>
-                <hr>
+    <div class="menu-bar">
+        <div class="menu">
+            <div class="search-box">
 
             </div>
+
+            <ul class="menu-links">
+                <li class="nav-link" id="user">
+                    <a href="/user">
+                        <i class="fa-solid fa-user icon2"></i>
+                        <span class="text nav-text">Profile</span>
+                    </a>
+                </li>
+
+                <li class="nav-link" id="user-bmi">
+                    <a href="/user-bmi">
+                        <i class="fa-solid fa-xl fa-person icon2"></i>
+                        <span class="text nav-text">Your BMI</span>
+                    </a>
+                </li>
+
+                <li class="nav-link" id="user-chart">
+                    <a href="/user-chart">
+                        <i class="fa-solid fa-chart-line icon2"></i>
+                        <span class="text nav-text">Health charts</span>
+                    </a>
+                </li>
+
+                <li class="nav-link" id="user-history">
+                    <a href="/user-history">
+                        <i class="fa-regular fa-calendar-check icon2"></i>
+                        <span class="text nav-text">Appointments</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class="fa-solid fa-bars icon2"></i>
+                        <span class="text nav-text">Setting</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="bottom-content">
+            <li class="mode">
+                <span class="mode-text text">Dark mode</span>
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+
         </div>
     </div>
 </div>
+
+<section class="home">
+    @yield('content')
+</section>
