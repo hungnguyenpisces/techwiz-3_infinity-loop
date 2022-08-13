@@ -19,9 +19,8 @@
 <body>
     @include('user.layouts.header')
 
-    <div class="d-flex">
-        @include('user.layouts.sidebar')
-    </div>
+    @include('user.layouts.sidebar')
+    
     @include('user.layouts.script')
     @yield('extraJs')
 

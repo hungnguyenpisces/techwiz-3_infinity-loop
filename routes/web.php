@@ -87,3 +87,7 @@ Route::get('/user-profile', function () {
 Route::get('/test2', function () {
     return view('web.notification');
 });
+
+Route::get('/test3', function() {
+    return view('user.user-history-details');
+});
