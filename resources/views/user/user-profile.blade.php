@@ -41,19 +41,19 @@
                         <ul class="list-group list-group-flush rounded-3">
                             <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                                 <p>Height</p>
-                                <p class="mb-0">180cm</p>
+                                <p class="mb-0">{{$healthIndex->height}} cm</p>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                                 <p>Weight</p>
-                                <p class="mb-0">65kg</p>
+                                <p class="mb-0">{{$healthIndex->weight}} kg</p>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                                 <p>Blood pressure</p>
-                                <p class="mb-0">120</p>
+                                <p class="mb-0">{{$healthIndex->blood_pressure}}</p>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                                 <p>Heartbeat</p>
-                                <p class="mb-0">80</p>
+                                <p class="mb-0">{{$healthIndex->heart_rate}}</p>
                             </li>
 
                         </ul>

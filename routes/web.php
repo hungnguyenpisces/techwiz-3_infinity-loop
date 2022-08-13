@@ -100,9 +100,8 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/user-bmi', function () {
     return view('user.user-bmi');
 });
-Route::get('/user', function () {
-    return view('user.user-profile');
-});
+Route::get('/user', [HealthIndexController::class, 'index']);
+
 Route::get('/user-health', function () {
     return view('user.user-health');
 });
@@ -113,8 +112,6 @@ Route::get('/user-history', function () {
     return view('user.user-history');
 });
 Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
-
-
 
 Route::get('/departments', function () {
     return view('web.departments');
