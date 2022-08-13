@@ -15,16 +15,31 @@ class DepartmentSeeder extends Seeder
      */
     public function run()
     {
-        $department = [
-            'Khoa thần kinh',
-            'Khoa tim mạch',
-            'Khoa xương khớp',
-            'Khoa nội tiết',
-            'Khoa Nhi',
+        $departments = [
+            'Anesthetics',
+            'Breast Screening',
+            'Cardiology',
+            'Ear, nose and throat (ENT)',
+            'Elderly services department',
+            'Gastroenterology',
+            'General Surgery',
+            'Gynecology',
+            'Hematology',
+            'Neonatal Unit',
+            'Neurology',
+            'Nutrition and dietetics',
+            'Obstetrics and gynecology units',
+            'Oncology',
+            'Ophthalmology',
+            'Orthopedics',
+            'Physiotherapy',
+            'Renal Unit',
+            'Sexual Health',
+            'Urology',
         ];
 
-        foreach ($department as $dp) {
-            Department::create(['name' => $dp]);
+        foreach ($departments as $department) {
+            Department::create(['name' => $department]);
         }
     }
 }

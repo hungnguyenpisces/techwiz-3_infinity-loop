@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AppointmentManageController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
@@ -48,6 +49,8 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::get('/permissions/{id}/edit', [PermissionController::class, 'edit'])->name('permissions.edit');
     Route::put('/permissions/{id}', [PermissionController::class, 'update'])->name('permissions.update');
     Route::delete('/permissions/{id}', [PermissionController::class, 'destroy'])->name('permissions.destroy');
+
+    Route::get('/all-appointment', AppointmentManageController::class . '@index')->name('all-appointment.index');
 
 
     Route::resource('/doctor',DoctorController::class);
