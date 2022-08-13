@@ -5,8 +5,7 @@
 <!-- extra css -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
 
-<link href="{!! url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css') !!}" rel="stylesheet">
-<!-- <link rel="stylesheet" href="{!! url('assets/css/admin-style.css') !!}"> -->
+<link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 <!-- end extra css -->
 @endsection
 
@@ -28,7 +27,7 @@
                         </li>
                     </ul>
                 </div>
-                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                <table class="table table-bordered table-striped table-hover js-basic-example dataTable" id="dataTable">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -153,12 +152,13 @@
 @section('extraJs')
 <!-- extraJs -->
 
-<script src="{!! url('assets/bundles/libscripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/bundles/vendorscripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/bundles/mainscripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/bundles/datatablescripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/js/morphing.js') !!}"></script>
-<script src="{!! url('assets/js/pages/tables/jquery-datatable.js') !!}"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
+    });
+</script>
 <!-- end extraJs -->
 @endsection

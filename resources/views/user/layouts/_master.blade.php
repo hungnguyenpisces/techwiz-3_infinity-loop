@@ -19,11 +19,13 @@
 <body>
 @include('user.layouts.header')
 
-<div class="d-flex">
-    @include('user.layouts.sidebar')
-</div>
-@include('user.layouts.script')
-@yield('extraJs')
+    <div class="d-flex">
+        @include('user.layouts.sidebar')
+    </div>
+
+    @include('user.layouts.footer')
+    @include('user.layouts.script')
+    @yield('extraJs')
 
 <script>
     const body = document.querySelector('body'),
