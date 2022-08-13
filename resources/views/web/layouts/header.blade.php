@@ -45,12 +45,7 @@
                             @if(Auth::check())
                             <div class="top-social navbar-nav ms-auto" style="top: 0px;">
                                 <ul>
-                                    <!-- <li><a href="javascript:void(0)"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
-                                            <span class="badge rounded-pill bg-danger">
-                                                1
-                                                <span class="visually-hidden">unread messages</span></a></li>
 
-                                                <li class="nav-item"> -->
                                     <li class="nav-item d-flex">
                                         <a style="padding: 0" class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
                                             <span class="badge rounded-pill bg-danger">
@@ -80,40 +75,23 @@
                 <div class="nav-inner">
 
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="/">
                             <img src="/assets/img/favicon.png" alt="Logo" style="height: 40px; width: 40px">
                         </a>
-                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="toggler-icon"></span>
-                            <span class="toggler-icon"></span>
-                            <span class="toggler-icon"></span>
-                        </button>
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ms-auto">
+
                                 <li class="nav-item">
-                                    <a class="page-scroll active dd-menu collapsed" href="/home" data-bs-toggle="collapse" data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Home</a>
+                                    <a href="/" aria-label="Toggle navigation">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
-                                    <ul class="sub-menu collapse" id="submenu-1-3">
-
-                                        @foreach($hospitals as $hosp)
-                                        <li class="nav-item"><a href="{{route('hospital.show',$hosp->id)}}">{{$hosp->name}}</a></li>
-                                        @endforeach
-
-                                    </ul>
+                                    <a href="/hospital" aria-label="Toggle navigation">Hospital</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Department</a>
-                                    <ul class="sub-menu collapse" id="submenu-1-3">
-                                        @foreach($departments as $dep)
-                                        <li class="nav-item"><a href="{{route('department.show',$dep->id)}}">{{$dep->name}}</a></li>
-                                        @endforeach
-                                    </ul>
-
+                                    <a href="/departments" aria-label="Toggle navigation">Departments</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Doctors</a>
+                                    <a href="/doctors" aria-label="Toggle navigation">Doctors</a>
                                 </li>
 
                                 <li class="nav-item">

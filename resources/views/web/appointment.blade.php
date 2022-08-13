@@ -21,7 +21,7 @@
                     <h1 class="page-title">Appointment</h1>
                 </div>
                 <ul class="breadcrumb-nav">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>appointment</li>
                 </ul>
             </div>

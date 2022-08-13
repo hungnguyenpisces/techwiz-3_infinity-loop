@@ -28,10 +28,10 @@
                             <img src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" alt="avatar"
                                  class="rounded-circle img-fluid" style="width: 150px;">
                             <h5 class="my-3">John Smith</h5>
-                            <p class="text-muted mb-1">Full Stack Developer</p>
+                            <p class="text-muted mb-1">User Name</p>
                             <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <button type="button" class="btn btn-primary">Edit Profile</button>
+                            <div class="button add-list-button">
+                                <a class="btn" href="/user-update">Edit Profile</a>
                             </div>
                         </div>
                     </div>
