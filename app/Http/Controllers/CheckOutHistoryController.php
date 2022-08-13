@@ -14,6 +14,7 @@ class CheckOutHistoryController extends Controller
      */
     public function index()
     {
+
         $lsCoh = CheckOutHistory::all();
         return view('web.checkout.index')->with('lsCoh', $lsCoh);
     }

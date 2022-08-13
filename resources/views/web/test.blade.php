@@ -1,123 +1,52 @@
-@extends('web.layouts._master')
-
-@section('title')
-@endsection
-
-@section('extraCss')
-    <!-- extra css -->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-
-
-
-    <!-- end extra css -->
-@endsection
-
-@section('content')
-    {{-----content-----}}
-    <div class="breadcrumbs overlay">
+<li class="nav-item dropdown position-static">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+       data-mdb-toggle="dropdown" aria-expanded="false">
+        Mega menu
+    </a>
+    <!-- Dropdown menu -->
+    <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown" style="
+                          border-top-left-radius: 0;
+                          border-top-right-radius: 0;
+                        ">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                    <div class="breadcrumbs-content">
-                        <h1 class="page-title">Registration</h1>
+            <div class="row my-4">
+                <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="list-group list-group-flush">
+                        <a href="" class="list-group-item list-group-item-action">Lorem ipsum</a>
+                        <a href="" class="list-group-item list-group-item-action">Dolor sit</a>
+                        <a href="" class="list-group-item list-group-item-action">Amet consectetur</a>
+                        <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                        <a href="" class="list-group-item list-group-item-action">Adipisicing elit</a>
                     </div>
-                    <ul class="breadcrumb-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li>Registration</li>
-                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="list-group list-group-flush">
+                        <a href="" class="list-group-item list-group-item-action">Explicabo voluptas</a>
+                        <a href="" class="list-group-item list-group-item-action">Perspiciatis quo</a>
+                        <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                        <a href="" class="list-group-item list-group-item-action">Laudantium maiores</a>
+                        <a href="" class="list-group-item list-group-item-action">Provident dolor</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                    <div class="list-group list-group-flush">
+                        <a href="" class="list-group-item list-group-item-action">Iste quaerato</a>
+                        <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                        <a href="" class="list-group-item list-group-item-action">Est iure</a>
+                        <a href="" class="list-group-item list-group-item-action">Praesentium</a>
+                        <a href="" class="list-group-item list-group-item-action">Laboriosam</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="list-group list-group-flush">
+                        <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                        <a href="" class="list-group-item list-group-item-action">Saepe</a>
+                        <a href="" class="list-group-item list-group-item-action">Vel alias</a>
+                        <a href="" class="list-group-item list-group-item-action">Sunt doloribus</a>
+                        <a href="" class="list-group-item list-group-item-action">Cum dolores</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <section class="login registration section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
-                    <div class="form-head">
-                        <h4 class="title">Registration</h4>
-                        <form action="registration.html#!" method="post">
-                            <div class="socila-login">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <ul>
-                                            <li><a href="javascript:void(0)" class="facebook"><i
-                                                        class="lni lni-facebook-filled"></i>Import From
-                                                    Facebook</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <ul>
-                                            <li><a href="javascript:void(0)" class="google"><i
-                                                        class="lni lni-google"></i>Import From Google
-                                                    Plus</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <ul>
-                                            <li><a href="javascript:void(0)" class="instagram"><i
-                                                        class="lni lni-instagram"></i>Import From
-                                                    Instagram</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <ul>
-                                            <li><a href="javascript:void(0)" class="linkedin"><i
-                                                        class="lni lni-linkedin-original"></i>Import From Linkedin</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="alt-option">
-                                <span>Or</span>
-                            </div>
-                            <div class="form-group">
-                                <input name="password" type="text" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <input name="email" type="email" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <input name="password" type="password" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <input name="password" type="password" placeholder="Confirm Password">
-                            </div>
-                            <div class="check-and-pass">
-                                <div class="row align-items-center">
-                                    <div class="col-12">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input width-auto"
-                                                   id="exampleCheck1">
-                                            <label class="form-check-label">Agree to our <a href="javascript:void(0)">Terms
-                                                    and
-                                                    Conditions</a></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="button">
-                                <button type="submit" class="btn">Registration</button>
-                            </div>
-                            <p class="outer-link">Already have an account? <a href=""> Login Now</a>
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    {{-----end content-----}}
-@endsection
-
-@section('extraJs')
-    <!-- extraJs -->
-
-
-
-    <!-- end extraJs -->
-@endsection
+</li>

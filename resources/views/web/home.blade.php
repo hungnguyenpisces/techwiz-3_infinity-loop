@@ -38,7 +38,7 @@
                                         Infinity-Loop, our teaming has been focused on
                                         building a high-qualities medicals service by Infinity-Loop.</p>
                                     <div class="button wow fadeInLeft" data-wow-delay=".7s">
-                                        <a href="#" class="btn">Book Appointment</a>
+                                        <a href="{{route('appointment.index')}}" class="btn" style="z-index: 0;">Book Appointment</a>
                                     </div>
                                 </div>
 
@@ -66,7 +66,8 @@
                                         on
                                         building a high-qualities medicals service by Infinity-Loop.</p>
                                     <div class="button">
-                                        <a href="#" class="btn">Book Appointment</a>
+                                        <a href="{{route('appointment.index')}}" class="btn" style="z-index: 0;">Book Appointment</a>
+
                                     </div>
                                 </div>
 
@@ -94,7 +95,8 @@
                                         on
                                         building a high-qualities medicals service by Infinity-Loop.</p>
                                     <div class="button">
-                                        <a href="#" class="btn">Book Appointment</a>
+                                        <a href="{{route('appointment.index')}}" class="btn" style="z-index: 0;">Book Appointment</a>
+
                                     </div>
                                 </div>
 

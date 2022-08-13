@@ -78,8 +78,8 @@
                                     <select name="hospital_id" id="hospital">
                                         <option value="none" selected disabled>Hospital</option>
                                         <!-- $hospital -->
-                                        @foreach($hospital as $hospital)
-                                        <option value="{{$hospital->id}}">{{$hospital->name}}</option>
+                                        @foreach($hospitals as $hospitals)
+                                        <option value="{{$hospitals->id}}">{{$hospitals->name}}</option>
                                         @endforeach
 
                                     </select>
@@ -91,8 +91,8 @@
                                     <select name="department_id" id="department">
                                         <option value="none" selected disabled>Department</option>
                                         <!-- $department -->
-                                        @foreach($department as $department)
-                                        <option value="{{$department->id}}">{{$department->name}}</option>
+                                        @foreach($departments as $departments)
+                                        <option value="{{$departments->id}}">{{$departments->name}}</option>
                                         @endforeach
 
                                     </select>

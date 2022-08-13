@@ -95,16 +95,20 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
+                                    <ul class="sub-menu collapse" id="submenu-1-3">
+
+                                        @foreach($hospitals as $hosp)
+                                        <li class="nav-item"><a href="{{route('hospital.show',$hosp->id)}}">{{$hosp->name}}</a></li>
+                                        @endforeach
+
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Department</a>
                                     <ul class="sub-menu collapse" id="submenu-1-3">
-                                        <li class="nav-item"><a href="#">Musculoskeletal</a></li>
-                                        <li class="nav-item"><a href="#">Neurology</a></li>
-                                        <li class="nav-item"><a href="#">Gastroenterology</a></li>
-                                        <li class="nav-item"><a href="#">Heart</a></li>
-                                        <li class="nav-item"><a href="#">Otorhinolaryngology</a></li>
-                                        <li class="nav-item"><a href="#">Dermatology</a></li>
+                                        @foreach($departments as $dep)
+                                        <li class="nav-item"><a href="{{route('department.show',$dep->id)}}">{{$dep->name}}</a></li>
+                                        @endforeach
                                     </ul>
 
                                 </li>

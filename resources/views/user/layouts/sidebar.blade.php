@@ -2,6 +2,7 @@
     <header>
         <div class="image-text">
             <span class="image">
+                <a href="/"></a>
                 <i class="fa-solid fa-home icon2"></i>
             </span>
             <div class="text logo-text">
