@@ -17,20 +17,50 @@
 </head>
 
 <body>
+@include('user.layouts.header')
 
-    @include('user.layouts.header')
-    <div class="">
-        <div class="row">
-            <div class="col-2">
-                @include('user.layouts.sidebar')
-            </div>
-            <div class="col-10">
-                @yield('content')
-            </div>
-        </div>
-    </div>
-    @include('user.layouts.script')
-    @yield('extraJs')
+<div class="d-flex">
+    @include('user.layouts.sidebar')
+</div>
+@include('user.layouts.script')
+@yield('extraJs')
+
+<script>
+    const body = document.querySelector('body'),
+        sidebar = body.querySelector('div.sidebar'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+
+
+    toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    })
+
+    searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+    })
+
+    modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+            modeText.innerText = "Light mode";
+        } else {
+            modeText.innerText = "Dark mode";
+
+        }
+    });
+    onload = function() {
+        const url = (window.location.href);
+        const index = url.search('user');
+        const _id = url.slice(index);
+        const li = document.getElementById(_id);
+        li.style.backgroundColor = '#88c250';
+        li.style.color = "white";
+    }
+</script>
 
 </body>
 
