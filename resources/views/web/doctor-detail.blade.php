@@ -50,9 +50,9 @@
                                     <div class="single-bar">
                                         <h4>Memberships</h4>
                                         <ul class="list">
-                                            <li><a href="javascript:void(0)">British Cardiovascular Society</a></li>
-                                            <li><a href="javascript:void(0)">European Society of Cardiology</a></li>
-                                            <li><a href="javascript:void(0)">Fellow Royal Society of Medicine</a></li>
+                                            <li><a href="#">British Cardiovascular Society</a></li>
+                                            <li><a href="#">European Society of Cardiology</a></li>
+                                            <li><a href="#">Fellow Royal Society of Medicine</a></li>
                                         </ul>
                                     </div>
 
@@ -97,13 +97,13 @@
                                         <li>
                                             <ul class="social">
                                                 <li><span>Follow On:</span></li>
-                                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a>
+                                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                                <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                                <li><a href="#"><i class="lni lni-instagram"></i></a>
                                                 </li>
-                                                <li><a href="javascript:void(0)"><i class="lni lni-pinterest"></i></a>
+                                                <li><a href="#"><i class="lni lni-pinterest"></i></a>
                                                 </li>
-                                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a>
+                                                <li><a href="#"><i class="lni lni-youtube"></i></a>
                                                 </li>
                                             </ul>
                                         </li>

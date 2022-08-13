@@ -11,67 +11,63 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $hospitals = Hospital::all();
-        $departments = Department::all();
-        return view('web/index', compact('hospitals', 'departments'));
+        return view('web.index');
     }
 
 
     public function time_table()
     {
-        return view('web/timetable');
+        return view('web.timetable');
     }
 
     public function testimonial()
     {
-        return view('web/testimonial');
+        return view('web.testimonial');
     }
 
     public function project_detail()
     {
-        return view('web/projectdetail');
+        return view('web.projectdetail');
     }
 
     public function faq()
     {
-        return view('web/faq');
+        return view('web.faq');
     }
 
     public function service()
     {
-        return view('web/service');
+        return view('web.service');
     }
 
     public function service_detail()
     {
-        return view('web/servicedetail');
+        return view('web.servicedetail');
     }
 
     public function doctor()
     {
-        return view('web/doctor');
+        return view('web.doctor');
     }
 
     public function doctor_detail()
     {
-        return view('web/doctordetail');
+        return view('web.doctordetail');
     }
 
     public function blog()
     {
-        return view('web/blog');
+        return view('web.blog');
     }
 
     public function blog_detail()
     {
-        return view('web/blogdetail');
+        return view('web.blogdetail');
     }
 
     public function contact_us()
     {
-        $hospitals = Hospital::all();
-        $departments = Department::all();
-        return view('web/contactus', compact('hospitals', 'departments'));
+        return view('web.contactus');
     }
 
     public function chart()
@@ -85,5 +81,4 @@ class HomeController extends Controller
 
         return view('user/user-chart')->with('chart', $chart);
     }
-
 }

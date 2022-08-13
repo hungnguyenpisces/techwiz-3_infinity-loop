@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AppointmentNotify;
 use App\Models\Appointment;
 use App\Models\Department;
 use App\Models\Doctor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AppointmentManageController extends Controller
 {
@@ -111,7 +113,20 @@ class AppointmentManageController extends Controller
 
     public function approve($id)
     {
-        dd($id);
-        return view('admin.appointment.all-appointment');
+        //chang status to Accepted
+        $apmt = Appointment::find($id);
+        $apmt->status = 'Accepted';
+        $apmt->save();
+
+        $appointment = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.last_name as doctor_name')
+            ->where('appointments.id', $id)
+            ->first();
+
+        Mail::to('hungdevic@gmail.com')->send(new AppointmentNotify($appointment));
+        return redirect()->route('all-appointment.index')->with('success', 'Appointment has been accepted');
     }
 }

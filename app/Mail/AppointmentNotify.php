@@ -2,25 +2,26 @@
 
 namespace App\Mail;
 
+use App\Models\Appointment;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class InfoMail extends Mailable
+class AppointmentNotify extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data;
+    protected $apmt;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($a)
+    public function __construct(Appointment $param)
     {
-        $this->data = $a;
+        $this->apmt = $param;
     }
 
     /**
@@ -30,6 +31,7 @@ class InfoMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.infomail', compact('data'));
+        $appointment = $this->apmt;
+        return $this->view('mail.infomail', compact('appointment'));
     }
 }

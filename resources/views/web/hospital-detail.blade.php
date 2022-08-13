@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="button">
-                            <a href="javascript:void(0)" class="btn">More About Us</a>
+                            <a href="#" class="btn">More About Us</a>
                         </div>
                     </div>
                 </div>
@@ -134,10 +134,10 @@
                         <div class="image">
                             <img src="assets/images/doctors/doctor1.jpg" alt="#">
                             <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                             </ul>
                         </div>
                         <div class="content">
@@ -153,10 +153,10 @@
                         <div class="image">
                             <img src="assets/images/doctors/doctor2.jpg" alt="#">
                             <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                             </ul>
                         </div>
                         <div class="content">
@@ -172,10 +172,10 @@
                         <div class="image">
                             <img src="assets/images/doctors/doctor3.jpg" alt="#">
                             <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                             </ul>
                         </div>
                         <div class="content">
@@ -191,10 +191,10 @@
                         <div class="image">
                             <img src="assets/images/doctors/doctor4.jpg" alt="#">
                             <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                             </ul>
                         </div>
                         <div class="content">

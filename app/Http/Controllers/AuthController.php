@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-use App\Mail\InfoMail;
+use App\Mail\WellcomeJoinInfinityLoopTeam;
 use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
@@ -19,7 +19,7 @@ class AuthController extends Controller
         if (Auth::check()) {
             return redirect()->route('index');
         }
-        return view('web/register');
+        return view('web.register');
     }
 
     public function processRegister(RegisterRequest $request)
@@ -32,7 +32,7 @@ class AuthController extends Controller
         $user->save();
         $user->assignRole('User');
 
-        Mail::to((string)$user->email)->send(new InfoMail($user));
+        Mail::to('hungdevic@gmail.com')->send(new WellcomeJoinInfinityLoopTeam($user));
 
         auth()->login($user);
         $request->session()->flash('success', "Account successfully registered.");
@@ -44,7 +44,7 @@ class AuthController extends Controller
         if (Auth::check()) {
             return redirect()->route('index');
         }
-        return view('web/login');
+        return view('web.login');
     }
 
     public function processLogin(LoginRequest $request)

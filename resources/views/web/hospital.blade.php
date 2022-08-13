@@ -52,12 +52,12 @@
                                     available, but the majority have suffered alteration in some form, don't look believable.</p>
                                 <ul class="meta-info">
                                     <li>
-                                        <a href="javascript:void(0)"><img src="assets/images/blog/comment1.jpg" alt="#">
+                                        <a href="#"><img src="assets/images/blog/comment1.jpg" alt="#">
                                             Alice
                                             Williams</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">08 Mar 2023 </a>
+                                        <a href="#">08 Mar 2023 </a>
                                     </li>
                                 </ul>
                             </div>
@@ -82,11 +82,11 @@
                                     available, but the majority have suffered alteration in some form, don't look believable.</p>
                                 <ul class="meta-info">
                                     <li>
-                                        <a href="javascript:void(0)"><img src="assets/images/blog/comment2.jpg" alt="#"> Alrado
+                                        <a href="#"><img src="assets/images/blog/comment2.jpg" alt="#"> Alrado
                                             Deyam</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">10 Feb 2023 </a>
+                                        <a href="#">10 Feb 2023 </a>
                                     </li>
                                 </ul>
                             </div>
@@ -111,12 +111,12 @@
                                     available, but the majority have suffered alteration in some form, don't look believable.</p>
                                 <ul class="meta-info">
                                     <li>
-                                        <a href="javascript:void(0)"><img src="assets/images/blog/comment1.jpg" alt="#">
+                                        <a href="#"><img src="assets/images/blog/comment1.jpg" alt="#">
                                             Alice
                                             Williams</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">08 Mar 2023 </a>
+                                        <a href="#">08 Mar 2023 </a>
                                     </li>
                                 </ul>
                             </div>
@@ -141,11 +141,11 @@
                                     available, but the majority have suffered alteration in some form, don't look believable.</p>
                                 <ul class="meta-info">
                                     <li>
-                                        <a href="javascript:void(0)"><img src="assets/images/blog/comment2.jpg" alt="#">
+                                        <a href="#"><img src="assets/images/blog/comment2.jpg" alt="#">
                                             Archana Chaowali</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">10 April 2023 </a>
+                                        <a href="#">10 April 2023 </a>
                                     </li>
                                 </ul>
                             </div>
@@ -170,12 +170,12 @@
                                     available, but the majority have suffered alteration in some form, don't look believable.</p>
                                 <ul class="meta-info">
                                     <li>
-                                        <a href="javascript:void(0)"><img src="assets/images/blog/comment1.jpg" alt="#">
+                                        <a href="#"><img src="assets/images/blog/comment1.jpg" alt="#">
                                             Alice
                                             Williams</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">08 Mar 2023 </a>
+                                        <a href="#">08 Mar 2023 </a>
                                     </li>
                                 </ul>
                             </div>
@@ -200,11 +200,11 @@
                                     available, but the majority have suffered alteration in some form, don't look believable.</p>
                                 <ul class="meta-info">
                                     <li>
-                                        <a href="javascript:void(0)"><img src="assets/images/blog/comment2.jpg" alt="#"> Alrado
+                                        <a href="#"><img src="assets/images/blog/comment2.jpg" alt="#"> Alrado
                                             Deyam</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">10 Feb 2023 </a>
+                                        <a href="#">10 Feb 2023 </a>
                                     </li>
                                 </ul>
                             </div>
@@ -229,11 +229,11 @@
                                     available, but the majority have suffered alteration in some form, don't look believable.</p>
                                 <ul class="meta-info">
                                     <li>
-                                        <a href="javascript:void(0)"><img src="assets/images/blog/comment2.jpg" alt="#">
+                                        <a href="#"><img src="assets/images/blog/comment2.jpg" alt="#">
                                             Archana Chaowali</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">10 April 2023 </a>
+                                        <a href="#">10 April 2023 </a>
                                     </li>
                                 </ul>
                             </div>
@@ -244,12 +244,12 @@
 
                 <div class="pagination left blog-grid-page">
                     <ul class="pagination-list">
-                        <li><a href="javascript:void(0)">Prev</a></li>
-                        <li class="active"><a href="javascript:void(0)">1</a></li>
-                        <li><a href="javascript:void(0)">2</a></li>
-                        <li><a href="javascript:void(0)">3</a></li>
-                        <li><a href="javascript:void(0)">4</a></li>
-                        <li><a href="javascript:void(0)">Next</a></li>
+                        <li><a href="#">Prev</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">Next</a></li>
                     </ul>
                 </div>
 
@@ -307,22 +307,22 @@
                         <h5 class="widget-title">Categories</h5>
                         <ul class="custom">
                             <li>
-                                <a href="javascript:void(0)">Finance</a>
+                                <a href="#">Finance</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">Marketing</a>
+                                <a href="#">Marketing</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">Operations</a>
+                                <a href="#">Operations</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">Strategy</a>
+                                <a href="#">Strategy</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">People</a>
+                                <a href="#">People</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">Jobs</a>
+                                <a href="#">Jobs</a>
                             </li>
                         </ul>
                     </div> -->
@@ -331,17 +331,17 @@
                     <div class="widget popular-tag-widget">
                         <h5 class="widget-title">Popular Tags</h5>
                         <div class="tags">
-                            <a href="javascript:void(0)">Operations</a>
-                            <a href="javascript:void(0)">People</a>
-                            <a href="javascript:void(0)">HR</a>
-                            <a href="javascript:void(0)">Finance</a>
-                            <a href="javascript:void(0)">Interview</a>
-                            <a href="javascript:void(0)">Jobs</a>
-                            <a href="javascript:void(0)">Business</a>
-                            <a href="javascript:void(0)">Salary</a>
-                            <a href="javascript:void(0)">Disease</a>
-                            <a href="javascript:void(0)">Consult</a>
-                            <a href="javascript:void(0)">Employee</a>
+                            <a href="#">Operations</a>
+                            <a href="#">People</a>
+                            <a href="#">HR</a>
+                            <a href="#">Finance</a>
+                            <a href="#">Interview</a>
+                            <a href="#">Jobs</a>
+                            <a href="#">Business</a>
+                            <a href="#">Salary</a>
+                            <a href="#">Disease</a>
+                            <a href="#">Consult</a>
+                            <a href="#">Employee</a>
                         </div>
                     </div>
 

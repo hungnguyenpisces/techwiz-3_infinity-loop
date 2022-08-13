@@ -281,7 +281,7 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non leo
                                                 nunc. Vivamus lacinia massa nec sem sagittis.</p>
                                             <div class="button">
-                                                <a href="javascript:void(0)" class="btn">View Speciality</a>
+                                                <a href="#" class="btn">View Speciality</a>
                                             </div>
                                         </div>
                                     </div>
@@ -315,7 +315,7 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non leo
                                                 nunc. Vivamus lacinia massa nec sem sagittis.</p>
                                             <div class="button">
-                                                <a href="javascript:void(0)" class="btn">View Speciality</a>
+                                                <a href="#" class="btn">View Speciality</a>
                                             </div>
                                         </div>
                                     </div>
@@ -349,7 +349,7 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non leo
                                                 nunc. Vivamus lacinia massa nec sem sagittis.</p>
                                             <div class="button">
-                                                <a href="javascript:void(0)" class="btn">View Speciality</a>
+                                                <a href="#" class="btn">View Speciality</a>
                                             </div>
                                         </div>
                                     </div>
@@ -383,7 +383,7 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non leo
                                                 nunc. Vivamus lacinia massa nec sem sagittis.</p>
                                             <div class="button">
-                                                <a href="javascript:void(0)" class="btn">View Speciality</a>
+                                                <a href="#" class="btn">View Speciality</a>
                                             </div>
                                         </div>
                                     </div>
@@ -418,7 +418,7 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non leo
                                                 nunc. Vivamus lacinia massa nec sem sagittis.</p>
                                             <div class="button">
-                                                <a href="javascript:void(0)" class="btn">View Speciality</a>
+                                                <a href="#" class="btn">View Speciality</a>
                                             </div>
                                         </div>
                                     </div>
