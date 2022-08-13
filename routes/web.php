@@ -108,9 +108,7 @@ Route::get('/user-health', function () {
 Route::get('/user-update', function () {
     return view('user.user-update');
 });
-Route::get('/user-history', function () {
-    return view('user.user-history');
-});
+
 Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
 Route::get('/departments', function () {

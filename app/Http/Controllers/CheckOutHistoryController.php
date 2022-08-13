@@ -24,7 +24,7 @@ class CheckOutHistoryController extends Controller
                 ->join('departments', 'check_out_histories.department_id', '=', 'departments.id')
                 ->join('doctors', 'check_out_histories.doctor_id', '=', 'doctors.id')
                 ->select('check_out_histories.*', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
-                ->where('check_out_histories.users_id', $user->id)
+                ->where('check_out_histories.user_id', $user->id)
                 ->get();
             return view('user.user-history', compact('check_out_histories'));
         }
