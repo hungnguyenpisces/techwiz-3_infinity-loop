@@ -35,6 +35,12 @@
                         <span class="text nav-text">Profile</span>
                     </a>
                 </li>
+                <li class="nav-link">
+                    <a href="/user-health">
+                        <i class="fa-solid fa-file-pen icon2"></i>
+                        <span class="text nav-text">Health</span>
+                    </a>
+                </li>
 
                 <li class="nav-link" id="user-bmi">
                     <a href="/user-bmi">
@@ -57,23 +63,9 @@
                     </a>
                 </li>
 
-                <li class="nav-link">
-                    <a href="#">
-                        <i class="fa-solid fa-bars icon2"></i>
-                        <span class="text nav-text">Setting</span>
-                    </a>
-                </li>
+
 
             </ul>
-        </div>
-        <div class="bottom-content">
-            <li class="mode">
-                <span class="mode-text text">Dark mode</span>
-                <div class="toggle-switch">
-                    <span class="switch"></span>
-                </div>
-            </li>
-
         </div>
     </div>
 </div>

@@ -59,7 +59,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
     Route::get("/user-history", [AppointmentController::class, 'userHistory'])->name('user-history');
 
-   
+
 
     //Route::resource('/healthindex', HealthIndexController::class);
     Route::get('/user',[HealthIndexController::class, 'index'])->name('user.index');
@@ -68,7 +68,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/user/{id}/edit',[HealthIndexController::class, 'edit'])->name('user.edit');
     Route::put('/user/{id}',[HealthIndexController::class, 'update'])->name('user.update');
     Route::delete('/user/{id}',[HealthIndexController::class, 'destroy'])->name('user.destroy');
-    
+
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
     });
 
@@ -97,32 +97,32 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
 
-Route::get('/test', function () {
-    return view('web.home');
-});
-
 Route::get('/user-bmi', function () {
     return view('user.user-bmi');
 });
-
-    Route::get('/user-history', function () {
-        return view('web.home');
-    });
-
-Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
-
 Route::get('/user', function () {
     return view('user.user-profile');
 });
-
+Route::get('/user-health', function () {
+    return view('user.user-health');
+});
 Route::get('/user-update', function () {
     return view('user.user-update');
 });
-
 Route::get('/user-history', function () {
     return view('user.user-history');
 });
+Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
-Route::get('/test2', function () {
-    return view('web.notification');
+
+
+Route::get('/departments', function () {
+    return view('web.departments');
 });
+Route::get('/doctors', function () {
+    return view('web.doctors');
+});
+Route::get('/hospital', function () {
+    return view('web.hospital');
+});
+

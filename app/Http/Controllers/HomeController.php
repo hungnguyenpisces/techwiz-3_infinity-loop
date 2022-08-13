@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
+use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -9,7 +11,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('web/index');
+        $hospitals = Hospital::all();
+        $departments = Department::all();
+        return view('web/index', compact('hospitals', 'departments'));
     }
 
 
@@ -65,7 +69,9 @@ class HomeController extends Controller
 
     public function contact_us()
     {
-        return view('web/contactus');
+        $hospitals = Hospital::all();
+        $departments = Department::all();
+        return view('web/contactus', compact('hospitals', 'departments'));
     }
 
     public function chart()

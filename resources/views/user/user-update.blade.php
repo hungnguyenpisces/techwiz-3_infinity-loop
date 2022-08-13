@@ -42,8 +42,7 @@
                     <div class="col-md-6 mb-4">
 
                         <h6 class="mb-2 pb-1">Gender: </h6>
-
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline" >
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
                                    value="option1" checked />
                             <label class="form-check-label" for="femaleGender">Female</label>
@@ -82,51 +81,8 @@
 
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
 
-                        <div class="form-outline">
-                            <input type="text" id="height" name="height" class="form-control form-control-lg" />
-                            <label class="form-label" placeholder="Height" >Height</label>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6 mb-4">
-
-                        <div class="form-outline">
-                            <input type="text" id="weight" name="weight" class="form-control form-control-lg" />
-                            <label class="form-label" placeholder="Weight">Weight</label>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-
-                        <div class="form-outline">
-                            <input type="text" id="blood_pressure" name="blood_pressure" class="form-control form-control-lg" />
-                            <label class="form-label" placeholder="Blood pressure" >Blood pressure</label>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6 mb-4">
-
-                        <div class="form-outline">
-                            <input type="text" id="heart_rate" name="heart_rate" class="form-control form-control-lg" />
-                            <label class="form-label" placeholder="Heartbeat">Heartbeat</label>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="">History of drug allergy</label>
-                    <textarea class="form-control" id="" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="">Medical history</label>
-                    <textarea class="form-control" id="" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-success">Submit</button>
             </form>
 
         </div>
