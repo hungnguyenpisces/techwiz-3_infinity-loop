@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use App\Mail\InfoMail;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -29,6 +31,8 @@ class AuthController extends Controller
         $user->fill($data);
         $user->save();
         $user->assignRole('User');
+
+        Mail::to((string)$user->email)->send(new InfoMail($user));
 
         auth()->login($user);
         $request->session()->flash('success', "Account successfully registered.");

@@ -15,11 +15,11 @@ Appointments Management
 
 <section class="content">
     <div class="container-fluid">
-        <div class="block-header">
-            <h2>Appointments</h2>
-            <small class="text-muted">Welcome to Swift application</small>
-        </div>
         <div class="row clearfix">
+            <div class="block-header">
+                <h2>Appointments</h2>
+                <small class="text-muted">Welcome to Swift application</small>
+            </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
@@ -42,6 +42,7 @@ Appointments Management
                                     <th>Department</th>
                                     <th>Hospital</th>
                                     <th>Symptom status</th>
+                                    <th>Doctor</th>
                                     <th>Date</th>
                                     <th>Time</th>
                                     <th>Status</th>
@@ -55,6 +56,7 @@ Appointments Management
                                     <th>Department</th>
                                     <th>Hospital</th>
                                     <th>Symptom status</th>
+                                    <th>Doctor</th>
                                     <th>Date</th>
                                     <th>Time</th>
                                     <th>Status</th>
@@ -69,12 +71,27 @@ Appointments Management
                                     <td>{{ $appointment->department_name }}</td>
                                     <td>{{ $appointment->hospital_name }}</td>
                                     <td>{{ $appointment->self_check_symptom }}</td>
+                                    @if(!$appointment->doctor_first_name)
+                                    <td>N/A</td>
+                                    @elseif($appointment->doctor_first_name)
+                                    <td>{{ $appointment->doctor_first_name }}</td>
+                                    @endif
                                     <td>{{ $appointment->date }}</td>
                                     <td>{{ $appointment->time }}</td>
-                                    <td>{{ $appointment->status }}</td>
+                                    <!-- <td>{{ $appointment->status }}</td> -->
+                                    @if($appointment->status == 'Pending')
+                                    <td><span class="badge bg-orange">{{ $appointment->status }}</span></td>
+                                    @elseif($appointment->status == 'Accepted')
+                                    <td><span class="badge bg-green">{{ $appointment->status }}</span></td>
+                                    @elseif($appointment->status == 'Done')
+                                    <td><span class="badge bg-blue">{{ $appointment->status }}</span></td>
+                                    @elseif($appointment->status == 'Cancelled')
+                                    <td><span class="badge bg-red">{{ $appointment->status }}</span></td>
+                                    @endif
                                     <td>
-                                        <a href="{{ url('admin.appointment.edit', $appointment->id) }}" class="btn btn-primary waves-effect btn-sm">Edit</a>
-                                        <a href="{{ url('admin.appointment.delete', $appointment->id) }}" class="btn btn-danger waves-effect btn-sm">Delete</a>
+                                        <a href="{{ route('admin.appointment.detail', $appointment->id) }}" class="btn btn-primary waves-effect">
+                                            <i class="material-icons">remove_red_eye</i>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -86,7 +103,6 @@ Appointments Management
         </div>
     </div>
 </section>
-
 @endsection
 
 
