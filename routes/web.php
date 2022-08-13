@@ -56,6 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/appointment/{id}/edit', [AppointmentController::class, 'edit'])->name('appointment.edit');
     Route::put('/appointment/{id}', [AppointmentController::class, 'update'])->name('appointment.update');
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
+    Route::get("/user-history", [AppointmentController::class, 'userHistory'])->name('user-history');
 
     Route::resource('/comment', CommentController::class);
 
@@ -88,4 +89,8 @@ Route::get('/user-profile', function () {
 
 Route::get('/user-history', function () {
     return view('user.user-history');
+});
+
+Route::get('/test2', function () {
+    return view('web.notification');
 });
