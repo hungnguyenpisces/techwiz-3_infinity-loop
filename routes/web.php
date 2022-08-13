@@ -55,8 +55,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/appointment/{id}/edit', [AppointmentController::class, 'edit'])->name('appointment.edit');
     Route::put('/appointment/{id}', [AppointmentController::class, 'update'])->name('appointment.update');
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
-
     Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
+
+    Route::get('/user',[HealthIndexController::class, 'index'])->name('user.index');
+    Route::post('/user',[HealthIndexController::class, 'store'])->name('user.store');
+    Route::get('/user/{id}',[HealthIndexController::class, 'show'])->name('user.show');
+    Route::get('/user/{id}/edit',[HealthIndexController::class, 'edit'])->name('user.edit');
+    Route::put('/user/{id}',[HealthIndexController::class, 'update'])->name('user.update');
+    Route::delete('/user/{id}',[HealthIndexController::class, 'destroy'])->name('user.destroy');
 
     Route::resource('/comment', CommentController::class);
 
@@ -68,15 +74,21 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/hospitalsearch', function () {
     return view('web.hospital-search');
 });
+Route::get('/hospital', function () {
+    return view('web.hospital');
+});
 
 
-    Route::get('/doctor-detail', function () {
-        return view('web.doctor-detail');
+    Route::get('/doctor', function () {
+        return view('web.doctor');
     });
 
     Route::get('/doctor-search', function () {
         return view('web.doctor-search');
     });
+Route::get('/departments', function () {
+    return view('web.departments');
+});
 
 
 
@@ -98,9 +110,7 @@ Route::get('/user-health', function () {
 Route::get('/user-update', function () {
     return view('user.user-update');
 });
-Route::get('/user-history', function () {
-    return view('user.user-history');
-});
+
 Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
 

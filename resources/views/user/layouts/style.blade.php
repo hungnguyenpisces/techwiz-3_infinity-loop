@@ -3,11 +3,6 @@
 <link rel="stylesheet" href="{!! url('assets/css/LineIcons.2.0.css') !!}">
 <link rel="stylesheet" href="{!! url('assets/css/animate.css') !!}">
 <link rel="stylesheet" href="{!! url('assets/css/tiny-slider.css') !!}">
-<link rel="stylesheet" href="{!! url('assets/css/glightbox.min.css') !!}">
+{{--<link rel="stylesheet" href="{!! url('assets/css/glightbox.min.css') !!}">--}}
 <link rel="stylesheet" href="{!! url('assets/css/main.css') !!}">
-
 <link rel="stylesheet" href="{!! url('assets/css/user-styles.css') !!}">
-
-<style>
-    
-</style>
