@@ -113,7 +113,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" aria-label="Toggle navigation">Contact</a>
+                                    <a href="/contactus" aria-label="Toggle navigation">Contact</a>
                                 </li>
                             </ul>
                         </div>
