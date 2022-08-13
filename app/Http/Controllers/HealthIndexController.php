@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HealthIndex;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HealthIndexController extends Controller
 {
@@ -36,8 +37,9 @@ class HealthIndexController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
         $heal = new HealthIndex();
-        $heal->users_id = $request->users_id;
+        $heal->users_id = $user->id;
         $heal->height = $request->height;
         $heal->weight = $request->weight;
         $heal->heart_rate = $request->heart_rate;

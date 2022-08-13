@@ -25,12 +25,12 @@ Custom title if need
                         <div class="body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="javascript:void(0);" class="p-profile-pix"><img
-                                            src="http://via.placeholder.com/130x130" alt="user"
+                                    <a href="patient-profile" class="p-profile-pix"><img
+                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
                                             class="img-thumbnail img-fluid"></a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="javascript:void(0);" class="edit"><i
+                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
                                                 class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
                                     <address class="m-b-0">
                                         123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
@@ -46,12 +46,12 @@ Custom title if need
                         <div class="body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="javascript:void(0);" class="p-profile-pix"><img
-                                            src="http://via.placeholder.com/130x130" alt="user"
+                                    <a href="patient-profile" class="p-profile-pix"><img
+                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
                                             class="img-thumbnail img-fluid"></a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="javascript:void(0);" class="edit"><i
+                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
                                                 class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
                                     <address class="m-b-0">
                                         123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
@@ -67,12 +67,12 @@ Custom title if need
                         <div class="body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="javascript:void(0);" class="p-profile-pix"><img
-                                            src="http://via.placeholder.com/130x130" alt="user"
+                                    <a href="patient-profile" class="p-profile-pix"><img
+                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
                                             class="img-thumbnail img-fluid"></a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="javascript:void(0);" class="edit"><i
+                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
                                                 class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
                                     <address class="m-b-0">
                                         123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
@@ -88,12 +88,12 @@ Custom title if need
                         <div class="body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="javascript:void(0);" class="p-profile-pix"><img
-                                            src="http://via.placeholder.com/130x130" alt="user"
+                                    <a href="patient-profile" class="p-profile-pix"><img
+                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
                                             class="img-thumbnail img-fluid"></a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="javascript:void(0);" class="edit"><i
+                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
                                                 class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
                                     <address class="m-b-0">
                                         123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
@@ -109,12 +109,12 @@ Custom title if need
                         <div class="body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="javascript:void(0);" class="p-profile-pix"><img
-                                            src="http://via.placeholder.com/130x130" alt="user"
+                                    <a href="patient-profile" class="p-profile-pix"><img
+                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
                                             class="img-thumbnail img-fluid"></a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="javascript:void(0);" class="edit"><i
+                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
                                                 class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
                                     <address class="m-b-0">
                                         123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
@@ -130,12 +130,12 @@ Custom title if need
                         <div class="body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="javascript:void(0);" class="p-profile-pix"><img
-                                            src="http://via.placeholder.com/130x130" alt="user"
+                                    <a href="patient-profile" class="p-profile-pix"><img
+                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
                                             class="img-thumbnail img-fluid"></a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="javascript:void(0);" class="edit"><i
+                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
                                                 class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
                                     <address class="m-b-0">
                                         123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
@@ -151,12 +151,12 @@ Custom title if need
                         <div class="body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="javascript:void(0);" class="p-profile-pix"><img
-                                            src="http://via.placeholder.com/130x130" alt="user"
+                                    <a href="patient-profile" class="p-profile-pix"><img
+                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
                                             class="img-thumbnail img-fluid"></a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="javascript:void(0);" class="edit"><i
+                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
                                                 class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
                                     <address class="m-b-0">
                                         123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
@@ -172,12 +172,12 @@ Custom title if need
                         <div class="body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="javascript:void(0);" class="p-profile-pix"><img
-                                            src="http://via.placeholder.com/130x130" alt="user"
+                                    <a href="patient-profile" class="p-profile-pix"><img
+                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
                                             class="img-thumbnail img-fluid"></a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="javascript:void(0);" class="edit"><i
+                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
                                                 class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
                                     <address class="m-b-0">
                                         123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
@@ -193,12 +193,12 @@ Custom title if need
                         <div class="body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="javascript:void(0);" class="p-profile-pix"><img
-                                            src="http://via.placeholder.com/130x130" alt="user"
+                                    <a href="patient-profile" class="p-profile-pix"><img
+                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
                                             class="img-thumbnail img-fluid"></a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="javascript:void(0);" class="edit"><i
+                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
                                                 class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
                                     <address class="m-b-0">
                                         123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
@@ -214,12 +214,12 @@ Custom title if need
                         <div class="body">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="javascript:void(0);" class="p-profile-pix"><img
-                                            src="http://via.placeholder.com/130x130" alt="user"
+                                    <a href="patient-profile" class="p-profile-pix"><img
+                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
                                             class="img-thumbnail img-fluid"></a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="javascript:void(0);" class="edit"><i
+                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
                                                 class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
                                     <address class="m-b-0">
                                         123 Folsom Ave, Suite 100 New York, CADGE 56824<br>

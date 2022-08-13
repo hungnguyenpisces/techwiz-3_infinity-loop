@@ -22,7 +22,7 @@ Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testim
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
-Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+//Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contactus', [HomeController::class, 'contact_us'])->name('contactus');
 Route::resource('/checkouthistory', CheckOutHistoryController::class);
 
@@ -45,9 +45,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/projectdetail', [HomeController::class, 'project_detail'])->name('projectdetail');
     Route::get('/servicedetail', [HomeController::class, 'service_detail'])->name('servicedetail');
     Route::get('/doctordetail', [HomeController::class, 'doctor_detail'])->name('doctordetail');
-    Route::get('/blogdetail', [HomeController::class, 'blog_detail'])->name('blogdetail');
+    //Route::get('/blogdetail', [HomeController::class, 'blog_detail'])->name('blogdetail');
+
     Route::resource('/medicine', MedicinePillController::class);
-    Route::resource('/healthindex', HealthIndexController::class);
+    Route::resource('/comment', CommentController::class);
 
     // Route::resource('/appointment', AppointmentController::class);
     Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
@@ -57,7 +58,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/appointment/{id}', [AppointmentController::class, 'update'])->name('appointment.update');
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
 
-    Route::resource('/comment', CommentController::class);
+   
+
+    //Route::resource('/healthindex', HealthIndexController::class);
+    Route::get('/healthindex',[HealthIndexController::class, 'index'])->name('health.index');
+    Route::post('/healthindex',[HealthIndexController::class, 'store'])->name('health.store');
+    Route::get('/healthindex/{id}',[HealthIndexController::class, 'show'])->name('health.show');
+    Route::get('/healthindex/{id}/edit',[HealthIndexController::class, 'edit'])->name('health.edit');
+    Route::put('/healthindex/{id}',[HealthIndexController::class, 'update'])->name('health.update');
+    Route::delete('/healthindex/{id}',[HealthIndexController::class, 'destroy'])->name('health.destroy');
+    
 
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
