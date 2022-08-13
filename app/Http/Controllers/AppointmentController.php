@@ -82,7 +82,7 @@ class AppointmentController extends Controller
             ->join('departments', 'appointments.department_id', '=', 'departments.id')
             ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
             ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
-            ->where('appointments.id', $user->id)->get();
+            ->where('user_id', $user->id)->get();
 //            dd($appointments);
         return view('user.user-appointments', compact('hospitals', 'departments', 'appointments'));
     }

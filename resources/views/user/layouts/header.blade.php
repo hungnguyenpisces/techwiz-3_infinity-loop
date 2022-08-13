@@ -27,7 +27,7 @@
                                            data-bs-target="#submenu-1-5" aria-controls="navbarSupportedContent" aria-expanded="false"
                                            aria-label="Toggle navigation" style="padding: 0;"><i class="lni lni-user"></i> {{Auth::user()->first_name}} {{Auth::user()->last_name}}</a>
                                         <ul class="sub-menu collapse" id="submenu-1-5">
-                                            <li class="nav-item"><a href="">Profile</a></li>
+                                            <li class="nav-item"><a href="user">Profile</a></li>
                                             <li class="nav-item"><a href="/logout">Logout</a></li>
                                         </ul>
                                     </li>

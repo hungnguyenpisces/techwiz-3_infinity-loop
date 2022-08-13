@@ -1,7 +1,8 @@
 @extends('user.layouts._master')
 @section('extraCss')
-    <link href="{!! url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css') !!}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
 
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 
 @endsection
 
@@ -49,11 +50,11 @@
                                 <td>{{ $appointment->doctor_first_name }}</td>
                                 <td>
                                     @if($appointment->status == 'pending')
-                                        <span class="badge badge-warning">{{ $appointment->status }}</span>
+                                        <span class="text-bg-warning badge badge-warning">{{ $appointment->status }}</span>
                                     @elseif($appointment->status == 'approved')
-                                        <span class="badge badge-success">{{ $appointment->status }}</span>
+                                        <span class="text-bg-success badge badge-success">{{ $appointment->status }}</span>
                                     @elseif($appointment->status == 'Cancelled')
-                                        <span class="badge badge-danger">{{ $appointment->status }}</span>
+                                        <span class="text-bg-danger badge badge-danger">{{ $appointment->status }}</span>
                                     @else
                                         <span
                                             class="text-bg-primary badge badge-primary">{{ $appointment->status }}</span>
@@ -65,13 +66,17 @@
                                         <i class="fa fa-eye"></i>
                                     </button>
                                 </td>
-
-                        </tbody>
+                            </tr>
+                            <?php $i++; ?>
                         @endforeach
-
-                        @endsection
-
-                        @section('extraJs')
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+@section('extraJs')
 
 @endsection
 
