@@ -22,6 +22,8 @@
     <div class="d-flex">
         @include('user.layouts.sidebar')
     </div>
+
+    @include('user.layouts.footer')
     @include('user.layouts.script')
     @yield('extraJs')
 
