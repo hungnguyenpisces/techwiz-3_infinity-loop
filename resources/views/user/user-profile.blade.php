@@ -26,7 +26,7 @@
                 <div class="card mb-4">
                     <div class="card-body text-center">
                         <img src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                        <h5 class="my-3">John Smith</h5>
+                        <h5 class="my-3">{{Auth::user()->first_name}}</h5>
                         <p class="text-muted mb-1">Full Stack Developer</p>
                         <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
                         <div class="d-flex justify-content-center mb-2">
@@ -65,10 +65,19 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Full Name</p>
+                                <p class="mb-0">First Name</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">Johnatan Smith</p>
+                                <p class="text-muted mb-0">{{Auth::user()->first_name}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Last Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{Auth::user()->last_name}}</p>
                             </div>
                         </div>
                         <hr>
@@ -77,7 +86,7 @@
                                 <p class="mb-0">Email</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">example@example.com</p>
+                                <p class="text-muted mb-0">{{Auth::user()->email}}</p>
                             </div>
                         </div>
                         <hr>
@@ -86,7 +95,7 @@
                                 <p class="mb-0">Phone</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">(097) 234-5678</p>
+                                <p class="text-muted mb-0">{{Auth::user()->phone}}</p>
                             </div>
                         </div>
                         <hr>
@@ -95,7 +104,7 @@
                                 <p class="mb-0">Gender</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">Male</p>
+                                <p class="text-muted mb-0">{{Auth::user()->gender}}</p>
                             </div>
                         </div>
                         <hr>
@@ -104,7 +113,7 @@
                                 <p class="mb-0">Address</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                                <p class="text-muted mb-0">{{Auth::user()->address}}</p>
                             </div>
                         </div>
                     </div>

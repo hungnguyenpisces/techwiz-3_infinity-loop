@@ -46,8 +46,8 @@ class HealthIndexController extends Controller
         $heal->blood_pressure = $request->blood_pressure;
         $heal->save();
 
-        $request->session()->flash('success', 'Health index created sucessfully.');
-        return redirect(route('web.success'));
+        $request->session()->flash('success', 'Health Index created sucessfully.');
+        return view('web.success');
     }
 
     /**
@@ -90,8 +90,8 @@ class HealthIndexController extends Controller
         $heal->blood_pressure = $request->blood_pressure;
         $heal->save();
 
-        $request->session()->flash('success', 'Health index updated sucessfully.');
-        return redirect(route('web.success'));
+        $request->session()->flash('success', 'Health Index updated sucessfully.');
+        return view('web.success');
     }
 
     /**

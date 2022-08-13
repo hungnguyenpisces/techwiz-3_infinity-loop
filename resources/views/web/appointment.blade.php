@@ -57,7 +57,7 @@
                             <div class="col-lg-6 col-md-6 col-12 p-0">
                                 <div class="appointment-input">
                                     <label for="last_name"><i class="lni lni-user"></i></label>
-                                    <input type="text" name="last_name" id="last_name" placeholder="First name" value="{{Auth::user()->last_name}}">
+                                    <input type="text" name="last_name" id="last_name" placeholder="Last name" value="{{Auth::user()->last_name}}">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 p-0">
