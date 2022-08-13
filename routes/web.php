@@ -76,6 +76,26 @@ Route::group(['middleware' => ['auth']], function () {
         return view('web.hospital-search');
     });
 
+    Route::get('/hospital', function () {
+        return view('web.hospital');
+    });
+
+    Route::get('/hospital-search', function () {
+        return view('web.hospital-search');
+    });
+
+    Route::get('/doctor', function () {
+        return view('web.doctor');
+    });
+
+    Route::get('/doctor-detail', function () {
+        return view('web.doctor-detail');
+    });
+
+    Route::get('/doctor-search', function () {
+        return view('web.doctor-search');
+    });
+
 
 Route::get('/test', function () {
     return view('web.home');
@@ -93,6 +113,10 @@ Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
 Route::get('/user', function () {
     return view('user.user-profile');
+});
+
+Route::get('/user-update', function () {
+    return view('user.user-update');
 });
 
 Route::get('/user-history', function () {

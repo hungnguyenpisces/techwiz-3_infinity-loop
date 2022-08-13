@@ -7,7 +7,7 @@
 @section('content')
 
 
-    <section class="vh-100 gradient-custom">
+    <section class="gradient-custom">
         <div class="container py-5 h-100 form-head">
             <h3 class="container justify-content-center">Personal Health Information</h3>
             <form action="" method="post">
@@ -132,4 +132,4 @@
     </section>
 
 @endsection
-<?php
+
