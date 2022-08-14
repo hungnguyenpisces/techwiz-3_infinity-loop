@@ -25,7 +25,7 @@ Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testim
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
-Route::get('/contactus', [HomeController::class, 'contact_us'])->name('contactus');
+Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
 Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
 Route::group(['middleware' => ['auth']], function () {
@@ -55,9 +55,21 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/user/{id}', [HealthIndexController::class, 'update'])->name('user.update');
     Route::delete('/user/{id}', [HealthIndexController::class, 'destroy'])->name('user.destroy');
 
+    Route::get('/user-bmi', function () {
+        return view('user.user-bmi');
+    });
+
+    Route::get('/user-health', function () {
+        return view('user.user-health');
+    });
+
+    Route::get('/user-update', function () {
+        return view('user.user-update');
+    });
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });
+
 
 Route::get('/hospital', function () {
     return view('web.hospital');
@@ -77,18 +89,6 @@ Route::get('/doctor-detail', function () {
 
 Route::get('/doctor-search', function () {
     return view('web.doctor-search');
-});
-
-Route::get('/user-bmi', function () {
-    return view('user.user-bmi');
-});
-
-Route::get('/user-health', function () {
-    return view('user.user-health');
-});
-
-Route::get('/user-update', function () {
-    return view('user.user-update');
 });
 
 Route::get('/departments', function () {
