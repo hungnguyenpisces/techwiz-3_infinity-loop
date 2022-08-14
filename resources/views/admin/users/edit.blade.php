@@ -46,7 +46,7 @@ Custom title if need
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="addon-wrapping-firstname">First name:</span>
                                             </div>
-                                            <input type="text" class="form-control border border-success pl-2" name="first_name" placeholder="Enter first name" value='{{ old("first_name", $user->first_name) }}' aria-describedby="addon-wrapping-firstname" required>
+                                            <input type="text" class="form-control border border-success pl-2" name="first_name" placeholder="Enter first name" value='{{ old("first_name", $user->first_name) }}' aria-describedby="addon-wrapping-firstname" >
                                             @error('first_name')
                                             <p class="mt-2 mb-0 error text-danger">{{ $message }}</p>
                                             @enderror
@@ -57,7 +57,7 @@ Custom title if need
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="addon-wrapping-lastname">Last name:</span>
                                             </div>
-                                            <input type="text" class="form-control border border-success pl-2" name="last_name" placeholder="Enter last name" value='{{ old("last_name", $user->last_name) }}' aria-describedby="addon-wrapping-lastname" required>
+                                            <input type="text" class="form-control border border-success pl-2" name="last_name" placeholder="Enter last name" value='{{ old("last_name", $user->last_name) }}' aria-describedby="addon-wrapping-lastname" >
                                             @error('last_name')
                                             <p class="mt-2 mb-0 error text-danger">{{ $message }}</p>
                                             @enderror
@@ -68,7 +68,7 @@ Custom title if need
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text pr-5" id="addon-wrapping-email">Email:</span>
                                             </div>
-                                            <input type="text" class="form-control border border-success pl-2" name="email" placeholder="Enter email" value='{{ old("email", $user->email) }}' aria-describedby="addon-wrapping-email" required>
+                                            <input type="text" class="form-control border border-success pl-2" name="email" placeholder="Enter email" value='{{ old("email", $user->email) }}' aria-describedby="addon-wrapping-email" >
                                             @error('email')
                                             <p class="mt-2 mb-0 error text-danger">{{ $message }}</p>
                                             @enderror
@@ -79,7 +79,7 @@ Custom title if need
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="addon-wrapping-password">Password:</span>
                                             </div>
-                                            <input type="password" class="form-control border border-success pl-2" name="password" placeholder="Enter Password" aria-describedby="addon-wrapping-password" required>
+                                            <input type="password" class="form-control border border-success pl-2" name="password" placeholder="Enter Password" aria-describedby="addon-wrapping-password" >
                                             @error('password')
                                             <p class="mt-2 mb-0 error text-danger">{{ $message }}</p>
                                             @enderror
@@ -90,7 +90,7 @@ Custom title if need
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="addon-wrapping-pwdconfirm">Confirm Password:</span>
                                             </div>
-                                            <input type="password" class="form-control border border-success pl-2" name="confirm-password" placeholder="Confirm Password" aria-describedby="addon-wrapping-pwdconfirm" required>
+                                            <input type="password" class="form-control border border-success pl-2" name="confirm-password" placeholder="Confirm Password" aria-describedby="addon-wrapping-pwdconfirm" >
                                             @error('password')
                                             <p class="mt-2 mb-0 error text-danger">{{ $message }}</p>
                                             @enderror

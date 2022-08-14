@@ -71,6 +71,7 @@ Custom title if need
                 </div>
                 <!-- /.card -->
             </div>
+            {{ $users->links() }}
         </div>
     </div>
 </section>
