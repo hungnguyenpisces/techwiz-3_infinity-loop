@@ -30,6 +30,12 @@ class AppointmentManageController extends Controller
         return view('admin.appointment.all-appointment', compact('appointments', 'doctors'));
     }
 
+    public function doctorSchedule()
+    {
+
+        return view('admin.appointment.doctor-schedule');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -37,7 +43,7 @@ class AppointmentManageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.appointment.book-appointment');
     }
 
     /**
