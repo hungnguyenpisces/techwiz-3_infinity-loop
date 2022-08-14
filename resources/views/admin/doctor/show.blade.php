@@ -46,7 +46,7 @@ Custom title if need
                         <div class="profile-sub-header">
                             <div class="box-list">
                                 <ul class="text-center">
-                                    <li> <a href="mail-inbox.html" class=""><i class="zmdi zmdi-email"></i>
+                                    <li> <a href="#" class=""><i class="zmdi zmdi-email"></i>
                                             <p>My Inbox</p>
                                         </a> </li>
                                     <li> <a href="#" class=""><i class="zmdi zmdi-camera"></i>

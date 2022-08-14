@@ -55,7 +55,7 @@
                     </div>
                     <div class="content">
                         <h5>Cardiologist</h5>
-                        <h3><a href="doctor-detail">Dr.Felica Queen</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Felica Queen</a></h3>
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@
                     </div>
                     <div class="content">
                         <h5>Neurologist</h5>
-                        <h3><a href="doctor-detail">Dr.Alice Williams</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Alice Williams</a></h3>
                     </div>
                 </div>
 
@@ -93,7 +93,7 @@
                     </div>
                     <div class="content">
                         <h5>Physician Assistant</h5>
-                        <h3><a href="doctor-detail">Dr.Paul Flavius</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Paul Flavius</a></h3>
                     </div>
                 </div>
 
@@ -112,7 +112,7 @@
                     </div>
                     <div class="content">
                         <h5>Physician Assistant</h5>
-                        <h3><a href="doctor-detail">Dr.Michael Bean</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Michael Bean</a></h3>
                     </div>
                 </div>
 
@@ -131,7 +131,7 @@
                     </div>
                     <div class="content">
                         <h5>Cardiologist</h5>
-                        <h3><a href="doctor-detail">Dr.Felica Queen</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Felica Queen</a></h3>
                     </div>
                 </div>
 
@@ -150,7 +150,7 @@
                     </div>
                     <div class="content">
                         <h5>Neurologist</h5>
-                        <h3><a href="doctor-detail">Dr.Alice Williams</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Alice Williams</a></h3>
                     </div>
                 </div>
 
@@ -169,7 +169,7 @@
                     </div>
                     <div class="content">
                         <h5>Physician Assistant</h5>
-                        <h3><a href="doctor-detail">Dr.Paul Flavius</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Paul Flavius</a></h3>
                     </div>
                 </div>
 
@@ -188,7 +188,7 @@
                     </div>
                     <div class="content">
                         <h5>Physician Assistant</h5>
-                        <h3><a href="doctor-detail">Dr.Michael Bean</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Michael Bean</a></h3>
                     </div>
                 </div>
 
