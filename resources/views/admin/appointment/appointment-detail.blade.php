@@ -6,11 +6,11 @@ Custom title if need
 
 @section('extraCss')
 <!-- extra css -->
-<link rel="icon" href="{!! url('favicon.ico') !!}" type="image/x-icon">
-<link rel="stylesheet" href="{!! url('https://fonts.googleapis.com/icon?family=Material+Icons') !!}" type="text/css">
-<link rel="stylesheet" href="{!! url('assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') !!}" />
-<link rel="stylesheet" href="{!! url('assets/plugins/waitme/waitMe.css') !!}" />
-<link rel="stylesheet" href="{!! url('assets/plugins/bootstrap-select/css/bootstrap-select.css') !!}" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
+<link rel="stylesheet" href="/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" />
+<link rel="stylesheet" href="/assets/plugins/waitme/waitMe.css" />
+<link rel="stylesheet" href="/assets/plugins/bootstrap-select/css/bootstrap-select.css" />
 
 
 @endsection
@@ -215,10 +215,10 @@ $appointment->status
 
 @section('extraJs')
 <!-- extraJs -->
-<script src="{!! url('assets/plugins/autosize/autosize.js') !!}"></script>
-<script src="{!! url('assets/plugins/momentjs/moment.js') !!}"></script>
-<script src="{!! url('assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') !!}"></script>
-<script src="{!! url('assets/js/pages/forms/basic-form-elements.js') !!}"></script>
+<script src="/assets/plugins/autosize/autosize.js"></script>
+<script src="/assets/plugins/momentjs/moment.js"></script>
+<script src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+<script src="/assets/js/pages/forms/basic-form-elements.js"></script>
 
 <!-- end extraJs -->
 @endsection

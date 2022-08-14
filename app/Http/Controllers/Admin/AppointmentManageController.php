@@ -7,6 +7,7 @@ use App\Mail\AppointmentNotify;
 use App\Models\Appointment;
 use App\Models\Department;
 use App\Models\Doctor;
+use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -86,7 +87,18 @@ class AppointmentManageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $appointment = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
+            ->where('appointments.id', $id)
+            ->first();
+
+        $doctors = Doctor::all();
+        $departments = Department::all();
+        $hospitals = Hospital::all();
+        return view('admin.appointment.appointment-edit', compact('appointment', 'doctors', 'departments', 'hospitals'));
     }
 
     /**
@@ -114,7 +126,11 @@ class AppointmentManageController extends Controller
 
     public function reject($id)
     {
-        //
+        $appointment = Appointment::find($id);
+        $appointment->status = 'Cancelled';
+        $appointment->save();
+
+        return redirect()->route('all-appointment.index');
     }
 
     public function approve($id)

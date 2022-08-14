@@ -6,11 +6,11 @@ Custom title if need
 
 @section('extraCss')
 <!-- extra css -->
-<link rel="icon" href="{!! url('favicon.ico') !!}" type="image/x-icon">
-<link rel="stylesheet" href="{!! url('https://fonts.googleapis.com/icon?family=Material+Icons') !!}" type="text/css">
-<link rel="stylesheet" href="{!! url('assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') !!}" />
-<link rel="stylesheet" href="{!! url('assets/plugins/waitme/waitMe.css') !!}" />
-<link rel="stylesheet" href="{!! url('assets/plugins/bootstrap-select/css/bootstrap-select.css') !!}" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
+<link rel="stylesheet" href="/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" />
+<link rel="stylesheet" href="/assets/plugins/waitme/waitMe.css" />
+<link rel="stylesheet" href="/assets/plugins/bootstrap-select/css/bootstrap-select.css" />
 
 
 @endsection
@@ -192,12 +192,12 @@ $appointment->status
                                     <div class="col-sm-12">
                                         <a href="{{route('all-appointment.index')}}" class="btn btn-primary waves-effect">Back to list</a>
                                         @if($appointment->status == 'Pending')
-                                        <button type="submit" class="btn btn-raised bg-orange">Approve</button>
-                                        <button type="submit" class="btn btn-raised bg-teal">Edit</button>
-                                        @elseif($appointment->status = 'Accepted')
-                                        <button type="submit" class="btn btn-raised bg-teal">Edit</button>
-                                        <button type="submit" class="btn btn-raised bg-red">Reject</button>
-                                        @elseif($appointment->status = 'Rejected')
+                                        <a href="{{route('admin.appointment.approve', $appointment->id)}}" class="btn btn-raised bg-orange" onclick="return confirm('Are you sure?')">Approve</a>
+                                        <a href="{{route('admin.appointment.edit', $appointment->id)}}" class="btn btn-raised bg-teal">Edit</a>
+                                        <a href="{{route('admin.appointment.reject', $appointment->id)}}" class="btn btn-raised bg-red" onclick="return confirm('Are you sure?')">Reject</a>
+                                        @elseif($appointment->status == 'Accepted')
+                                        <a href="{{route('admin.appointment.edit', $appointment->id)}}" class="btn btn-raised bg-teal">Edit</a>
+                                        @elseif($appointment->status == 'Done'||$appointment->status == 'Cancelled')
                                         @endif
                                     </div>
                                 </div>
@@ -215,10 +215,10 @@ $appointment->status
 
 @section('extraJs')
 <!-- extraJs -->
-<script src="{!! url('assets/plugins/autosize/autosize.js') !!}"></script>
-<script src="{!! url('assets/plugins/momentjs/moment.js') !!}"></script>
-<script src="{!! url('assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') !!}"></script>
-<script src="{!! url('assets/js/pages/forms/basic-form-elements.js') !!}"></script>
+<script src="/assets/plugins/autosize/autosize.js"></script>
+<script src="/assets/plugins/momentjs/moment.js"></script>
+<script src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+<script src="/assets/js/pages/forms/basic-form-elements.js"></script>
 
 <!-- end extraJs -->
 @endsection
