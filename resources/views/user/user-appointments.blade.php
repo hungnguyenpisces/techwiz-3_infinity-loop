@@ -8,7 +8,7 @@
 
 @section('content')
     <section class="mt-5">
-        <h1 class="text-center">APPOINTMENTS</h1>
+        <h1 class="text-center">History Appointments</h1>
         <div class="container">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
