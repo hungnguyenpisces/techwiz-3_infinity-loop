@@ -66,13 +66,8 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::get('/payment/add-payment', [PaymentController::class, 'create'])->name('payment.create');
     Route::get('/payment/patient-invoice', [PaymentController::class, 'show'])->name('payment.show');
 
-
-    Route::get('/report', function () {
-        return view('admin.report');
-    });
-    Route::get('/widgets', function () {
-        return view('admin.widgets');
-    });
+    Route::get('/report', [AdminController::class, 'report'])->name('report.index');
+    Route::get('/widgets', [AdminController::class, 'widgets'])->name('widgets.index');
 
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout.perform');
 });

@@ -107,12 +107,27 @@ class HealthIndexController extends Controller
     public function destroy($id, Request $request)
     {
         $heal = HealthIndex::find($id);
-        if($heal == null) {
+        if ($heal == null) {
             $request->session()->flash('danger', 'Index not found.');
         } else {
             $heal->delete();
             $request->session()->flash('success', 'Index deleted sucessfully.');
         }
         return redirect(route('user.index'));
+    }
+
+    public function bmi()
+    {
+        return view('user.user-bmi');
+    }
+
+    public function health()
+    {
+        return view('user.user-health');
+    }
+
+    public function updateInfo()
+    {
+        return view('user.user-update-info');
     }
 }

@@ -54,4 +54,14 @@ class AdminController extends Controller
             }
         }
     }
+
+    public function report()
+    {
+        return view('admin.report');
+    }
+
+    public function widgets()
+    {
+        return view('admin.widgets');
+    }
 }
