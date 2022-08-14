@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HealthIndex;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,10 @@ class HealthIndexController extends Controller
     public function index()
     {
         $lsHe = HealthIndex::all();
-        return view('user.user-profile')->with('lsHe', $lsHe);
+        $user = Auth::user();
+        $healthIndex = HealthIndex::where('users_id', $user->id)->take(1)->get();
+        $healthIndex = $healthIndex[0];
+        return view('user.user-profile')->with(compact('lsHe', 'healthIndex'));
     }
 
     /**

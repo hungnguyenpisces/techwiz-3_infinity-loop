@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('check_out_histories', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
-            $table->string('department_id');
-            $table->string('hospital_id');
+            $table->bigInteger('user_id');
+            $table->bigInteger('department_id');
+            $table->bigInteger('hospital_id');
             $table->string('symptoms');
             $table->string('conclusion');
-            $table->string('staff_id');
-            $table->string('doctor_id');
+            $table->bigInteger('staff_id');
+            $table->bigInteger('doctor_id');
             $table->timestamps();
         });
     }

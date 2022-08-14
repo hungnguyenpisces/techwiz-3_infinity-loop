@@ -45,6 +45,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
 
     Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
+    Route::get('/user-appointment', [AppointmentController::class, 'show'])->name('appointment.show');
 
 
     Route::get('/user', [HealthIndexController::class, 'index'])->name('user.index');
