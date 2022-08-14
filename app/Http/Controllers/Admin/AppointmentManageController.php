@@ -76,7 +76,10 @@ class AppointmentManageController extends Controller
             ->first();
 
         $doctors = Doctor::all();
-        return view('admin.appointment.appointment-detail', compact('appointment', 'doctors'));
+        $departments = Department::all();
+        $hospitals = Hospital::all();
+        // dd($appointment);
+        return view('admin.appointment.appointment-detail', compact('appointment', 'doctors', 'departments', 'hospitals'));
     }
 
     /**
@@ -110,7 +113,17 @@ class AppointmentManageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $appointment = Appointment::find($id);
+        $appointment->doctor_id = $request->doctor_id;
+        $appointment->hospital_id = $request->hospital_id;
+        $appointment->department_id = $request->department_id;
+        $appointment->date = date('Y-m-d', strtotime($request->datetime));
+        $appointment->time = date('H:i:s', strtotime($request->datetime));
+        $appointment->save();
+
+        $appointment->message = 'Your appointment has been updated successfully.';
+        Mail::to('hungdevic@gmail.com')->send(new AppointmentNotify($appointment));
+        return redirect()->route('all-appointment.index')->with('success', 'Appointment has been updated successfully.');
     }
 
     /**
@@ -130,24 +143,35 @@ class AppointmentManageController extends Controller
         $appointment->status = 'Cancelled';
         $appointment->save();
 
-        return redirect()->route('all-appointment.index');
+        $appointment = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_name')
+            ->where('appointments.id', $id)
+            ->first();
+
+        $appointment->message = 'Your appointment has been cancelled';
+
+        Mail::to('hungdevic@gmail.com')->send(new AppointmentNotify($appointment));
+        return redirect()->route('all-appointment.index')->with('success', 'Appointment has been accepted');
     }
 
-    public function approve($id)
+    public function approve(Request $request, $id)
     {
-        //chang status to Accepted
         $apmt = Appointment::find($id);
         $apmt->status = 'Accepted';
+        $apmt->doctor_id = $request->doctor_id;
         $apmt->save();
 
         $appointment = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
             ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
             ->join('departments', 'appointments.department_id', '=', 'departments.id')
             ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
-            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.last_name as doctor_name')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_name')
             ->where('appointments.id', $id)
             ->first();
-
+        $appointment->message = 'Your appointment has been accepted by Staff';
         Mail::to('hungdevic@gmail.com')->send(new AppointmentNotify($appointment));
         return redirect()->route('all-appointment.index')->with('success', 'Appointment has been accepted');
     }

@@ -69,7 +69,8 @@ $appointment->status
                         </ul>
                     </div>
                     <div class="body">
-                        <form action="" method="">
+                        <form id="appointmentForm" action="" method="">
+                            @csrf
                             <div class="row clearfix">
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -118,7 +119,7 @@ $appointment->status
                             </div>
 
                             <div class="row clearfix">
-                                <div class="col-sm-4 ">
+                                <div class="col-sm-6 ">
                                     <div class="form-group">
                                         <div class="form-line">
                                             <label for="">Email</label>
@@ -126,51 +127,78 @@ $appointment->status
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-4 ">
+                                <div class="col-sm-6 ">
                                     <div class="form-group drop-custum">
                                         <label for="">Phone:</label>
                                         <input type="text" class="datepicker form-control" placeholder="Phone" value="{{$appointment->user->phone}}" disabled>
                                     </div>
                                 </div>
-                                <div class="col-sm-4 ">
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-sm-6 ">
                                     <div class="form-group drop-custum">
                                         <label for="">Address:</label>
                                         <input type="text" class="datepicker form-control" placeholder="Address" value="{{$appointment->user->address}}" disabled>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row clearfix">
-                                <div class="col-sm-4 ">
+                                <div class="col-sm-6 ">
                                     <div class="form-group">
                                         <div class="form-line">
                                             <label for="">Appointment time: </label>
                                             @if($appointment->status == 'Pending')
-                                            <input type="text" name="datetime" class="datepicker form-control" value="{{$appointment->date}} {{$appointment->time}}">
+                                            <input type="text" name="datetime" class="datepicker form-control" value="{{$appointment->date}} {{$appointment->time}}" required>
                                             @elseif($appointment->status != 'Pending')
                                             <input type="text" class="datetimepicker form-control" value="{{$appointment->date}} {{$appointment->time}}" disabled>
                                             @endif
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-sm-4 ">
+                                    <div class="form-group drop-custum">
+                                        <label for="">Hospital:</label>
+                                        <select class="form-control show-tick" disabled>
+                                            <option value="" selected>{{$appointment->hospital_name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
                                             <label for="">Department:</label>
-                                            <input type="text" class="form-control" placeholder="" value="{{$appointment->department_name}}" disabled>
+                                        <select class="form-control show-tick" disabled>
+                                            <option value="" selected>{{$appointment->department_name}}</option>
+                                        </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4 ">
                                     <div class="form-group drop-custum">
                                         <label for="">Doctor:</label>
-                                        @if($appointment->doctor_first_name)
+                                        @if($appointment->status == 'Pending' && !$appointment->doctor_first_name)
+                                        <select name="doctor_id" class="form-control form-select show-tick" required>
+                                            <option selected disabled value="">-- Select --</option>
+                                            @foreach($doctors as $doctor)
+                                            <option value="{{$doctor->id}}">{{$doctor->first_name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @endif
+                                        @if($appointment->status == 'Pending' && $appointment->doctor_first_name)
                                         <select class="form-control show-tick" disabled>
                                             <option value="" selected>{{$appointment->doctor_first_name}}</option>
                                         </select>
-                                        @else
-                                        <select class="form-control show-tick" required>
-                                            <option selected disabled>-- Select --</option>
+                                        @endif
+                                        @if($appointment->status != 'Pending' && $appointment->doctor_first_name)
+                                        <select class="form-control show-tick" disabled>
+                                            <option value="" selected>{{$appointment->doctor_first_name}}</option>
+                                        </select>
+                                        @endif
+                                        @if($appointment->status != 'Pending' && !$appointment->doctor_first_name)
+                                        <select name="doctor_id" class="form-control form-select show-tick" required>
+                                            <option selected disabled value="">-- Select --</option>
                                             @foreach($doctors as $doctor)
                                             <option value="{{$doctor->id}}">{{$doctor->first_name}}</option>
                                             @endforeach
@@ -192,9 +220,9 @@ $appointment->status
                                     <div class="col-sm-12">
                                         <a href="{{route('all-appointment.index')}}" class="btn btn-primary waves-effect">Back to list</a>
                                         @if($appointment->status == 'Pending')
-                                        <a href="{{route('admin.appointment.approve', $appointment->id)}}" class="btn btn-raised bg-orange" onclick="return confirm('Are you sure?')">Approve</a>
                                         <a href="{{route('admin.appointment.edit', $appointment->id)}}" class="btn btn-raised bg-teal">Edit</a>
-                                        <a href="{{route('admin.appointment.reject', $appointment->id)}}" class="btn btn-raised bg-red" onclick="return confirm('Are you sure?')">Reject</a>
+                                        <button type="submit" class="btn btn-raised bg-orange" onclick="approveForm()">Approve</button>
+                                        <button type="submit" class="btn btn-raised bg-red" onclick="rejectForm()">Reject</button>
                                         @elseif($appointment->status == 'Accepted')
                                         <a href="{{route('admin.appointment.edit', $appointment->id)}}" class="btn btn-raised bg-teal">Edit</a>
                                         @elseif($appointment->status == 'Done'||$appointment->status == 'Cancelled')
@@ -220,5 +248,17 @@ $appointment->status
 <script src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 <script src="/assets/js/pages/forms/basic-form-elements.js"></script>
 
+<!-- script set atrribute form id appointmentForm action & method -->
+<script>
+    function approveForm() {
+        document.getElementById('appointmentForm').action = "{{route('admin.appointment.approve', $appointment->id)}}";
+        document.getElementById('appointmentForm').method = "POST";
+    }
+
+    function rejectForm() {
+        document.getElementById('appointmentForm').action = "{{route('admin.appointment.reject', $appointment->id)}}";
+        document.getElementById('appointmentForm').method = "POST";
+    }
+</script>
 <!-- end extraJs -->
 @endsection
