@@ -13,7 +13,7 @@
             color: white;
         }
     </style>
-    <link rel="stylesheet" href="{!! url('assets/bootstrap/css/bootstrap.min.css') !!}">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>

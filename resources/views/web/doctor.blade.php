@@ -203,7 +203,7 @@
 
 @section('extraJs')
 <!-- extraJs -->
-    <script src="{!! url('assets/js/imagesloaded.min.js') !!}"></script>
-    <script src="{!! url('assets/js/isotope.min.js') !!}"></script>
+    <script src="/assets/js/imagesloaded.min.js"></script>
+    <script src="/assets/js/isotope.min.js"></script>
 <!-- end extraJs -->
 @endsection

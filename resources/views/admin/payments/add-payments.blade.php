@@ -6,9 +6,9 @@
 
 @section('extraCss')
     <!-- extra css -->
-    <link rel="stylesheet" href="{!! url('assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') !!}" />
-    <link rel="stylesheet" href="{!! url('assets/plugins/waitme/waitMe.css') !!}" />
-    <link rel="stylesheet" href="{!! url('assets/plugins/bootstrap-select/css/bootstrap-select.css') !!}" />
+    <link rel="stylesheet" href="/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" />
+    <link rel="stylesheet" href="/assets/plugins/waitme/waitMe.css" />
+    <link rel="stylesheet" href="/assets/plugins/bootstrap-select/css/bootstrap-select.css" />
 
 
     <!-- end extra css -->
@@ -125,10 +125,10 @@
 @section('extraJs')
     <!-- extraJs -->
 
-    <script src="{!! url('assets/plugins/autosize/autosize.js') !!}"></script>
-    <script src="{!! url('assets/plugins/momentjs/moment.js') !!}"></script>
+    <script src="/assets/plugins/autosize/autosize.js"></script>
+    <script src="/assets/plugins/momentjs/moment.js"></script>
 
-    <script src="{!! url('assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') !!}"></script>
+    <script src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
 
     <!-- end extraJs -->

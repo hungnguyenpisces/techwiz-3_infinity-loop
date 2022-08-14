@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Admin - Login</title>
-    <link rel="icon" type="image/x-icon" href="{!! url('assets/img/favicon.png') !!}" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
 
     @include('admin.layouts.style')
 

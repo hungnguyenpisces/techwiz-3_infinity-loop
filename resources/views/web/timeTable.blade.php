@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Hopital search</title>
-    <link rel="icon" type="image/x-icon" href="{!! url('assets/img/favicon.png') !!}" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
 
     @include('web.layouts.style')
 
