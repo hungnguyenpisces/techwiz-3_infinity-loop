@@ -19,7 +19,7 @@ class AppointmentNotify extends Mailable
      *
      * @return void
      */
-    public function __construct(Appointment $param)
+    public function __construct($param)
     {
         $this->apmt = $param;
     }

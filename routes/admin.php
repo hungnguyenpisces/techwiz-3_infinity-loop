@@ -50,8 +50,10 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::get('/appointment', AppointmentManageController::class . '@create')->name('appointment.create');
     Route::get('/appointment/{id}/detail', AppointmentManageController::class . '@show')->name('admin.appointment.detail');
     Route::get('/appointment/{id}/edit', AppointmentManageController::class . '@edit')->name('admin.appointment.edit');
-    Route::get('/appointment/{id}/reject', AppointmentManageController::class . '@reject')->name('admin.appointment.reject');
-    Route::get('/appointment/{id}/approve', AppointmentManageController::class . '@approve')->name('admin.appointment.approve');
+    Route::post('/appointment/{id}/approve', AppointmentManageController::class . '@approve')->name('admin.appointment.approve');
+    Route::post('/appointment/{id}/reject', AppointmentManageController::class . '@reject')->name('admin.appointment.reject');
+    Route::post('/appointment/{id}/update', AppointmentManageController::class . '@update')->name('admin.appointment.update');
+
     Route::get('/doctor-schedule', AppointmentManageController::class . '@doctorSchedule')->name('admin.doctor.schedule');
 
     Route::get('/doctor', [DoctorController::class, 'index'])->name('doctor.index');
