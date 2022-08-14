@@ -43,7 +43,7 @@
                             </div>
                             <div class="content">
                                 <h5>Doctor's position</h5>
-                                <h3><a href="doctor-details.html">Doctor Name</a></h3>
+                                <h3><a href="/doctor-detail">Doctor Name</a></h3>
                             </div>
                         </div>
 

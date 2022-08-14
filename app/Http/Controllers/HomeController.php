@@ -14,35 +14,24 @@ class HomeController extends Controller
         return view('web.index');
     }
 
+    public function hospital()
+    {
+        return view('web.hospital');
+    }
+
+    public function hospitalSearch()
+    {
+        return view('web.hospital-search');
+    }
+
+    public function departments()
+    {
+        return view('web.departments');
+    }
 
     public function time_table()
     {
         return view('web.timetable');
-    }
-
-    public function testimonial()
-    {
-        return view('web.testimonial');
-    }
-
-    public function project_detail()
-    {
-        return view('web.projectdetail');
-    }
-
-    public function faq()
-    {
-        return view('web.faq');
-    }
-
-    public function service()
-    {
-        return view('web.service');
-    }
-
-    public function service_detail()
-    {
-        return view('web.servicedetail');
     }
 
     public function doctor()
@@ -50,19 +39,14 @@ class HomeController extends Controller
         return view('web.doctor');
     }
 
-    public function doctor_detail()
+    public function doctorSearch()
     {
-        return view('web.doctordetail');
+        return view('web.doctor-search');
     }
 
-    public function blog()
+    public function doctorDetail()
     {
-        return view('web.blog');
-    }
-
-    public function blog_detail()
-    {
-        return view('web.blogdetail');
+        return view('web.doctor-detail');
     }
 
     public function contact_us()

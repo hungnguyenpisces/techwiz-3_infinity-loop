@@ -16,17 +16,18 @@ Route::prefix('admin')->middleware(['auth', 'role:Super-Admin|Admin'])->group(fu
 
 Route::get('/register', [AuthController::class, 'register'])->name('register.show');
 Route::post('/register', [AuthController::class, 'processRegister'])->name('register.perform');
-
 Route::get('/login', [AuthController::class, 'login'])->name('login.show');
 Route::post('/login', [AuthController::class, 'processLogin'])->name('login.perform');
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
-Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
-Route::get('/service', [HomeController::class, 'service'])->name('service');
+Route::get('/hospital', [HomeController::class, 'hospital'])->name('hospital');
+Route::get('/hospital-search', [HomeController::class, 'hospitalSearch'])->name('hospital-search');
+Route::get('/departments', [HomeController::class, 'departments'])->name('departments');
 Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
+Route::get('/doctor-search', [HomeController::class, 'doctorSearch'])->name('doctor-search');
+Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doctor-detail');
+
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
-Route::get('/user-chart', [HomeController::class, 'chart'])->name('chart');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/timetable', [HomeController::class, 'time_table'])->name('timetable');
@@ -70,30 +71,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });
 
-
-Route::get('/hospital', function () {
-    return view('web.hospital');
-});
-
-Route::get('/hospital-search', function () {
-    return view('web.hospital-search');
-});
-
-Route::get('/doctor', function () {
-    return view('web.doctor');
-});
-
-Route::get('/doctor-detail', function () {
-    return view('web.doctor-detail');
-});
-
-Route::get('/doctor-search', function () {
-    return view('web.doctor-search');
-});
-
-Route::get('/departments', function () {
-    return view('web.departments');
-});
 
 Route::get('/404', function () {
     return view('404');
