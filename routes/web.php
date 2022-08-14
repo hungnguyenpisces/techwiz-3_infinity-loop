@@ -48,25 +48,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
     Route::get('/user-appointment', [AppointmentController::class, 'show'])->name('appointment.show');
 
-
     Route::get('/user', [HealthIndexController::class, 'index'])->name('user.index');
     Route::post('/user', [HealthIndexController::class, 'store'])->name('user.store');
     Route::get('/user/{id}', [HealthIndexController::class, 'show'])->name('user.show');
     Route::get('/user/{id}/edit', [HealthIndexController::class, 'edit'])->name('user.edit');
     Route::put('/user/{id}', [HealthIndexController::class, 'update'])->name('user.update');
     Route::delete('/user/{id}', [HealthIndexController::class, 'destroy'])->name('user.destroy');
-
-    Route::get('/user-bmi', function () {
-        return view('user.user-bmi');
-    });
-
-    Route::get('/user-health', function () {
-        return view('user.user-health');
-    });
-
-    Route::get('/user-update', function () {
-        return view('user.user-update');
-    });
+    Route::get('/user-bmi', [HealthIndexController::class, 'bmi'])->name('user.bmi');
+    Route::get('/user-health', [HealthIndexController::class, 'health'])->name('user.health');
+    Route::get('/user-update-info', [HealthIndexController::class, 'updateInfo'])->name('user.updateInfo');
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });
