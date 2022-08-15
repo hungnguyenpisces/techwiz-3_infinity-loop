@@ -38,7 +38,7 @@
             <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
                 <div class="form-head">
                     <h4 class="title">Login To Your Account</h4>
-                    <form action="{{route('login.perform')}}" method="post">
+                    <form action="/login" method="post">
                         @csrf
                         <div class="form-group">
                             <input name="username" type="text" placeholder="username">

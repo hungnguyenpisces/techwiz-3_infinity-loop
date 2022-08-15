@@ -34,7 +34,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                <form action="{{route('appointment.store')}}" method="post">
+                <form action="/appointment" method="post">
                     @csrf
                     <div class="appointment-form">
                         <div class="row">

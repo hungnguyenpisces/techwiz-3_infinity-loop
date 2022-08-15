@@ -251,12 +251,12 @@ $appointment->status
 <script src="/assets/js/pages/forms/basic-form-elements.js"></script>
 <script>
     function updateForm() {
-        document.getElementById('appointmentForm').action = "{{route('admin.appointment.update', $appointment->id)}}";
+        document.getElementById('appointmentForm').action = "/admin/appointment/{{$appointment->id}}/update";
         document.getElementById('appointmentForm').method = "POST";
     }
 
     function cancelForm() {
-        document.getElementById('appointmentForm').action = "{{route('admin.appointment.reject', $appointment->id)}}";
+        document.getElementById('appointmentForm').action = "/admin/appointment/{{$appointment->id}}/reject";
         document.getElementById('appointmentForm').method = "POST";
     }
 </script>

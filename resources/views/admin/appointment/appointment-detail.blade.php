@@ -169,9 +169,9 @@ $appointment->status
                                     <div class="form-group">
                                         <div class="form-line">
                                             <label for="">Department:</label>
-                                        <select class="form-control show-tick" disabled>
-                                            <option value="" selected>{{$appointment->department_name}}</option>
-                                        </select>
+                                            <select class="form-control show-tick" disabled>
+                                                <option value="" selected>{{$appointment->department_name}}</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -251,12 +251,12 @@ $appointment->status
 <!-- script set atrribute form id appointmentForm action & method -->
 <script>
     function approveForm() {
-        document.getElementById('appointmentForm').action = "{{route('admin.appointment.approve', $appointment->id)}}";
+        document.getElementById('appointmentForm').action = "/admin/appointment/{{$appointment->id}}/approve";
         document.getElementById('appointmentForm').method = "POST";
     }
 
     function rejectForm() {
-        document.getElementById('appointmentForm').action = "{{route('admin.appointment.reject', $appointment->id)}}";
+        document.getElementById('appointmentForm').action = "/admin/appointment/{{$appointment->id}}/reject";
         document.getElementById('appointmentForm').method = "POST";
     }
 </script>
