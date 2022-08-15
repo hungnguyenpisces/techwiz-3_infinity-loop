@@ -18,17 +18,12 @@ class HealthIndexController extends Controller
     {
         $user = Auth::user();
 
-        $healthIndex = HealthIndex::where('users_id', $user->id)->take(1)->get();
-        $healthIndex = $healthIndex[0];
-        if (!$healthIndex) {
-            $healthIndex = new HealthIndex();
-            $healthIndex->user_id = $user->id;
-            $healthIndex->height = 170;
-            $healthIndex->weight = 70;
-            $healthIndex->heart_rate = 70;
-            $healthIndex->blood_pressure = 70;
-            $healthIndex->save();
-        }
+        $healthIndex = new HealthIndex();
+        $healthIndex->user_id = $user->id;
+        $healthIndex->height = 170;
+        $healthIndex->weight = 70;
+        $healthIndex->heart_rate = 70;
+        $healthIndex->blood_pressure = 70;
         return view('user.user-profile')->with(compact('healthIndex'));
     }
 
