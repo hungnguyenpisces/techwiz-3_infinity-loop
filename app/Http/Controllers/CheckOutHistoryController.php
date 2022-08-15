@@ -13,7 +13,8 @@ class CheckOutHistoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
         //check out history  join with  hospital, department doctor
         if (!Auth::check()) {
             return redirect()->route('login');
@@ -122,5 +123,24 @@ class CheckOutHistoryController extends Controller
             $request->session()->flash('success', 'History deleted sucessfully.');
         }
         return redirect(route('checkout.index'));
+    }
+
+    public function showDetail($id)
+    {
+        //check out history  join with  hospital, department doctor
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        } else {
+            $user = Auth::user();
+            $check_out_histories = CheckOutHistory::join('hospitals', 'check_out_histories.hospital_id', '=', 'hospitals.id')
+                ->join('departments', 'check_out_histories.department_id', '=', 'departments.id')
+                ->join('doctors', 'check_out_histories.doctor_id', '=', 'doctors.id')
+                ->select('check_out_histories.*', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
+                ->where('check_out_histories.user_id', $user->id)
+                ->where('check_out_histories.id', $id)
+                ->first();
+            // dd($check_out_histories);
+            return view('user.user-history-detail', compact('check_out_histories'));
+        }
     }
 }
