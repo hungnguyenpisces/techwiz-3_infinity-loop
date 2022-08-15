@@ -50,7 +50,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/user', [HealthIndexController::class, 'index'])->name('user.index');
     Route::post('/user', [HealthIndexController::class, 'store'])->name('user.store');
-    Route::get('/user/{id}', [HealthIndexController::class, 'show'])->name('user.show');
     Route::get('/user/{id}/edit', [HealthIndexController::class, 'edit'])->name('user.edit');
     Route::put('/user/{id}', [HealthIndexController::class, 'update'])->name('user.update');
     Route::delete('/user/{id}', [HealthIndexController::class, 'destroy'])->name('user.destroy');
