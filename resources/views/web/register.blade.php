@@ -36,7 +36,7 @@
             <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
                 <div class="form-head">
                     <h4 class="title">Registration</h4>
-                    <form action="{{route('register.perform')}}" method="POST">
+                    <form action="/register" method="POST">
                         {{ csrf_field() }}
                         <div class="socila-login">
                             <div class="row">

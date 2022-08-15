@@ -11,7 +11,7 @@
         <div class="container py-5 h-100 form-head">
             <h3 style="max-width: 90%; margin: auto" class="mt-3 text-center">Personal Health Information</h3>
 
-            <form action="{{route('user.store')}}" method="post">
+            <form action="/user" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-md-6 mb-4">
