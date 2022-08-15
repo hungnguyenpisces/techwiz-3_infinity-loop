@@ -24,6 +24,8 @@ class HealthIndexController extends Controller
         $healthIndex->weight = 70;
         $healthIndex->heart_rate = 70;
         $healthIndex->blood_pressure = 70;
+        $healthIndex->save();
+
         return view('user.user-profile')->with(compact('healthIndex'));
     }
 
