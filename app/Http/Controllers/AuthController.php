@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Mail\WellcomeJoinInfinityLoopTeam;
-use App\Models\HealthIndex;
 use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
@@ -33,18 +32,9 @@ class AuthController extends Controller
         $user->save();
         $user->assignRole('User');
 
-        auth()->login($user);
-
-        $lsHe = new HealthIndex();
-        $lsHe->user_id = $user->id;
-        $lsHe->height = 170;
-        $lsHe->weight = 70;
-        $lsHe->heart_rate = 70;
-        $lsHe->blood_pressure = 70;
-        $lsHe->save();
-
         Mail::to((string)$user->email)->send(new WellcomeJoinInfinityLoopTeam($user));
 
+        auth()->login($user);
         $request->session()->flash('success', "Account successfully registered.");
         return redirect()->route('index');
     }
