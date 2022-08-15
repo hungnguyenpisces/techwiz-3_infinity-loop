@@ -1,82 +1,96 @@
 @extends('user.layouts._master')
 @section('extraCss')
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
+<link href="/assets/css/datatable.css" rel="stylesheet">
 
-    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
+
+<!-- end common style Css -->
+<!-- extra css -->
 
 @endsection
 
 @section('content')
-    <section class="mt-5">
-        <h1 class="text-center">APPOINTMENTS</h1>
-        <div class="container">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="card">
-                    <div class="header">
-                        <ul class="header-dropdown">
-                            <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"
-                                                    data-toggle="dropdown" role="button" aria-haspopup="true"
-                                                    aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+<section class="content container">
+    <h1 class="text-center mt-3 mb-3">Appointments list</h1>
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="header">
+                    <ul class="header-dropdown">
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Time</th>
-                            <th>Department</th>
-                            <th>Hospital</th>
-                            <th>Doctor</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php $i = 1; ?>
-
-                        @foreach($appointments as $appointment)
-
                             <tr>
-                                <td><?php echo $i; ?></td>
-                                <td>{{ $appointment->created_at }}</td>
+                                <th>Department</th>
+                                <th>Hospital</th>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Department</th>
+                                <th>Hospital</th>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach($appointments as $appointment)
+                            <tr>
                                 <td>{{ $appointment->department_name }}</td>
                                 <td>{{ $appointment->hospital_name }}</td>
+                                @if(!$appointment->doctor_first_name)
+                                <td>N/A</td>
+                                @elseif($appointment->doctor_first_name)
                                 <td>{{ $appointment->doctor_first_name }}</td>
-                                <td>
-                                    @if($appointment->status == 'pending')
-                                        <span class="text-bg-warning badge badge-warning">{{ $appointment->status }}</span>
-                                    @elseif($appointment->status == 'Accepted')
-                                        <span class="text-bg-success badge badge-success">{{ $appointment->status }}</span>
-                                    @elseif($appointment->status == 'Cancelled')
-                                        <span class="text-bg-danger badge badge-danger">{{ $appointment->status }}</span>
-                                    @else
-                                        <span
-                                            class="text-bg-primary badge badge-primary">{{ $appointment->status }}</span>
-                                    @endif
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                                            data-target="#medicineDetail">
-                                        <i class="fa fa-eye"></i>
-                                    </button>
+                                @endif
+                                <td>{{ $appointment->date }}</td>
+                                <!-- <td>{{ $appointment->status }}</td> -->
+                                @if($appointment->status == 'Pending')
+                                <td><span class="text-bg-warning badge badge-warning">{{ $appointment->status }}</span></td>
+                                @elseif($appointment->status == 'Accepted')
+                                <td><span class="text-bg-success badge badge-success">{{ $appointment->status }}</span></td>
+                                @elseif($appointment->status == 'Done')
+                                <td><span class="text-bg-primary badge badge-primary">{{ $appointment->status }}</span></td>
+                                @elseif($appointment->status == 'Cancelled')
+                                <td><span class="text-bg-danger badge badge-danger">{{ $appointment->status }}</span></td>
+                                @endif
+                                <td class="text-center">
+                                    <a href="{{ route('appointment.detail', $appointment->id) }}" class="btn btn-success waves-effect">
+                                        <i class="material-icons">remove_red_eye</i>
+                                    </a>
                                 </td>
                             </tr>
-                            <?php $i++; ?>
-                        @endforeach
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 @endsection
 @section('extraJs')
 
+<script src="/assets/bundles/libscripts.bundle.js"></script>
+<script src="/assets/bundles/datatablescripts.bundle.js"></script>
+<script src="/assets/js/pages/tables/jquery-datatable.js"></script>
 @endsection
-
