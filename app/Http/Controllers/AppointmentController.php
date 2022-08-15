@@ -20,8 +20,6 @@ class AppointmentController extends Controller
         $hospitals = Hospital::all();
         $departments = Department::all();
         return view('web.appointment', compact('hospitals', 'departments'));
-
-
     }
 
 
@@ -83,7 +81,7 @@ class AppointmentController extends Controller
             ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
             ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
             ->where('user_id', $user->id)->get();
-//            dd($appointments);
+        //            dd($appointments);
         return view('user.user-appointments', compact('hospitals', 'departments', 'appointments'));
     }
 
@@ -138,9 +136,17 @@ class AppointmentController extends Controller
         }
         return redirect(route('appointment.index'));
     }
-    public function userHistory() {
+    public function userHistory()
+    {
         $user = Auth::user();
         $appointments = Appointment::where('user_id', $user->id)->get();
         return view('user.user-history', compact('appointments'));
+    }
+
+    // showDetail $id
+    public function showDetail($id)
+    {
+        $appointment = Appointment::find($id);
+        return view('user.user-appointment-detail', compact('appointment'));
     }
 }
