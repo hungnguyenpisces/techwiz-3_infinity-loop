@@ -9,6 +9,7 @@ use App\Models\Department;
 use App\Models\Doctor;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class AppointmentManageController extends Controller
@@ -113,6 +114,7 @@ class AppointmentManageController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = Auth::user();
         $appointment = Appointment::find($id);
         $appointment->doctor_id = $request->doctor_id;
         $appointment->hospital_id = $request->hospital_id;
@@ -122,7 +124,7 @@ class AppointmentManageController extends Controller
         $appointment->save();
 
         $appointment->message = 'Your appointment has been updated successfully.';
-        Mail::to('hungdevic@gmail.com')->send(new AppointmentNotify($appointment));
+        Mail::to((string)$user->email)->send(new AppointmentNotify($appointment));
         return redirect()->route('all-appointment.index')->with('success', 'Appointment has been updated successfully.');
     }
 
@@ -153,7 +155,7 @@ class AppointmentManageController extends Controller
 
         $appointment->message = 'Your appointment has been cancelled';
 
-        Mail::to('hungdevic@gmail.com')->send(new AppointmentNotify($appointment));
+        Mail::to((string)$appointment->user->email)->send(new AppointmentNotify($appointment));
         return redirect()->route('all-appointment.index')->with('success', 'Appointment has been accepted');
     }
 
@@ -172,7 +174,7 @@ class AppointmentManageController extends Controller
             ->where('appointments.id', $id)
             ->first();
         $appointment->message = 'Your appointment has been accepted by Staff';
-        Mail::to('hungdevic@gmail.com')->send(new AppointmentNotify($appointment));
+        Mail::to((string)$appointment->user->email)->send(new AppointmentNotify($appointment));
         return redirect()->route('all-appointment.index')->with('success', 'Appointment has been accepted');
     }
 }
