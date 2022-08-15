@@ -35,10 +35,8 @@ class AuthController extends Controller
 
         auth()->login($user);
 
-        $userLogin = Auth::user();
-
         $lsHe = new HealthIndex();
-        $lsHe->user_id = $userLogin->id;
+        $lsHe->user_id = $user->id;
         $lsHe->height = 170;
         $lsHe->weight = 70;
         $lsHe->heart_rate = 70;
