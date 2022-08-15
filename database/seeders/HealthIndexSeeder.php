@@ -26,7 +26,7 @@ class HealthIndexSeeder extends Seeder
         // blood_pressure
         for ($i = 0; $i < $limit; $i++) {
             HealthIndex::create([
-                'users_id' => $i + 1,
+                'user_id' => $i + 1,
                 'height' => $faker->numberBetween(150, 200),
                 'weight' => $faker->numberBetween(50, 100),
                 'heart_rate' => $faker->numberBetween(50, 100),
