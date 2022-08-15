@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class HealthIndex extends Model
 {
     use HasFactory;
+    protected $table = 'health_indices';
 
     public function user()
     {
