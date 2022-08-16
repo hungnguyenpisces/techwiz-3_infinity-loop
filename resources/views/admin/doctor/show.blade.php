@@ -28,17 +28,17 @@ Custom title if need
                                     <button class="btn btn-raised btn-primary bg-green btn-sm">Message</button>
                                 </div>
                                 <p class="social-icon">
-                                    <a title="Twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a>
-                                    <a title="Facebook" href="javascript:void(0);"><i
+                                    <a title="Twitter" href="#"><i class="zmdi zmdi-twitter"></i></a>
+                                    <a title="Facebook" href="#"><i
                                             class="zmdi zmdi-facebook"></i></a>
-                                    <a title="Google-plus" href="javascript:void(0);"><i
+                                    <a title="Google-plus" href="#"><i
                                             class="zmdi zmdi-twitter"></i></a>
-                                    <a title="Dribbble" href="javascript:void(0);"><i
+                                    <a title="Dribbble" href="#"><i
                                             class="zmdi zmdi-dribbble"></i></a>
-                                    <a title="Behance" href="javascript:void(0);"><i class="zmdi zmdi-behance"></i></a>
-                                    <a title="Instagram" href="javascript:void(0);"><i
+                                    <a title="Behance" href="#"><i class="zmdi zmdi-behance"></i></a>
+                                    <a title="Instagram" href="#"><i
                                             class="zmdi zmdi-instagram "></i></a>
-                                    <a title="Pinterest" href="javascript:void(0);"><i
+                                    <a title="Pinterest" href="#"><i
                                             class="zmdi zmdi-pinterest "></i></a>
                                 </p>
                             </div>
@@ -49,13 +49,13 @@ Custom title if need
                                     <li> <a href="mail-inbox.html" class=""><i class="zmdi zmdi-email"></i>
                                             <p>My Inbox</p>
                                         </a> </li>
-                                    <li> <a href="javascript:void(0);" class=""><i class="zmdi zmdi-camera"></i>
+                                    <li> <a href="#" class=""><i class="zmdi zmdi-camera"></i>
                                             <p>Gallery</p>
                                         </a> </li>
-                                    <li> <a href="javascript:void(0);"><i class="zmdi zmdi-attachment"></i>
+                                    <li> <a href="#"><i class="zmdi zmdi-attachment"></i>
                                             <p>Collections</p>
                                         </a> </li>
-                                    <li> <a href="javascript:void(0);"><i class="zmdi zmdi-format-subject"></i>
+                                    <li> <a href="#"><i class="zmdi zmdi-format-subject"></i>
                                             <p>Tasks</p>
                                         </a> </li>
                                 </ul>
@@ -148,12 +148,12 @@ Custom title if need
                                                         placeholder="Please type what you want..."></textarea>
                                                 </div>
                                             </div>
-                                            <div class="post-toolbar-b"> <a href="javascript:void(0);"
+                                            <div class="post-toolbar-b"> <a href="#"
                                                     tooltip="Add File" class="btn btn-raised btn-default btn-sm"><i
                                                         class="zmdi zmdi-attachment"></i></a> <a
-                                                    href="javascript:void(0);" tooltip="Add Image"
+                                                    href="#" tooltip="Add Image"
                                                     class="btn btn-raised btn-default btn-sm"><i
-                                                        class="zmdi zmdi-camera"></i></a> <a href="javascript:void(0);"
+                                                        class="zmdi zmdi-camera"></i></a> <a href="#"
                                                     class="pull-right btn btn-raised btn-success btn-sm"
                                                     tooltip="Post it!">Post</a> </div>
                                         </div>
@@ -168,10 +168,10 @@ Custom title if need
                                                     <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and
                                                         typesetting industry. Lorem Ipsum has been the industry's
                                                         standard dummy text ever since the 1500s, </p>
-                                                    <p> <a href="javascript:void(0);"
+                                                    <p> <a href="#"
                                                             class="btn btn-raised btn-info btn-sm"><i
                                                                 class="zmdi zmdi-favorite-outline"></i> Like (5) </a> <a
-                                                            href="javascript:void(0);"
+                                                            href="#"
                                                             class="btn btn-raised bg-soundcloud btn-sm"><i
                                                                 class="zmdi zmdi-long-arrow-return"></i> Reply</a> </p>
                                                 </div>
@@ -187,10 +187,10 @@ Custom title if need
                                                     <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and
                                                         typesetting industry. Lorem Ipsum has been the industry's
                                                         standard dummy text ever since the 1500s, </p>
-                                                    <p> <a href="javascript:void(0);"
+                                                    <p> <a href="#"
                                                             class="btn btn-raised btn-info btn-sm"><i
                                                                 class="zmdi zmdi-favorite-outline"></i> Like (5) </a> <a
-                                                            href="javascript:void(0);"
+                                                            href="#"
                                                             class="btn btn-raised bg-soundcloud btn-sm"><i
                                                                 class="zmdi zmdi-long-arrow-return"></i> Reply</a> </p>
                                                 </div>
@@ -206,16 +206,16 @@ Custom title if need
                                                     <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and
                                                         typesetting industry. Lorem Ipsum has been the industry's
                                                         standard dummy text ever since the 1500s, </p>
-                                                    <p> <a href="javascript:void(0);"
+                                                    <p> <a href="#"
                                                             class="btn btn-raised btn-info btn-sm"><i
                                                                 class="zmdi zmdi-favorite-outline"></i> Like (5) </a> <a
-                                                            href="javascript:void(0);"
+                                                            href="#"
                                                             class="btn btn-raised bg-soundcloud btn-sm"><i
                                                                 class="zmdi zmdi-long-arrow-return"></i> Reply</a> </p>
                                                 </div>
                                             </div>
                                             <hr>
-                                            <div class="text-center"> <a href="javascript:void(0);"
+                                            <div class="text-center"> <a href="#"
                                                     class="btn btn-raised btn-default">Load More …</a> </div>
                                         </div>
                                     </div>

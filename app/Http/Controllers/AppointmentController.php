@@ -20,8 +20,6 @@ class AppointmentController extends Controller
         $hospitals = Hospital::all();
         $departments = Department::all();
         return view('web.appointment', compact('hospitals', 'departments'));
-
-
     }
 
 

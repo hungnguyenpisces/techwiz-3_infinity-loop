@@ -25,18 +25,18 @@
                         <h3 class="card-title text-center">CONFIRMATION LETTER</h3>
                     </div>
                     <div class="card-body">
-                        <p>Dear, Mr/Ms </p> @yield('last_name')
+                        <p>Dear, Mr/Ms </p> {{$appointment->user->last_name}}
                         <p>We are pleased to inform you that your appointment you booked has been confirmed. Please find below the details of your booking:</p>
                         <div>
-                            <strong>Date:</strong> @yield('date')
+                            <strong>Date:</strong> <?php echo date('d-m-Y', strtotime($appointment->date)); ?>
                             <br>
-                            <strong>Time:</strong>  @yield('time')
+                            <strong>Time:</strong>  <?php echo date('h:i A', strtotime($appointment->time)); ?>
                             <br>
-                            <strong>Department:</strong>  @yield('department')
+                            <strong>Department:</strong>  {{$appointment->department_name}}
                             <br>
-                            <strong>Address:</strong> @yield('address')
+                            <strong>Hospital:</strong> {{$appointment->hospital_name}}
                             <br>
-                            <strong>Doctor:</strong> @yield('doctor')
+                            <strong>Doctor:</strong> {{$appointment->doctor_name}}
                             <br>
                             <strong>Note:</strong>  @yield('note')
                             <br>

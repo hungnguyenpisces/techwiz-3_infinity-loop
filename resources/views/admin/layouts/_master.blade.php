@@ -38,7 +38,7 @@
 
     <ul id="f-menu" class="mfbc-br mfb-zoomin" data-mfb-toggle="hover">
         <li class="mfbc_wrap">
-            <a href="javascript:void(0);" class="mfbcb-main g-bg-cyan">
+            <a href="#" class="mfbcb-main g-bg-cyan">
                 <i class="mfbcm-icon-resting zmdi zmdi-plus"></i>
                 <i class="mfbcm-icon-active zmdi zmdi-close"></i>
             </a>

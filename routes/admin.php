@@ -62,16 +62,6 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::resource('/hospital', HospitalController::class);
     Route::resource('/department', DepartmentController::class);
 
-    Route::get('/add-doctor', function () {
-        return view('admin.doctor.create');
-    });
-    Route::get('/doctor', function () {
-        return view('admin.doctor.index');
-    });
-    Route::get('/doctor-profile', function () {
-        return view('admin.doctor.show');
-    });
-
     Route::get('/patient', function () {
         return view('admin.patient.index');
     });

@@ -35,10 +35,10 @@
                             <div class="image">
                                 <img src="assets/images/doctors/detail-img.jpg" alt="#">
                                 <ul class="social">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                                 </ul>
                             </div>
                             <div class="content">

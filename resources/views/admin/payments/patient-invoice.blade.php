@@ -25,13 +25,13 @@
                         <div class="header">
                             <h2>Invoices Detail</h2>
                             <ul class="header-dropdown">
-                                <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more-vert"></i> </a>
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more-vert"></i> </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Print Invoices</a></li>
+                                        <li><a href="#">Print Invoices</a></li>
                                         <li role="presentation" class="divider"></li>
-                                        <li><a href="javascript:void(0);">Export to XLS</a></li>
-                                        <li><a href="javascript:void(0);">Export to CSV</a></li>
-                                        <li><a href="javascript:void(0);">Export to XML</a></li>
+                                        <li><a href="#">Export to XLS</a></li>
+                                        <li><a href="#">Export to CSV</a></li>
+                                        <li><a href="#">Export to XML</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -130,7 +130,7 @@
                                 <div class="col-md-12 text-right hidden-print">
                                     <hr>
                                     <a href="javascript:window.print()" class="btn btn-raised btn-success"><i class="zmdi zmdi-print"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-raised btn-default">Submit</a>
+                                    <a href="#" class="btn btn-raised btn-default">Submit</a>
                                 </div>
                             </div>
                         </div>
