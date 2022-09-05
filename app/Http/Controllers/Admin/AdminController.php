@@ -6,13 +6,30 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
+    public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
+
     public function login()
     {
-        return view('admin.login');
+        $user = Auth::user();
+        if ($user == null) {
+            return view('admin.login');
+        } else {
+            if ($user->hasRole(['Super-Admin', 'Admin'])) {
+                return redirect()->route('admin.dashboard');
+            } else {
+                Session::flush();
+                Auth::logout();
+                return redirect()->route('admin.login.show')->with('error', 'You do not have permission to access this page');
+            }
+        }
     }
 
     public function processLogin(LoginRequest $request)
@@ -24,8 +41,16 @@ class AdminController extends Controller
 
             if ($user->hasRole(['Super-Admin', 'Admin'])) {
                 Auth::login($user);
-                return redirect()->route('admin.dashboard');
+                $token = auth('api')->setTTL(240)->attempt($credentials);
+                $resToken = [
+                    'access_token' => $token,
+                    'token_type' => 'bearer',
+                    'expires_in' => auth('api')->factory()->getTTL() * 60 * 4
+                ];
+                return Redirect::route('admin.dashboard')->with('token', $resToken);
             } else {
+                Session::flush();
+                Auth::logout();
                 return redirect()->route('admin.login.show')->with('error', 'You do not have permission to access this page');
             }
         } else {
@@ -38,21 +63,7 @@ class AdminController extends Controller
     {
         Session::flush();
         Auth::logout();
-        return redirect()->route('index');
-    }
-
-    public function dashboard()
-    {
-        $user = Auth::user();
-        if ($user == null) {
-            return redirect()->route('admin.login.show');
-        } else {
-            if ($user->hasRole(['Super-Admin', 'Admin'])) {
-                return view('admin.dashboard');
-            } else {
-                return redirect()->route('admin.login.show')->with('error', 'You do not have permission to access this page');
-            }
-        }
+        return redirect()->route('admin.login.show');
     }
 
     public function report()
