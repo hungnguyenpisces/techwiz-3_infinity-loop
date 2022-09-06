@@ -8,25 +8,30 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
-    public function appointment(){
+    public function appointment()
+    {
         return $this->hasMany('App\Models\Appointment');
     }
 
-    public function health(){
-        return $this->hasOne('App\Models\HealthIndex');
+    public function health()
+    {
+        return $this->hasMany('App\Models\HealthIndex');
     }
 
-    public function checkout(){
+    public function checkout()
+    {
         return $this->hasMany('App\Models\CheckOutHistory');
     }
 
-    public function comment(){
+    public function comment()
+    {
         return $this->hasMany('App\Models\Comment');
     }
 
@@ -63,4 +68,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Rest omitted for brevity
+
+    /**
+     * Get the identifier that will be stored in the subject claim of the JWT.
+     *
+     * @return mixed
+     */
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        return [
+            'uid' => $this->id,
+            'role' => $this->getRoleNames(),
+        ];
+    }
 }

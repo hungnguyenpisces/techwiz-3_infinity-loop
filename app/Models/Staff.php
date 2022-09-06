@@ -4,12 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
-class Staff extends Model
+class Staff extends User
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
-    public function checkout(){
+    protected $guard_name = 'web';
+    
+    public function checkout()
+    {
         return $this->hasMany('App\Models\CheckOutHistory');
     }
 }

@@ -11,16 +11,16 @@ use App\Http\Controllers\Admin\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::withoutMiddleware(['auth', 'role:Super-Admin|Admin'])->group(function () {
+Route::withoutMiddleware(['role:Super-Admin|Admin'])->group(function () {
     Route::get('/', function () {
         return redirect()->route('admin.login.show');
     });
     Route::get('/login', [AdminController::class, 'login'])->name('admin.login.show');
     Route::post('/login', [AdminController::class, 'processLogin'])->name('admin.login.perform');
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 });
 
 Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/users', UserController::class . '@index')->name('users.index');
     Route::get('/users/create', UserController::class . '@create')->name('users.create');
     Route::post('/users/store', UserController::class . '@store')->name('users.store');

@@ -62,7 +62,7 @@ Admin
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2>Hospital Survey</h2>
+                        <h2>Patients & Appointments</h2>
                         <ul class="header-dropdown">
                             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                 <ul class="dropdown-menu float-right">
@@ -414,15 +414,43 @@ Admin
 </section>
 
 <!-- ============================endcontent============================== -->
-
-
 @endsection
 
 @section('extraJs')
 <!-- extraJs -->
+@if(session('token'))
+<script>
+    const token = <?php echo json_encode(session('token')); ?>;
+    sessionStorage.setItem('token', JSON.stringify(token));
+</script>
+@endif
+@if(!session('token'))
+@hasanyrole('Super-Admin|Admin|Staff')
+<script>
+    if (!sessionStorage.getItem('token')) {
+        window.location.href = "/admin/logout";
+    } else {
+        $.ajax({
+            url: "/api/refresh",
+            type: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + JSON.parse(sessionStorage.getItem("token")).access_token,
+            },
+            success: function(data) {
+                sessionStorage.setItem('token', JSON.stringify(data));
+            },
+            error: function(data) {
+                console.log(data);
+            },
+        });
+    }
+</script>
+@endhasanyrole
+@endif
 <script src="/assets/bundles/chartscripts.bundle.js"></script>
 <script src="/assets/bundles/sparklinescripts.bundle.js"></script>
-<script src="/assets/js/pages/index.js"></script>
+<script src="/assets/js/pages/dashboard.js"></script>
 <script src="/assets/js/pages/charts/sparkline.min.js"></script>
 <!-- end extraJs -->
 @endsection

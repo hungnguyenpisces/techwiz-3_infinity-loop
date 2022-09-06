@@ -274,7 +274,7 @@ Custom title if need
 
 <script src="/assets/bundles/chartscripts.bundle.js"></script>
 <script src="/assets/bundles/sparklinescripts.bundle.js"></script>
-<script src="/assets/js/pages/index.js"></script>
+<script src="/assets/js/pages/dashboard.js"></script>
 <script src="/assets/js/pages/charts/sparkline.min.js"></script>
 
 <!-- end extraJs -->

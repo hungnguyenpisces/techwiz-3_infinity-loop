@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\AdminDashboardApiController;
+use App\Http\Controllers\Api\TokenController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'api'], function () {
+    Route::post('login', [TokenController::class, 'login']);
+    Route::post('logout', [TokenController::class, 'logout']);
+    Route::post('refresh', [TokenController::class, 'refresh']);
+    Route::post('me', [TokenController::class, 'me']);
+});
+Route::group(['middleware' => ['checkRole:Super-Admin,Admin,Staff']], function () {
+    Route::get('/users', [AdminDashboardApiController::class, 'countPatientAndAppointment']);
 });
