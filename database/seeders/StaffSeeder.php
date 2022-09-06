@@ -17,23 +17,13 @@ class StaffSeeder extends Seeder
      */
     public function run()
     {
-        // first_name
-        // last_name
-        // hospital_id random from 1 to 10
-        // gender random from male female
-        // date_of_birth less than 20 years from now
-        // username
-        // email
-        // phone
-        // address
-        // password
         $faker = Factory::create();
         $limit = 10;
         for ($i = 0; $i < $limit; $i++) {
-            Staff::create([
+            $staff = Staff::create([
                 'first_name' => $faker->firstName,
                 'last_name' => $faker->lastName,
-                'hospital_id' => $faker->numberBetween(1, 10),
+                'hospital_id' => $i + 1,
                 'gender' => $faker->randomElement(['Male', 'Female']),
                 'phone' => $faker->phoneNumber,
                 'address' => $faker->city,
@@ -42,6 +32,7 @@ class StaffSeeder extends Seeder
                 'password' => Hash::make('12345678'),
                 'date_of_birth' => $faker->dateTimeBetween('-20 years', '-18 years')
             ]);
+            $staff->assignRole('Admin', 'Staff');
         }
     }
 }

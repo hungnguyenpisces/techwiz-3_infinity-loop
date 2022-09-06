@@ -592,7 +592,7 @@ Custom title if need
 <!-- extraJs -->
 
 <script src="/assets/bundles/chartscripts.bundle.js"></script>
-<script src="/assets/js/pages/index.js"></script>
+<script src="/assets/js/pages/dashboard.js"></script>
 <script src="/assets/bundles/sparklinescripts.bundle.js"></script> 
 <script src="/assets/bundles/jvectormapscripts.bundle.js"></script> 
 <script src="/assets/plugins/jquery-countto/jquery.countTo.js"></script> 
