@@ -22,7 +22,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
 
-        $users = User::all();
+        $users = User::orderBy('id', 'ASC')->paginate(11);
 
         return view('admin.users.index', compact('users'));
     }
@@ -94,13 +94,6 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'same:confirm-password',
-            'roles' => 'required'
-        ]);
-
         $input = $request->all();
         if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);

@@ -26,7 +26,7 @@
                         <h1 class="page-title">About Us</h1>
                     </div>
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li>About Us</li>
                     </ul>
                 </div>
@@ -142,7 +142,7 @@
                         </div>
                         <div class="content">
                             <h5>Cardiologist</h5>
-                            <h3><a href="doctor-details.html">Dr.Felica Queen</a></h3>
+                            <h3><a href="/doctor-detail">Dr.Felica Queen</a></h3>
                         </div>
                     </div>
 
@@ -161,7 +161,7 @@
                         </div>
                         <div class="content">
                             <h5>Neurologist</h5>
-                            <h3><a href="doctor-details.html">Dr.Alice Williams</a></h3>
+                            <h3><a href="/doctor-detail">Dr.Alice Williams</a></h3>
                         </div>
                     </div>
 
@@ -199,7 +199,7 @@
                         </div>
                         <div class="content">
                             <h5>Physician Assistant</h5>
-                            <h3><a href="doctor-details.html">Dr.Michael Bean</a></h3>
+                            <h3><a href="/doctor-detail">Dr.Michael Bean</a></h3>
                         </div>
                     </div>
 

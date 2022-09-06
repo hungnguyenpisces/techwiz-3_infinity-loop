@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('hospital_departments', function (Blueprint $table) {
             $table->id();
-            $table->string('hospital_id');
-            $table->string('department_id');
+            $table->bigInteger('hospital_id');
+            $table->bigInteger('department_id');
             $table->timestamps();
         });
     }

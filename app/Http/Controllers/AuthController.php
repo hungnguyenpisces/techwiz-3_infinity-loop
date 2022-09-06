@@ -32,7 +32,7 @@ class AuthController extends Controller
         $user->save();
         $user->assignRole('User');
 
-//        Mail::to('hungdevic@gmail.com')->send(new WellcomeJoinInfinityLoopTeam($user));
+        Mail::to((string)$user->email)->send(new WellcomeJoinInfinityLoopTeam($user));
 
         auth()->login($user);
         $request->session()->flash('success', "Account successfully registered.");

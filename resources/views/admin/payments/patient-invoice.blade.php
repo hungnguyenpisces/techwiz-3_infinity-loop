@@ -40,7 +40,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="media">
-                                        <img class="align-self-start mr-3" src="{!! url('assets/images/logo-placeholder.jpg') !!}" width="70" alt="Swift">
+                                        <img class="align-self-start mr-3" src="/assets/images/logo-placeholder.jpg" width="70" alt="Swift">
                                         <div class="media-body">
                                             <h4>Invoice # <br>
                                                 <strong>2015-04-5654667546</strong>

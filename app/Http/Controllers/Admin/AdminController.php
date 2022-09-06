@@ -12,7 +12,7 @@ class AdminController extends Controller
 {
     public function login()
     {
-        return view('admin/login');
+        return view('admin.login');
     }
 
     public function processLogin(LoginRequest $request)
@@ -48,10 +48,20 @@ class AdminController extends Controller
             return redirect()->route('admin.login.show');
         } else {
             if ($user->hasRole(['Super-Admin', 'Admin'])) {
-                return view('admin/dashboard');
+                return view('admin.dashboard');
             } else {
                 return redirect()->route('admin.login.show')->with('error', 'You do not have permission to access this page');
             }
         }
+    }
+
+    public function report()
+    {
+        return view('admin.report');
+    }
+
+    public function widgets()
+    {
+        return view('admin.widgets');
     }
 }

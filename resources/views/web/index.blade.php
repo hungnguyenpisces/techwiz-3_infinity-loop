@@ -636,7 +636,7 @@
                         <div class="pf-content">
                             <a href="#" class="detail-btn"><i class="lni lni-link"></i></a>
                             <span class="category">Eye Surgery</span>
-                            <h4><a href="portfolio-details.html">Dry Eye Surgery</a></h4>
+                            <h4><a href="#">Dry Eye Surgery</a></h4>
                         </div>
                     </div>
                 </div>

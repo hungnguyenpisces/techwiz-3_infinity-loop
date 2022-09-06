@@ -33,7 +33,7 @@
 
                     <div class="single-footer f-about">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="assets/img/favicon.png" style="width: 40px;height: 40px" alt="logo">
                             </a>
                         </div>

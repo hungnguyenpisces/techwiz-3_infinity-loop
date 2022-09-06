@@ -7,7 +7,7 @@
 @section('extraCss')
     <!-- extra css -->
 
-    <link rel="stylesheet" href="{!! url('assets/plugins/fullcalendar/fullcalendar.min.css') !!}"/>
+    <link rel="stylesheet" href="/assets/plugins/fullcalendar/fullcalendar.min.css"/>
     <!-- end extra css -->
 @endsection
 
@@ -69,8 +69,8 @@
 
 @section('extraJs')
     <!-- extraJs -->
-    <script src="{!! url('assets/bundles/fullcalendarscripts.bundle.js') !!}"></script>
-    <script src="{!! url('assets/js/pages/calendar/calendar.js') !!}"></script>
+    <script src="/assets/bundles/fullcalendarscripts.bundle.js"></script>
+    <script src="/assets/js/pages/calendar/calendar.js"></script>
 
     <!-- end extraJs -->
 @endsection

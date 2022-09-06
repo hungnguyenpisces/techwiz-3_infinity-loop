@@ -6,7 +6,7 @@ Appointments Management
 
 @section('extraCss')
 <!-- extra css -->
-<link href="{!! url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css') !!}" rel="stylesheet">
+<link href="/assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
 <!-- end extra css -->
 @endsection
 
@@ -108,9 +108,9 @@ Appointments Management
 
 @section('extraJs')
 <!-- extraJs -->
-<script src="{!! url('assets/bundles/datatablescripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/js/morphing.js') !!}"></script>
-<script src="{!! url('assets/js/pages/tables/jquery-datatable.js') !!}"></script>
+<script src="/assets/bundles/datatablescripts.bundle.js"></script>
+<script src="/assets/js/morphing.js"></script>
+<script src="/assets/js/pages/tables/jquery-datatable.js"></script>
 
 <!-- end extraJs -->
 @endsection

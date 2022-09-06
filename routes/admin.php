@@ -5,10 +5,9 @@ use App\Http\Controllers\Admin\AppointmentManageController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\DoctorController;
-use App\Http\Controllers\Admin\HospitalController;
-use App\Http\Controllers\Admin\StaffController;
+use App\Http\Controllers\Admin\PatientController;
+use App\Http\Controllers\Admin\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,9 +18,6 @@ Route::withoutMiddleware(['auth', 'role:Super-Admin|Admin'])->group(function () 
     Route::get('/login', [AdminController::class, 'login'])->name('admin.login.show');
     Route::post('/login', [AdminController::class, 'processLogin'])->name('admin.login.perform');
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/blank', function () {
-        return view('admin.blank');
-    });
 });
 
 Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
@@ -51,50 +47,29 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::delete('/permissions/{id}', [PermissionController::class, 'destroy'])->name('permissions.destroy');
 
     Route::get('/all-appointment', AppointmentManageController::class . '@index')->name('all-appointment.index');
+    Route::get('/appointment', AppointmentManageController::class . '@create')->name('appointment.create');
     Route::get('/appointment/{id}/detail', AppointmentManageController::class . '@show')->name('admin.appointment.detail');
     Route::get('/appointment/{id}/edit', AppointmentManageController::class . '@edit')->name('admin.appointment.edit');
-    Route::get('/appointment/{id}/reject', AppointmentManageController::class . '@reject')->name('admin.appointment.reject');
-    Route::get('/appointment/{id}/approve', AppointmentManageController::class . '@approve')->name('admin.appointment.approve');
+    Route::post('/appointment/{id}/approve', AppointmentManageController::class . '@approve')->name('admin.appointment.approve');
+    Route::post('/appointment/{id}/reject', AppointmentManageController::class . '@reject')->name('admin.appointment.reject');
+    Route::post('/appointment/{id}/update', AppointmentManageController::class . '@update')->name('admin.appointment.update');
 
+    Route::get('/doctor-schedule', AppointmentManageController::class . '@doctorSchedule')->name('admin.doctor.schedule');
 
-    Route::resource('/doctor', DoctorController::class);
-    Route::resource('/staff', StaffController::class);
-    Route::resource('/hospital', HospitalController::class);
-    Route::resource('/department', DepartmentController::class);
+    Route::get('/doctor', [DoctorController::class, 'index'])->name('doctor.index');
+    Route::get('/doctor/create', [DoctorController::class, 'create'])->name('doctor.create');
+    Route::get('/doctor/doctor-profile', [DoctorController::class, 'show'])->name('doctor.show');
 
-    Route::get('/patient', function () {
-        return view('admin.patient.index');
-    });
-    Route::get('/add-patient', function () {
-        return view('admin.patient.create');
-    });
-    Route::get('/patient-profile', function () {
-        return view('admin.patient.show');
-    });
+    Route::get('/patient', [PatientController::class, 'index'])->name('patient.index');
+    Route::get('/patient/create', [PatientController::class, 'create'])->name('patient.create');
+    Route::get('/patient/patient-profile', [PatientController::class, 'show'])->name('patient.show');
 
-    Route::get('/appointment', function () {
-        return view('admin.appointment.book-appointment');
-    });
-    Route::get('/doctor-schedule', function () {
-        return view('admin.appointment.doctor-schedule');
-    });
+    Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+    Route::get('/payment/add-payment', [PaymentController::class, 'create'])->name('payment.create');
+    Route::get('/payment/patient-invoice', [PaymentController::class, 'show'])->name('payment.show');
 
-    Route::get('/payment', function () {
-        return view('admin.payments.payments');
-    });
-    Route::get('/add-payment', function () {
-        return view('admin.payments.add-payments');
-    });
-    Route::get('/patient-invoice', function () {
-        return view('admin.payments.patient-invoice');
-    });
-
-    Route::get('/report', function () {
-        return view('admin.report');
-    });
-    Route::get('/widgets', function () {
-        return view('admin.widgets');
-    });
+    Route::get('/report', [AdminController::class, 'report'])->name('report.index');
+    Route::get('/widgets', [AdminController::class, 'widgets'])->name('widgets.index');
 
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout.perform');
 });

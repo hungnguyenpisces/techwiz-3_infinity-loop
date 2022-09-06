@@ -6,14 +6,14 @@ Custom title if need
 
 @section('extraCss')
 <!-- extra css -->
-    <link rel="stylesheet" href="{!! url('assets/plugins/dropzone/dropzone.css') !!}">
+    <link rel="stylesheet" href="/assets/plugins/dropzone/dropzone.css">
 
     <link rel="stylesheet"
-        href="{!! url('assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') !!}" />
+        href="/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" />
 
-    <link rel="stylesheet" href="{!! url('assets/plugins/waitme/waitMe.css') !!}" />
+    <link rel="stylesheet" href="/assets/plugins/waitme/waitMe.css" />
 
-    <link rel="stylesheet" href="{!! url('assets/plugins/bootstrap-select/css/bootstrap-select.css') !!}" />
+    <link rel="stylesheet" href="/assets/plugins/bootstrap-select/css/bootstrap-select.css" />
 <!-- end extra css -->
 @endsection
 
@@ -194,11 +194,11 @@ Custom title if need
 @section('extraJs')
 <!-- extraJs -->
 
-    <script src="{!! url('assets/plugins/autosize/autosize.js') !!}"></script>
-    <script src="{!! url('assets/plugins/momentjs/moment.js') !!}"></script>
-    <script src="{!! url('assets/plugins/dropzone/dropzone.js') !!}"></script>
-    <script src="{!! url('assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') !!}"></script>
-    <script src="{!! url('assets/js/pages/forms/basic-form-elements.js') !!}"></script>
+    <script src="/assets/plugins/autosize/autosize.js"></script>
+    <script src="/assets/plugins/momentjs/moment.js"></script>
+    <script src="/assets/plugins/dropzone/dropzone.js"></script>
+    <script src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="/assets/js/pages/forms/basic-form-elements.js"></script>
     <script>(function () { var js = "window['__CF$cv$params']={r:'738813effa6c2390',m:'VuitF6PK5DLz8PUEBdKZpsVkGiNhNI9t.TcTOEX1nOo-1660127654-0-AVnno4w4LkQWXS14bzfPf11UXujvCHySfOm6cnwfXhy4GB7TOvncdZ4EIGf7Z7sacrEz0dwdLp2jZcbwwgFOBJrYCHqf89kBgBDqYbgnLOEHCLJxvJ2kzrilFJ7ZKDIsMf2xsDqEWCSodC+RS4I7H8sFnYgiS5haTNejTnfK4Let',s:[0x65416c2db8,0x7772ee6685],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);"; var _0xh = document.createElement('iframe'); _0xh.height = 1; _0xh.width = 1; _0xh.style.position = 'absolute'; _0xh.style.top = 0; _0xh.style.left = 0; _0xh.style.border = 'none'; _0xh.style.visibility = 'hidden'; document.body.appendChild(_0xh); function handler() { var _0xi = _0xh.contentDocument || _0xh.contentWindow.document; if (_0xi) { var _0xj = _0xi.createElement('script'); _0xj.nonce = ''; _0xj.innerHTML = js; _0xi.getElementsByTagName('head')[0].appendChild(_0xj); } } if (document.readyState !== 'loading') { handler(); } else if (window.addEventListener) { document.addEventListener('DOMContentLoaded', handler); } else { var prev = document.onreadystatechange || function () { }; document.onreadystatechange = function (e) { prev(e); if (document.readyState !== 'loading') { document.onreadystatechange = prev; handler(); } }; } })();</script>
 <!-- end extraJs -->
 @endsection

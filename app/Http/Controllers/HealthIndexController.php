@@ -16,11 +16,17 @@ class HealthIndexController extends Controller
      */
     public function index()
     {
-        $lsHe = HealthIndex::all();
         $user = Auth::user();
-        $healthIndex = HealthIndex::where('users_id', $user->id)->take(1)->get();
-        $healthIndex = $healthIndex[0];
-        return view('user.user-profile')->with(compact('lsHe', 'healthIndex'));
+
+        $healthIndex = new HealthIndex();
+        $healthIndex->user_id = $user->id;
+        $healthIndex->height = 170;
+        $healthIndex->weight = 70;
+        $healthIndex->heart_rate = 70;
+        $healthIndex->blood_pressure = 70;
+        $healthIndex->save();
+
+        return view('user.user-profile')->with(compact('healthIndex'));
     }
 
     /**
@@ -107,12 +113,27 @@ class HealthIndexController extends Controller
     public function destroy($id, Request $request)
     {
         $heal = HealthIndex::find($id);
-        if($heal == null) {
+        if ($heal == null) {
             $request->session()->flash('danger', 'Index not found.');
         } else {
             $heal->delete();
             $request->session()->flash('success', 'Index deleted sucessfully.');
         }
         return redirect(route('user.index'));
+    }
+
+    public function bmi()
+    {
+        return view('user.user-bmi');
+    }
+
+    public function health()
+    {
+        return view('user.user-health');
+    }
+
+    public function updateInfo()
+    {
+        return view('user.user-update-info');
     }
 }

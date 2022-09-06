@@ -33,7 +33,7 @@ Role Management
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{route('roles.update', $role->id)}}" method="POST">
+                    <form action="/admin/roles/{{$role->id}}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="card-body">

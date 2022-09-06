@@ -6,7 +6,7 @@ Admin
 
 @section('extraCss')
 <!-- extra css -->
-<link rel="stylesheet" href="{!! url('assets/plugins/morrisjs/morris.css') !!}">
+<link rel="stylesheet" href="/assets/plugins/morrisjs/morris.css">
 <!-- end extra css -->
 @endsection
 
@@ -420,9 +420,9 @@ Admin
 
 @section('extraJs')
 <!-- extraJs -->
-<script src="{!! url('assets/bundles/chartscripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/bundles/sparklinescripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/js/pages/index.js') !!}"></script>
-<script src="{!! url('assets/js/pages/charts/sparkline.min.js') !!}"></script>
+<script src="/assets/bundles/chartscripts.bundle.js"></script>
+<script src="/assets/bundles/sparklinescripts.bundle.js"></script>
+<script src="/assets/js/pages/index.js"></script>
+<script src="/assets/js/pages/charts/sparkline.min.js"></script>
 <!-- end extraJs -->
 @endsection
