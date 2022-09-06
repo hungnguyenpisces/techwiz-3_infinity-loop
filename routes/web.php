@@ -10,7 +10,7 @@ use App\Http\Controllers\MedicinePillController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::prefix('admin')->middleware(['auth', 'role:Super-Admin|Admin'])->group(function () {
+Route::prefix('admin')->middleware(['role:Super-Admin|Admin'])->group(function () {
     require_once __DIR__ . '/admin.php';
 });
 

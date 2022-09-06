@@ -19,6 +19,20 @@ class UserSeeder extends Seeder
     {
         $faker = Factory::create();
 
+        $hung = User::create([
+            'first_name' => 'Hung',
+            'last_name' => 'Devic',
+            'username' => 'hung',
+            'email' => 'hungdevic@email.com',
+            'password' => Hash::make('12345678'),
+            'phone' => $faker->phoneNumber,
+            'address' => $faker->city,
+            'gender' => $faker->randomElement(['Male', 'Female']),
+            'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
+            'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
+        ]);
+        $hung->assignRole('Super-Admin');
+
         $ngan = User::create([
             'first_name' => 'Ngan',
             'last_name' => 'Ga',
@@ -45,7 +59,7 @@ class UserSeeder extends Seeder
             'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
             'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
         ]);
-        $giang->assignRole('Admin');
+        $giang->assignRole('Admin', 'Staff');
 
         $hiep = User::create([
             'first_name' => 'Hiep',
@@ -59,7 +73,21 @@ class UserSeeder extends Seeder
             'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
             'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
         ]);
-        $hiep->assignRole('Admin');
+        $hiep->assignRole('Admin', 'Staff');
+
+        $hien = User::create([
+            'first_name' => 'Hien',
+            'last_name' => 'Ga',
+            'username' => 'hien',
+            'email' => 'hienga@email.com',
+            'password' => Hash::make('12345678'),
+            'phone' => $faker->phoneNumber,
+            'address' => $faker->city,
+            'gender' => $faker->randomElement(['Male', 'Female']),
+            'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
+            'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
+        ]);
+        $hien->assignRole('Admin', 'Staff');
 
         $huan = User::create([
             'first_name' => 'Huan',
@@ -73,9 +101,9 @@ class UserSeeder extends Seeder
             'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
             'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
         ]);
-        $huan->assignRole('User');
+        $huan->assignRole('User', 'Patient');
 
-        $limit = 100;
+        $limit = 300;
         for ($i = 0; $i < $limit; $i++) {
             $user = User::create([
                 'first_name' => $faker->firstName,
@@ -88,8 +116,10 @@ class UserSeeder extends Seeder
                 'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
                 'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
                 'password' => Hash::make('12345678'),
+                'created_at' => $faker->dateTimeBetween('-1 years', '-1 days'),
+                'updated_at' => $faker->dateTimeBetween('-1 days', 'now'),
             ]);
-            $user->assignRole('User');
+            $user->assignRole('User', 'Patient');
         }
     }
 }
