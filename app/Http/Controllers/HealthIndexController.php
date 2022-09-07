@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
+use App\Models\Department;
 use App\Models\HealthIndex;
+use App\Models\Hospital;
 use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -68,7 +72,12 @@ class HealthIndexController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = Auth::user();
+        $healthIndex = health_indices::join('users', 'healthIndex.user_id', '=', 'users.id')
+            ->join('', '', '=', '')
+            ->select('', 'users.first_name', 'users.last_name', '')
+            ->where('user_id', $user->id)->get();
+        return view('user.user-profile', compact('healthIndex'));
     }
 
     /**

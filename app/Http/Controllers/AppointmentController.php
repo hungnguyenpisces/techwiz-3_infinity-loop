@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\CheckOutHistory;
 use App\Models\Department;
+use App\Models\Doctor;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -93,11 +94,18 @@ class AppointmentController extends Controller
      */
     public function edit($id)
     {
-        $amt = Appointment::find($id);
-        $hospitals = Hospital::all();
+        $appointment = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name')
+            ->where('appointments.id', $id)
+            ->first();
+
         $departments = Department::all();
-        return view('user.user-editAppointment')->with('amt', $amt,)->with('hospitals',$hospitals)->with('departments',$departments);
+        $hospitals = Hospital::all();
+        return view('user.user-editAppointment', compact('appointment', 'departments', 'hospitals'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -149,7 +157,15 @@ class AppointmentController extends Controller
     // showDetail $id
     public function showDetail($id)
     {
-        $appointment = Appointment::find($id);
-        return view('user.user-appointment-detail', compact('appointment'));
+        $appointment = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name','hospitals.location as hospital_location')
+            ->where('appointments.id', $id)
+            ->first();
+
+        $departments = Department::all();
+        $hospitals = Hospital::all();
+        return view('user.user-appointment-detail', compact('appointment', 'departments', 'hospitals'));
     }
 }

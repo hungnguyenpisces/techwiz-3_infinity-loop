@@ -83,16 +83,6 @@
                                     <a href="{{ route('appointment.detail', $appointment->id) }}" class="btn btn-success waves-effect">
                                         <i class="material-icons">remove_red_eye</i>
                                     </a>
-                                    @if($appointment->status == 'Accepted')
-                                        <a class="btn btn-secondary" href="{{route("appointment.edit", $appointment->id)}}">Edit</a>
-                                    @endif
-                                    <form method="post" action="{{route('appointment.destroy', $appointment->id)}}"
-                                          onsubmit='return confirm("Sure ?")'>
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="submit" value="Delete" class="btn btn-danger">
-                                    </form>
-
                                 </td>
 
                             </tr>

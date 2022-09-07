@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                    <form method="post" action="{{route('appointment.update', $amt->id)}}">
+                    <form method="post" action="{{route('appointment.update', $appointment->id)}}">
                         @csrf
                         @method('PUT')
                         <div class="appointment-form">
@@ -79,45 +79,59 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12 p-0">
                                     <div class="appointment-input">
-                                        <label for="hospital"><i class="lni lni-sthethoscope"></i></label>
-                                        <select class="form-select" name="hospital_id" id="hospital" required>
-                                            <option selected disabled value="">Hospital</option>
-                                            <!-- $hospital -->
-                                            @foreach($hospitals as $hospitals)
-                                                <option value="{{$hospitals->id}}">{{$hospitals->name}}</option>
+                                        <label for="">Hospital</label>
+                                        <select name="hospital_id" class="form-control form-select show-tick" required>
+                                            @foreach($hospitals as $hospital)
+                                                @if($hospital->id == $appointment->hospital_id)
+                                                    <option value="{{$appointment->hospital_id}}" selected>{{$appointment->hospital_name}}</option>
+                                                @else
+                                                    <option value="{{$hospital->id}}">{{$hospital->name}}</option>
+                                                @endif
                                             @endforeach
-
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12 p-0">
                                     <div class="appointment-input">
-                                        <label for="department"><i class="lni lni-notepad"></i></label>
-                                        <select class="form-select" name="department_id" id="department" required>
-                                            <option selected disabled value="">Department</option>
-                                            <!-- $department -->
-                                            @foreach($departments as $departments)
-                                                <option value="{{$departments->id}}">{{$departments->name}}</option>
+                                        <label for="">Department</label>
+                                        <select name="department_id" class="form-control form-select show-tick" required>
+                                            @foreach($departments as $department)
+                                                @if($department->id == $appointment->department_id)
+                                                    <option value="{{$appointment->department_id}}" selected>{{$appointment->department_name}}</option>
+                                                @else
+                                                    <option value="{{$department->id}}">{{$department->name}}</option>
+                                                @endif
                                             @endforeach
-
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12 p-0">
                                     <div class="appointment-input">
-                                        <label for="date"><i class="lni lni-user"></i></label>
+                                        <label for="date"></label>
                                         <input type="date" name="date" id="date" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12 p-0">
                                     <div class="appointment-input">
-                                        <label for="time"><i class="lni lni-user"></i></label>
+                                        <label for="time"></label>
                                         <input type="time" name="time" id="time" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 p-0">
+                                    <div class="appointment-input">
+                                        <label for="date">{{$appointment->date}}</label>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 p-0">
+                                    <div class="appointment-input">
+                                        <label for="time">{{$appointment->time}}</label>
+
                                     </div>
                                 </div>
                                 <div class="col-12 p-0">
                                     <div class="appointment-input">
-                                        <textarea name="self_check_symptom" placeholder="Write Your Message Here....." required></textarea>
+                                        <textarea name="self_check_symptom" placeholder="{{$appointment->self_check_symptom}}" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12 p-0">

@@ -27,12 +27,13 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-6">
-                            <p class="mb-0 h4"><strong class="mx-5">Hosptal:</strong>{{ $appointment-> hospital_name }}
+                            <p class="mb-0 h4"><strong class="mx-5">Hosptal:</strong>{{$appointment->hospital_name}}
                             </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0 h4"><strong
-                                    class="mx-5">Department:</strong>{{ $appointment-> department_name }}</p>
+                            <p class="mb-0 h4">
+                                <strong
+                                    class="mx-5">Department:</strong>{{$appointment->department_name }}</p>
                         </div>
                     </div>
                     <hr>
@@ -56,7 +57,7 @@
                 </div>
                 <hr>
                 <div class="row">
-                    <p class="mb-0 h4"><strong class="mx-5">Address:</strong>{{ $appointment-> location }}</p>
+                    <p class="mb-0 h4"><strong class="mx-5">Address Hospital :</strong>{{$appointment->hospital_location }}</p>
                 </div>
                 <hr>
                 <div class="row">
@@ -79,6 +80,17 @@
                 <br>
                 <div class="text-center">
                     <a type="button" href="/user-appointment" class="btn btn-success">Back to list</a>
+                    @if($appointment->status == 'Accepted')
+                        <a class="btn btn-secondary" href="{{route("appointment.edit", $appointment->id)}}">Edit</a>
+                    @elseif($appointment->status == 'Pending')
+                        <a class="btn btn-secondary" href="{{route("appointment.edit", $appointment->id)}}">Edit</a>
+                    @endif
+                    <form method="post" action="{{route('appointment.destroy', $appointment->id)}}"
+                          onsubmit='return confirm("Sure ?")'>
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                    </form>
 
                 </div>
             </div>
