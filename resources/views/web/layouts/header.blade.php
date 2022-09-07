@@ -27,6 +27,7 @@
                                             <ul class="sub-menu collapse" id="submenu-1-5">
                                                 <li class="nav-item"><a href="user">Profile</a></li>
                                                 <li class="nav-item"><a href="/logout">Logout</a></li>
+                                                <li class="nav-item"><a href="/user-appointment">List Appointment</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -88,7 +89,7 @@
                                     <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
                                     <ul class="sub-menu collapse" id="submenu-1-3">
                                         <li class="nav-item"><a href="hospital">Hospital</a></li>
-                                        <li class="nav-item"><a href="hospitalsearch">Hospital Search</a></li>
+                                        <li class="nav-item"><a href="hospital-search">Hospital Search</a></li>
 
                                     </ul>
                                 </li>
@@ -104,7 +105,11 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="/contactus" aria-label="Toggle navigation">Contact</a>
+                                    <a href="/faq" aria-label="Toggle navigation">FAQs</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="/contact-us" aria-label="Toggle navigation">Contact</a>
                                 </li>
                             </ul>
                         </div>
