@@ -6,6 +6,8 @@ use App\Http\Controllers\CheckOutHistoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HealthIndexController;
 use App\Http\Controllers\HomeController;
+// use UserController
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\MedicinePillController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +18,9 @@ Route::prefix('admin')->middleware(['role:Super-Admin|Admin'])->group(function (
 
 Route::get('/register', [AuthController::class, 'register'])->name('register.show');
 Route::post('/register', [AuthController::class, 'processRegister'])->name('register.perform');
-Route::get('/login', [AuthController::class, 'login'])->name('login.show');
-Route::post('/login', [AuthController::class, 'processLogin'])->name('login.perform');
+Route::get('/login', [UserController::class, 'login'])->name('login.show');
+Route::post('/login', [UserController::class, 'processLogin'])->name('login.perform');
+Route::post('/refresh', [AuthController::class, 'refresh'])->name('refresh');
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/hospital', [HomeController::class, 'hospital'])->name('hospital');

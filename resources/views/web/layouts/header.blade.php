@@ -53,9 +53,11 @@
                                                 1
                                                 <span class="visually-hidden">unread messages</span></a>
                                             <ul class="sub-menu collapse">
-                                                <li class="nav-item-customize">
-                                                    <span>12:00<strong>Wednesday</strong></span>
-                                                    <a href="#" class="text-success">Musculoskeletal</a>
+                                                <li class="nav-item-customize" id="notification">
+                                                    
+                                                </li>
+                                                <li class="nav-item-customize" id="notification">
+                                                    <a href="#" class="text-center" style="color: black">View all notifications</a>
                                                 </li>
 
                                             </ul>

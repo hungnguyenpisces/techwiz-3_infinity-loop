@@ -9,6 +9,10 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\LoginRequest;
+//use redirect
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -142,4 +146,56 @@ class UserController extends Controller
         return redirect()->route('users.index')
             ->with($notification);
     }
+
+    public function login() {
+        $user = Auth::user();
+        if ($user == null) {
+            return view('web.login');
+        } else {
+            if ($user->hasRole(['Super-Admin', 'Admin'])) {
+                return redirect()->route('admin.dashboard');
+            } else {
+                return redirect()->route('index');
+            }
+        }
+    }
+
+
+    public function processLogin(LoginRequest $request)
+    {
+        $credentials = $request->getCredentials();
+  
+        if (Auth::attempt($credentials)) {
+            $user = Auth::getProvider()->retrieveByCredentials($credentials);
+            Auth::login($user);
+            $token=auth('api')->setTTL(240)->attempt($credentials);
+            $resToken=[
+                'token'=>$token,
+                'token_type'=>'bearer',
+                'expires_in'=>auth('api')->factory()->getTTL()*60*4
+            ];
+            return Redirect::route('index')->with('token', $resToken);
+        }
+        else {
+            return Redirect::route('login.show')->with('error', 'Invalid Credentials');
+        }
+    }
+
+    public function logout() {
+        Session::flush();
+        Auth::logout();
+        return Redirect::route('login.show');
+    }
+
+    // public function refresh() {
+    //     return $this->respondWithToken(auth()->refresh());
+    // }
+
+    // public function respondWithToken($token) {
+    //     return response()->json([
+    //         'access_token' => $token,
+    //         'token_type' => 'bearer',
+    //         'expires_in' => auth()->factory()->getTTL() * 60 * 4
+    //     ]);
+    // }
 }

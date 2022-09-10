@@ -854,30 +854,88 @@
             'width': 900,
             'autoplayVideos': true,
         });
-        //============== isotope masonry js with imagesloaded
-        // imagesLoaded('#container', function () {
-        //     var elem = document.querySelector('.grid');
-        //     var iso = new Isotope(elem, {
-        //         // options
-        //         itemSelector: '.grid-item',
-        //         masonry: {
-        //             // use outer width of grid-sizer for columnWidth
-        //             columnWidth: '.grid-item'
-        //         }
-        //     });
-        //
-        //     let filterButtons = document.querySelectorAll('.portfolio-btn-wrapper button');
-        //     filterButtons.forEach(e =>
-        //         e.addEventListener('click', () => {
-        //
-        //             let filterValue = event.target.getAttribute('data-filter');
-        //             iso.arrange({
-        //                 filter: filterValue
-        //             });
-        //         })
-        //     );
-        // });
+
+
+
+        
     </script>
+
+    @if(session('token'))
+    <script>
+        const token = <?php echo json_encode(session('token')); ?>;
+        console.log(token);
+        sessionStorage.setItem('token', JSON.stringify(token));
+        // call notification api
+
+        // fetch data from api
+        fetch('http://127.0.0.1:8000/api/user/notifications?token=' + token.token, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token.token
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            var html = '';
+            var span= '';
+            console.log(data);
+            // show notification
+            if(data.count_notif > 0){
+                data.data.forEach(item => {
+                    html += `
+                        <li class="nav-item-customize" id="notification">
+                            <strong>${item.created_at}</strong>
+                            <p>${item.content}</p>                                               
+                        </li>
+                        <hr>
+                    `;
+                });
+                span += `
+                <span class="badge rounded-pill bg-danger">
+                    ${data.count_notif}
+                <span class="visually-hidden">unread messages</span>
+                `;
+                
+            }else{
+                html += `
+                    <a href="#" class="dropdown-item">
+                        <div class="media">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1">No notification</h5>
+                            </div>
+                        </div>
+                    </a>
+                `;
+            }
+            document.getElementById('notification').innerHTML = html;
+        } );
+
+    </script>
+    @endif
+    @if(!session('token'))
+    <script>
+        if (!sessionStorage.getItem('token')) {
+            window.location.href = "/logout";
+        } else {
+            $.ajax({
+                url: "/api/refresh",
+                type: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + JSON.parse(sessionStorage.getItem("token")).access_token,
+                },
+                success: function(data) {
+                    sessionStorage.setItem('token', JSON.stringify(data));
+                },
+                error: function(data) {
+                    console.log(data);
+                },
+            });
+        }
+    </script>
+    @endif
+
 
     <!-- end extraJs -->
 @endsection
