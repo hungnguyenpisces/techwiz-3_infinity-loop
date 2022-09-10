@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CheckoutSeeder::class);
         $this->call(HealthIndexSeeder::class);
         $this->call(MedicineSeeder::class);
+        $this->call(FAQSeeder::class);
     }
 }

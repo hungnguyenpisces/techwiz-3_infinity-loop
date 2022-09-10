@@ -28,7 +28,7 @@ Route::get('/doctor-search', [HomeController::class, 'doctorSearch'])->name('doc
 Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doctor-detail');
 
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
-Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+Route::get('/faq', [FAQController::class, 'index'])->name('faq');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/timetable', [HomeController::class, 'time_table'])->name('timetable');

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\Admin\FaqController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -68,9 +69,9 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::get('/payment/add-payment', [PaymentController::class, 'create'])->name('payment.create');
     Route::get('/payment/patient-invoice', [PaymentController::class, 'show'])->name('payment.show');
 
-    Route::get('/faq', function () {
-        return view('admin.faq');
-    });
+    Route::get('/faq', [FaqController::class, 'index'])->name('admin.faq.index');
+    Route::get('/faq/add-faq', [FaqController::class, 'create'])->name('admin.faq.create');
+    Route::get('/faq/{id}/edit-faq', [FaqController::class, 'edit'])->name('admin.faq.edit');
 
     Route::get('/report', function () {
         return view('admin.report');

@@ -97,41 +97,17 @@
 
 
 <section class="faq-container">
+    @foreach($faq as $fq)
     <div class="faq-one">
         <!-- faq question -->
-        <h5 class="faq-page">What is an FAQ Page?</h5>
+        <h5 class="faq-page">{{$fq->question}}</h5>
         <!-- faq answer -->
         <div class="faq-body">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
-                necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
-                aperiam.
-                Perspiciatis, porro!</p>
+            <p>{{$fq->answer}}</p>
         </div>
     </div>
     <hr class="hr-line">
-    <div class="faq-two">
-        <!-- faq question -->
-        <h5 class="faq-page">Why do you need an FAQ page?</h5>
-        <!-- faq answer -->
-        <div class="faq-body">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
-                necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
-                aperiam.
-                Perspiciatis, porro!</p>
-        </div>
-    </div>
-    <hr class="hr-line">
-    <div class="faq-three">
-        <!-- faq question -->
-        <h5 class="faq-page">Does it improves the user experience of a website?</h5>
-        <!-- faq answer -->
-        <div class="faq-body">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
-                necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
-                aperiam.
-                Perspiciatis, porro!</p>
-        </div>
-    </div>
+    @endforeach
 </section>
 
 
