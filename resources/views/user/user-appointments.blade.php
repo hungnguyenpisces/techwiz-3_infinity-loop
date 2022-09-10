@@ -29,6 +29,13 @@
                         </li>
                     </ul>
                 </div>
+                @foreach(['danger', 'success', 'warning', 'info'] as $type)
+                    @if(\Illuminate\Support\Facades\Session::has($type))
+                        <p class="alert alert-{{$type}}">
+                            {{\Illuminate\Support\Facades\Session::get($type)}}
+                        </p>
+                    @endif
+                @endforeach
                 <div class="body table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead>
@@ -77,6 +84,7 @@
                                         <i class="material-icons">remove_red_eye</i>
                                     </a>
                                 </td>
+
                             </tr>
                             @endforeach
                         </tbody>
@@ -87,8 +95,15 @@
     </div>
 </section>
 
+
 @endsection
 @section('extraJs')
+    <script type="text/javascript">
+        function confirmDelete() {
+            var value =  confirm("Sure ?");
+            return value;
+        }
+    </script>
 
 <script src="/assets/bundles/libscripts.bundle.js"></script>
 <script src="/assets/bundles/datatablescripts.bundle.js"></script>

@@ -55,6 +55,11 @@
                                 <p>Heartbeat</p>
                                 <p class="mb-0">{{$healthIndex->heart_rate}}</p>
                             </li>
+                            <div class="d-flex justify-content-center mb-2">
+                                <div class="button wow fadeInLeft" data-wow-delay=".7s">
+                                    <a href="/user-update-info" class="btn">Edit Health</a>
+                                </div>
+                            </div>
 
                         </ul>
                     </div>
@@ -144,6 +149,7 @@
                                 <div class="progress rounded mb-2" style="height: 5px;">
                                     <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
+
                             </div>
                         </div>
                     </div>

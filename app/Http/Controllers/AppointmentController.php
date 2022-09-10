@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\CheckOutHistory;
 use App\Models\Department;
+use App\Models\Doctor;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -81,7 +83,6 @@ class AppointmentController extends Controller
             ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
             ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
             ->where('user_id', $user->id)->get();
-        //            dd($appointments);
         return view('user.user-appointments', compact('hospitals', 'departments', 'appointments'));
     }
 
@@ -93,9 +94,18 @@ class AppointmentController extends Controller
      */
     public function edit($id)
     {
-        $amt = Appointment::find($id);
-        return view('appointment.edit')->with('amt', $amt);
+        $appointment = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name')
+            ->where('appointments.id', $id)
+            ->first();
+
+        $departments = Department::all();
+        $hospitals = Hospital::all();
+        return view('user.user-editAppointment', compact('appointment', 'departments', 'hospitals'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -106,17 +116,18 @@ class AppointmentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = Auth::user();
+
         $amt = Appointment::find($id);
-        $amt->users_id = $request->users_id;
         $amt->department_id = $request->department_id;
+        $amt->hospital_id = $request->hospital_id;
         $amt->self_check_symptom = $request->self_check_symptom;
         $amt->time = $request->time;
         $amt->date = $request->date;
-        $amt->status = $request->status;
         $amt->save();
 
         $request->session()->flash('success', 'Appointment updated sucessfully.');
-        return redirect(route('appointment.index'));
+        return redirect(route('appointment.show'));
     }
 
     /**
@@ -134,7 +145,7 @@ class AppointmentController extends Controller
             $amt->delete();
             $request->session()->flash('success', 'Appointment deleted sucessfully.');
         }
-        return redirect(route('appointment.index'));
+        return redirect(route('appointment.show'));
     }
     public function userHistory()
     {
@@ -146,7 +157,15 @@ class AppointmentController extends Controller
     // showDetail $id
     public function showDetail($id)
     {
-        $appointment = Appointment::find($id);
-        return view('user.user-appointment-detail', compact('appointment'));
+        $appointment = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name','hospitals.location as hospital_location')
+            ->where('appointments.id', $id)
+            ->first();
+
+        $departments = Department::all();
+        $hospitals = Hospital::all();
+        return view('user.user-appointment-detail', compact('appointment', 'departments', 'hospitals'));
     }
 }
