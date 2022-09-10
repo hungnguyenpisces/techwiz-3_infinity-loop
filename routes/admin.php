@@ -99,6 +99,10 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
         return view('admin.payments.patient-invoice');
     });
 
+    Route::get('/faq', function () {
+        return view('admin.faq');
+    });
+
     Route::get('/report', function () {
         return view('admin.report');
     });

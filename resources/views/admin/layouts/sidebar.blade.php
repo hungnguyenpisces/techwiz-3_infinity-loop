@@ -56,6 +56,7 @@
                         <li class="side_link"> <a href="/admin/patient-invoice">Patient Invoice</a></li>
                     </ul>
                 </li>
+                <li class="side_link_parent"><a href="/admin/faq"><i class="zmdi zmdi-file-text"></i><span>FAQs</span></a></li>
                 <li class="side_link_parent"><a href="/admin/report"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
                 <li class="side_link_parent"><a href="/admin/widgets"><i class="zmdi zmdi-delicious"></i><span>Widgets</span></a></li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Extra Pages</span> </a>
