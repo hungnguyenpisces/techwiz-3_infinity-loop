@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{!! url('assets/img/favicon.png') !!}" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
 
     <title>@yield('title') | IL-Team</title>
 
@@ -38,7 +38,7 @@
 
     <ul id="f-menu" class="mfbc-br mfb-zoomin" data-mfb-toggle="hover">
         <li class="mfbc_wrap">
-            <a href="javascript:void(0);" class="mfbcb-main g-bg-cyan">
+            <a href="#" class="mfbcb-main g-bg-cyan">
                 <i class="mfbcm-icon-resting zmdi zmdi-plus"></i>
                 <i class="mfbcm-icon-active zmdi zmdi-close"></i>
             </a>
@@ -64,7 +64,7 @@
     @include('admin.layouts.script')
 
     <!-- master js -->
-    <script src="{!! url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- end master js -->
 
     @yield('extraJs')

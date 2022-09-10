@@ -33,7 +33,7 @@ Role Management
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{route('roles.store')}}" method="POST">
+                    <form action="/admin/roles" method="POST">
                         @csrf
                         <div class="card-body">
 

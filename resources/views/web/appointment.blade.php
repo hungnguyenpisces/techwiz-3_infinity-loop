@@ -34,7 +34,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                <form action="{{route('appointment.store')}}" method="post">
+                <form action="/appointment" method="post">
                     @csrf
                     <div class="appointment-form">
                         <div class="row">
@@ -51,19 +51,19 @@
                             <div class="col-lg-6 col-md-6 col-12 p-0">
                                 <div class="appointment-input">
                                     <label for="first_name"><i class="lni lni-user"></i></label>
-                                    <input type="text" name="first_name" id="first_name" placeholder="First name" value="{{Auth::user()->first_name}}">
+                                    <input type="text" name="first_name" id="first_name" placeholder="First name" value="{{Auth::user()->first_name}}" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 p-0">
                                 <div class="appointment-input">
                                     <label for="last_name"><i class="lni lni-user"></i></label>
-                                    <input type="text" name="last_name" id="last_name" placeholder="Last name" value="{{Auth::user()->last_name}}">
+                                    <input type="text" name="last_name" id="last_name" placeholder="Last name" value="{{Auth::user()->last_name}}" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 p-0">
                                 <div class="appointment-input">
                                     <label for="email"><i class="lni lni-envelope"></i></label>
-                                    <input type="email" name="email" id="email" placeholder="Your Email" value="{{Auth::user()->email}}">
+                                    <input type="email" name="email" id="email" placeholder="Your Email" value="{{Auth::user()->email}}" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 p-0">
@@ -75,8 +75,8 @@
                             <div class="col-lg-6 col-md-6 col-12 p-0">
                                 <div class="appointment-input">
                                     <label for="hospital"><i class="lni lni-sthethoscope"></i></label>
-                                    <select name="hospital_id" id="hospital">
-                                        <option value="none" selected disabled>Hospital</option>
+                                    <select class="form-select" name="hospital_id" id="hospital" required>
+                                        <option selected disabled value="">Hospital</option>
                                         <!-- $hospital -->
                                         @foreach($hospitals as $hospitals)
                                         <option value="{{$hospitals->id}}">{{$hospitals->name}}</option>
@@ -88,8 +88,8 @@
                             <div class="col-lg-6 col-md-6 col-12 p-0">
                                 <div class="appointment-input">
                                     <label for="department"><i class="lni lni-notepad"></i></label>
-                                    <select name="department_id" id="department">
-                                        <option value="none" selected disabled>Department</option>
+                                    <select class="form-select" name="department_id" id="department" required>
+                                        <option selected disabled value="">Department</option>
                                         <!-- $department -->
                                         @foreach($departments as $departments)
                                         <option value="{{$departments->id}}">{{$departments->name}}</option>
@@ -101,18 +101,18 @@
                             <div class="col-lg-6 col-md-6 col-12 p-0">
                                 <div class="appointment-input">
                                     <label for="date"><i class="lni lni-user"></i></label>
-                                    <input type="date" name="date" id="date">
+                                    <input type="date" name="date" id="date" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 p-0">
                                 <div class="appointment-input">
                                     <label for="time"><i class="lni lni-user"></i></label>
-                                    <input type="time" name="time" id="time">
+                                    <input type="time" name="time" id="time" required>
                                 </div>
                             </div>
                             <div class="col-12 p-0">
                                 <div class="appointment-input">
-                                    <textarea name="self_check_symptom" placeholder="Write Your Message Here....."></textarea>
+                                    <textarea name="self_check_symptom" placeholder="Write Your Message Here....." required></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 p-0">

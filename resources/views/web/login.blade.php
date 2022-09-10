@@ -38,7 +38,7 @@
             <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
                 <div class="form-head">
                     <h4 class="title">Login To Your Account</h4>
-                    <form action="{{route('login.perform')}}" method="post">
+                    <form action="/login" method="post">
                         @csrf
                         <div class="form-group">
                             <input name="username" type="text" placeholder="username">
@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
-                                    <a href="javascript:void(0)" class="lost-pass">Lost your password?</a>
+                                    <a href="#" class="lost-pass">Lost your password?</a>
                                 </div>
                             </div>
                         </div>
@@ -69,26 +69,26 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
-                                        <li><a href="javascript:void(0)" class="facebook"><i class="lni lni-facebook-original"></i>Login With
+                                        <li><a href="#" class="facebook"><i class="lni lni-facebook-original"></i>Login With
                                                 Facebook</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
-                                        <li><a href="javascript:void(0)" class="google"><i class="lni lni-google"></i>Login With Google
+                                        <li><a href="#" class="google"><i class="lni lni-google"></i>Login With Google
                                                 Plus</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
-                                        <li><a href="javascript:void(0)" class="instagram"><i class="lni lni-instagram"></i>Login With
+                                        <li><a href="#" class="instagram"><i class="lni lni-instagram"></i>Login With
                                                 Instagram</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
-                                        <li><a href="javascript:void(0)" class="linkedin"><i class="lni lni-linkedin-original"></i>Login With Linkedin</a>
+                                        <li><a href="#" class="linkedin"><i class="lni lni-linkedin-original"></i>Login With Linkedin</a>
                                         </li>
                                     </ul>
                                 </div>

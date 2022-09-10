@@ -29,14 +29,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Dentist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">Dentist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -51,14 +51,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">ENT Specialist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">ENT Specialist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -73,14 +73,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -95,14 +95,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -117,14 +117,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Dentist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">Dentist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -139,14 +139,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">ENT Specialist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">ENT Specialist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -161,14 +161,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -183,14 +183,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -205,14 +205,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -227,14 +227,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -249,14 +249,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Dentist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">Dentist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -271,14 +271,14 @@ Custom title if need
                                         </div>
                                         <div class="">
                                             <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">ENT Specialist<span> <a href="javascript:void(0);" class="text-pink">websitename.com</a> </span></p>
+                                            <p class="text-muted">ENT Specialist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
                                         </div>
                                         <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
                                         <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
                                         <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
+                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>

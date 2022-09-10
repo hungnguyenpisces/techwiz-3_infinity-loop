@@ -47,9 +47,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
     Route::get('/user-appointment-detail/{id}', [AppointmentController::class, 'showDetail'])->name('appointment.detail');
 
+    Route::get('/user-appointment-detail/{id}', [AppointmentController::class, 'showDetail'])->name('appointment.detail');
+
     Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
-    Route::get('/user-appointment', [AppointmentController::class, 'show'])->name('appointment.show');
-    Route::get('/record-detail/{id}', [CheckOutHistoryController::class, 'showDetail'])->name('record.detail');
+    Route::get('/user-appointment', [AppointmentController::class, 'index'])->name('appointment.index');
+
 
     Route::get('/user', [HealthIndexController::class, 'index'])->name('user.index');
     Route::post('/user', [HealthIndexController::class, 'store'])->name('user.store');

@@ -47,15 +47,15 @@
                     <div class="image">
                         <img src="assets/images/doctors/doctor1.jpg" alt="#">
                         <ul class="social">
-                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                            <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                         </ul>
                     </div>
                     <div class="content">
                         <h5>Cardiologist</h5>
-                        <h3><a href="doctor-detail">Dr.Felica Queen</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Felica Queen</a></h3>
                     </div>
                 </div>
 
@@ -66,15 +66,15 @@
                     <div class="image">
                         <img src="assets/images/doctors/doctor2.jpg" alt="#">
                         <ul class="social">
-                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                            <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                         </ul>
                     </div>
                     <div class="content">
                         <h5>Neurologist</h5>
-                        <h3><a href="doctor-detail">Dr.Alice Williams</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Alice Williams</a></h3>
                     </div>
                 </div>
 
@@ -85,15 +85,15 @@
                     <div class="image">
                         <img src="assets/images/doctors/doctor3.jpg" alt="#">
                         <ul class="social">
-                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                            <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                         </ul>
                     </div>
                     <div class="content">
                         <h5>Physician Assistant</h5>
-                        <h3><a href="doctor-detail">Dr.Paul Flavius</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Paul Flavius</a></h3>
                     </div>
                 </div>
 
@@ -104,15 +104,15 @@
                     <div class="image">
                         <img src="assets/images/doctors/doctor4.jpg" alt="#">
                         <ul class="social">
-                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                            <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                         </ul>
                     </div>
                     <div class="content">
                         <h5>Physician Assistant</h5>
-                        <h3><a href="doctor-detail">Dr.Michael Bean</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Michael Bean</a></h3>
                     </div>
                 </div>
 
@@ -123,15 +123,15 @@
                     <div class="image">
                         <img src="assets/images/doctors/doctor1.jpg" alt="#">
                         <ul class="social">
-                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                            <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                         </ul>
                     </div>
                     <div class="content">
                         <h5>Cardiologist</h5>
-                        <h3><a href="doctor-detail">Dr.Felica Queen</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Felica Queen</a></h3>
                     </div>
                 </div>
 
@@ -142,15 +142,15 @@
                     <div class="image">
                         <img src="assets/images/doctors/doctor2.jpg" alt="#">
                         <ul class="social">
-                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                            <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                         </ul>
                     </div>
                     <div class="content">
                         <h5>Neurologist</h5>
-                        <h3><a href="doctor-detail">Dr.Alice Williams</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Alice Williams</a></h3>
                     </div>
                 </div>
 
@@ -161,15 +161,15 @@
                     <div class="image">
                         <img src="assets/images/doctors/doctor3.jpg" alt="#">
                         <ul class="social">
-                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                            <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                         </ul>
                     </div>
                     <div class="content">
                         <h5>Physician Assistant</h5>
-                        <h3><a href="doctor-detail">Dr.Paul Flavius</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Paul Flavius</a></h3>
                     </div>
                 </div>
 
@@ -180,15 +180,15 @@
                     <div class="image">
                         <img src="assets/images/doctors/doctor4.jpg" alt="#">
                         <ul class="social">
-                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                            <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                         </ul>
                     </div>
                     <div class="content">
                         <h5>Physician Assistant</h5>
-                        <h3><a href="doctor-detail">Dr.Michael Bean</a></h3>
+                        <h3><a href="/doctor-detail">Dr.Michael Bean</a></h3>
                     </div>
                 </div>
 
@@ -203,7 +203,7 @@
 
 @section('extraJs')
 <!-- extraJs -->
-    <script src="{!! url('assets/js/imagesloaded.min.js') !!}"></script>
-    <script src="{!! url('assets/js/isotope.min.js') !!}"></script>
+    <script src="/assets/js/imagesloaded.min.js"></script>
+    <script src="/assets/js/isotope.min.js"></script>
 <!-- end extraJs -->
 @endsection

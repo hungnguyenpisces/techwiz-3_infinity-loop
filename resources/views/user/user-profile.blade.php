@@ -31,7 +31,7 @@
                         <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
                         <div class="d-flex justify-content-center mb-2">
                             <div class="button wow fadeInLeft" data-wow-delay=".7s">
-                                <a href="user-update" class="btn">Edit profile</a>
+                                <a href="/user-update-info" class="btn">Edit profile</a>
                             </div>
                         </div>
                     </div>

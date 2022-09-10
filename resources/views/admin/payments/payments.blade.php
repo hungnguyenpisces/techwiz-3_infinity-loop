@@ -6,7 +6,7 @@
 
 @section('extraCss')
     <!-- extra css -->
-    <link href="{!! url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css') !!}" rel="stylesheet">
+    <link href="/assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- end extra css -->
 @endsection
 
@@ -25,11 +25,11 @@
                         <div class="header">
                             <h2>Hospital Payments</h2>
                             <ul class="header-dropdown">
-                                <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -527,9 +527,9 @@
 
 @section('extraJs')
     <!-- extraJs -->
-    <script src="{!! url('assets/bundles/datatablescripts.bundle.js') !!}"></script>
-    <script src="{!! url('assets/js/morphing.js') !!}"></script>
-    <script src="{!! url('assets/js/pages/tables/jquery-datatable.js') !!}"></script>
+    <script src="/assets/bundles/datatablescripts.bundle.js"></script>
+    <script src="/assets/js/morphing.js"></script>
+    <script src="/assets/js/pages/tables/jquery-datatable.js"></script>
 
     <!-- end extraJs -->
 @endsection

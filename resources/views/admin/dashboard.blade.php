@@ -6,7 +6,7 @@ Admin
 
 @section('extraCss')
 <!-- extra css -->
-<link rel="stylesheet" href="{!! url('assets/plugins/morrisjs/morris.css') !!}">
+<link rel="stylesheet" href="/assets/plugins/morrisjs/morris.css">
 <!-- end extra css -->
 @endsection
 
@@ -62,13 +62,13 @@ Admin
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2>Hospital Survey</h2>
+                        <h2>Patients & Appointments</h2>
                         <ul class="header-dropdown">
-                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                 <ul class="dropdown-menu float-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -85,11 +85,11 @@ Admin
                     <div class="header">
                         <h2>New Patient <small>18% High then last month</small></h2>
                         <ul class="header-dropdown">
-                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                 <ul class="dropdown-menu float-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -118,11 +118,11 @@ Admin
                     <div class="header">
                         <h2>Heart Surgeries <small>18% High then last month</small></h2>
                         <ul class="header-dropdown">
-                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                 <ul class="dropdown-menu float-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -151,11 +151,11 @@ Admin
                     <div class="header">
                         <h2>Medical Treatment <small>18% High then last month</small></h2>
                         <ul class="header-dropdown">
-                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                 <ul class="dropdown-menu float-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -186,11 +186,11 @@ Admin
                     <div class="header">
                         <h2> New Patient List <small>Description text here...</small> </h2>
                         <ul class="header-dropdown">
-                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                 <ul class="dropdown-menu float-right">
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
+                                    <li><a href="#" class=" waves-effect waves-block">Action</a></li>
+                                    <li><a href="#" class=" waves-effect waves-block">Another action</a></li>
+                                    <li><a href="#" class=" waves-effect waves-block">Something else here</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -263,11 +263,11 @@ Admin
                     <div class="header">
                         <h2>PATIENT prograss</h2>
                         <ul class="header-dropdown">
-                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                 <ul class="dropdown-menu float-right">
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
+                                    <li><a href="#" class=" waves-effect waves-block">Action</a></li>
+                                    <li><a href="#" class=" waves-effect waves-block">Another action</a></li>
+                                    <li><a href="#" class=" waves-effect waves-block">Something else here</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -289,11 +289,11 @@ Admin
                     <div class="header">
                         <h2>PATIENT Reports</h2>
                         <ul class="header-dropdown">
-                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                 <ul class="dropdown-menu float-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -349,11 +349,11 @@ Admin
                     <div class="header">
                         <h2>Visits from countries</h2>
                         <ul class="header-dropdown">
-                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                 <ul class="dropdown-menu float-right">
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
+                                    <li><a href="#" class=" waves-effect waves-block">Action</a></li>
+                                    <li><a href="#" class=" waves-effect waves-block">Another action</a></li>
+                                    <li><a href="#" class=" waves-effect waves-block">Something else here</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -414,15 +414,43 @@ Admin
 </section>
 
 <!-- ============================endcontent============================== -->
-
-
 @endsection
 
 @section('extraJs')
 <!-- extraJs -->
-<script src="{!! url('assets/bundles/chartscripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/bundles/sparklinescripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/js/pages/index.js') !!}"></script>
-<script src="{!! url('assets/js/pages/charts/sparkline.min.js') !!}"></script>
+@if(session('token'))
+<script>
+    const token = <?php echo json_encode(session('token')); ?>;
+    sessionStorage.setItem('token', JSON.stringify(token));
+</script>
+@endif
+@if(!session('token'))
+@hasanyrole('Super-Admin|Admin|Staff')
+<script>
+    if (!sessionStorage.getItem('token')) {
+        window.location.href = "/admin/logout";
+    } else {
+        $.ajax({
+            url: "/api/refresh",
+            type: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + JSON.parse(sessionStorage.getItem("token")).access_token,
+            },
+            success: function(data) {
+                sessionStorage.setItem('token', JSON.stringify(data));
+            },
+            error: function(data) {
+                console.log(data);
+            },
+        });
+    }
+</script>
+@endhasanyrole
+@endif
+<script src="/assets/bundles/chartscripts.bundle.js"></script>
+<script src="/assets/bundles/sparklinescripts.bundle.js"></script>
+<script src="/assets/js/pages/dashboard.js"></script>
+<script src="/assets/js/pages/charts/sparkline.min.js"></script>
 <!-- end extraJs -->
 @endsection

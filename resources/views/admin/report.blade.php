@@ -6,8 +6,8 @@ Custom title if need
 
 @section('extraCss')
 <!-- extra css -->
-<link rel="stylesheet" href="{!! url('assets/plugins/morrisjs/morris.css') !!}" />
-<link rel="stylesheet" href="{!! url('assets/plugins/waitme/waitMe.css') !!}" />
+<link rel="stylesheet" href="/assets/plugins/morrisjs/morris.css" />
+<link rel="stylesheet" href="/assets/plugins/waitme/waitMe.css" />
 <!-- end extra css -->
 @endsection
 
@@ -72,11 +72,11 @@ Custom title if need
                             <div class="header">
                                 <h2>Hospital Budget</h2>
                                 <ul class="header-dropdown">
-                                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                         <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);">Action</a></li>
-                                            <li><a href="javascript:void(0);">Another action</a></li>
-                                            <li><a href="javascript:void(0);">Something else here</a></li>
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -94,11 +94,11 @@ Custom title if need
                             <div class="header">
                                 <h2>Income Analysis <small>18% High then last month</small></h2>
                                 <ul class="header-dropdown">
-                                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                         <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);">Action</a></li>
-                                            <li><a href="javascript:void(0);">Another action</a></li>
-                                            <li><a href="javascript:void(0);">Something else here</a></li>
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -127,11 +127,11 @@ Custom title if need
                             <div class="header">
                                 <h2>Income Analysis <small>18% High then last month</small></h2>
                                 <ul class="header-dropdown">
-                                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                         <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);">Action</a></li>
-                                            <li><a href="javascript:void(0);">Another action</a></li>
-                                            <li><a href="javascript:void(0);">Something else here</a></li>
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -160,11 +160,11 @@ Custom title if need
                             <div class="header">
                                 <h2>Income Analysis <small>18% High then last month</small></h2>
                                 <ul class="header-dropdown">
-                                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                         <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);">Action</a></li>
-                                            <li><a href="javascript:void(0);">Another action</a></li>
-                                            <li><a href="javascript:void(0);">Something else here</a></li>
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -198,11 +198,11 @@ Custom title if need
                             <div class="header">
                                 <h2>RADAR CHART</h2>
                                 <ul class="header-dropdown">
-                                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                         <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);">Action</a></li>
-                                            <li><a href="javascript:void(0);">Another action</a></li>
-                                            <li><a href="javascript:void(0);">Something else here</a></li>
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -219,11 +219,11 @@ Custom title if need
                             <div class="header">
                                 <h2>PIE CHART</h2>
                                 <ul class="header-dropdown">
-                                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                         <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);">Action</a></li>
-                                            <li><a href="javascript:void(0);">Another action</a></li>
-                                            <li><a href="javascript:void(0);">Something else here</a></li>
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -242,11 +242,11 @@ Custom title if need
                             <div class="header">
                                 <h2>BAR CHART</h2>
                                 <ul class="header-dropdown">
-                                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                                         <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);">Action</a></li>
-                                            <li><a href="javascript:void(0);">Another action</a></li>
-                                            <li><a href="javascript:void(0);">Something else here</a></li>
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -268,12 +268,12 @@ Custom title if need
 @section('extraJs')
 <!-- extraJs -->
 
-<script src="{!! url('assets/bundles/chartscripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/bundles/sparklinescripts.bundle.js') !!}"></script>
-<script src="{!! url('assets/js/pages/index.js') !!}"></script>
-<script src="{!! url('assets/js/pages/charts/sparkline.min.js') !!}"></script>
-<script src="{!! url('assets/plugins/jquery-countto/jquery.countTo.js') !!}"></script> 
-<script src="{!! url('assets/js/pages/widgets/infobox/infobox-1.js') !!}"></script>
+<script src="/assets/bundles/chartscripts.bundle.js"></script>
+<script src="/assets/bundles/sparklinescripts.bundle.js"></script>
+<script src="/assets/js/pages/dashboard.js"></script>
+<script src="/assets/js/pages/charts/sparkline.min.js"></script>
+<script src="/assets/plugins/jquery-countto/jquery.countTo.js"></script> 
+<script src="/assets/js/pages/widgets/infobox/infobox-1.js"></script>
 
 <!-- end extraJs -->
 @endsection

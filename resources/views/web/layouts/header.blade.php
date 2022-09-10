@@ -7,13 +7,13 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="top-social">
                             <ul>
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
+                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a>
                                 </li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a>
+                                <li><a href="#"><i class="lni lni-twitter-original"></i></a>
                                 </li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-pinterest"></i></a></li>
+                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="#"><i class="lni lni-youtube"></i></a></li>
+                                <li><a href="#"><i class="lni lni-pinterest"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -27,6 +27,7 @@
                                             <ul class="sub-menu collapse" id="submenu-1-5">
                                                 <li class="nav-item"><a href="user">Profile</a></li>
                                                 <li class="nav-item"><a href="/logout">Logout</a></li>
+                                                <li class="nav-item"><a href="/user-appointment">List Appointment</a></li>
                                                 <li class="nav-item"><a href="/user-appointment">List Appointment</a></li>
                                             </ul>
                                         </li>
@@ -86,10 +87,10 @@
                                     <a href="/" aria-label="Toggle navigation">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
+                                    <a class="page-scroll dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
                                     <ul class="sub-menu collapse" id="submenu-1-3">
                                         <li class="nav-item"><a href="hospital">Hospital</a></li>
-                                        <li class="nav-item"><a href="hospital-search">Hospital Search</a></li>
+                                        <li class="nav-item"><a href="hospital--search">Hospital Search</a></li>
 
                                     </ul>
                                 </li>
@@ -97,7 +98,7 @@
                                     <a href="/departments" aria-label="Toggle navigation">Departments</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Doctors</a>
+                                    <a class="page-scroll dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Doctors</a>
                                     <ul class="sub-menu collapse" id="submenu-1-3">
                                         <li class="nav-item"><a href="/doctor">Doctors</a></li>
                                         <li class="nav-item"><a href="/doctor-search">Doctor Search</a></li>

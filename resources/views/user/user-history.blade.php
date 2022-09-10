@@ -1,16 +1,15 @@
 @extends('user.layouts._master')
-
-
 @section('extraCss')
-<!-- extra css -->
+<link href="/assets/css/datatable.css" rel="stylesheet">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
 
-<link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-<!-- end extra css -->
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
+
 @endsection
 
 @section('content')
-
 <section class="mt-5">
     <h1 class="text-center">MEDICAL HISTORY</h1>
     <div class="container">
@@ -18,7 +17,7 @@
             <div class="card">
                 <div class="header">
                     <ul class="header-dropdown">
-                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                        <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
                             <ul class="dropdown-menu pull-right">
                                 <li><a href="javascript:void(0);">Action</a></li>
                                 <li><a href="javascript:void(0);">Another action</a></li>
@@ -49,10 +48,10 @@
                             <td>{{ $check_out_history->department_name }}</td>
                             <td>{{ $check_out_history->hospital_name }}</td>
                             <td>{{ $check_out_history->doctor_first_name }}</td>
-                            <td>
-                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#medicineDetail">
+                            <td class="text-center">
+                                <a href="{{ route('record.detail', $check_out_history->id) }}" type="button" class="btn btn-success btn-sm">
                                     <i class="fa fa-eye"></i>
-                                </button>
+                                </a>
                             </td>
                         </tr>
                         <?php $i++; ?>
@@ -69,9 +68,9 @@
 
 @section('extraJs')
 <!-- extraJs -->
-
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script src="/assets/bundles/libscripts.bundle.js"></script>
+<script src="/assets/bundles/datatablescripts.bundle.js"></script>
+<script src="/assets/js/pages/tables/jquery-datatable.js"></script>
 
 <script>
     $(document).ready(function() {

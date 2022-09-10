@@ -2,25 +2,24 @@
 
 namespace App\Mail;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class InfoMail extends Mailable
+class WellcomeJoinInfinityLoopTeam extends Mailable
 {
     use Queueable, SerializesModels;
-
-    public $data;
-
+    protected $user;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($a)
+    public function __construct(User $param)
     {
-        $this->data = $a;
+        $this->user = $param;
     }
 
     /**
@@ -30,6 +29,7 @@ class InfoMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.infomail', compact('data'));
+        $userMail = $this->user;
+        return $this->view('mail.register', compact('userMail'));
     }
 }

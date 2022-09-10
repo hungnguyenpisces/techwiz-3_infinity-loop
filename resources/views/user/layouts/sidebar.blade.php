@@ -1,17 +1,10 @@
 <div class="sidebar close">
     <header>
         <div class="image-text">
-            <!-- <span class="image">
-                <i class="fa-solid fa-home icon2"></i>
-            </span> -->
-            <!-- <div class="text logo-text">
-                <a href="/">
-                    <span class="name">BACK TO HOME</span>
-                </a>
-            </div> -->
+
 
         </div>
-        <span class="toggle mt-5"> <i style="font-size: 14"
+        <span class="toggle mt-5"> <i style="font-size: 14px"
                                       class="fa-solid fa-xl fa-arrow-right-from-bracket"></i></span>
     </header>
 
@@ -36,7 +29,7 @@
                         <span class="text nav-text">Profile</span>
                     </a>
                 </li>
-                <li class="nav-link">
+                <li class="nav-link" id="user-health">
                     <a href="/user-health">
                         <i class="fa-solid fa-file-pen icon2"></i>
                         <span class="text nav-text">Health</span>
@@ -50,7 +43,7 @@
                     </a>
                 </li>
 
-                <li class="nav-link" id="user-chart">
+                <li class="nav-link" id="user-appointment">
                     <a href="/user-appointment">
                         <i class="fa-solid fa-book-medical icon2"></i>
                         <span class="text nav-text">Appointments</span>

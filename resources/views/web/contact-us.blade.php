@@ -23,7 +23,7 @@
                         <h1 class="page-title">Contact Us</h1>
                     </div>
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li>Contact Us</li>
                     </ul>
                 </div>
@@ -135,11 +135,11 @@
                                     <i class="lni lni-mobile"></i>
                                 </div>
                                 <ul>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-original"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-pinterest"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                                 </ul>
                             </div>
                         </div>

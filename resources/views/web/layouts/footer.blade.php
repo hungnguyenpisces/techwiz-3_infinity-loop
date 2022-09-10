@@ -7,7 +7,7 @@
                     <div class="cta">
                         <h3>Need Help?</h3>
                         <p>Please feel free to contact our friendly reception staff with any medical enquiry, or
-                            call <a href="javascript:void(0)">0123456789</a></p>
+                            call <a href="#">0123456789</a></p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
@@ -33,17 +33,17 @@
 
                     <div class="single-footer f-about">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="assets/img/favicon.png" style="width: 40px;height: 40px" alt="logo">
                             </a>
                         </div>
                         <p>There’s nothing in this story to make us think he was dreaming about riches.</p>
                         <ul class="social">
-                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                            <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                            <li><a href="#"><i class="lni lni-youtube"></i></a></li>
                         </ul>
                     </div>
 
@@ -55,20 +55,20 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <ul>
-                                    <li><a href="javascript:void(0)">About</a></li>
-                                    <li><a href="javascript:void(0)">Team</a></li>
-                                    <li><a href="javascript:void(0)">Before After</a></li>
-                                    <li><a href="javascript:void(0)">Cost Calculator</a></li>
-                                    <li><a href="javascript:void(0)">Working Hours</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Before After</a></li>
+                                    <li><a href="#">Cost Calculator</a></li>
+                                    <li><a href="#">Working Hours</a></li>
                                 </ul>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <ul>
-                                    <li><a href="javascript:void(0)">Appointment</a></li>
-                                    <li><a href="javascript:void(0)">Gallery</a></li>
-                                    <li><a href="javascript:void(0)">Timetable</a></li>
-                                    <li><a href="javascript:void(0)">Departments</a></li>
-                                    <li><a href="javascript:void(0)">Contact Us</a></li>
+                                    <li><a href="#">Appointment</a></li>
+                                    <li><a href="#">Gallery</a></li>
+                                    <li><a href="#">Timetable</a></li>
+                                    <li><a href="#">Departments</a></li>
+                                    <li><a href="#">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -132,9 +132,9 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                         <ul class="extra-link">
-                            <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                            <li><a href="javascript:void(0)">FAQ</a></li>
-                            <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>

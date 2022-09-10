@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('health_indices', function (Blueprint $table) {
             $table->id();
-            $table->string('users_id');
+            $table->bigInteger('user_id');
             $table->float('height');
             $table->float('weight');
             $table->float('heart_rate')->nullable();

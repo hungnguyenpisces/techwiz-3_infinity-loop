@@ -81,7 +81,7 @@ Admin
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="{{route('permissions.store')}}" id="permissionForm">
+            <form method="POST" action="/admin/permissions" id="permissionForm">
                 @csrf
                 <div class="modal-body">
                     <div class="input-group flex-nowrap">

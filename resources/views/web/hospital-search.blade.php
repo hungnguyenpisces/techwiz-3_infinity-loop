@@ -6,49 +6,58 @@
 
 </head>
 @section('content')
-    <br><br><br>
+    <br>
     <div class="container">
         <section class="doctors section">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title">
+            <div class="section-title">
                             <h3>Hospital</h3>
                             <div class="newsletter-form input">
-                                <h2 class="wow fadeInUp">Search Hospital</h2>
-                                <form action="#" method="get" target="_blank" class="newsletter-form">
-                                    <input style="height: 50px; width: 70%" name="searcher" placeholder="     What are you looking for?" type="text">
-                                    <label class="button">
-                                        <button class="btn">Search<span class="dir-part"></span></button>
-                                    </label>
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                                <h2 class="wow fadeInUp">Search hospital</h2>
+            <form method="get" action="{{ route('hospital-searchRs') }}" class="form-inline mr-auto">
+              <input type="text" name="query" value="{{ isset($searchterm) ? $searchterm : ''  }}" class="form-control col-sm-8 h-10"  placeholder="Search for your hospital" aria-label="Search">
+              <!-- <button class="btn aqua-gradient btn-rounded btn-sm my-0 waves-effect waves-light" type="submit">Search</button> -->
+            </form>
+</div></div>
                 <div class="row">
-{{--                    @foreach()--}}
+                  
+                    @if ($searchResults-> isEmpty())
+                    <h3 class="text-center">Sorry, no search result found!</b></h3>
+                    <div class="text-center">
+                         <a href="/hospital-search" class="btn btn-success mt-3">Back to list</a>
+                    </div>
+                    @foreach($searchResults as $hpt) 
                     <div class="col-lg-3 col-md-6 col-12">
-
                         <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
                             <div class="image">
                                 <img src="assets/images/doctors/detail-img.jpg" alt="#">
-                                <ul class="social">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                                </ul>
                             </div>
                             <div class="content">
-                                <h5>Hospital address</h5>
-                                <h3><a href="doctor-details.html">hospital name</a></h3>
+                                <h5>{{$hpt->name}}</h5>
+                                <h3><a href="/doctor-detail">{{$hpt->location}}</a></h3>
                             </div>
                         </div>
 
-                    </div>
-{{--                    @endforeach--}}
+                        </div>
+                    @endforeach
+                    @else
+                    @foreach($searchResults as $hpt) 
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
+                            <div class="image">
+                                <img src="assets/images/doctors/detail-img.jpg" alt="#">
+                            </div>
+                            <div class="content">
+                                <h5>{{$hpt->name}}</h5>
+                                <h3><a href="/hospital-detail"></a>{{$hpt->location}}</h3>
+                            </div>
+                        </div>
+
+                        </div>
+                    @endforeach
+                    @endif
+                   
+
                 </div>
             </div>
         </section>

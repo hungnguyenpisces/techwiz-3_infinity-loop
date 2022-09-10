@@ -3,87 +3,87 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Doctor;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Searchable\Search;
+use Spatie\Searchable\ModelSearchAspect;
+
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $hospitals = Hospital::all();
-        $departments = Department::all();
-        return view('web/index', compact('hospitals', 'departments'));
+        return view('web.index');
     }
 
+    public function hospital()
+    {
+        return view('web.hospital');
+    }
+
+    public function hospitalSearch()
+    {
+        return view('web.hospital-search');
+    }
+
+    public function departments()
+    {
+        return view('web.departments');
+    }
 
     public function time_table()
     {
-        return view('web/timetable');
-    }
-
-    public function testimonial()
-    {
-        return view('web/testimonial');
-    }
-
-    public function project_detail()
-    {
-        return view('web/projectdetail');
-    }
-
-    public function faq()
-    {
-        return view('web/faq');
-    }
-
-    public function service()
-    {
-        return view('web/service');
-    }
-
-    public function service_detail()
-    {
-        return view('web/servicedetail');
+        return view('web.timetable');
     }
 
     public function doctor()
     {
-        return view('web/doctor');
+        return view('web.doctor');
     }
 
-    public function doctor_detail()
+    public function doctorSearch()
     {
-        return view('web/doctordetail');
+        $lsDoctors = Doctor::all();
+        return view('web.doctor-search', compact('lsDoctors'));
     }
 
-    public function blog()
+    public function searchHospitalRs(Request $request)
     {
-        return view('web/blog');
+        $searchterm = $request->input('query');
+        $lsHospital = Hospital::all();
+
+        $searchResults = Hospital::where('name', 'LIKE', '%'.$searchterm.'%')
+		            // ->orWhere('last_name', 'LIKE', '%'.$searchterm.'%')
+		            ->get();
+
+        // dd($searchResults);
+
+        return view('web.hospital-search', compact('searchResults', 'searchterm', 'lsHospital'));
     }
 
-    public function blog_detail()
+    public function searchDoctorRs(Request $request)
     {
-        return view('web/blogdetail');
+        $searchterm = $request->input('query');
+        $lsDoctors = Doctor::all();
+
+        $searchResults = Doctor::where('first_name', 'LIKE', '%'.$searchterm.'%')
+		            ->orWhere('last_name', 'LIKE', '%'.$searchterm.'%')
+		            ->get();
+
+        // dd($searchResults);
+
+        return view('web.doctor-search', compact('searchResults', 'searchterm', 'lsDoctors'));
+    }
+
+    public function doctorDetail()
+    {
+        return view('web.doctor-detail');
     }
 
     public function contact_us()
     {
-        $hospitals = Hospital::all();
-        $departments = Department::all();
-        return view('web/contactus', compact('hospitals', 'departments'));
+        return view('web.contact-us');
     }
-
-//    public function chart()
-//    {
-//        $chart  = [
-//            ['x' => 50, 'y' => 88, 'z' => 13, 'axes' => 1],
-//            ['x' => 23, 'y' => 77, 'z' => 44, 'axes' => 2],
-//            ['x' => 44, 'y' => 22, 'z' => 88, 'axes' => 3]
-//
-//        ];
-//
-//        return view('user/user-chart')->with('chart', $chart);
-//    }
-
 }
