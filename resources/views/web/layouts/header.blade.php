@@ -52,8 +52,8 @@
                                                 <span class="badge rounded-pill bg-danger" id="count_notif">
                                                 
                                                 <span class="visually-hidden">unread messages</span></a>
-                                            <ul class="sub-menu collapse" id="notification">
-                                                
+                                            <ul class="sub-menu collapse" id="notification" style="height: 600px; overflow: scroll">
+                                               
                                             </ul>
                                         </li>
                                     </ul>

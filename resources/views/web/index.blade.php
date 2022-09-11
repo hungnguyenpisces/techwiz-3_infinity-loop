@@ -859,14 +859,13 @@
 
         
     </script>
-    //import libscript
     <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/user-get-api.js') }}"></script>
     @if(session('token'))
     <script>
         const token = <?php echo json_encode(session('token')); ?>;
         console.log(token);
         sessionStorage.setItem('token', JSON.stringify(token));
-
     </script>
     @endif
     @if(!session('token'))
@@ -891,6 +890,5 @@
     </script>
     @endhasanyrole
     @endif
-    <script src="{{ asset('assets/js/user-get-api.js') }}"></script>
     <!-- end extraJs -->
 @endsection

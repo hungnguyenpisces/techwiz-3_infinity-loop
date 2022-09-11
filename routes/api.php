@@ -28,7 +28,7 @@ Route::group(['middleware' => 'api'], function () {
 });
 Route::group(['middleware' => ['checkRole:Super-Admin,Admin,Staff']], function () {
     Route::get('/users', [AdminDashboardApiController::class, 'countPatientAndAppointment']);
-    Route::get('user/notifications', [UserApiController::class, 'getAllNotifications']);
+    Route::get('users/notifications', [UserApiController::class, 'getAllNotifications']);
 
 });
 
