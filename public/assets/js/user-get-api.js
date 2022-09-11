@@ -14,7 +14,6 @@ if (!sessionStorage.getItem("token")) {
             var notifications = data;
             var notifications_count = data.count_notif;
             var notifications_html = "";
-            var notifications_count_html = "";
            
             if (notifications_count > 0) {
                 notifications.data.forEach(function (item) {
