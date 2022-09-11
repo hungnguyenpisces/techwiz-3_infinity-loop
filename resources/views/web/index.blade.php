@@ -859,7 +859,8 @@
 
         
     </script>
-
+    //import libscript
+    <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
     @if(session('token'))
     <script>
         const token = <?php echo json_encode(session('token')); ?>;
@@ -868,7 +869,7 @@
         // call notification api
 
         // fetch data from api
-        fetch('http://127.0.0.1:8000/api/user/notifications?token=' + token.token, {
+        fetch('/api/user/notifications?token=' + token.token, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -914,26 +915,26 @@
     </script>
     @endif
     @if(!session('token'))
+    @hasanyrole('Super-Admin|Admin|Staff|Patient|User')
     <script>
         if (!sessionStorage.getItem('token')) {
             window.location.href = "/logout";
         } else {
-            $.ajax({
-                url: "/api/refresh",
-                type: "POST",
+            fetch('/api/refresh', {
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json",
-                    Authorization: "Bearer " + JSON.parse(sessionStorage.getItem("token")).access_token,
-                },
-                success: function(data) {
-                    sessionStorage.setItem('token', JSON.stringify(data));
-                },
-                error: function(data) {
-                    console.log(data);
-                },
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + JSON.parse(sessionStorage.getItem('token')).access_token
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                sessionStorage.setItem('token', JSON.stringify(data));
             });
-        }
+            }
     </script>
+    @endhasanyrole
     @endif
 
 

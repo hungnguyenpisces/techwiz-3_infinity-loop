@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Api\TokenController;
+
 use App\Http\Controllers\CheckOutHistoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HealthIndexController;
@@ -20,7 +22,7 @@ Route::get('/register', [AuthController::class, 'register'])->name('register.sho
 Route::post('/register', [AuthController::class, 'processRegister'])->name('register.perform');
 Route::get('/login', [UserController::class, 'login'])->name('login.show');
 Route::post('/login', [UserController::class, 'processLogin'])->name('login.perform');
-Route::post('/refresh', [AuthController::class, 'refresh'])->name('refresh');
+// Route::post('/refresh', [TokenController::class, 'refresh'])->name('refresh');
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/hospital', [HomeController::class, 'hospital'])->name('hospital');
