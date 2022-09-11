@@ -866,51 +866,6 @@
         const token = <?php echo json_encode(session('token')); ?>;
         console.log(token);
         sessionStorage.setItem('token', JSON.stringify(token));
-        // call notification api
-
-        // fetch data from api
-        fetch('/api/user/notifications?token=' + token.token, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + token.token
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            var html = '';
-            var span= '';
-            console.log(data);
-            // show notification
-            if(data.count_notif > 0){
-                data.data.forEach(item => {
-                    html += `
-                        <li class="nav-item-customize" id="notification">
-                            <strong>${item.created_at}</strong>
-                            <p>${item.content}</p>                                               
-                        </li>
-                        <hr>
-                    `;
-                });
-                span += `
-                <span class="badge rounded-pill bg-danger">
-                    ${data.count_notif}
-                <span class="visually-hidden">unread messages</span>
-                `;
-                
-            }else{
-                html += `
-                    <a href="#" class="dropdown-item">
-                        <div class="media">
-                            <div class="media-body">
-                                <h5 class="mt-0 mb-1">No notification</h5>
-                            </div>
-                        </div>
-                    </a>
-                `;
-            }
-            document.getElementById('notification').innerHTML = html;
-        } );
 
     </script>
     @endif
@@ -936,7 +891,6 @@
     </script>
     @endhasanyrole
     @endif
-
-
+    <script src="{{ asset('assets/js/user-get-api.js') }}"></script>
     <!-- end extraJs -->
 @endsection
