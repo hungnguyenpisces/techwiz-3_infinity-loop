@@ -170,7 +170,7 @@ class UserController extends Controller
             Auth::login($user);
             $token=auth('api')->setTTL(240)->attempt($credentials);
             $resToken=[
-                'token'=>$token,
+                'access_token'=>$token,
                 'token_type'=>'bearer',
                 'expires_in'=>auth('api')->factory()->getTTL()*60*4
             ];

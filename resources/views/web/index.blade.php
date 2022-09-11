@@ -870,7 +870,7 @@
     @endif
     @if(!session('token'))
     @hasanyrole('Super-Admin|Admin|Staff|Patient|User')
-    <script>
+    <!-- <script>
         if (!sessionStorage.getItem('token')) {
             window.location.href = "/logout";
         } else {
@@ -887,7 +887,27 @@
                 sessionStorage.setItem('token', JSON.stringify(data));
             });
             }
-    </script>
+    </script> -->
+    <script>
+    if (!sessionStorage.getItem('token')) {
+        window.location.href = "/logout";
+    } else {
+        $.ajax({
+            url: "/api/refresh",
+            type: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + JSON.parse(sessionStorage.getItem("token")).access_token,
+            },
+            success: function(data) {
+                sessionStorage.setItem('token', JSON.stringify(data));
+            },
+            error: function(data) {
+                console.log(data);
+            },
+        });
+    }
+</script>
     @endhasanyrole
     @endif
     <!-- end extraJs -->
