@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogViewController;
 use App\Http\Controllers\CheckOutHistoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HealthIndexController;
@@ -50,6 +51,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
     Route::get('/user-appointment', [AppointmentController::class, 'show'])->name('appointment.show');
     Route::get('/record-detail/{id}', [CheckOutHistoryController::class, 'showDetail'])->name('record.detail');
+
+    Route::get('/blog', [BlogViewController::class, 'list_blogs'])->name('view_blogs.list');
+    Route::get('/blog/{id}', [BlogViewController::class, 'view_blog'])->name('view_blogs.view');
 
     Route::get('/user', [HealthIndexController::class, 'index'])->name('user.index');
     Route::post('/user', [HealthIndexController::class, 'store'])->name('user.store');

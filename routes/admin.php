@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppointmentManageController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
@@ -68,6 +69,8 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::get('/payment/add-payment', [PaymentController::class, 'create'])->name('payment.create');
     Route::get('/payment/patient-invoice', [PaymentController::class, 'show'])->name('payment.show');
 
+    Route::resource('/blog', BlogController::class);
+    Route::post('/blog/upload', [BlogController::class, 'upload'])->name('blog.upload');
     Route::get('/report', [AdminController::class, 'report'])->name('report.index');
     Route::get('/widgets', [AdminController::class, 'widgets'])->name('widgets.index');
 
