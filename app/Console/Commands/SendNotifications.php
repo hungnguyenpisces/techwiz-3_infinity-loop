@@ -70,15 +70,28 @@ class SendNotifications extends Command
 
         //check if created_at is 7 days ago
         foreach ($health_index as $index) {
-            if (date('Y-m-d', strtotime($index->created_at)) == date('Y-m-d', strtotime('-7 days'))) {
-                //insert into table notifications 
-             
+            //check if lastest health index is 7 days ago
+            $lastest = DB::table('health_indices')
+                ->where('user_id', $index->user_id)
+                ->orderBy('created_at', 'desc')
+                ->first();
+           
+            $diff = date_diff(date_create($lastest->created_at), date_create(date('Y-m-d')));
+
+            if ($diff >=7) {
+                $time = $diff%7;
+
                 $notification = new Notification();
                 $notification->user_id = $index->user_id;
-                $notification->content = 'You have not updated your health index this week. Update it now!';
+                if ($time == 1) {
+                    $notification->content = 'You have not updated your health index for 7 days';
+                } else {
+                    $notification->content = 'You have not updated your health index for ' . $time . ' days';
+                }
                 $notification->type = 3;
                 $notification->save();
             }
+           
         }
 
         $this->info('Notification sent successfully!');
