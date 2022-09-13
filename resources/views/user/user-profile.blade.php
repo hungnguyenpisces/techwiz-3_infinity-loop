@@ -57,7 +57,7 @@
                             </li>
                             <div class="d-flex justify-content-center mb-2">
                                 <div class="button wow fadeInLeft" data-wow-delay=".7s">
-                                    <a href="/user-update-info" class="btn">Edit Health</a>
+                                    <a href='{{route("healthIndex.edit" , $healthIndex ->id)}}' class="btn">Edit latest record</a>
                                 </div>
                             </div>
 

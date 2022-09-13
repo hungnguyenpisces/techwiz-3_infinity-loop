@@ -114,7 +114,7 @@
                                 <div class="col-lg-6 col-md-6 col-12 p-0">
                                     <div class="appointment-input">
                                         <label for="time"></label>
-                                        <input type="time" name="time" id="time" required>
+                                        <input  type="time" name="time" id="time" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12 p-0">
