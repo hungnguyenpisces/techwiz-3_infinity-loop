@@ -12,7 +12,10 @@ class BlogViewController extends Controller
     }
 
     public function view_blog(Request $Request, $id){
-        $blog_data=\App\Models\Blog::find($id);
-        return view("web.blog-view")->with("blog_data",$blog_data);
+        $blog_data=\App\Models\Blog::where("id",$id)->where("is_viewable","TRUE");
+        if ($blog_data->count()){
+            return view("web.blog-view")->with("blog_data",$blog_data->first());
+        }
+        abort(404);
     }
 }

@@ -41,6 +41,7 @@ button:focus,
 	border-color: #88c250;
 }
 select {
+	writing-mode: horizontal-tb !important;
 	-webkit-writing-mode: horizontal-tb !important;
 	text-rendering: auto;
 	color: #081828;
@@ -1116,7 +1117,7 @@ ol {
 }
 .header .top-bar .right-content {
 	float: right;
-	display: inline-block;
+	display: block;
 }
 .header .top-bar .middle-content {
 	text-align: center;
