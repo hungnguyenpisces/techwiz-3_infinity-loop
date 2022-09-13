@@ -86,7 +86,7 @@ class SendNotifications extends Command
                 if ($time == 1) {
                     $notification->content = 'You have not updated your health index for 7 days';
                 } else {
-                    $notification->content = 'You have not updated your health index for ' . $time . ' days';
+                    $notification->content = 'You have not updated your health index for ' . $time . ' weeks';
                 }
                 $notification->type = 3;
                 $notification->save();
