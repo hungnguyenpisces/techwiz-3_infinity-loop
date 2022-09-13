@@ -17,7 +17,7 @@ FAQs Management
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="block-header">
-                <h2>FAQs</h2>
+                <h2>FAQ Management</h2>
                 <small class="text-muted">Welcome to Swift application</small>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
