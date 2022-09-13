@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Department;
 use App\Models\Doctor;
+use App\Models\FAQ;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -80,6 +81,12 @@ class HomeController extends Controller
     public function doctorDetail()
     {
         return view('web.doctor-detail');
+    }
+
+    public function faq()
+    {
+        $faq = FAQ::all();
+        return view('web.faq')->with('faq',$faq);
     }
 
     public function contact_us()

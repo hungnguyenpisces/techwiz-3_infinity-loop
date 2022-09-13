@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\FAQ;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 
 class FaqController extends Controller
 {
@@ -18,11 +16,11 @@ class FaqController extends Controller
     public function index()
     {
         $faq = FAQ::all();
-        return view('admin.faq.all-faq')->with('faq',$faq);
-       
+        //dd($faq);
+        return view('admin.faq.all-faq', compact('faq'));
     }
 
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,11 +39,11 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-       $faq = new FAQ();
-       $faq->question = $request->question;
-       $faq->answer = $request->answer;
-       $faq->save();
-       return redirect()->route('admin.faq.index')->with('success', 'FAQ has been created successfully.');
+        $faq = new FAQ();
+        $faq->question = $request->question;
+        $faq->answer = $request->answer;
+        $faq->save();
+        return redirect()->route('admin.faq.index')->with('success', 'FAQ has been created successfully.');
     }
 
     /**
@@ -54,9 +52,10 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $faq = FAQ::all();
+        return view('admin.faq.all-faq')->with('faq', $faq);
     }
 
     /**
@@ -68,7 +67,7 @@ class FaqController extends Controller
     public function edit($id)
     {
         $faq = FAQ::find($id);
-        return view('admin.faq.edit-faq')->with('faq',$faq);
+        return view('admin.faq.edit-faq')->with('faq', $faq);
     }
 
     /**
@@ -96,9 +95,9 @@ class FaqController extends Controller
     public function destroy($id, Request $request)
     {
         $faq = FAQ::find($id);
-        if($faq == null){
+        if ($faq == null) {
             $request->session()->flash('danger', 'Question not found.');
-        }else{
+        } else {
             $faq->delete();
             $request->session()->flash('danger', 'Question deleted successfully.');
         }

@@ -37,7 +37,6 @@ FAQs Management
                         <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Question</th>
                                     <th>Answer</th>
                                     <th>Created At</th>
@@ -47,7 +46,6 @@ FAQs Management
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Question</th>
                                     <th>Answer</th>
                                     <th>Created At</th>
@@ -58,13 +56,12 @@ FAQs Management
                             <tbody>
                                 @foreach($faq as $fq)
                                 <tr>
-                                    <td>{{ $fq->id }}</td>
-                                    <td>{{ $fq->question }}</td>
-                                    <td>{{ $fq->answer }}</td>
-                                    <td>{{ $fq->created_at }}</td>
-                                    <td>{{ $fq->updated_at }}</td>
+                                    <td>{{$fq->question}}</td>
+                                    <td>{{$fq->answer}}</td>
+                                    <td>{{$fq->created_at}}</td>
+                                    <td>{{$fq->updated_at}}</td>
                                     <td>
-                                        <a href="{{ route('admin.faq.edit-faq', $faq->id) }}" class="btn btn-primary waves-effect">
+                                        <a href="{{ route('admin.faq.edit', $fq->id) }}" class="btn btn-primary waves-effect">
                                             <i class="material-icons">remove_red_eye</i>
                                         </a>
                                     </td>

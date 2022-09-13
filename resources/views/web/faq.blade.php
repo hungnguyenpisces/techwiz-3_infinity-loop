@@ -60,7 +60,7 @@
     }
 
     .faq-page:after {
-        content: '\02795';
+        content:'\02795';
         /* Unicode character for "plus" sign (+) */
         font-size: 20px;
         color: white;
@@ -69,7 +69,7 @@
     }
 
     .active:after {
-        content: "\2796";
+        content:"\2796";
         /* Unicode character for "minus" sign (-) */
     }
 </style>
