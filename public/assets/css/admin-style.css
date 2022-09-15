@@ -19660,9 +19660,12 @@ input[type="search"] {
 	border-bottom: 2px solid #f7bb97 !important;
 }
 
+.fllf{
+	float: left;
+}
 .preview_image{
-	width: 160px;
-	height: 160px;
+	width: 50px;
+	height: 50px;
 }
 .form_file_upload{
 	width: 350px;
@@ -19684,6 +19687,7 @@ input[type="search"] {
 .dropzone.dz-started .dz-message-container{
 	display: none;
 }
-.blog_content{
-	min-height: 350px;
+.ck.ck-content:not(.ck-comment__input *){
+	height: 310px;
+	overflow-y:auto;
 }

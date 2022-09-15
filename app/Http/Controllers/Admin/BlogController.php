@@ -151,7 +151,7 @@ class BlogController extends Controller
         $file=$request->file("file");
         $path="blog_images/default_image.png";
         if ($file){
-            if ($request->file("file")->isValid()){
+            if ($file->isValid()){
                 $path=$file->store("blog_images","public");
             }
         }
@@ -159,5 +159,20 @@ class BlogController extends Controller
         $thumb_entry->thumbnail_token=$thumb_token;
         $thumb_entry->image=$path;
         $thumb_entry->save();
+    }
+
+    public function ck_upload(Request $request)
+    {
+        $thumb_token=$request->input("thumb_token");
+        $file=$request->file("upload");
+        $path="/storage/blog_images/default_image.png";
+        if ($file){
+            if ($file->isValid()){
+                $path="/storage/".$file->store("blog_images","public");
+            }
+        }
+        return response()->json([
+            "url"=>$path
+        ]);
     }
 }

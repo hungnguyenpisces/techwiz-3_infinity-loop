@@ -16,7 +16,7 @@
 		<div class="col-12">
 			<h2>{{$blog_data->title}}</h2>
 			<div class="blog_content">
-				{{$blog_data->content}}
+				{!!$blog_data->content!!}
 			</div>
 		</div>
 	</div>

@@ -75,7 +75,7 @@ Custom title if need
 								<div class="content-box">
 									<div class="form-group">
 										<div class="form-line">
-											<textarea rows="4" name="content" class="form-control blog_content no-resize" placeholder="Content" form="blog_form_data">{{$blog_item->content}}</textarea>
+											<textarea rows="4" name="content" id="blog_content" placeholder="Content" form="blog_form_data">{!!$blog_item->content!!}</textarea>
 										</div>
 									</div>
 								</div>
@@ -121,6 +121,18 @@ Custom title if need
 	<script src="/assets/plugins/momentjs/moment.js"></script>
 	<script src="/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 	<script src="/assets/js/pages/forms/basic-form-elements.js"></script>
+	<script src="/assets/js/ckeditor/ckeditor.js" scr="een"></script>
+	<script>
+		ClassicEditor.create(document.getElementById("blog_content"),{
+			simpleUpload:{
+				uploadUrl: "{{route('blog.ck_upload')}}",
+				withCretentials: true,
+				headers:{
+					'X-CSRF-TOKEN': "{{csrf_token()}}"
+				}
+			}
+		})
+	</script>
 	<script>
 		(function () {
 			var js = "window['__CF$cv$params']={r:'738813effa6c2390',m:'VuitF6PK5DLz8PUEBdKZpsVkGiNhNI9t.TcTOEX1nOo-1660127654-0-AVnno4w4LkQWXS14bzfPf11UXujvCHySfOm6cnwfXhy4GB7TOvncdZ4EIGf7Z7sacrEz0dwdLp2jZcbwwgFOBJrYCHqf89kBgBDqYbgnLOEHCLJxvJ2kzrilFJ7ZKDIsMf2xsDqEWCSodC+RS4I7H8sFnYgiS5haTNejTnfK4Let',s:[0x65416c2db8,0x7772ee6685],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";

@@ -41,7 +41,6 @@ Custom title if need
 									<th>Title</th>
 									<th>Description</th>
 									<th>Thumbnail</th>
-									<th>Content</th>
 									<th>Hidden</th>
 									<th>Action</th>
 								</tr>
@@ -51,7 +50,6 @@ Custom title if need
 									<th>Title</th>
 									<th>Description</th>
 									<th>Thumbnail</th>
-									<th>Content</th>
 									<th>Hidden</th>
 									<th>Action</th>
 								</tr>
@@ -62,16 +60,15 @@ Custom title if need
 										<td>{{$blog_item->title}}</td>
 										<td>{{$blog_item->short_description}}</td>
 										<td><img class="preview_image" scr="een" src="/storage/{{$blog_item->image->image}}"></td>
-										<td>{{$blog_item->content}}</td>
 										<td>{{$blog_item->is_viewable?"No":"Yes"}}</td>
 										<td>
-											<a href="{{route('blog.edit',$blog_item->id)}}" class="btn btn-primary waves-effect">
+											<a href="{{route('blog.edit',$blog_item->id)}}" class="btn btn-primary waves-effect fllf">
 												<i class="material-icons">edit</i>
 											</a>
 											<form method="post" action="{{route('blog.destroy',$blog_item->id)}}">
 												@csrf
 												@method("DELETE")
-												<button class="btn btn-primary waves-effect">
+												<button class="btn btn-danger waves-effect">
 													<i class="material-icons">delete</i>
 												</button>
 											</form>

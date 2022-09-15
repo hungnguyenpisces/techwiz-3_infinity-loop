@@ -71,6 +71,7 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
 
     Route::resource('/blog', BlogController::class);
     Route::post('/blog/upload', [BlogController::class, 'upload'])->name('blog.upload');
+    Route::post('/blog/ck_upload', [BlogController::class, 'ck_upload'])->name('blog.ck_upload');
     Route::get('/report', [AdminController::class, 'report'])->name('report.index');
     Route::get('/widgets', [AdminController::class, 'widgets'])->name('widgets.index');
 

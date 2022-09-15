@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class BlogViewController extends Controller
 {
     public function list_blogs(){
-        $all_blogs=\App\Models\Blog::all();
+        $all_blogs=\App\Models\Blog::where("is_viewable","TRUE")->get();
         return view("web.blog")->with("all_blogs",$all_blogs);
     }
 
