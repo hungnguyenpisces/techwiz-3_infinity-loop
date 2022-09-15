@@ -85,7 +85,7 @@ class HealthIndexController extends Controller
                 'healthIndex.heart_rate as healthIndex_heart_rate')
             ->where('user_id', $user->id)
             ->first();
-        dd($healthIndex);
+
         return view('user.user-profile', compact('healthIndex','user'));
     }
 

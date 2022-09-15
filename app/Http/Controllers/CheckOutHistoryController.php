@@ -71,7 +71,7 @@ class CheckOutHistoryController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

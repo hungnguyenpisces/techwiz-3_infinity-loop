@@ -21,14 +21,14 @@ Route::post('/login', [AuthController::class, 'processLogin'])->name('login.perf
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/hospital', [HomeController::class, 'hospital'])->name('hospital');
-Route::get('/hospital-search', [HomeController::class, 'hospitalSearch'])->name('hospital-search');
+Route::get('/hospital-search', [HomeController::class, 'searchHospitalRs'])->name('hospital-searchRs');
 Route::get('/departments', [HomeController::class, 'departments'])->name('departments');
 Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
 Route::get('/doctor-search', [HomeController::class, 'doctorSearch'])->name('doctor-search');
+Route::get('/doctor-search-result', [HomeController::class, 'searchDoctorRs'])->name('doctor-searchRs');
 Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doctor-detail');
 
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
-Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/timetable', [HomeController::class, 'time_table'])->name('timetable');
@@ -37,8 +37,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/doctordetail', [HomeController::class, 'doctor_detail'])->name('doctordetail');
 
     Route::resource('/medicine', MedicinePillController::class);
-
-    Route::get('/create-feedback', [CommentController::class,'create'])->name('feedback.create');
+    Route::resource('/comment', CommentController::class);
 
     Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
     Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment.store');
@@ -48,12 +47,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
     Route::get('/user-appointment-detail/{id}', [AppointmentController::class, 'showDetail'])->name('appointment.detail');
 
-    Route::get('/user-appointment-detail/{id}', [AppointmentController::class, 'showDetail'])->name('appointment.detail');
-
     Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
-    Route::get('/user-history/{id}/detail', [CheckOutHistoryController::class, 'showDetail'])->name('record.detail');
-    Route::get('/user-appointment', [AppointmentController::class, 'index'])->name('appointment.index');
-
+    Route::get('/user-appointment', [AppointmentController::class, 'show'])->name('appointment.show');
+    Route::get('/record-detail/{id}', [CheckOutHistoryController::class, 'showDetail'])->name('record.detail');
+    Route::delete('/record-detail/{id}', [CheckOutHistoryController::class, 'destroy'])->name('record.destroy');
 
     Route::get('/user', [HealthIndexController::class, 'index'])->name('user.index');
     Route::post('/user', [HealthIndexController::class, 'store'])->name('user.store');
