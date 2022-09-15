@@ -86,7 +86,7 @@
                             <a type="button"  class="btn btn-secondary" href="{{route("appointment.edit", $appointment->id)}}">Edit</a>
                         @endif
                         <form  method="post" action="{{route('appointment.destroy', $appointment->id)}}"
-                              onsubmit='return confirm("Sure ?")'>
+                               onsubmit='return confirm("Sure ?")'>
                             @csrf
                             @method('DELETE')
                             <input type="submit" value="Delete" class="btn btn-danger">

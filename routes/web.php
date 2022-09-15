@@ -2,14 +2,10 @@
 
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Api\TokenController;
-
 use App\Http\Controllers\CheckOutHistoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HealthIndexController;
 use App\Http\Controllers\HomeController;
-// use UserController
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\MedicinePillController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,17 +16,16 @@ Route::prefix('admin')->middleware(['role:Super-Admin|Admin'])->group(function (
 
 Route::get('/register', [AuthController::class, 'register'])->name('register.show');
 Route::post('/register', [AuthController::class, 'processRegister'])->name('register.perform');
-Route::get('/login', [UserController::class, 'login'])->name('login.show');
-Route::post('/login', [UserController::class, 'processLogin'])->name('login.perform');
-// Route::post('/refresh', [TokenController::class, 'refresh'])->name('refresh');
+Route::get('/login', [AuthController::class, 'login'])->name('login.show');
+Route::post('/login', [AuthController::class, 'processLogin'])->name('login.perform');
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/hospital', [HomeController::class, 'hospital'])->name('hospital');
 Route::get('/hospital-search', [HomeController::class, 'searchHospitalRs'])->name('hospital-searchRs');
 Route::get('/departments', [HomeController::class, 'departments'])->name('departments');
 Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
-Route::get('/doctor-search', [HomeController::class, 'searchDoctorRs'])->name('doctor-searchRs');
-// Route::get('/doctor-search-result', [HomeController::class, 'searchDoctorRs'])->name('doctor-searchRs');
+Route::get('/doctor-search', [HomeController::class, 'doctorSearch'])->name('doctor-search');
+Route::get('/doctor-search-result', [HomeController::class, 'searchDoctorRs'])->name('doctor-searchRs');
 Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doctor-detail');
 
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
@@ -59,6 +54,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/user', [HealthIndexController::class, 'index'])->name('user.index');
     Route::post('/user', [HealthIndexController::class, 'store'])->name('user.store');
     Route::get('/user/{id}/edit', [HealthIndexController::class, 'edit'])->name('healthIndex.edit');
+
     Route::put('/user/{id}', [HealthIndexController::class, 'update'])->name('user.update');
     Route::delete('/user/{id}', [HealthIndexController::class, 'destroy'])->name('user.destroy');
     Route::get('/user-bmi', [HealthIndexController::class, 'bmi'])->name('user.bmi');

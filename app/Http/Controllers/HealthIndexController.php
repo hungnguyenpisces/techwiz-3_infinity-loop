@@ -169,3 +169,5 @@ class HealthIndexController extends Controller
     }
 
 }
+Route::get('/user/{id}/edit', [HealthIndexController::class, 'edit'])->name('healthIndex.edit');
+
