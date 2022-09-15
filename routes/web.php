@@ -29,6 +29,9 @@ Route::get('/doctor-search', [HomeController::class, 'doctorSearch'])->name('doc
 Route::get('/doctor-search-result', [HomeController::class, 'searchDoctorRs'])->name('doctor-searchRs');
 Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doctor-detail');
 
+Route::get('/blog', [BlogViewController::class, 'list_blogs'])->name('view_blogs.list');
+Route::get('/blog/{id}', [BlogViewController::class, 'view_blog'])->name('view_blogs.view');
+
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
 
 Route::group(['middleware' => ['auth']], function () {
@@ -51,9 +54,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
     Route::get('/user-appointment', [AppointmentController::class, 'show'])->name('appointment.show');
     Route::get('/record-detail/{id}', [CheckOutHistoryController::class, 'showDetail'])->name('record.detail');
-
-    Route::get('/blog', [BlogViewController::class, 'list_blogs'])->name('view_blogs.list');
-    Route::get('/blog/{id}', [BlogViewController::class, 'view_blog'])->name('view_blogs.view');
 
     Route::get('/user', [HealthIndexController::class, 'index'])->name('user.index');
     Route::post('/user', [HealthIndexController::class, 'store'])->name('user.store');

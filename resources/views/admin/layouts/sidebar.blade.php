@@ -3,7 +3,7 @@
         <div class="user-info">
             <div class="admin-image"> <img src="/assets/images/random-avatar7.jpg" alt=""> </div>
             <div class="admin-action-info"> <span>Welcome</span>
-                <h3>Dr. John</h3>
+                <h3>{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}</h3>
                 <ul>
                     <li><a href="#" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
                     <li><a href="#" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>

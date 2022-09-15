@@ -11,4 +11,7 @@ class Blog extends Model
     public function image(){
         return $this->hasOne(Blog_thumbnail::class,"thumbnail_token","thumbnail_token");
     }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

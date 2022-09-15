@@ -32,7 +32,7 @@
                                     <ul class="meta-info">
                                         <li>
                                             <a href="#"><img src="assets/images/blog/comment1.jpg" alt="#">
-                                                (Author pending)</a>
+                                                {{$blog_item->user->last_name}} {{$blog_item->user->first_name}}</a>
                                         </li>
                                         <li>
                                             {{$blog_item->created_at}}

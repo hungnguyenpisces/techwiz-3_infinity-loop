@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
@@ -68,6 +69,7 @@ class BlogController extends Controller
         $blog_entry->short_description=$description;
         $blog_entry->content=$content;
         $blog_entry->thumbnail_token=$thumb_token;
+        $blog_entry->user_id=Auth::user()->id;
         if ($request->has("hidden")){
             $blog_entry->is_viewable=0;
         }
@@ -118,6 +120,7 @@ class BlogController extends Controller
         $blog_entry->title=$title;
         $blog_entry->short_description=$description;
         $blog_entry->content=$content;
+        $blog_entry->user_id=Auth::user()->id;
         $blog_entry->is_viewable=1;
         if ($hascount){
             $blog_entry->thumbnail_token=$thumb_token;

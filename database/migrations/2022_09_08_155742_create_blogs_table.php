@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text("content")->nullable();
             $table->string("thumbnail_token")->unique();
             $table->boolean("is_viewable")->default(1);
+            $table->bigInteger("user_id");
             $table->timestamps();
         });
     }
