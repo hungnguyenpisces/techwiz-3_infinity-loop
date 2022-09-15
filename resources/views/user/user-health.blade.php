@@ -9,7 +9,7 @@
 
     <section class="vh-100 gradient-custom">
         <div class="container py-5 h-100 form-head">
-            <h3 style="max-width: 90%; margin: auto" class="mt-3 text-center">Personal Health Information</h3>
+            <h3 style="max-width: 90%; margin: auto" class="mt-3 text-center">Add Personal Health Information</h3>
 
             <form action="{{route('user.store')}}" method="post">
                 @csrf

@@ -79,18 +79,20 @@
                 <br>
                 <br>
                 <div class="text-center">
-                    <a type="button" href="/user-appointment" class="btn btn-success">Back to list</a>
-                    @if($appointment->status == 'Accepted')
-                        <a class="btn btn-secondary" href="{{route("appointment.edit", $appointment->id)}}">Edit</a>
-                    @elseif($appointment->status == 'Pending')
-                        <a class="btn btn-secondary" href="{{route("appointment.edit", $appointment->id)}}">Edit</a>
-                    @endif
-                    <form method="post" action="{{route('appointment.destroy', $appointment->id)}}"
-                          onsubmit='return confirm("Sure ?")'>
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" value="Delete" class="btn btn-danger">
-                    </form>
+                    <div class="col-sm-12">
+                        <a type="button" href="/user-appointment" class="btn btn-success">Back to list</a>
+
+                        @if($appointment->status == 'Pending')
+                            <a type="button"  class="btn btn-secondary" href="{{route("appointment.edit", $appointment->id)}}">Edit</a>
+                        @endif
+                        <form  method="post" action="{{route('appointment.destroy', $appointment->id)}}"
+                              onsubmit='return confirm("Sure ?")'>
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+
+                    </div>
 
                 </div>
             </div>
