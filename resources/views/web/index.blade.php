@@ -854,30 +854,61 @@
             'width': 900,
             'autoplayVideos': true,
         });
-        //============== isotope masonry js with imagesloaded
-        // imagesLoaded('#container', function () {
-        //     var elem = document.querySelector('.grid');
-        //     var iso = new Isotope(elem, {
-        //         // options
-        //         itemSelector: '.grid-item',
-        //         masonry: {
-        //             // use outer width of grid-sizer for columnWidth
-        //             columnWidth: '.grid-item'
-        //         }
-        //     });
-        //
-        //     let filterButtons = document.querySelectorAll('.portfolio-btn-wrapper button');
-        //     filterButtons.forEach(e =>
-        //         e.addEventListener('click', () => {
-        //
-        //             let filterValue = event.target.getAttribute('data-filter');
-        //             iso.arrange({
-        //                 filter: filterValue
-        //             });
-        //         })
-        //     );
-        // });
-    </script>
 
+
+
+        
+    </script>
+    <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/user-get-api.js') }}"></script>
+    @if(session('token'))
+    <script>
+        const token = <?php echo json_encode(session('token')); ?>;
+        console.log(token);
+        sessionStorage.setItem('token', JSON.stringify(token));
+    </script>
+    @endif
+    @if(!session('token'))
+    @hasanyrole('Super-Admin|Admin|Staff|Patient|User')
+    <!-- <script>
+        if (!sessionStorage.getItem('token')) {
+            window.location.href = "/logout";
+        } else {
+            fetch('/api/refresh', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + JSON.parse(sessionStorage.getItem('token')).access_token
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                sessionStorage.setItem('token', JSON.stringify(data));
+            });
+            }
+    </script> -->
+    <script>
+    if (!sessionStorage.getItem('token')) {
+        window.location.href = "/logout";
+    } else {
+        $.ajax({
+            url: "/api/refresh",
+            type: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + JSON.parse(sessionStorage.getItem("token")).access_token,
+            },
+            success: function(data) {
+                sessionStorage.setItem('token', JSON.stringify(data));
+            },
+            error: function(data) {
+                console.log(data);
+            },
+        });
+    }
+</script>
+    @endhasanyrole
+    @endif
     <!-- end extraJs -->
 @endsection
