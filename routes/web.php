@@ -37,7 +37,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/doctordetail', [HomeController::class, 'doctor_detail'])->name('doctordetail');
 
     Route::resource('/medicine', MedicinePillController::class);
-    Route::resource('/comment', CommentController::class);
+    
+    Route::get('/create-feedback', [CommentController::class,'create'])->name('feedback.create');
 
     Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
     Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment.store');
@@ -50,6 +51,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/user-appointment-detail/{id}', [AppointmentController::class, 'showDetail'])->name('appointment.detail');
 
     Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
+    Route::get('/user-history/{id}/detail', [CheckOutHistoryController::class, 'showDetail'])->name('record.detail');
     Route::get('/user-appointment', [AppointmentController::class, 'index'])->name('appointment.index');
 
 

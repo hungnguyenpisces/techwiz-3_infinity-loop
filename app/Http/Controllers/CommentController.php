@@ -15,7 +15,7 @@ class CommentController extends Controller
     public function index()
     {
         $lsCmt = Comment::all();
-        return view('comment.index')->with('lsCmt', $lsCmt);
+        return view('')->with('lsCmt', $lsCmt);
     }
 
     /**
@@ -25,7 +25,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        return view('comment.create');
+        return view('web.feedback.feedback-create');
     }
 
     /**
