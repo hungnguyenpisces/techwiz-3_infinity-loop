@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Appointment;
 use App\Models\Department;
 use App\Models\HealthIndex;
@@ -169,5 +170,4 @@ class HealthIndexController extends Controller
     }
 
 }
-Route::get('/user/{id}/edit', [HealthIndexController::class, 'edit'])->name('healthIndex.edit');
 
