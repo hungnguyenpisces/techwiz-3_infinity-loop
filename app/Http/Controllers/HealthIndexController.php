@@ -21,16 +21,13 @@ class HealthIndexController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $healthIndex = HealthIndex::where('user_id', $user->id)->orderBy("created_at","desc")->first();
 
-        $healthIndex = new HealthIndex();
-        $healthIndex->user_id = $user->id;
-        $healthIndex->height = 170;
-        $healthIndex->weight = 70;
-        $healthIndex->heart_rate = 70;
-        $healthIndex->blood_pressure = 70;
-        $healthIndex->save();
+        return view('user.user-profile', [
+            'user' => $user,
+            'healthIndex' => $healthIndex
 
-        return view('user.user-profile')->with(compact('healthIndex'));
+        ]);
     }
 
     /**
@@ -46,19 +43,25 @@ class HealthIndexController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $height = $request->input('height');
+        $weight = $request->input('weight');
+        $heart_rate = $request->input('heart_rate');
+        $blood_pressure = $request->input('blood_pressure');
+
         $user = Auth::user();
-        $heal = new HealthIndex();
-        $heal->users_id = $user->id;
-        $heal->height = $request->height;
-        $heal->weight = $request->weight;
-        $heal->heart_rate = $request->heart_rate;
-        $heal->blood_pressure = $request->blood_pressure;
-        $heal->save();
+        $healthIndex = new HealthIndex();
+        $healthIndex->user_id = $user->id;
+        $healthIndex->height = $height;
+        $healthIndex->weight = $weight;
+        $healthIndex->heart_rate = $heart_rate;
+        $healthIndex->blood_pressure = $blood_pressure;
+
+        $healthIndex->save();
 
         $request->session()->flash('success', 'Health Index created sucessfully.');
         return view('web.success');
@@ -67,56 +70,70 @@ class HealthIndexController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $user = Auth::user();
-        $healthIndex = health_indices::join('users', 'healthIndex.user_id', '=', 'users.id')
-            ->join('', '', '=', '')
-            ->select('', 'users.first_name', 'users.last_name', '')
-            ->where('user_id', $user->id)->get();
-        return view('user.user-profile', compact('healthIndex'));
+        $healthIndex = HealthIndex::join('users', 'healthIndex.user_id', '=', '$user.id')
+            ->select('healthIndex.*', 'users.first_name', 'users.last_name',
+                'healthIndex.height as healthIndex_height',
+                'healthIndex.weight as healthIndex_weight',
+                'healthIndex.blood_pressure as healthIndex_blood_pressure',
+                'healthIndex.heart_rate as healthIndex_heart_rate')
+            ->where('user_id', $user->id)
+            ->first();
+        dd($healthIndex);
+        return view('user.user-profile', compact('healthIndex','user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $heal = HealthIndex::find($id);
-        return view('user.user-profile')->with('heal', $heal);
+        $healthIndex = HealthIndex::find($id);
+        return view('user.user-editHealth')->with('healthIndex', $healthIndex);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $heal = HealthIndex::find($id);
-        $heal->users_id = $request->users_id;
-        $heal->height = $request->height;
-        $heal->weight = $request->weight;
-        $heal->heart_rate = $request->heart_rate;
-        $heal->blood_pressure = $request->blood_pressure;
-        $heal->save();
+        $user = Auth::user();
 
-        $request->session()->flash('success', 'Health Index updated sucessfully.');
+        $height = $request->input('height');
+        $weight = $request->input('weight');
+        $heart_rate = $request->input('heart_rate');
+        $blood_pressure = $request->input('blood_pressure');
+
+        $healthIndex = HealthIndex::find($id);
+
+        $healthIndex->user_id = $user->id;
+        $healthIndex->height = $height;
+        $healthIndex->weight = $weight;
+        $healthIndex->heart_rate = $heart_rate;
+        $healthIndex->blood_pressure = $blood_pressure;
+
+        $healthIndex->save();
+
+        $request->session()->flash('success', 'Health Index created sucessfully.');
         return view('web.success');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id, Request $request)
@@ -138,11 +155,17 @@ class HealthIndexController extends Controller
 
     public function health()
     {
-        return view('user.user-health');
+        $user = Auth::user();
+        $healthIndex = HealthIndex::where('user_id', $user->id)->firstOrFail();
+        return view('user.user-health', [
+            'user' => $user,
+            'healthIndex' => $healthIndex
+        ]);
     }
 
     public function updateInfo()
     {
         return view('user.user-update-info');
     }
+
 }

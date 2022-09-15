@@ -9,8 +9,7 @@
                             <ul>
                                 <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
                                 </li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a>
-                                </li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-pinterest"></i></a></li>
