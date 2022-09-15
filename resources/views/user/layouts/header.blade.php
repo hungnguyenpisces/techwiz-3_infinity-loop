@@ -7,13 +7,12 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="top-social">
                             <ul>
-                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a>
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
                                 </li>
-                                <li><a href="#"><i class="lni lni-twitter-original"></i></a>
-                                </li>
-                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="#"><i class="lni lni-youtube"></i></a></li>
-                                <li><a href="#"><i class="lni lni-pinterest"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-pinterest"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -47,7 +46,7 @@
                             @if(Auth::check())
                             <div class="top-social navbar-nav ms-auto" style="top: 0px;">
                                 <ul>
-                                    <!-- <li><a href="#"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
+                                    <!-- <li><a href="javascript:void(0)"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
                                             <span class="badge rounded-pill bg-danger">
                                                 1
                                                 <span class="visually-hidden">unread messages</span></a></li>
