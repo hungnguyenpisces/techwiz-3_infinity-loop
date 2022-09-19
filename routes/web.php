@@ -59,7 +59,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/user/{id}', [HealthIndexController::class, 'destroy'])->name('user.destroy');
     Route::get('/user-bmi', [HealthIndexController::class, 'bmi'])->name('user.bmi');
     Route::get('/user-health', [HealthIndexController::class, 'health'])->name('user.health');
+    Route::post('/user-health', [HealthIndexController::class, 'store'])->name('healthIndex.store');
     Route::get('/user-update-info', [HealthIndexController::class, 'updateInfo'])->name('user.updateInfo');
+
+    Route::get('/user-health-list', [HealthIndexController::class, 'healthList'])->name('user.healthList');
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });

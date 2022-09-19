@@ -8,6 +8,8 @@ use App\Models\Department;
 use App\Models\HealthIndex;
 use App\Models\Hospital;
 use App\Models\User;
+use Carbon\Carbon;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,7 +40,17 @@ class HealthIndexController extends Controller
      */
     public function create()
     {
-        return view('user.user-profile');
+        $user = Auth::user();
+        $healthIndex = HealthIndex::where('user_id', $user->id)->orderBy("created_at","desc")->first();
+        $now = Carbon::now();
+        $nowbefore7day = $now->subDays(7);
+        if($healthIndex->created_at > $nowbefore7day) {
+            return redirect("user.user-health-list");
+        } else {
+            return view('user.user-health');
+        }
+
+//        return view('user.user-profile');
     }
 
     /**
@@ -49,23 +61,61 @@ class HealthIndexController extends Controller
      */
     public function store(Request $request)
     {
-        $height = $request->input('height');
-        $weight = $request->input('weight');
-        $heart_rate = $request->input('heart_rate');
-        $blood_pressure = $request->input('blood_pressure');
 
+
+//        $height = $request->input('height');
+//        $weight = $request->input('weight');
+//        $heart_rate = $request->input('heart_rate');
+//        $blood_pressure = $request->input('blood_pressure');
         $user = Auth::user();
-        $healthIndex = new HealthIndex();
-        $healthIndex->user_id = $user->id;
-        $healthIndex->height = $height;
-        $healthIndex->weight = $weight;
-        $healthIndex->heart_rate = $heart_rate;
-        $healthIndex->blood_pressure = $blood_pressure;
 
-        $healthIndex->save();
+        $healthIndex = HealthIndex::where('user_id', $user->id)->orderBy("created_at","desc")->first();
 
-        $request->session()->flash('success', 'Health Index created sucessfully.');
-        return view('web.success');
+//        $last_7_days = HealthIndex::where('created_at','>=',Carbon::now()
+//            ->subdays(7))
+//            ->first(['id','created_at']);
+
+        $now = Carbon::now();
+        $nowbefore7day = $now->subDays(7);
+
+        if($healthIndex->created_at > $nowbefore7day) {
+            return redirect()->back()->with('warning', 'You added health information this week then you can edit it or add a new one in 1 week');
+
+//            return redirect(route('user.healthList'));
+        } else {
+
+            $height = $request->input('height');
+            $weight = $request->input('weight');
+            $heart_rate = $request->input('heart_rate');
+            $blood_pressure = $request->input('blood_pressure');
+
+            $user = Auth::user();
+            $healthIndex = new HealthIndex();
+
+
+            $healthIndex->user_id = $user->id;
+            $healthIndex->height = $height;
+            $healthIndex->weight = $weight;
+            $healthIndex->heart_rate = $heart_rate;
+            $healthIndex->blood_pressure = $blood_pressure;
+
+            $healthIndex->save();
+
+            $request->session()->flash('success', 'Health Index created sucessfully.');
+            return view('web.success');
+        }
+
+//        $healthIndex = new HealthIndex();
+//        $healthIndex->user_id = $user->id;
+//        $healthIndex->height = $height;
+//        $healthIndex->weight = $weight;
+//        $healthIndex->heart_rate = $heart_rate;
+//        $healthIndex->blood_pressure = $blood_pressure;
+//
+//        $healthIndex->save();
+//
+//        $request->session()->flash('success', 'Health Index created sucessfully.');
+//        return view('web.success');
     }
 
     /**
@@ -162,6 +212,19 @@ class HealthIndexController extends Controller
             'user' => $user,
             'healthIndex' => $healthIndex
         ]);
+    }
+    public function healthList(){
+        $user = Auth::user();
+        $health_indices = HealthIndex::join('users', 'health_indices.user_id', '=', 'users.id')
+            ->select('health_indices.*', 'users.first_name', 'users.last_name',
+                'health_indices.height as healthIndex_height',
+                'health_indices.weight as healthIndex_weight',
+                'health_indices.blood_pressure as healthIndex_blood_pressure',
+                'health_indices.heart_rate as healthIndex_heart_rate')
+            ->where('user_id', $user->id)
+            ->get();
+
+        return view('user.user-health-list', compact('health_indices','user'));
     }
 
     public function updateInfo()
