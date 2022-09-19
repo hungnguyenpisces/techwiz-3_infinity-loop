@@ -53,13 +53,23 @@ class SendNotifications extends Command
         
 
         foreach ($appointment as $app) {
-            if ($app->status == 'Accepted' && $app->date == date('Y-m-d', strtotime('+1 day'))) {
+            //check if appointment date is today
+            if ($app->status == 'Accepted' && $app->date == date('Y-m-d')) {
                 $notification = new Notification();
                 $notification->user_id = $app->user_id;
-                $notification->content = 'You have an appointment with ' . $app->name. ' at ' . $app->time . ' on ' . $app->date;
+                $notification->content = 'You have an appointment with ' . $app->name . ' today';
                 $notification->type = 2;
                 $notification->save();
+            
             }
+
+            // if ($app->status == 'Accepted' && $app->date == date('Y-m-d', strtotime('+1 day'))) {
+            //     $notification = new Notification();
+            //     $notification->user_id = $app->user_id;
+            //     $notification->content = 'You have an appointment with ' . $app->name. ' at ' . $app->time . ' on ' . $app->date;
+            //     $notification->type = 2;
+            //     $notification->save();
+            // }
 
         }
 
@@ -77,6 +87,8 @@ class SendNotifications extends Command
                 ->first();
            
             $diff = date_diff(date_create($lastest->created_at), date_create(date('Y-m-d')));
+            //$diff to int
+            $diff = (int)$diff->format('%a');
 
             if ($diff >=7) {
                 $time = $diff%7;
