@@ -58,6 +58,7 @@ class BlogController extends Controller
         $content=$request->input("content");
         $thumb_token=$request->input("thumb_token");
         $hascount=\App\Models\Blog_thumbnail::where("thumbnail_token",$thumb_token)->count();
+        dd($request->input("tag"));
         if (!$hascount){
             $thumb_entry=new \App\Models\Blog_thumbnail();
             $thumb_entry->thumbnail_token=$thumb_token;

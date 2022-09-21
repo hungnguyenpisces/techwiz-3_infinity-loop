@@ -19,6 +19,7 @@ Custom title if need
 			border-radius: 0;
 		}
 	</style>
+	<link rel="stylesheet" href="/assets/plugins/tags-input/tags-input.css" />
 <!-- end extra css -->
 @endsection
 
@@ -62,10 +63,17 @@ Custom title if need
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-9 col-sm-12">
+								<div class="col-lg-6 col-sm-12">
 									<div class="form-group">
 										<div class="form-line">
 											<input type="text" name="description" class="form-control" placeholder="Description">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-sm-12">
+									<div class="form-group">
+										<div class="form-line">
+											<input type="tags" name="description" placeholder="Tags">
 										</div>
 									</div>
 								</div>
@@ -172,11 +180,13 @@ Custom title if need
 		})();
 	</script>
 	<script src="/assets/plugins/dropzone/dropzone.js"></script>
+	<script src="/assets/plugins/tags-input/tags-input.js"></script>
 	<script>
 		Dropzone.options.frmFileUpload={
 				maxFiles: 1,
 				acceptedFiles: "image/*"
-		}
+		};
+		[].forEach.call(document.querySelectorAll('input[type="tags"]'), tagsInput);
 	</script>
 <!-- end extraJs -->
 @endsection
