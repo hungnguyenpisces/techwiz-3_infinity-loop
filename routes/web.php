@@ -38,7 +38,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('/medicine', MedicinePillController::class);
     
-    Route::get('/create-feedback', [CommentController::class,'create'])->name('feedback.create');
+    Route::get('/feedback/{id}/create', [CommentController::class,'create'])->name('feedback.create');
+    Route::get('/feedback', [CommentController::class,'index'])->name('feedback.index');
+    Route::post('/feedback', [CommentController::class,'store'])->name('feedback.store');
 
     Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
     Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment.store');

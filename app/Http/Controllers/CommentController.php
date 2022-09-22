@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\CheckOutHistory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -12,20 +14,39 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $lsCmt = Comment::all();
-        return view('')->with('lsCmt', $lsCmt);
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        } else {
+            $user = Auth::user();
+            $utls = Comment::join('departments', 'comment.department_id', '=', 'departments.id')
+                ->join('hospitals', 'comment.hospital_id', '=', 'hospitals.id')
+                ->select('comment.*', 'hospitals.name as hospital_name', 'departments.name as department_name')
+                ->where('comment.user_id', $user->id)
+                ->get();
+            return view('web.feedback.feedback-index', compact('utls'));
+        }
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * 
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('web.feedback.feedback-create');
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        } else {
+            $utls = Comment::join('users', 'users.id', '=', 'comments.user_id')
+                ->join('hospitals', 'hospitals.id', '=', 'comments.hospital_id')
+                ->join('departments','departments.id','=','comments.department_id')
+                ->select('comments.*', 'hospitals.name as hospital_name', 'departments.name as department_name')
+                ->get();
+            return view('web.feedback.feedback-create', compact('utls'));
+        }
     }
 
     /**
@@ -38,9 +59,11 @@ class CommentController extends Controller
     {
         $cmt = new Comment();
         $cmt->users_id = $request->users_id;
-        $cmt->hospital_id = $request->hospital_id;
+        $cmt->doctor_rate = $request->doctor_rate;
+        $cmt->hospital_rate = $request->hospital_rate;
+        $cmt->department_rate = $request->department_rate;
+        $cmt->overall_rate = $request->overall_rate;
         $cmt->content = $request->content;
-        $cmt->rate = $request->rate;
         $cmt->save();
 
         $request->session()->flash('success', 'Comment created sucessfully.');
@@ -99,7 +122,7 @@ class CommentController extends Controller
     public function destroy($id, Request $request)
     {
         $cmt = Comment::find($id);
-        if($cmt == null) {
+        if ($cmt == null) {
             $request->session()->flash('danger', 'Comment not found.');
         } else {
             $cmt->delete();

@@ -26,6 +26,5 @@ class FAQSeeder extends Seeder
                 'updated_at' => $faker->dateTimeBetween('-1 days', 'now'),
             ]);
         }
-
     }
 }

@@ -50,7 +50,7 @@
             <br>
             <div class="text-center">
                 <a type="button" href="/user-history" class="btn btn-success">Back to list</a>
-
+                <a type="button" href="{{route('feedback.create', $check_out_histories->id)}}" class="btn btn-success">Make your feedback</a>
             </div>
         </div>
     </div>
