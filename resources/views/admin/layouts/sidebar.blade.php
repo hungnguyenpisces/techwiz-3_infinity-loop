@@ -118,10 +118,10 @@
                     <li data-theme="blue">
                         <div class="blue"></div><span>Blue</span>
                     </li>
-                    <li data-theme="cyan" class="active">
+                    <li data-theme="cyan">
                         <div class="cyan"></div><span>Cyan</span>
                     </li>
-                    <li data-theme="green">
+                    <li data-theme="green" class="active">
                         <div class="green"></div><span>Green</span>
                     </li>
                     <li data-theme="deep-orange">

@@ -58,7 +58,7 @@ class BlogController extends Controller
         $content=$request->input("content");
         $thumb_token=$request->input("thumb_token");
         $hascount=\App\Models\Blog_thumbnail::where("thumbnail_token",$thumb_token)->count();
-        dd($request->input("tag"));
+        $tags=explode(",",$request->input("tags"));
         if (!$hascount){
             $thumb_entry=new \App\Models\Blog_thumbnail();
             $thumb_entry->thumbnail_token=$thumb_token;
@@ -75,6 +75,25 @@ class BlogController extends Controller
             $blog_entry->is_viewable=0;
         }
         $blog_entry->save();
+        if ($tags){
+            foreach ($tags as $index=>$tag){
+                $tag_exists=\App\Models\Tag::where("tag_name",$tag);
+                $tag_id=0;
+                if ($tag_exists->count()){
+                    $tag_id=$tag_exists->first()->id;
+                }
+                else{
+                    $new_tag=new \App\Models\Tag();
+                    $new_tag->tag_name=$tag;
+                    $new_tag->save();
+                    $tag_id=$new_tag->id;
+                }
+                $new_blutack=new \App\Models\BluTack();
+                $new_blutack->blog_id=$blog_entry->id;
+                $new_blutack->tag_id=$tag_id;
+                $new_blutack->save();
+            }
+        }
 
         return redirect(route("blog.index"));
     }
@@ -100,7 +119,11 @@ class BlogController extends Controller
     {
         $token=$this->generate_uuid();
         $blog_item=\App\Models\Blog::find($id);
-        return view("admin.blog.modify")->with("thumb_token",$token)->with("blog_item",$blog_item);
+        $blog_tags=array();
+        foreach($blog_item->blutack as $tag_item){
+            $blog_tags[]=$tag_item->tag_name;
+        }
+        return view("admin.blog.modify")->with("thumb_token",$token)->with("blog_item",$blog_item)->with("blog_tags",implode(",",$blog_tags));
     }
 
     /**
@@ -116,8 +139,44 @@ class BlogController extends Controller
         $description=$request->input("description");
         $content=$request->input("content");
         $thumb_token=$request->input("thumb_token");
+        $tags=explode(",",$request->input("tags"));
+
         $hascount=\App\Models\Blog_thumbnail::where("thumbnail_token",$thumb_token)->count();
         $blog_entry=\App\Models\Blog::find($id);
+
+        $old_tags=array();
+        foreach($blog_entry->blutack as $tag_item){
+            $old_tags[]=$tag_item->tag_name;
+        }
+        // n² complexity, nobody's inserting a thousand tags for the lulz, but still a stupid design choice
+        $insert_tags=array_diff($tags,$old_tags);
+        $remove_tags=array_diff($old_tags,$tags);
+        foreach ($insert_tags as $insert_tag){
+            $tag_id=0;
+            $tag_exists=\App\Models\Tag::where("tag_name",$insert_tag);
+            if ($tag_exists->count()){
+                $tag_id=$tag_exists->first()->id;
+            }
+            else {
+                $new_tag=new \App\Models\Tag();
+                $new_tag->tag_name=$insert_tag;
+                $new_tag->save();
+                $tag_id=$new_tag->id;
+            }
+            $new_blutack=new \App\Models\BluTack();
+            $new_blutack->blog_id=$id;
+            $new_blutack->tag_id=$tag_id;
+            $new_blutack->save();
+        }
+        foreach ($remove_tags as $remove_tag){
+            $del_tag=\App\Models\Tag::where("tag_name",$remove_tag)->first();
+            $del_blutack=\App\Models\BluTack::where("tag_id",$del_tag->id);
+            if ($del_blutack->count()<=1){
+                $del_tag->delete();
+            }
+            $del_blutack->where("blog_id",$id)->first()->delete();
+        }
+
         $blog_entry->title=$title;
         $blog_entry->short_description=$description;
         $blog_entry->content=$content;
@@ -144,6 +203,18 @@ class BlogController extends Controller
     {
         $blog_entry=\App\Models\Blog::find($id);
         if ($blog_entry){
+            $remove_tags=array();
+            foreach($blog_entry->blutack as $tag_item){
+                $remove_tags[]=$tag_item->tag_name;
+            }
+            foreach ($remove_tags as $remove_tag){
+                $del_tag=\App\Models\Tag::where("tag_name",$remove_tag)->first();
+                $del_blutack=\App\Models\BluTack::where("tag_id",$del_tag->id);
+                if ($del_blutack->count()<=1){
+                    $del_tag->delete();
+                }
+                $del_blutack->where("blog_id",$id)->first()->delete();
+            }
             $blog_entry->delete();
         }
         return redirect(route("blog.index"));

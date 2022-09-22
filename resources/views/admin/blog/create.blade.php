@@ -73,7 +73,7 @@ Custom title if need
 								<div class="col-lg-3 col-sm-12">
 									<div class="form-group">
 										<div class="form-line">
-											<input type="tags" name="description" placeholder="Tags">
+											<input type="tags" name="tags" placeholder="Tags">
 										</div>
 									</div>
 								</div>
