@@ -9,4 +9,8 @@ class BluTack extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    public function blutack(){
+        return $this->belongsTo(Blog::class,"blog_id");
+    }
 }

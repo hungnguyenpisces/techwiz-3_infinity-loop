@@ -21,21 +21,21 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12 pr-0">
                                 <div class="image">
-                                    <a href="{{route('view_blogs.view',$blog_item->id)}}"><img src="/storage/{{$blog_item->image->image}}" alt="#"></a>
+                                    <a href="{{route('view_blogs.view',$blog_item->blutack->id)}}"><img src="/storage/{{$blog_item->blutack->image->image}}" alt="#"></a>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-12  pl-0">
                                 <div class="content">
-                                    <h2 class="title"><a href="{{route('view_blogs.view',$blog_item->id)}}">{{$blog_item->title}}</a>
+                                    <h2 class="title"><a href="{{route('view_blogs.view',$blog_item->blutack->id)}}">{{$blog_item->blutack->title}}</a>
                                     </h2>
-                                    <p>{{$blog_item->short_description}}</p>
+                                    <p>{{$blog_item->blutack->short_description}}</p>
                                     <ul class="meta-info">
                                         <li>
                                             <a href="#"><img src="/assets/images/blog/comment1.jpg" alt="#">
-                                                {{$blog_item->user->last_name}} {{$blog_item->user->first_name}}</a>
+                                                {{$blog_item->blutack->user->last_name}} {{$blog_item->blutack->user->first_name}}</a>
                                         </li>
                                         <li>
-                                            {{$blog_item->created_at}}
+                                            {{$blog_item->blutack->created_at}}
                                         </li>
                                     </ul>
                                 </div>
@@ -55,14 +55,6 @@
                 </div>
                 <aside class="col-lg-4 col-md-12 col-12">
                     <div class="sidebar blog-grid-page">
-                        <div class="widget search-widget">
-                            <h5 class="widget-title">Search This Site</h5>
-                            <form>
-                                <input type="text" name="q" placeholder="Search Here...">
-                                <button type="submit"><i class="lni lni-search-alt"></i></button>
-                            </form>
-                            <a href="?" style="width:100%;"><button>Clear queries</button></a>
-                        </div>
                         <div class="widget popular-feeds">
                             <h5 class="widget-title">Recent Feeds</h5>
                             <div class="popular-feed-loop">

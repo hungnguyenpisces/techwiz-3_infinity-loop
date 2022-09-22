@@ -31,6 +31,7 @@ Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doc
 
 Route::get('/blog', [BlogViewController::class, 'list_blogs'])->name('view_blogs.list');
 Route::get('/blog/{id}', [BlogViewController::class, 'view_blog'])->name('view_blogs.view');
+Route::get('/blog/tag/{id}', [BlogViewController::class, 'tags_lookup'])->name('view_blogs.tags_lookup');
 
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
 
