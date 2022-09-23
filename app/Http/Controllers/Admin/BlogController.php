@@ -196,7 +196,7 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -220,6 +220,11 @@ class BlogController extends Controller
         return redirect(route("blog.index"));
     }
 
+    /**
+     * Upload a file with a given thumbnail token
+     *
+     * @param  \Illuminate\Http\Request  $request
+     */
     public function upload(Request $request)
     {
         $thumb_token=$request->input("thumb_token");
@@ -236,6 +241,12 @@ class BlogController extends Controller
         $thumb_entry->save();
     }
 
+    /**
+     * Upload a file to be used within CKEditor
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function ck_upload(Request $request)
     {
         $thumb_token=$request->input("thumb_token");
