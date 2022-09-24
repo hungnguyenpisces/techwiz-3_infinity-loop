@@ -16,23 +16,23 @@ Custom title if need
 	<section class="content">
 		<div class="container-fluid">
 			<div class="block-header">
-				<h2>Payments</h2>
+				<h2>Blog posts</h2>
 				<small class="text-muted">Welcome to Swift application</small>
 			</div>
 			<div class="row clearfix">
 				<div class="col-lg-12 col-md-12 col-sm-12">
 					<div class="card">
 						<div class="header">
-							<h2>Hospital Payments</h2>
+							<h2>Blog posts</h2>
 							<ul class="header-dropdown">
-								<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+								<!-- <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
 									<ul class="dropdown-menu pull-right">
 										<li><a href="#">Action</a></li>
 										<li><a href="#">Another action</a></li>
 										<li><a href="#">Something else here</a></li>
 									</ul>
 								</li>
-							</ul>
+							</ul> -->
 						</div>
 						<div class="body table-responsive">
 							<table class="table table-bordered table-striped table-hover js-basic-example dataTable">
