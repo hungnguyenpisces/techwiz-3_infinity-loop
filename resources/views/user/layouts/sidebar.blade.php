@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li class="nav-link" id="user-health">
-                    <a href="/user-health">
+                    <a href="/user-health-list">
                         <i class="fa-solid fa-file-pen icon2"></i>
                         <span class="text nav-text">Health</span>
                     </a>

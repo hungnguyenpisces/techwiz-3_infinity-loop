@@ -2,14 +2,10 @@
 
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Api\TokenController;
-
 use App\Http\Controllers\CheckOutHistoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HealthIndexController;
 use App\Http\Controllers\HomeController;
-// use UserController
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\MedicinePillController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,8 +25,8 @@ Route::get('/hospital', [HomeController::class, 'hospital'])->name('hospital');
 Route::get('/hospital-search', [HomeController::class, 'searchHospitalRs'])->name('hospital-searchRs');
 Route::get('/departments', [HomeController::class, 'departments'])->name('departments');
 Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
-Route::get('/doctor-search', [HomeController::class, 'searchDoctorRs'])->name('doctor-searchRs');
-// Route::get('/doctor-search-result', [HomeController::class, 'searchDoctorRs'])->name('doctor-searchRs');
+Route::get('/doctor-search', [HomeController::class, 'doctorSearch'])->name('doctor-search');
+Route::get('/doctor-search-result', [HomeController::class, 'searchDoctorRs'])->name('doctor-searchRs');
 Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doctor-detail');
 
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');

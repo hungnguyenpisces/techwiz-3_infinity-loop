@@ -6,6 +6,8 @@ use App\Models\CheckOutHistory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function GuzzleHttp\Promise\all;
+
 class CheckOutHistoryController extends Controller
 {
     /**
@@ -69,7 +71,7 @@ class CheckOutHistoryController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
