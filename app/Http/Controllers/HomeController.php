@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Doctor;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Searchable\Search;
+use Spatie\Searchable\ModelSearchAspect;
+
 
 class HomeController extends Controller
 {
@@ -41,7 +45,36 @@ class HomeController extends Controller
 
     public function doctorSearch()
     {
-        return view('web.doctor-search');
+        $lsDoctors = Doctor::all();
+        return view('web.doctor-search', compact('lsDoctors'));
+    }
+
+    public function searchHospitalRs(Request $request)
+    {
+        $searchterm = $request->input('query');
+        $lsHospital = Hospital::all();
+
+        $searchResults = Hospital::where('name', 'LIKE', '%'.$searchterm.'%')
+		            // ->orWhere('last_name', 'LIKE', '%'.$searchterm.'%')
+		            ->get();
+
+        // dd($searchResults);
+
+        return view('web.hospital-search', compact('searchResults', 'searchterm', 'lsHospital'));
+    }
+
+    public function searchDoctorRs(Request $request)
+    {
+        $searchterm = $request->input('query');
+        $lsDoctors = Doctor::all();
+
+        $searchResults = Doctor::where('first_name', 'LIKE', '%'.$searchterm.'%')
+		            ->orWhere('last_name', 'LIKE', '%'.$searchterm.'%')
+		            ->get();
+
+        // dd($searchResults);
+
+        return view('web.doctor-search', compact('searchResults', 'searchterm', 'lsDoctors'));
     }
 
     public function doctorDetail()
