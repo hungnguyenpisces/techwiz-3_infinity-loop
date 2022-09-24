@@ -20,9 +20,8 @@ class CommentSeeder extends Seeder
         $limit = 50;
         for ($i = 0; $i < $limit; $i++) {
             Comment::create([
-                'user_id' => rand(1, 100),
-                'hospital_id' => rand(1, 10),
-                'department_id' => rand(1, 20),
+                // 'user_id' => rand(1, 100),
+                'check_out_history_id' => rand(1, 500),
                 'doctor_rate' => rand(1, 5),
                 'hospital_rate' => rand(1, 5),
                 'department_rate' => rand(1, 5),

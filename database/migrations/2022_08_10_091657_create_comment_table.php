@@ -15,9 +15,7 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->bigInteger('hospital_id');
-            $table->bigInteger('department_id');
+            $table->bigInteger('check_out_history_id');
             $table->bigInteger('doctor_rate');
             $table->bigInteger('hospital_rate');
             $table->bigInteger('department_rate');

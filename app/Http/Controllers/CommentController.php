@@ -40,12 +40,15 @@ class CommentController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login');
         } else {
-            $utls = Comment::join('users', 'users.id', '=', 'comments.user_id')
-                ->join('hospitals', 'hospitals.id', '=', 'comments.hospital_id')
-                ->join('departments','departments.id','=','comments.department_id')
-                ->select('comments.*', 'hospitals.name as hospital_name', 'departments.name as department_name')
-                ->get();
-            return view('web.feedback.feedback-create', compact('utls'));
+            $user = Auth::user();
+            $check_out_histories = CheckOutHistory::join('hospitals', 'check_out_histories.hospital_id', '=', 'hospitals.id')
+                ->join('departments', 'check_out_histories.department_id', '=', 'departments.id')
+                ->select('check_out_histories.*', 'hospitals.name as hospital_name', 'departments.name as department_name')
+                ->where('check_out_histories.user_id', $user->id)
+                ->where('check_out_histories.id', $id)
+                ->first();
+            // dd($check_out_histories->id);
+            return view('web.feedback.feedback-create', compact('check_out_histories'));
         }
     }
 
@@ -58,7 +61,7 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $cmt = new Comment();
-        $cmt->users_id = $request->users_id;
+        $cmt->check_out_history_id = $request->check_out_history_id;
         $cmt->doctor_rate = $request->doctor_rate;
         $cmt->hospital_rate = $request->hospital_rate;
         $cmt->department_rate = $request->department_rate;
@@ -103,10 +106,12 @@ class CommentController extends Controller
     public function update(Request $request, $id)
     {
         $cmt = Comment::find($id);
-        $cmt->users_id = $request->users_id;
-        $cmt->hospital_id = $request->hospital_id;
+        $cmt->check_out_history_id = $request->check_out_history_id;
+        $cmt->doctor_rate = $request->doctor_rate;
+        $cmt->hospital_rate = $request->hospital_rate;
+        $cmt->department_rate = $request->department_rate;
+        $cmt->overall_rate = $request->overall_rate;
         $cmt->content = $request->content;
-        $cmt->rate = $request->rate;
         $cmt->save();
 
         $request->session()->flash('success', 'Comment updated sucessfully.');

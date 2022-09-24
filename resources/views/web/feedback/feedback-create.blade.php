@@ -458,11 +458,16 @@ Create Feedback
         <div class="col-rt-12">
             <div class="Scriptcontent">
                 <div class="feedback">
-                    <p>Dear {{Auth::user()->first_name}},<br>
-                        Thank you for getting your services in {{ $utls-> department_name }} department at {{ $utls-> hospital_name }} hospital . We would like to know how we performed. Please spare some moments to give us your valuable feedback as it will help us in improving our service.</p>
+                    <p>Dear <b>{{Auth::user()->first_name}}</b>,<br>
+                        Thank you for getting your services in <b>{{ $check_out_histories->department_name }}</b> department at <b>{{ $check_out_histories->hospital_name }} </b>
+                        hospital .
+                        We would like to know how we performed.
+                        Please spare some moments to give us your valuable feedback as it will help us in improving our service.</p>
                     <h5>Please rate your service experience for the following parameters</h5>
                     <form method="post" action="/feedback">
                         @csrf
+                        
+                        <!--Doctor-->
                         <label>1. Your experience with our doctor ?</label><br>
                         <span class="star-rating">
                             <input type="radio" name="rating1" value="1"><i></i>
@@ -473,6 +478,7 @@ Create Feedback
                         </span>
                         <div class="clear"></div>
                         <hr class="survey-hr">
+                        <!--Hospital-->
                         <label>2. Evaluation of hospital facilities</label><br>
                         <span class="star-rating">
                             <input type="radio" name="rating2" value="1"><i></i>
@@ -483,6 +489,7 @@ Create Feedback
                         </span>
                         <div class="clear"></div>
                         <hr class="survey-hr">
+                        <!--Department-->
                         <label>3. Evaluation of the quality of the department's examination</label><br>
                         <span class="star-rating">
                             <input type="radio" name="rating3" value="1"><i></i>
@@ -493,6 +500,7 @@ Create Feedback
                         </span>
                         <div class="clear"></div>
                         <hr class="survey-hr">
+                        <!--Overall-->
                         <label>4. Overall Rate</label><br><br />
                         <div style="color:grey">
                             <span style="float:left">
@@ -550,10 +558,11 @@ Create Feedback
                         <textarea cols="75" name="commentText" rows="5"></textarea><br>
                         <br>
                         <div class="clear"></div>
-                        <!-- <div class="button add-list-button">
-                            <a class="btn" style="z-index: 0;" type="submit">Submit your review</a>
-                        </div> -->
-                        <input style="background:#88c250;color:#fff;padding:12px;border:0" type="submit" value="Submit your review">
+                        <div class="button add-list-button">
+                            <button class="btn" style="z-index: 0;" type="submit">Submit your review</button>
+                        </div>
+
+                        <!-- <input style="background:#88c250;color:#fff;padding:12px;border:0" type="submit" value="Submit your review"> -->
                     </form>
                 </div>
             </div>

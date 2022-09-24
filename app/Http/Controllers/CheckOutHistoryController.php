@@ -141,7 +141,7 @@ class CheckOutHistoryController extends Controller
                 ->where('check_out_histories.user_id', $user->id)
                 ->where('check_out_histories.id', $id)
                 ->first();
-            // dd($check_out_histories);
+            //dd($check_out_histories);
             return view('user.user-history-detail', compact('check_out_histories'));
         }
     }
