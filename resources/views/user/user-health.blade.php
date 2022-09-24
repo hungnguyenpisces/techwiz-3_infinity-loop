@@ -55,6 +55,7 @@
                         @if(Session::has($type))
                             <p class="alert alert-{{$type}}">
                                 {{Session::get($type)}}
+                                <a href='{{route("healthIndex.edit" , $healthIndex ->id)}}' class="btn">Click Edit latest record</a>
                             </p>
                         @endif
                     @endforeach

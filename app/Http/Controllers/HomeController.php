@@ -6,14 +6,42 @@ use App\Models\Department;
 use App\Models\Doctor;
 use App\Models\FAQ;
 use App\Models\Hospital;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Searchable\Search;
 use Spatie\Searchable\ModelSearchAspect;
+use Illuminate\Support\Facades\Hash;
 
 
 class HomeController extends Controller
 {
+    public function changePassword()
+    {
+        return view('user.change-password');
+    }
+    public function updatePassword(Request $request)
+    {
+        # Validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+
+
+        #Match The Old Password
+        if(!Hash::check($request->old_password, auth()->user()->password)){
+            return back()->with("error", "Old Password Doesn't match!");
+        }
+
+
+        #Update the new Password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        return back()->with("status", "Password changed successfully!");
+    }
     public function index()
     {
         return view('web.index');
@@ -54,7 +82,7 @@ class HomeController extends Controller
     {
         $searchterm = $request->input('query');
         $lsHospital = Hospital::paginate(5);
-        
+
 
         $searchResults = Hospital::where('name', 'LIKE', '%'.$searchterm.'%')
 		            // ->orWhere('last_name', 'LIKE', '%'.$searchterm.'%')
@@ -67,14 +95,14 @@ class HomeController extends Controller
 
     public function searchDoctorRs(Request $request)
     {
-        
+
         $searchterm = $request->input('query');
         $lsHospital = Hospital::all();
         $lsDepartment = Department::all();
         $lsDoctors = Doctor::all();
         $department_filter = $request->input('department_id');
         $hospital_filter = $request->input('hospital_id');
-        
+
         //filter doctor by department_id and hospital_id
         $searchResults= Doctor::all();
         if($department_filter != null || $hospital_filter!= null || $searchterm !='' ) {
@@ -82,15 +110,15 @@ class HomeController extends Controller
             ->join('hospital_departments', 'hospital_departments.department_id', '=', 'departments.id')
             //select doctor
             ->select('doctors.*')
-            
+
             ->where('doctors.first_name', 'LIKE', '%'.$searchterm.'%')
             ->where('doctors.department_id', $department_filter)
             ->where('hospital_departments.hospital_id', $hospital_filter)
-    
+
             ->get();
-    
+
         }
-        
+
         // $hospital_filter = $request->input('hospital_id');
 
 

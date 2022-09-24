@@ -54,7 +54,7 @@
                                 <th>Blood pressure</th>
                                 <th>Date created</th>
                                 <th>Date change</th>
-                                <th>Action</th>
+{{--                                <th>Action</th>--}}
 
                             </tr>
                             </thead>
@@ -66,7 +66,7 @@
                                 <th>Blood pressure</th>
                                 <th>Date created</th>
                                 <th>Date change</th>
-                                <th>Action</th>
+{{--                                <th>Action</th>--}}
                             </tr>
                             </tfoot>
                             <tbody>
@@ -78,11 +78,11 @@
                                     <td>{{ $health->heart_rate }}</td>
                                     <td>{{ $health->created_at }}</td>
                                     <td>{{ $health->updated_at }}</td>
-                                    <td>
-                                        <div class="d-flex justify-content-center mb-2">
-                                            <a href='{{route("healthIndex.edit" , $health->id)}}' class="btn btn-secondary">Edit record</a>
-                                        </div>
-                                    </td>
+{{--                                    <td>--}}
+{{--                                        <div class="d-flex justify-content-center mb-2">--}}
+{{--                                            <a href='{{route("healthIndex.edit" , $health->id)}}' class="btn btn-secondary">Edit record</a>--}}
+{{--                                        </div>--}}
+{{--                                    </td>--}}
                                 </tr>
                             @endforeach
                             </tbody>

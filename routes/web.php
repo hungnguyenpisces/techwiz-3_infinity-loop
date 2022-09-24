@@ -31,6 +31,11 @@ Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doc
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
 
 Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/change-password', [App\Http\Controllers\AuthController::class, 'changePassword'])->name('change-password');
+    Route::post('/change-password', [App\Http\Controllers\AuthController::class, 'updatePassword'])->name('update-password');
+
+
     Route::get('/timetable', [HomeController::class, 'time_table'])->name('timetable');
     Route::get('/projectdetail', [HomeController::class, 'project_detail'])->name('projectdetail');
     Route::get('/servicedetail', [HomeController::class, 'service_detail'])->name('servicedetail');

@@ -79,7 +79,7 @@ class HealthIndexController extends Controller
         $nowbefore7day = $now->subDays(7);
 
         if($healthIndex->created_at > $nowbefore7day) {
-            return redirect()->back()->with('warning', 'You added health information this week then you can edit it or add a new one in 1 week');
+            return redirect()->back()->with('warning', 'You added health information this week then you can edit it or add a new one in 1 week ');
 
 //            return redirect(route('user.healthList'));
         } else {

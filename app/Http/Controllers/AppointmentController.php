@@ -7,6 +7,7 @@ use App\Models\CheckOutHistory;
 use App\Models\Department;
 use App\Models\Doctor;
 use App\Models\Hospital;
+use App\Models\MedicinePill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -138,6 +139,7 @@ class AppointmentController extends Controller
      */
     public function destroy($id, Request $request)
     {
+
         $amt = Appointment::find($id);
         if ($amt == null) {
             $request->session()->flash('danger', 'Appointment not found.');
@@ -167,5 +169,22 @@ class AppointmentController extends Controller
         $departments = Department::all();
         $hospitals = Hospital::all();
         return view('user.user-appointment-detail', compact('appointment', 'departments', 'hospitals'));
+
     }
+//    public function medicine()
+    //        $obj = [];
+//        for ($i = 0 ; $i ++ ; $i <= 10){
+//            if ($request->except('name_'.$i)){
+//                $obj[$request->get('name_'.$i)] = [
+//                    'nameb'=>$request->get('name_'.$i),
+//                    'time'=>$request->get('name_'.$i),
+//                    'day'=>$request->get('name_'.$i),
+//                    'period'=>$request->get('name_'.$i),
+//                ];
+//            }
+//        }
+//        $a = new MedicinePill();
+//        $a->update('detail',$obj);
+//        json_encode($obj);
+    //luuu vao detail database
 }
