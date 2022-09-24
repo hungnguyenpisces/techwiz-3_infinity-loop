@@ -73,6 +73,8 @@ Route::group(['middleware' => ['role:Super-Admin|Admin|Staff']], function () {
     Route::get('/faq', [FaqController::class, 'index'])->name('admin.faq.index');
     Route::get('/faq/add-faq', [FaqController::class, 'create'])->name('admin.faq.create');
     Route::get('/faq/{id}/edit-faq', [FaqController::class, 'edit'])->name('admin.faq.edit');
+    Route::post('/faq', [FaqController::class, 'store'])->name('admin.faq.store');
+    Route::post('/faq/update', [FaqController::class, 'update'])->name('admin.faq.update');
 
     Route::get('/report', function () {
         return view('admin.report');

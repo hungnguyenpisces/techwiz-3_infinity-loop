@@ -37,8 +37,11 @@ Route::group(['middleware' => ['auth']], function () {
   Route::get('/servicedetail', [HomeController::class, 'service_detail'])->name('servicedetail');
   Route::get('/doctordetail', [HomeController::class, 'doctor_detail'])->name('doctordetail');
 
-  Route::resource('/medicine', MedicinePillController::class);
-  Route::resource('/comment', CommentController::class);
+    Route::resource('/medicine', MedicinePillController::class);
+    
+    Route::get('/feedback/{id}/create', [CommentController::class,'create'])->name('feedback.create');
+    Route::get('/feedback', [CommentController::class,'index'])->name('feedback.index');
+    Route::post('/feedback', [CommentController::class,'store'])->name('feedback.store');
 
   Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
   Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment.store');

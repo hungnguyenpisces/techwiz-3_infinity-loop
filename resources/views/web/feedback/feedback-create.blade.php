@@ -10,7 +10,7 @@ Create Feedback
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900');
+    /* @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900'); */
 
     html {
         box-sizing: border-box;
@@ -404,7 +404,7 @@ Create Feedback
     }
 
     span.scale-rating label:hover {
-        background: #fddf8d;
+        background: #88c250;
     }
 
     span.scale-rating input[type=radio]:last-child {
@@ -414,7 +414,7 @@ Create Feedback
     span.scale-rating label input[type=radio]:checked~label {
         -webkit-appearance: none;
         margin: 0;
-        background: #fddf8d;
+        background: #88c250;
     }
 
     span.scale-rating label:before {
@@ -458,10 +458,16 @@ Create Feedback
         <div class="col-rt-12">
             <div class="Scriptcontent">
                 <div class="feedback">
-                    <p>Dear Customer,<br>
-                        Thank you for getting your services at our workshop. We would like to know how we performed. Please spare some moments to give us your valuable feedback as it will help us in improving our service.</p>
+                    <p>Dear <b>{{Auth::user()->first_name}}</b>,<br>
+                        Thank you for getting your services in <b>{{ $check_out_histories->department_name }}</b> department at <b>{{ $check_out_histories->hospital_name }} </b>
+                        hospital .
+                        We would like to know how we performed.
+                        Please spare some moments to give us your valuable feedback as it will help us in improving our service.</p>
                     <h5>Please rate your service experience for the following parameters</h5>
-                    <form method="post" action="#action-url">
+                    <form method="post" action="/feedback">
+                        @csrf
+                        
+                        <!--Doctor-->
                         <label>1. Your experience with our doctor ?</label><br>
                         <span class="star-rating">
                             <input type="radio" name="rating1" value="1"><i></i>
@@ -472,6 +478,7 @@ Create Feedback
                         </span>
                         <div class="clear"></div>
                         <hr class="survey-hr">
+                        <!--Hospital-->
                         <label>2. Evaluation of hospital facilities</label><br>
                         <span class="star-rating">
                             <input type="radio" name="rating2" value="1"><i></i>
@@ -482,16 +489,18 @@ Create Feedback
                         </span>
                         <div class="clear"></div>
                         <hr class="survey-hr">
+                        <!--Department-->
                         <label>3. Evaluation of the quality of the department's examination</label><br>
                         <span class="star-rating">
-                            <input type="radio" name="rating2" value="1"><i></i>
-                            <input type="radio" name="rating2" value="2"><i></i>
-                            <input type="radio" name="rating2" value="3"><i></i>
-                            <input type="radio" name="rating2" value="4"><i></i>
-                            <input type="radio" name="rating2" value="5"><i></i>
+                            <input type="radio" name="rating3" value="1"><i></i>
+                            <input type="radio" name="rating3" value="2"><i></i>
+                            <input type="radio" name="rating3" value="3"><i></i>
+                            <input type="radio" name="rating3" value="4"><i></i>
+                            <input type="radio" name="rating3" value="5"><i></i>
                         </span>
                         <div class="clear"></div>
                         <hr class="survey-hr">
+                        <!--Overall-->
                         <label>4. Overall Rate</label><br><br />
                         <div style="color:grey">
                             <span style="float:left">
@@ -549,7 +558,11 @@ Create Feedback
                         <textarea cols="75" name="commentText" rows="5"></textarea><br>
                         <br>
                         <div class="clear"></div>
-                        <input style="background:#483285;color:#fff;padding:12px;border:0" type="submit" value="Submit your review">&nbsp;
+                        <div class="button add-list-button">
+                            <button class="btn" style="z-index: 0;" type="submit">Submit your review</button>
+                        </div>
+
+                        <!-- <input style="background:#88c250;color:#fff;padding:12px;border:0" type="submit" value="Submit your review"> -->
                     </form>
                 </div>
             </div>

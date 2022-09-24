@@ -21,49 +21,42 @@
             </div>
         </div>
 
-        <div class="row">
-            <h2 class="text-center mb-5">Your Check-out Record </h2>
-            <div class="container">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <p class="mb-0 h4"><strong class="mx-5">Hosptal:</strong>{{ $check_out_histories-> hospital_name }}</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0 h4"><strong class="mx-5">Department:</strong>{{ $check_out_histories-> department_name }}</p>
-                        </div>
+    <div class="row">
+        <h2 class="text-center mb-5">Your Check-out Record </h2>
+        <div class="container">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="mb-0 h4"><strong class="mx-5">Hosptal:</strong>{{ $check_out_histories-> hospital_name }}</p>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <p class="mb-0 h4"><strong class="mx-5">Symptoms:</strong>{{ $check_out_histories-> symptoms }}</p>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <p class="mb-0 h4"><strong class="mx-5">Conclusion:</strong>Dr. {{ $check_out_histories-> conclusion }}</p>
+                    <div class="col-sm-6">
+                        <p class="mb-0 h4"><strong class="mx-5">Department:</strong>{{ $check_out_histories-> department_name }}</p>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
-                    <p class="mb-0 h4"><strong class="mx-5">Medicine Dosages:</strong></p>
+                    <p class="mb-0 h4"><strong class="mx-5">Symptoms:</strong>{{ $check_out_histories-> symptoms }}</p>
                 </div>
                 <hr>
-                <br>
-                <div class="text-center">
-                    <a type="button" href="/user-history" class="btn btn-success">Back to list</a>
-                    <form  method="post" action="{{route('record.destroy', $check_out_histories->id)}}"
-                           onsubmit='return confirm("Sure ?")'>
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" value="Delete" class="btn btn-danger">
-                    </form>
+                <div class="row">
+                    <p class="mb-0 h4"><strong class="mx-5">Conclusion:</strong>Dr. {{ $check_out_histories-> conclusion }}</p>
                 </div>
-
-
+            </div>
+            <hr>
+            <div class="row">
+                <p class="mb-0 h4"><strong class="mx-5">Medicine Dosages:</strong></p>
+            </div>
+            <hr>
+            <br>
+            <div class="text-center">
+                <a type="button" href="/user-history" class="btn btn-success">Back to list</a>
+                <a type="button" href="{{route('feedback.create', $check_out_histories->id)}}" class="btn btn-success">Make your feedback</a>
             </div>
         </div>
     </div>
-    </div>
-    </div>
+</div>
+</div>
+</div>
 @endsection
 @section('extraJs')
 

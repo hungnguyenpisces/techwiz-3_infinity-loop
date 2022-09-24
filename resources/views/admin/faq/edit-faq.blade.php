@@ -39,7 +39,7 @@ Custom title if need
                         </ul>
                     </div>
                     <div class="body">
-                        <form id="appointmentForm" action="" method="">
+                        <form id="appointmentForm" action="/faq/update" method="post">
                             @csrf
                             <div class="row clearfix">
                                 <div class="col-sm-6">
@@ -66,7 +66,7 @@ Custom title if need
                                 <div class="row clearfix">
                                     <div class="col-sm-12">
                                         <a href="{{route('admin.faq.index')}}" class="btn btn-primary waves-effect">Back to list</a>
-                                        <button type="submit" class="btn btn-raised bg-deep-purple" onclick="updateForm()">Update</button>
+                                        <button type="submit" class="btn btn-raised bg-deep-purple" >Update</button>
                                         <button type="submit" class="btn btn-raised bg-red" onclick="cancelForm()">Cancel</button>
                                     </div>
                                 </div>
