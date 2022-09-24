@@ -26,8 +26,12 @@ class AuthController extends Controller
   public function processRegister(RegisterRequest $request)
   {
     $data = $request->validated();
-    $data['password'] = Hash::make($data['password']);
 
+    if (!$data) {
+      return redirect()->back()->withInput() ->withErrors($data ->errors());
+    }
+   
+    $data['password'] = Hash::make($data['password']);
     $user = new User();
     $user->fill($data);
     $user->save();
@@ -45,7 +49,7 @@ class AuthController extends Controller
     if (Auth::check()) {
       return redirect()->route('index');
     }
-    return view('web.login');
+    return view('web.login')->with('error', 'Username or password is not correct');
   }
 
   public function processLogin(LoginRequest $request)

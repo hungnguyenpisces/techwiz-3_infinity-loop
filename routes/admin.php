@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::withoutMiddleware(['role:Super-Admin|Admin'])->group(function () {
+Route::withoutMiddleware(['role:Super-Admin|Admin|Staff'])->group(function () {
     Route::get('/', function () {
         return redirect()->route('admin.login.show');
     });
@@ -19,7 +19,7 @@ Route::withoutMiddleware(['role:Super-Admin|Admin'])->group(function () {
     Route::post('/login', [AdminController::class, 'processLogin'])->name('admin.login.perform');
 });
 
-Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
+Route::group(['middleware' => ['role:Super-Admin|Admin|Staff']], function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/users', UserController::class . '@index')->name('users.index');
     Route::get('/users/create', UserController::class . '@create')->name('users.create');
@@ -53,6 +53,7 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::post('/appointment/{id}/approve', AppointmentManageController::class . '@approve')->name('admin.appointment.approve');
     Route::post('/appointment/{id}/reject', AppointmentManageController::class . '@reject')->name('admin.appointment.reject');
     Route::post('/appointment/{id}/update', AppointmentManageController::class . '@update')->name('admin.appointment.update');
+    Route::post('/createAppointment', AppointmentManageController::class.'@createAppointment')->name('admin.createAppointment');
 
     Route::get('/doctor-schedule', AppointmentManageController::class . '@doctorSchedule')->name('admin.doctor.schedule');
 

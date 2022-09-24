@@ -11,7 +11,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-use App\Mail\AppointmentNotify;
+use App\Mail\Reminder;
 use App\Models\Appointment;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Output\ConsoleOutput;
@@ -53,15 +53,12 @@ class SendEmail extends Command
 
       //check if appointment date is today
       if ($app->status == 'Accepted' && $app->date == date('Y-m-d')) {
-        $app->message = 'Your appointment has been accepted by Staff';
+        $app->message = 'Dont forget your appointment today';
         $out->writeln($app->email);
-        Mail::to((string)$app->email)->send(new AppointmentNotify($app));
+        Mail::to((string)$app->email)->send(new Reminder($app));
         $this->info('Email sent!');
         $this->info($app->email);
 
-        // Mail::send('mail.infomail', compact('appointment'), function ($message) use ($app) {
-        //   $message->to($app->email)->subject('Appointment Reminder');
-        // });
       }
     }
   }

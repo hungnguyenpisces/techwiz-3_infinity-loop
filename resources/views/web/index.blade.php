@@ -848,7 +848,7 @@
 @if(!session('token')&& Auth::check())
 <script>
   if (!sessionStorage.getItem('token')) {
-    window.location.href = "/logout";
+    window.location.href = "/index";
   } else {
     $.ajax({
       url: "/api/refresh",

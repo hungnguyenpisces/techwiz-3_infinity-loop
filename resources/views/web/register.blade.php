@@ -37,7 +37,12 @@
                 <div class="form-head">
                     <h4 class="title">Registration</h4>
                     <form action="/register" method="POST">
-                        {{ csrf_field() }}
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <p>{{  $errors->first() }}</p>
+                        </div>
+                        @endif
+                        @csrf
                         <div class="socila-login">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
@@ -95,7 +100,7 @@
                         <!-- Form Group (email address)-->
                         <div class="mb-3">
                             <label class="text-gray-600 small" for="emailInput">Email address</label>
-                            <input class="form-control form-control-solid" name="email" type="text" placeholder="username@email.com" aria-label="Email Address" aria-describedby="emailInput" value="{{old('email')}}" required />
+                            <input class="form-control form-control-solid" name="email" type="email" placeholder="username@email.com" aria-label="Email Address" aria-describedby="emailInput" value="{{old('email')}}" required />
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3">
