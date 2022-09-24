@@ -176,13 +176,25 @@ Custom title if need
                                         </select>
                                         @endif
                                         @if($appointment->status == 'Pending' && $appointment->doctor_first_name)
-                                        <select class="form-control show-tick" disabled>
-                                            <option value="" selected>{{$appointment->doctor_first_name}}</option>
+                                        <select name="doctor_id"  class="form-control show-tick">
+                                            @foreach($doctors as $doctor)
+                                                @if($doctor->id == $appointment->doctor_id)
+                                                    <option value="{{$doctor->id}}" selected>{{$doctor->first_name}}</option>
+                                                @else
+                                                    <option value="{{$doctor->id}}">{{$doctor->first_name}}</option>
+                                                @endif
+                                            @endforeach
                                         </select>
                                         @endif
                                         @if($appointment->status != 'Pending' && $appointment->doctor_first_name)
-                                        <select class="form-control show-tick" disabled>
-                                            <option value="" selected>{{$appointment->doctor_first_name}}</option>
+                                        <select name="doctor_id" class="form-control show-tick">
+                                             @foreach($doctors as $doctor)
+                                                @if($doctor->id == $appointment->doctor_id)
+                                                    <option value="{{$doctor->id}}" selected>{{$doctor->first_name}}</option>
+                                                @else
+                                                    <option value="{{$doctor->id}}">{{$doctor->first_name}}</option>
+                                                @endif
+                                            @endforeach
                                         </select>
                                         @endif
                                         @if($appointment->status != 'Pending' && !$appointment->doctor_first_name)
@@ -193,6 +205,16 @@ Custom title if need
                                             @endforeach
                                         </select>
                                         @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="">Symptom: </label>
+                                        <div class="form-line">
+                                            <textarea rows="1" name="self_check_symptom" class="form-control no-resize" value="{{$appointment->self_check_symptom}}" readonly>{{$appointment->self_check_symptom}}</textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -231,8 +253,9 @@ Custom title if need
                             <div class="row clearfix">
                                 <div class="col-sm-12">
                                     <div class="form-group">
+                                        <label for="">Type note here:</label>
                                         <div class="form-line">
-                                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                            <textarea rows="4" name="staff_note" class="form-control no-resize" placeholder="Please type what you want...">{{$appointment->staff_note}}</textarea>
                                         </div>
                                     </div>
                                 </div>

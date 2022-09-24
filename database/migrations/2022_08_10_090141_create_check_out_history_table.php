@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('department_id');
             $table->bigInteger('hospital_id');
+            $table->bigInteger('appointment_id');
             $table->string('symptoms');
             $table->string('conclusion');
             $table->bigInteger('staff_id');

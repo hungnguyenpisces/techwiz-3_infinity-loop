@@ -22,15 +22,25 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header2">
-                        <h3 class="card-title text-center">WELCOME TO INFINITY-LOOP</h3>
+                        <h3 class="card-title text-center">YOU HAVE APPOINTMENT TODAY!</h3>
                     </div>
                     <div class="card-body">
-                        <span>Dear, Mr/Ms </span> {{$userMail->last_name}}
-                        <p>Your account created successfully. Now you can log in <strong>Infinity Loop</strong> with your account</p>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-success mb-3">GO TO WEBSITE</a>
+                        <span>Dear, Mr/Ms </span><b> {{$appointment->user->last_name}}</b>
+                        <p>Today you have an appointment to check out. Please check the the information below and contact us if there is any change</p>
+                        <br>
+                        <div>
+                            <strong>Date:</strong> <?php echo date('d-m-Y', strtotime($appointment->date)); ?>
+                            <br>
+                            <strong>Time:</strong> <?php echo date('h:i A', strtotime($appointment->time)); ?>
+                            <br>
+                            <strong>Department:</strong><b> {{$appointment->department_name}}</b>
+                            <br>
+                            <strong>Hospital:</strong> <b>{{$appointment->hospital_name}}</b>
+                            <br>
+                            <strong>Doctor:</strong><b> {{$appointment->doctor_name}}</b>
+                            <br>
                         </div>
-                        <p>Feel free to contact us if there is anything we can help.<br>Thank you for you belief. Your health is our happiness!</p>
+                        <p>We always dedicate to bring you best services!</p>
                         <div>
                             <svg enable-background="new 0 0 320.4 79.8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 700 100" xmlns="http://www.w3.org/2000/svg">
                                 <path d="m52.5 37.3h-5.6" fill="none" />
@@ -52,6 +62,7 @@
                             <p>Infinity Loop Team</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

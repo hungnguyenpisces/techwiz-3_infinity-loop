@@ -32,59 +32,61 @@ class UserApiController extends Controller
 
     // get data for health index chart
     public function getHealthIndexChart() {
-        $user = User::find(auth()->user()->id);
-        $health_index = HealthIndex::where('user_id', auth()->user()->id)->whereMonth('created_at', '>=', 1)->get();
-        
-        
-        //week array = 1 to 52
-        $weeks = [];
-        for ($i = 1; $i < 53; $i++) {
-            $weeks[] = $i;
+       
+        $months = [];
+        for ($i = 0; $i < 13; $i++) {
+            $months[] = date('Y-M', strtotime("-$i months"));
         }
 
-        $height_by_week = [];
- 
-        foreach ($weeks as $week) {
-            $height_by_week[] = HealthIndex::where('user_id', auth()->user()->id)
-                ->where('created_at', date('m', strtotime($week)))
-                ->whereYear('created_at', date('Y', strtotime($week)))
+        $height_by_month= [];
+        $weight_by_month= [];
+        $blood_pressure_by_month=[];
+        $heart_rate_by_month=[];
+
+        foreach ($months as $month) {
+            $height_by_month[] = HealthIndex::whereMonth('created_at', date('m', strtotime($month)))
+                ->whereYear('created_at', date('Y', strtotime($month)))
+                ->where('user_id', auth()->user()->id)
                 ->avg('height');
         }
 
-        //average weight by week
-        $weight_by_week = [];
-        foreach ($weeks as $week) {
-            $weight_by_week[] = HealthIndex::where('user_id', auth()->user()->id)
-                ->whereMonth('created_at', date('m', strtotime($week)))
-                ->whereYear('created_at', date('Y', strtotime($week)))
+        foreach ($months as $month) {
+            $weight_by_month[] = HealthIndex::whereMonth('created_at', date('m', strtotime($month)))
+                ->whereYear('created_at', date('Y', strtotime($month)))
+                ->where('user_id', auth()->user()->id)
                 ->avg('weight');
         }
 
-        //average blood pressure by week
-        $blood_pressure_by_week = [];
-        foreach ($weeks as $week) {
-            $blood_pressure_by_week[] = HealthIndex::where('user_id', auth()->user()->id)
-                ->whereMonth('created_at', date('m', strtotime($week)))
-                ->whereYear('created_at', date('Y', strtotime($week)))
+        foreach ($months as $month) {
+            $blood_pressure_by_month[] = HealthIndex::whereMonth('created_at', date('m', strtotime($month)))
+                ->whereYear('created_at', date('Y'))
+                ->where('user_id', auth()->user()->id)
                 ->avg('blood_pressure');
         }
 
-        //average heart rate by week
-        $heart_rate_by_week = [];
-        foreach ($weeks as $week) {
-            $heart_rate_by_week[] = HealthIndex::where('user_id', auth()->user()->id)
-                ->whereMonth('created_at', date('m', strtotime($week)))
-                ->whereYear('created_at', date('Y', strtotime($week)))
+        foreach ($months as $month) {
+            $heart_rate_by_month[] = HealthIndex::whereMonth('created_at', date('m', strtotime($month)))
+                ->whereYear('created_at', date('Y'))
+                ->where('user_id', auth()->user()->id)
                 ->avg('heart_rate');
         }
-
+        
         return response()->json([
-            'weeks' => ($weeks),
-            'height_by_week' => array_reverse($height_by_week),
-            'weight_by_week' => array_reverse($weight_by_week),
-            'blood_pressure_by_week' => array_reverse($blood_pressure_by_week),
-            'heart_rate_by_week' => array_reverse($heart_rate_by_week),
+            'months' =>array_reverse($months),
+            'height' => array_reverse($height_by_month),
+            'weight' =>array_reverse($weight_by_month),
+            'blood_pressure' =>array_reverse($blood_pressure_by_month),
+            'heart_rate' =>array_reverse($heart_rate_by_month)
         ]);
+
+
+
+    
+        // return health index by month
+
+
+
+       
 
     }
 
