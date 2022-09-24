@@ -11,9 +11,39 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Mail\WellcomeJoinInfinityLoopTeam;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 
 class AuthController extends Controller
 {
+    public function changePassword()
+    {
+        return view('user.change-password');
+    }
+    public function updatePassword(Request $request)
+    {
+        # Validation
+        $request->validate([
+            'old_password' => 'required|min:8',
+            'new_password' => 'required|confirmed',
+            'new_password_confirmation' => 'required|same:new_password'
+        ]);
+
+
+        #Match The Old Password
+        if(!Hash::check($request->old_password, auth()->user()->password)){
+            return back()->with("error", "Old Password Doesn't match!");
+        }
+
+
+        #Update the new Password
+        User::whereId(auth()->user()->id)->update([
+
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        return back()->with("status", "Password changed successfully!");
+    }
+  
     public function register()
     {
         if (Auth::check()) {
@@ -21,53 +51,63 @@ class AuthController extends Controller
         }
         return view('web.register');
     }
+    
+  
 
-    public function processRegister(RegisterRequest $request)
-    {
-        $data = $request->validated();
-        $data['password'] = Hash::make($data['password']);
+  public function processRegister(RegisterRequest $request)
+  {
+    $data = $request->validated();
 
-        $user = new User();
-        $user->fill($data);
-        $user->save();
-        $user->assignRole('User');
-
-        Mail::to((string)$user->email)->send(new WellcomeJoinInfinityLoopTeam($user));
-
-        auth()->login($user);
-        $request->session()->flash('success', "Account successfully registered.");
-        return redirect()->route('index');
+    if (!$data) {
+      return redirect()->back()->withInput() ->withErrors($data ->errors());
     }
+   
+    $data['password'] = Hash::make($data['password']);
+    $user = new User();
+    $user->fill($data);
+    $user->save();
+    $user->assignRole('User');
 
-    public function login()
-    {
-        if (Auth::check()) {
-            return redirect()->route('index');
-        }
-        return view('web.login');
+    Mail::to((string)$user->email)->send(new WellcomeJoinInfinityLoopTeam($user));
+
+    auth()->login($user);
+    $request->session()->flash('success', "Account successfully registered.");
+    return redirect()->route('index');
+  }
+
+  public function login()
+  {
+    if (Auth::check()) {
+      return redirect()->route('index');
     }
+    return view('web.login')->with('error', 'Username or password is not correct');
+  }
 
-    public function processLogin(LoginRequest $request)
-    {
-        $credentials = $request->getCredentials();
+  public function processLogin(LoginRequest $request)
+  {
+    $credentials = $request->getCredentials();
 
-        if (Auth::attempt($credentials)) {
-
-            $user = Auth::getProvider()->retrieveByCredentials($credentials);
-
-            Auth::login($user);
-
-            return redirect()->intended('/');
-        } else {
-            $request->session()->flash('error', 'Invalid account and/or password. Please check and try again.');
-            return back()->withInput();
-        }
+    if (Auth::attempt($credentials)) {
+      $user = Auth::getProvider()->retrieveByCredentials($credentials);
+      Auth::login($user);
+      $token = auth('api')->setTTL(240)->attempt($credentials);
+      $resToken = [
+        'access_token' => $token,
+        'token_type' => 'bearer',
+        'expires_in' => auth('api')->factory()->getTTL() * 60 * 4
+      ];
+      return Redirect::route('index')->with('token', $resToken);
+    } else {
+      Session::flush();
+      Auth::logout();
+      return Redirect::route('login.show')->with('error', 'Invalid Credentials');
     }
+  }
 
-    public function logout()
-    {
-        Session::flush();
-        Auth::logout();
-        return redirect()->route('index');
-    }
+  public function logout()
+  {
+    Session::flush();
+    Auth::logout();
+    return redirect()->route('login.show');
+  }
 }

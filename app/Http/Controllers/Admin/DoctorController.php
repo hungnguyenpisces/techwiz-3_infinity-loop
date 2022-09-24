@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use App\Models\Department;
+use App\Models\Hospital;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -15,7 +17,12 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $lsDoc = Doctor::all();
+        $lsDoc = Doctor::join('hospital_departments', 'hospital_departments.department_id', '=', 'doctors.department_id')
+            ->join('hospitals', 'hospitals.id', '=', 'hospital_departments.hospital_id')
+            ->join('departments', 'doctors.department_id', '=', 'departments.id')
+            ->select('doctors.*', 'departments.name as department_name', 'hospitals.name as hospital_name')
+            ->get();
+        
         return view('admin.doctor.index')->with('lsDoc', $lsDoc);
     }
 

@@ -16,10 +16,16 @@ Appointments Management
 <section class="content">
     <div class="container-fluid">
         <div class="row clearfix">
-            <div class="block-header">
+            <!-- <div class="block-header">
                 <h2>Appointments</h2>
                 <small class="text-muted">Welcome to Swift application</small>
+            </div> -->
+            <!-- check if session has success -->
+            @if (session('success'))
+            <div style="margin-left: 15px">
+                <p class="alert alert-success">{{ session('success') }}</p>
             </div>
+            @endif
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
@@ -40,12 +46,14 @@ Appointments Management
                                     <th>Patient last name</th>
                                     <th>Patient first name</th>
                                     <th>Department</th>
+                                    @if(Auth::user()->hospital_id == null)
                                     <th>Hospital</th>
+                                    @endif
                                     <th>Symptom status</th>
                                     <th>Doctor</th>
                                     <th>Date</th>
                                     <th>Time</th>
-                                    <th>Status</th>
+                                    <th class="sorting_desc">Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -54,12 +62,14 @@ Appointments Management
                                     <th>Patient last name</th>
                                     <th>Patient first name</th>
                                     <th>Department</th>
+                                    @if(Auth::user()->hospital_id == null)
                                     <th>Hospital</th>
+                                    @endif
                                     <th>Symptom status</th>
                                     <th>Doctor</th>
                                     <th>Date</th>
                                     <th>Time</th>
-                                    <th>Status</th>
+                                    <th class="sorting_asc">Status</th>
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
@@ -69,7 +79,10 @@ Appointments Management
                                     <td>{{ $appointment->user->last_name }}</td>
                                     <td>{{ $appointment->user->first_name }}</td>
                                     <td>{{ $appointment->department_name }}</td>
+                                    <!-- if user hospital_id == null -->
+                                    @if(Auth::user()->hospital_id == null)
                                     <td>{{ $appointment->hospital_name }}</td>
+                                    @endif  
                                     <td>{{ $appointment->self_check_symptom }}</td>
                                     @if(!$appointment->doctor_first_name)
                                     <td>N/A</td>
@@ -111,6 +124,16 @@ Appointments Management
 <script src="/assets/bundles/datatablescripts.bundle.js"></script>
 <script src="/assets/js/morphing.js"></script>
 <script src="/assets/js/pages/tables/jquery-datatable.js"></script>
+<script>
+    $(document).ready(function() {
+         var table = $('.js-basic-example').DataTable();
+        @if(Auth::user()->hospital_id == null)
+            table.order( [ 8, 'desc' ] ).draw();
+        @else
+            table.order( [ 7, 'desc' ] ).draw();
+        @endif
+    });
+</script>
 
 <!-- end extraJs -->
 @endsection

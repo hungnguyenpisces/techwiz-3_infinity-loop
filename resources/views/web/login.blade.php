@@ -39,6 +39,9 @@
                 <div class="form-head">
                     <h4 class="title">Login To Your Account</h4>
                     <form action="/login" method="post">
+                        @if( Session::get('error') )
+                           <p class="alert alert-danger">{{ $error }}</p>
+                        @endif
                         @csrf
                         <div class="form-group">
                             <input name="username" type="text" placeholder="username">

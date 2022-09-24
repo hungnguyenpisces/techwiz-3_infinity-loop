@@ -139,6 +139,7 @@
                                         <button type="submit" class="btn" value="Save">Edit</button>
                                     </div>
                                 </div>
+
                                 <div class="col-lg-6 col-md-6 col-12 p-0">
                                     @foreach(['danger', 'success', 'warning', 'info'] as $type)
                                         @if(Session::has($type))

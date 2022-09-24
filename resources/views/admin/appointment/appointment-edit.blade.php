@@ -17,26 +17,7 @@ Custom title if need
 
 
 @section('content')
-<!-- 
-$appointment->user->last_name
-$appointment->user->first_name
 
-$appointment->user->date_of_birth
-$appointment->user->gender
-$appointment->user->blood_group
-
-$appointment->user->email
-$appointment->user->phone
-$appointment->user->address
-
-$appointment->department_name
-$appointment->hospital_name
-$appointment->self_check_symptom
-$appointment->doctor_first_name
-$appointment->date
-$appointment->time
-$appointment->status
--->
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
@@ -195,13 +176,25 @@ $appointment->status
                                         </select>
                                         @endif
                                         @if($appointment->status == 'Pending' && $appointment->doctor_first_name)
-                                        <select class="form-control show-tick" disabled>
-                                            <option value="" selected>{{$appointment->doctor_first_name}}</option>
+                                        <select name="doctor_id"  class="form-control show-tick">
+                                            @foreach($doctors as $doctor)
+                                                @if($doctor->id == $appointment->doctor_id)
+                                                    <option value="{{$doctor->id}}" selected>{{$doctor->first_name}}</option>
+                                                @else
+                                                    <option value="{{$doctor->id}}">{{$doctor->first_name}}</option>
+                                                @endif
+                                            @endforeach
                                         </select>
                                         @endif
                                         @if($appointment->status != 'Pending' && $appointment->doctor_first_name)
-                                        <select class="form-control show-tick" disabled>
-                                            <option value="" selected>{{$appointment->doctor_first_name}}</option>
+                                        <select name="doctor_id" class="form-control show-tick">
+                                             @foreach($doctors as $doctor)
+                                                @if($doctor->id == $appointment->doctor_id)
+                                                    <option value="{{$doctor->id}}" selected>{{$doctor->first_name}}</option>
+                                                @else
+                                                    <option value="{{$doctor->id}}">{{$doctor->first_name}}</option>
+                                                @endif
+                                            @endforeach
                                         </select>
                                         @endif
                                         @if($appointment->status != 'Pending' && !$appointment->doctor_first_name)
@@ -215,12 +208,54 @@ $appointment->status
                                     </div>
                                 </div>
                             </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="">Symptom: </label>
+                                        <div class="form-line">
+                                            <textarea rows="1" name="self_check_symptom" class="form-control no-resize" value="{{$appointment->self_check_symptom}}" readonly>{{$appointment->self_check_symptom}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+{{--                            <tabble>--}}
+{{--                                <input type="text" id="name" placeholder="Medicine Name">--}}
+{{--                                <input type="text" id="time" placeholder="unit per time">--}}
+{{--                                <input type="text" id="day" placeholder="time per day">--}}
+{{--                                <input type="text" id="period" placeholder="period">--}}
+{{--                                <input type="button" class="add-row" value="Add Row">--}}
+{{--                            </tabble>--}}
+{{--                            <table>--}}
+{{--                                <thead>--}}
+{{--                                <tr>--}}
+
+{{--                                    <th>Medicine Name</th>--}}
+{{--                                    <th>unit per time</th>--}}
+{{--                                    <th>time per day</th>--}}
+{{--                                    <th>period</th>--}}
+{{--                                    <th>Select</th>--}}
+{{--                                </tr>--}}
+{{--                                </thead>--}}
+{{--                                <tbody>--}}
+{{--                                <tr>--}}
+
+{{--                                    <td name="MedicineName"> </td>--}}
+{{--                                    <td name="unitpertime"> </td>--}}
+{{--                                    <td name="timeperday"> </td>--}}
+{{--                                    <td name="period"></td>--}}
+{{--                                    <td><input type="checkbox" name="record"></td>--}}
+{{--                                </tr>--}}
+{{--                                </tbody>--}}
+{{--                            </table>--}}
+
 
                             <div class="row clearfix">
                                 <div class="col-sm-12">
                                     <div class="form-group">
+                                        <label for="">Type note here:</label>
                                         <div class="form-line">
-                                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                            <textarea rows="4" name="staff_note" class="form-control no-resize" placeholder="Please type what you want...">{{$appointment->staff_note}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -259,6 +294,29 @@ $appointment->status
         document.getElementById('appointmentForm').action = "/admin/appointment/{{$appointment->id}}/reject";
         document.getElementById('appointmentForm').method = "POST";
     }
+</script>
+{{--<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>--}}
+<script>
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var name = $("#name").val();
+            var time = $("#time").val();
+            var day = $("#day").val();
+            var period = $("#period").val();
+
+            var markup = "<tr><td>" + name + "</td><td>" + time + "</td><td>" + day + "</td><td>" + period + "</td><td><input type='checkbox' name='record'></td></tr>";
+            $("table tbody").append(markup);
+        });
+
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+                if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });
 </script>
 <!-- end extraJs -->
 @endsection
