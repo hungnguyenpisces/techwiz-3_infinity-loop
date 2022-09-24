@@ -22,13 +22,19 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header2">
-                        <h3 class="card-title text-center">WELCOME TO INFINITY-LOOP</h3>
+                        <h3 class="card-title text-center">YOUR ACCOUNT HAS BEEN CREATED</h3>
                     </div>
                     <div class="card-body">
-                        <span>Dear, Mr/Ms </span> {{$userMail->last_name}}
-                        <p>Your account created successfully. Now you can log in <strong>Infinity Loop</strong> with your account</p>
+                        <span>Dear, Mr/Ms </span> {{$acc->last_name}}
+                        <p>Your account created successfully. Now you can log in <strong>Infinity Loop</strong></p>
+                        <p>Account information is as below</p>
+                        <p><strong>Username: </strong> {{$acc->username}}</p>
+                        <p><strong>Default Password: </strong>12345678</p>
                         <div class="text-center">
-                            <a href="#" class="btn btn-success mb-3">GO TO WEBSITE</a>
+                            <a href="127.0.0.1/login" class="btn btn-success mb-3">GO TO WEBSITE</a>
+                        </div>
+                        <div class="alert alert-warning mt-5" role="alert">
+                            <p class="alert alert-warning" style="font-weight: bold; font-style: italic">Remember to change your default password for security reasons.</p>
                         </div>
                         <p>Feel free to contact us if there is anything we can help.<br>Thank you for you belief. Your health is our happiness!</p>
                         <div>

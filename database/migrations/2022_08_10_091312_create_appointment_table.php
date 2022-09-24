@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
+            $table->bigInteger('user_id')->nullable();
             $table->bigInteger('department_id');
             $table->bigInteger('hospital_id');
             $table->bigInteger('doctor_id')->nullable();
             $table->string('self_check_symptom');
+            $table->string('staff_note')->nullable();
             $table->string('date');
             $table->string('time');
             $table->string('status');

@@ -211,8 +211,9 @@ $appointment->status
                             <div class="row clearfix">
                                 <div class="col-sm-12">
                                     <div class="form-group">
+                                        <label for="">Symptom:</label>
                                         <div class="form-line">
-                                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                            <textarea rows="4" name="staff_note" class="form-control no-resize" placeholder="Please type what you want...">{{$appointment->self_check_symptom   }}</textarea>
                                         </div>
                                     </div>
                                 </div>

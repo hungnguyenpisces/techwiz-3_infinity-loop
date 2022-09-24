@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\AppointmentNotify;
+use App\Mail\NewAccount;
+
 use App\Models\Appointment;
 use App\Models\Department;
 use App\Models\Doctor;
+use App\Models\User;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,14 +24,25 @@ class AppointmentManageController extends Controller
      */
     public function index()
     {
-        // appointment join with user, hospital, department, doctor
         $doctors = Doctor::all();
-        $appointments = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+        if (Auth::user()->hasRole('Staff')) {
+            $appointments = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
             ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
             ->join('departments', 'appointments.department_id', '=', 'departments.id')
             ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
             ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
+            ->where('hospitals.id', Auth::user()->hospital_id)
             ->get();
+        } else {
+            $appointments = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
+            
+            ->get();
+        }
+        
         return view('admin.appointment.all-appointment', compact('appointments', 'doctors'));
     }
 
@@ -44,10 +58,40 @@ class AppointmentManageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.appointment.book-appointment');
+    {   
+        $departments = Department::all();
+        return view('admin.appointment.book-appointment', compact('departments'));
     }
 
+    public function createAppointment(Request $request) {
+        $user = new User();
+        $user->username=$request->username;
+        $user->password=bcrypt('12345678');
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->blood_group= $request->blood_group;
+        $user->gender=$request->gender;
+        $user->save();
+
+        $appointment = new Appointment();
+        $appointment->user_id = $user->id;
+        $appointment->hospital_id = Auth::user()->hospital_id;
+        $appointment->department_id = $request->department_id;
+        $appointment->doctor_id = $request->doctor_id;
+        $date = date('Y-m-d', strtotime($request->date));   
+        $appointment->date = $date;
+        $time = date('H:i:s', strtotime($request->date));
+        $appointment->time = '19:00:00';
+        $appointment->self_check_symptom=$request->self_check_symptom;
+        $appointment->status = 'Pending';
+        $appointment->save();
+
+        Mail::to((string)$request->email)->send (new NewAccount($user));
+        return redirect()->route('all-appointment.index')->with('success', 'Appointment created successfully');
+         
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -121,6 +165,7 @@ class AppointmentManageController extends Controller
         $appointment->department_id = $request->department_id;
         $appointment->date = date('Y-m-d', strtotime($request->datetime));
         $appointment->time = date('H:i:s', strtotime($request->datetime));
+        $appointment->staff_note = $request->staff_note;
         $appointment->save();
 
         $appointment->message = 'Your appointment has been updated successfully.';

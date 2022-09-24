@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use App\Models\Department;
+use App\Models\User;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\MailTest;
+use Illuminate\Bus\Queueable;
+use Illuminate\Support\Facades\Mail;
+
+
 
 class AppointmentController extends Controller
 {
@@ -149,4 +155,5 @@ class AppointmentController extends Controller
         $appointment = Appointment::find($id);
         return view('user.user-appointment-detail', compact('appointment'));
     }
+
 }

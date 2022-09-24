@@ -7,13 +7,13 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="top-social">
                             <ul>
-                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a>
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
                                 </li>
-                                <li><a href="#"><i class="lni lni-twitter-original"></i></a>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a>
                                 </li>
-                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="#"><i class="lni lni-youtube"></i></a></li>
-                                <li><a href="#"><i class="lni lni-pinterest"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-pinterest"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -49,15 +49,11 @@
 
                                         <li class="nav-item d-flex">
                                             <a style="padding: 0" class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
-                                                <span class="badge rounded-pill bg-danger">
-                                                1
+                                                <span class="badge rounded-pill bg-danger" id="count_notif">
+                                                
                                                 <span class="visually-hidden">unread messages</span></a>
-                                            <ul class="sub-menu collapse">
-                                                <li class="nav-item-customize">
-                                                    <span>12:00<strong>Wednesday</strong></span>
-                                                    <a href="#" class="text-success">Musculoskeletal</a>
-                                                </li>
-
+                                            <ul class="sub-menu collapse" id="notification" style="height: 600px; overflow: scroll">
+                                               
                                             </ul>
                                         </li>
                                     </ul>
@@ -86,7 +82,7 @@
                                     <a href="/" aria-label="Toggle navigation">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
+                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
                                     <ul class="sub-menu collapse" id="submenu-1-3">
                                         <li class="nav-item"><a href="hospital">Hospital</a></li>
                                         <li class="nav-item"><a href="hospital-search">Hospital Search</a></li>
@@ -97,7 +93,7 @@
                                     <a href="/departments" aria-label="Toggle navigation">Departments</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Doctors</a>
+                                    <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Doctors</a>
                                     <ul class="sub-menu collapse" id="submenu-1-3">
                                         <li class="nav-item"><a href="/doctor">Doctors</a></li>
                                         <li class="nav-item"><a href="/doctor-search">Doctor Search</a></li>

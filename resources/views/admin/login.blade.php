@@ -29,6 +29,10 @@
                                 <div class="card-body">
                                     <!-- Login form-->
                                     <form method="post" action="{{ route('admin.login.perform') }}">
+                                        <!-- check if request has error message -->
+                                        @if( Session::get('error') )
+                                            <p class="alert alert-danger">{{ $error }}</p>
+                                        @endif
                                         @csrf
                                         <!-- Form Group (email address)-->
                                         <div class="mb-3">
