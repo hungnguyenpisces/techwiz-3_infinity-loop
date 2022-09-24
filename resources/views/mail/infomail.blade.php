@@ -25,7 +25,7 @@
                         <h3 class="card-title text-center">CONFIRMATION LETTER</h3>
                     </div>
                     <div class="card-body">
-                        <p>Dear, Mr/Ms </p><b> {{$appointment->user->last_name}}</b>
+                        <span>Dear, Mr/Ms </span><b> {{$appointment->user->last_name}}</b>
                         <p>We are pleased to inform you that your appointment you booked has been confirmed. Please find below the details of your booking:</p>
                         <strong>Message:</strong> <b>{{ $appointment->message }}</b>
                         <br>

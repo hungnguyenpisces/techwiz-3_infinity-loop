@@ -20,6 +20,8 @@ return new class extends Migration
             $table->float('weight');
             $table->float('heart_rate')->nullable();
             $table->float('blood_pressure')->nullable();
+            $table->string('allergies')->nullable();
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

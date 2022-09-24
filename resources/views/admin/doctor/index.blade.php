@@ -13,285 +13,57 @@ Custom title if need
 
 @section('content')
 
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="block-header">
-                        <h2>All Doctors</h2>
-                        <small class="text-muted">Welcome to Swift application</small>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+             <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <ul class="header-dropdown">
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="row clearfix">
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card verified">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Dentist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">ENT Specialist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card verified">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card verified">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card verified">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Dentist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">ENT Specialist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card verified">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card verified">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card verified">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card verified">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Neurologist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card verified">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">Dentist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="body">
-                                    <div class="member-card">
-                                        <div class="thumb-xl member-thumb">
-                                            <img src="/assets/images/doctors/doctor2.jpg" class="img-thumbnail rounded-circle" alt="profile-image">
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-5 m-t-20">Dr. John</h4>
-                                            <p class="text-muted">ENT Specialist<span> <a href="#" class="text-pink">websitename.com</a> </span></p>
-                                        </div>
-                                        <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                                        <a href="doctor-profile" class="btn btn-raised btn-sm">View Profile</a>
-                                        <ul class="social-links list-inline m-t-10">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-sm-12 text-center">
-                            <a href="add-doctor" class="btn btn-raised g-bg-cyan">Add Doctor</a>
-                        </div>
+                    <div class="body table-responsive">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Fullname</th>
+                                    <th>Image</th>
+                                    <th>Department</th>
+                                    <th>Hospital</th>
+                                    <th>Position</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($lsDoc as $appointment)
+                                <tr>
+                                    <td>{{ $appointment-> last_name }}{{ $appointment-> first_name}}</td>
+                                    <td></td>
+                                    <td>{{ $appointment->department_name }}</td>
+                                    <td>{{ $appointment->hospital_name }}</td>
+                                    <td>{{ $appointment->position }}</td>
+                                    <td>
+                                        <a href="{{ route('admin.appointment.detail', $appointment->id) }}" class="btn btn-primary waves-effect">
+                                            <i class="material-icons">remove_red_eye</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </div>
+</section>
 
 @endsection
 
@@ -299,7 +71,8 @@ Custom title if need
 @section('extraJs')
 <!-- extraJs -->
 
-<script>(function () { var js = "window['__CF$cv$params']={r:'738813eef8c92390',m:'lBz2LL8VUMBBIjFAKouL2zN7Neob8.cpQgtisCT.y5c-1660127654-0-AbYfOYFR2ONyEfb2uHwK0KtDfa0p5T62kCmZlFjOrxgKdsJKcdT9JTvAUPr45MLiwDJDYLq03zjglhgAjyYKepf3lQCTwhIGG34lSobhMcjLXmA5WUru1PBfKJMgc2PpjhjDVi6+G6dKk0yjK+EKkCQGbn+RBQLVvME+nmuXVxP+',s:[0x9a9ee8f130,0xcbd1f01bbd],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);"; var _0xh = document.createElement('iframe'); _0xh.height = 1; _0xh.width = 1; _0xh.style.position = 'absolute'; _0xh.style.top = 0; _0xh.style.left = 0; _0xh.style.border = 'none'; _0xh.style.visibility = 'hidden'; document.body.appendChild(_0xh); function handler() { var _0xi = _0xh.contentDocument || _0xh.contentWindow.document; if (_0xi) { var _0xj = _0xi.createElement('script'); _0xj.nonce = ''; _0xj.innerHTML = js; _0xi.getElementsByTagName('head')[0].appendChild(_0xj); } } if (document.readyState !== 'loading') { handler(); } else if (window.addEventListener) { document.addEventListener('DOMContentLoaded', handler); } else { var prev = document.onreadystatechange || function () { }; document.onreadystatechange = function (e) { prev(e); if (document.readyState !== 'loading') { document.onreadystatechange = prev; handler(); } }; } })();</script>
-
+<script src="/assets/bundles/datatablescripts.bundle.js"></script>
+<script src="/assets/js/morphing.js"></script>
+<script src="/assets/js/pages/tables/jquery-datatable.js"></script>
 <!-- end extraJs -->
 @endsection
