@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            //hospital_id nullable
+            $table->bigInteger('hospital_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

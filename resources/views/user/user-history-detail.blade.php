@@ -1,25 +1,25 @@
 @extends('user.layouts._master')
 @section('extraCss')
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
 
-<link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 
 @endsection
 
 @section('content')
-<div class="container py-5">
-    <div class="row">
-        <div class="col">
-            <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/user-profile">User</a></li>
-                    <li class="breadcrumb-item"><a href="/user-history">Medical history</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Record details</li>
-                </ol>
-            </nav>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/user-profile">User</a></li>
+                        <li class="breadcrumb-item"><a href="/user-history">Medical history</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Record details</li>
+                    </ol>
+                </nav>
+            </div>
         </div>
-    </div>
 
     <div class="row">
         <h2 class="text-center mb-5">Your Check-out Record </h2>
@@ -50,7 +50,7 @@
             <br>
             <div class="text-center">
                 <a type="button" href="/user-history" class="btn btn-success">Back to list</a>
-
+                <a type="button" href="{{route('feedback.create', $check_out_histories->id)}}" class="btn btn-success">Make your feedback</a>
             </div>
         </div>
     </div>

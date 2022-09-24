@@ -103,6 +103,21 @@ class UserSeeder extends Seeder
         ]);
         $huan->assignRole('User', 'Patient');
 
+         $huan = User::create([
+            'first_name' => 'Thi Ngan',
+            'last_name' => 'Ha',
+            'username' => 'staffngan',
+            'email' => 'motconvitxoerahaicaicanh@email.com',
+            'password' => Hash::make('12345678'),
+            'phone' => $faker->phoneNumber,
+            'address' => $faker->city,
+            'gender' => $faker->randomElement(['Male', 'Female']),
+            'blood_group' => $faker->randomElement(['O', 'A', 'B', 'AB']),
+            'date_of_birth' => $faker->dateTimeBetween('-50 years', '-18 years'),
+            'hospital_id' => 1
+        ]);
+        $huan->assignRole('Staff');
+
         $limit = 300;
         for ($i = 0; $i < $limit; $i++) {
             $user = User::create([

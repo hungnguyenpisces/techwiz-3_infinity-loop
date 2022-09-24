@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use App\Models\Department;
+use App\Models\User;
 use App\Models\Hospital;
+use App\Models\MedicinePill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\MailTest;
+use Illuminate\Bus\Queueable;
+use Illuminate\Support\Facades\Mail;
+
+
 
 class AppointmentController extends Controller
 {
@@ -127,6 +134,7 @@ class AppointmentController extends Controller
      */
     public function destroy($id, Request $request)
     {
+
         $amt = Appointment::find($id);
         if ($amt == null) {
             $request->session()->flash('danger', 'Appointment not found.');
@@ -146,7 +154,32 @@ class AppointmentController extends Controller
     // showDetail $id
     public function showDetail($id)
     {
-        $appointment = Appointment::find($id);
-        return view('user.user-appointment-detail', compact('appointment'));
+        $appointment = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
+            ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name','hospitals.location as hospital_location')
+            ->where('appointments.id', $id)
+            ->first();
+
+        $departments = Department::all();
+        $hospitals = Hospital::all();
+        return view('user.user-appointment-detail', compact('appointment', 'departments', 'hospitals'));
+
     }
+//    public function medicine()
+    //        $obj = [];
+//        for ($i = 0 ; $i ++ ; $i <= 10){
+//            if ($request->except('name_'.$i)){
+//                $obj[$request->get('name_'.$i)] = [
+//                    'nameb'=>$request->get('name_'.$i),
+//                    'time'=>$request->get('name_'.$i),
+//                    'day'=>$request->get('name_'.$i),
+//                    'period'=>$request->get('name_'.$i),
+//                ];
+//            }
+//        }
+//        $a = new MedicinePill();
+//        $a->update('detail',$obj);
+//        json_encode($obj);
+    //luuu vao detail database
 }

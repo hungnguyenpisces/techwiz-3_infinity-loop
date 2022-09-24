@@ -46,35 +46,24 @@
                 <div class="row">
                     <p class="mb-0 h4"><strong class="mx-5">Doctor:</strong>Dr. {{ $appointment-> doctor_first_name }}</p>
                 </div>
-            </div>
-            <hr>
-            <div class="row">
-                <p class="mb-0 h4"><strong class="mx-5">Message:</strong>{{ $appointment-> self_check_symptom }}</p>
-            </div>
-            <hr>
-            <div class="row">
-                <p class="mb-0 h4"><strong class="mx-5">Address:</strong>{{ $appointment-> location }}</p>
-            </div>
-            <hr>
-            <div class="row">
-                <p class="mb-0 h4"><strong class="mx-5">Status:</strong>
-                    @if($appointment->status == 'Pending')
-                    <span class="text-bg-warning badge badge-warning">{{ $appointment->status }}</span>
-                    <span style="font-size: 13px; font-style: italic">Your appointment is being processed.</span>
-                    @elseif($appointment->status == 'Accepted')
-                    <span class="text-bg-success badge badge-success">{{ $appointment->status }}</span>
-                    @elseif($appointment->status == 'Cancelled')
-                    <span class="text-bg-danger badge badge-danger">{{ $appointment->status }}</span>
-                    @else
-                    <span class="text-bg-primary badge badge-primary">{{ $appointment->status }}</span>
-                    @endif
-                </p>
-            </div>
-            <hr>
-            <br>
-            <br>
-            <div class="text-center">
-                <a type="button" href="/user-appointment" class="btn btn-success">Back to list</a>
+                <hr>
+                <br>
+                <br>
+                <div class="text-center">
+                    <div class="col-sm-12">
+                        <a type="button" href="/user-appointment" class="btn btn-success">Back to list</a>
+
+                        @if($appointment->status == 'Pending')
+                            <a type="button"  class="btn btn-secondary" href="{{route("appointment.edit", $appointment->id)}}">Edit</a>
+                        @endif
+                        <form  method="post" action="{{route('appointment.destroy', $appointment->id)}}"
+                               onsubmit='return confirm("Sure ?")'>
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+
+                    </div>
 
             </div>
         </div>

@@ -20,9 +20,10 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         if ($user == null) {
-            return view('admin.login');
+            //inform user wrong username or password
+            return view('admin.login')->with('error', 'Username or password is not correct');
         } else {
-            if ($user->hasRole(['Super-Admin', 'Admin'])) {
+            if ($user->hasRole(['Super-Admin', 'Admin', 'Staff'])) {
                 return redirect()->route('admin.dashboard');
             } else {
                 Session::flush();
@@ -39,7 +40,7 @@ class AdminController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
-            if ($user->hasRole(['Super-Admin', 'Admin'])) {
+            if ($user->hasRole(['Super-Admin', 'Admin', 'Staff'])) {
                 Auth::login($user);
                 $token = auth('api')->setTTL(240)->attempt($credentials);
                 $resToken = [

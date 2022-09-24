@@ -39,88 +39,113 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="body">
-                            <div class="row clearfix">
-                                <div class="col-sm-6 ">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="First Name">
+                        <form method="POST" action="{{route('admin.createAppointment')}}">
+                            @csrf
+                            <div class="body">
+                                <div class="row clearfix">
+                                    <div class="col-sm-12 ">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" name="username" class="form-control" placeholder="Username">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 ">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="Last Name">
+                                <div class="row clearfix">
+                                    <div class="col-sm-6 ">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input name="first_name" type="text" class="form-control" placeholder="First Name">
+                                            </div>
                                         </div>
+                                    </div>
+                                    <div class="col-sm-6 ">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input name="last_name" type="text" class="form-control" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-sm-3 ">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" name="date_of_birth" class="datepicker form-control" placeholder="Date of Birth">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="form-group drop-custum">
+                                            <select name="gender" class="form-control show-tick">
+                                                <option value="">-- Gender --</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="form-group drop-custum">
+                                            <select name="department_id" class="form-control show-tick">
+                                                <option value="">-- Service --</option>
+                                                <!-- foreach departments as dp -->
+                                                @foreach($departments as $dp)
+                                                    <option value="{{ $dp->id }}">{{ $dp->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input name="date_time" type="text" class="datetimepicker form-control" placeholder="Please choose date & time...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" name="blood_group" class="form-control" placeholder="Enter Your Blood group">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input name="phone" type="text" class="form-control" placeholder="Phone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <textarea name="address" rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <textarea name="self_check_symptom" rows="4" class="form-control no-resize" placeholder="Type in patient's symptom"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-raised g-bg-cyan">Submit</button>
+                                        <button type="submit" class="btn btn-raised">Cancel</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row clearfix">
-                                <div class="col-sm-3 ">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text" class="datepicker form-control" placeholder="Date of Birth">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 ">
-                                    <div class="form-group drop-custum">
-                                        <select class="form-control show-tick">
-                                            <option value="">-- Gender --</option>
-                                            <option value="10">Male</option>
-                                            <option value="20">Female</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 ">
-                                    <div class="form-group drop-custum">
-                                        <select class="form-control show-tick">
-                                            <option value="">-- Service --</option>
-                                            <option>Select Service</option>
-                                            <option>Dental Checkup</option>
-                                            <option>Full Body Checkup</option>
-                                            <option>ENT Checkup</option>
-                                            <option>Heart Checkup</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 ">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text" class="datetimepicker form-control" placeholder="Please choose date & time...">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="Enter Your Email">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="Phone">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-raised g-bg-cyan">Submit</button>
-                                    <button type="submit" class="btn btn-raised">Cancel</button>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

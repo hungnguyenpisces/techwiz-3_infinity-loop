@@ -25,7 +25,7 @@
                         <h3 class="card-title text-center">WELCOME TO INFINITY-LOOP</h3>
                     </div>
                     <div class="card-body">
-                        <p>Dear, Mr/Ms </p> {{$userMail->last_name}}
+                        <span>Dear, Mr/Ms </span> {{$userMail->last_name}}
                         <p>Your account created successfully. Now you can log in <strong>Infinity Loop</strong> with your account</p>
                         <div class="text-center">
                             <a href="#" class="btn btn-success mb-3">GO TO WEBSITE</a>

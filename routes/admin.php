@@ -9,10 +9,11 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\Admin\FaqController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::withoutMiddleware(['role:Super-Admin|Admin'])->group(function () {
+Route::withoutMiddleware(['role:Super-Admin|Admin|Staff'])->group(function () {
     Route::get('/', function () {
         return redirect()->route('admin.login.show');
     });
@@ -20,7 +21,7 @@ Route::withoutMiddleware(['role:Super-Admin|Admin'])->group(function () {
     Route::post('/login', [AdminController::class, 'processLogin'])->name('admin.login.perform');
 });
 
-Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
+Route::group(['middleware' => ['role:Super-Admin|Admin|Staff']], function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/users', UserController::class . '@index')->name('users.index');
     Route::get('/users/create', UserController::class . '@create')->name('users.create');
@@ -54,6 +55,7 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::post('/appointment/{id}/approve', AppointmentManageController::class . '@approve')->name('admin.appointment.approve');
     Route::post('/appointment/{id}/reject', AppointmentManageController::class . '@reject')->name('admin.appointment.reject');
     Route::post('/appointment/{id}/update', AppointmentManageController::class . '@update')->name('admin.appointment.update');
+    Route::post('/createAppointment', AppointmentManageController::class.'@createAppointment')->name('admin.createAppointment');
 
     Route::get('/doctor-schedule', AppointmentManageController::class . '@doctorSchedule')->name('admin.doctor.schedule');
 
@@ -72,8 +74,18 @@ Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
     Route::resource('/blog', BlogController::class);
     Route::post('/blog/upload', [BlogController::class, 'upload'])->name('blog.upload');
     Route::post('/blog/ck_upload', [BlogController::class, 'ck_upload'])->name('blog.ck_upload');
-    Route::get('/report', [AdminController::class, 'report'])->name('report.index');
-    Route::get('/widgets', [AdminController::class, 'widgets'])->name('widgets.index');
+    Route::get('/faq', [FaqController::class, 'index'])->name('admin.faq.index');
+    Route::get('/faq/add-faq', [FaqController::class, 'create'])->name('admin.faq.create');
+    Route::get('/faq/{id}/edit-faq', [FaqController::class, 'edit'])->name('admin.faq.edit');
+    Route::post('/faq', [FaqController::class, 'store'])->name('admin.faq.store');
+    Route::post('/faq/update', [FaqController::class, 'update'])->name('admin.faq.update');
+
+    Route::get('/report', function () {
+        return view('admin.report');
+    });
+    Route::get('/widgets', function () {
+        return view('admin.widgets');
+    });
 
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout.perform');
 });
