@@ -837,35 +837,5 @@
   });
 </script>
 <script src="/assets/bundles/libscripts.bundle.js"></script>
-<script src="/assets/js/user-get-api.js"></script>
-@if(session('token'))
-<script>
-  const token = <?php echo json_encode(session('token')); ?>;
-  console.log(token);
-  sessionStorage.setItem('token', JSON.stringify(token));
-</script>
-@endif
-@if(!session('token')&& Auth::check())
-<script>
-  if (!sessionStorage.getItem('token')) {
-    window.location.href = "/index";
-  } else {
-    $.ajax({
-      url: "/api/refresh",
-      type: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + JSON.parse(sessionStorage.getItem("token")).access_token,
-      },
-      success: function(data) {
-        sessionStorage.setItem('token', JSON.stringify(data));
-      },
-      error: function(data) {
-        console.log(data);
-      },
-    });
-  }
-</script>
-@endif
 <!-- end extraJs -->
 @endsection
