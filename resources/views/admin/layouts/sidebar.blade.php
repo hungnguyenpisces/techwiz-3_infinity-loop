@@ -27,6 +27,7 @@
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="side_link_parent"> <a href="/admin/dashboard"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                @role('Staff')
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                     <ul class="ml-menu">
                         <li class="side_link"> <a href="/admin/all-appointment">All Appointment</a></li>
@@ -76,6 +77,8 @@
                         <li class="side_link"> <a href="#">Blank Page</a> </li>
                     </ul>
                 </li>
+                @endrole
+
                 @role('Super-Admin')
                 <li class="header">SUPER ADMIN SECTION</li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-accounts-alt"></i><span>User Management</span> </a>

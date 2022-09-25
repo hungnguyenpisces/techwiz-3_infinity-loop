@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +12,10 @@ use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
+use App\Mail\NewAccount;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+
 //use redirect
 use Illuminate\Support\Facades\Redirect;
 
@@ -26,8 +31,12 @@ class UserController extends Controller
   public function index(Request $request)
   {
 
-    $users = User::orderBy('id', 'ASC')->paginate(11);
-
+    $admin = Auth::user();
+    if ($admin->hospital_id != null) {
+      $users = User::where('hospital_id', $admin->hospital_id)->orderBy('id', 'ASC')->paginate(10);
+    } else {
+      $users = User::orderBy('id', 'ASC')->paginate(11);
+    }
     return view('admin.users.index', compact('users'));
   }
 
@@ -40,57 +49,101 @@ class UserController extends Controller
     } else {
       $roles = Role::pluck('name', 'name')->except(['name', 'Super-Admin']);
     }
-    return view('admin.users.create', compact('roles'));
+    //get all hospital
+    $hospitals = Hospital::all(); 
+    return view('admin.users.create', compact('roles', 'hospitals'));
   }
 
 
   public function store(Request $request)
-  {
-    $this->validate($request, [
-      'name' => 'required',
-      'email' => 'required|email|unique:users,email',
-      'password' => 'required',
-      'confirm-password' => 'required|same:password',
-      'roles' => 'required'
-    ]);
-
+  { 
+    if ((auth()->user()->hasRole('Super-Admin')) && (auth()->user()->hospital_id == null)) {
+      $this->validate($request, [
+        'first_name' => 'required',
+        'last_name' => 'required',
+        'username' => 'required',
+        'email' => 'required|email|unique:users,email',
+        'phone' => 'required',
+        'email' => 'required|email|unique:users,email',
+        'roles' => 'required',
+        'hospital_id' => 'required',
+      ]);
+    } else if ((auth()->user()->hasRole('Super-Admin')) && (auth()->user()->hospital_id != null)) {
+      $this->validate($request, [
+        'first_name' => 'required',
+        'last_name' => 'required',
+        'username' => 'required',
+        'email' => 'required|email|unique:users,email',
+        'phone' => 'required',
+        'email' => 'required|email|unique:users,email',
+        'roles' => 'required',
+      ]);
+    }
+    
     $input = $request->all();
-    $input['password'] = Hash::make($input['password']);
+    $randPwd = Str::random(8);
+    $user = new User();
+    $user->first_name = $request->first_name;
+    $user->last_name = $request->last_name;
+    $user->username = $request->username;
+    $user->email = $request->email;
+    $user->phone = $request->phone;
+    $user->password = $randPwd;
+    if ((auth()->user()->hasRole('Super-Admin')) && (auth()->user()->hospital_id == null)) {
+      $user->hospital_id = $request->hospital_id;
+    } else if ((auth()->user()->hasRole('Super-Admin')) && (auth()->user()->hospital_id != null)) {
+      $user->hospital_id = auth()->user()->hospital_id;
+    }
+    $user->save();
 
-    $user = User::create($input);
     $user->assignRole($request->input('roles'));
 
-    $notification = array(
-      'message' => 'User created successfully',
-      'alert-type' => 'success'
-    );
+    Mail::to($request->email)->send(new NewAccount($user)); 
+    //return index with create user successfully message
+    $hashed_random_password = Hash::make($randPwd);
+    $user->password=$hashed_random_password;
+    $user->save();
     return redirect()->route('users.index')
-      ->with($notification);
+      ->with('success', 'User created successfully');
   }
 
   public function show($id)
   {
-    $user = User::find($id);
-    $permissionNames = $user->getPermissionNames();
-    return view('admin.users.show', compact('user', 'permissionNames'));
+    $admin = Auth::user();
+    if ($admin -> hospital_id != null) {
+      $user = User::find($id);
+      if ($user->hospital_id != $admin->hospital_id) {
+        return redirect()->route('users.index')
+          ->with('error', 'This user is not under your administration');
+      }
+    } else {
+      $user = User::find($id);
+      $permissionNames = $user->getPermissionNames();
+      return view('admin.users.show', compact('user', 'permissionNames'));
+    }
+    
   }
 
   public function edit($id)
   {
     $user = User::find($id);
     if ($user->hasRole('Super-Admin')) {
-      $notification = array(
-        'message' => "You have no permission for edit this user",
-        'alert-type' => 'error'
-      );
-      return redirect()->route('users.index')
-        ->with($notification);
+     return redirect()->route('users.index')
+          ->with('error', 'This user is not under your administration');                
     }
     if (auth()->user()->hasRole('Super-Admin')) {
       $roles = Role::pluck('name', 'name')->all();
     } else {
       $roles = Role::pluck('name', 'name')->except(['name', 'Super-Admin']);
     }
+
+    if (auth()->user()->hasRole('Super-Admin') && auth()->user()->hospital_id != null) {
+      if ($user->hospital_id != auth()->user()->hospital_id) {
+        return redirect()->route('users.index')
+          ->with('error', 'This user is not under your administration');                
+      }
+    }
+
     $userRole = $user->roles->pluck('name', 'name')->all();
 
     return view('admin.users.edit', compact('user', 'roles', 'userRole'));
@@ -116,7 +169,7 @@ class UserController extends Controller
       'alert-type' => 'success'
     );
     return redirect()->route('users.index')
-      ->with($notification);
+      ->with('notif', $notification);
   }
 
   public function destroy($id)
@@ -128,7 +181,7 @@ class UserController extends Controller
         'alert-type' => 'error'
       );
       return redirect()->route('users.index')
-        ->with($notification);
+        ->with('notif', $notification);
     }
     if ($user->hasRole('Super-Admin')) {
       $notification = array(
@@ -136,7 +189,18 @@ class UserController extends Controller
         'alert-type' => 'error'
       );
       return redirect()->route('users.index')
-        ->with($notification);
+       ->with('notif', $notification);
+    }
+
+    if (auth()->user()->hospital_id != null) {
+      if ($user->hospital_id != auth()->user()->hospital_id) {
+        $notification = array(
+          'message' => "You have no permission for delete this user",
+          'alert-type' => 'error'
+        );
+        return redirect()->route('users.index')
+          ->with('notif', $notification);
+      }
     }
     $user->delete();
     $notification = array(
@@ -144,7 +208,7 @@ class UserController extends Controller
       'alert-type' => 'success'
     );
     return redirect()->route('users.index')
-      ->with($notification);
+      ->with('notif', $notification);
   }
 
   // public function login() {

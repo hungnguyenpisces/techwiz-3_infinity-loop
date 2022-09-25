@@ -837,7 +837,7 @@
   });
 </script>
 <script src="/assets/bundles/libscripts.bundle.js"></script>
-<script src="/assets/js/user-get-api.js"></script>
+<!-- <script src="/assets/js/user-get-api.js"></script> -->
 @if(session('token'))
 <script>
   const token = <?php echo json_encode(session('token')); ?>;
@@ -845,10 +845,10 @@
   sessionStorage.setItem('token', JSON.stringify(token));
 </script>
 @endif
-@if(!session('token')&& Auth::check())
+@if(!session('token') && Auth::check())
 <script>
   if (!sessionStorage.getItem('token')) {
-    window.location.href = "/index";
+    window.location.href = "/login";
   } else {
     $.ajax({
       url: "/api/refresh",
@@ -867,5 +867,6 @@
   }
 </script>
 @endif
+
 <!-- end extraJs -->
 @endsection

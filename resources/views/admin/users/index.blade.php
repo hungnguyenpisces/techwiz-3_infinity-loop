@@ -16,7 +16,38 @@ Custom title if need
 <section class="content">
     <div class="container-fluid">
         <div class="row clearfix">
-
+            @if (isset($notif))
+                @if (isset($notif['type']))
+                    @if ($notif['type'] == 'success')
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> {{$notif['message']}}</div>
+                    @endif
+                    @if ($notif['type'] == 'error')
+                    <div class="alert alert-danger">
+                        <strong>Error!</strong> {{$notif['message']}}</div>
+                    @endif
+                @endif
+            @endif
+            @if (session('error'))
+            <div class="col-md-12">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Fail!</strong> {{ session('error') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            @endif
+            @if (session('success'))
+            <div class="col-md-12">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success!</strong> {{ session('success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            @endif
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
