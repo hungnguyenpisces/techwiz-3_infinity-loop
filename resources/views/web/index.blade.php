@@ -837,7 +837,6 @@
   });
 </script>
 <script src="/assets/bundles/libscripts.bundle.js"></script>
-<script src="/assets/js/user-get-api.js"></script>
 @if(session('token'))
 <script>
   const token = <?php echo json_encode(session('token')); ?>;
@@ -846,6 +845,7 @@
 </script>
 @endif
 @if(!session('token')&& Auth::check())
+<script src="/assets/js/user-get-api.js"></script>
 <script>
   if (!sessionStorage.getItem('token')) {
     window.location.href = "/index";

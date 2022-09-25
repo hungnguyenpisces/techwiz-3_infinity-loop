@@ -10,6 +10,34 @@ const calendar = new Calendar("#calendar", {
     hourStart: 7,
     hourEnd: 19,
   },
+  template: {
+    popupDetailBody: function (schedule) {
+      let start = new Date(schedule.start.d);
+      let end = new Date(schedule.end.d);
+      return `
+        <div class="toastui-calendar-popup-top-line" style="background-color: ${schedule.backgroundColor}; left: 0; height: 10px;"></div>
+        <div class="toastui-calendar-popup-body">
+          <div class="toastui-calendar-popup-body-left">
+            <div class="toastui-calendar-popup-body-left-location">
+              <span>${start.toLocaleString()} - ${end.toLocaleString()}</span>
+            </div>
+            <div class="toastui-calendar-popup-body-left-title">
+              <span><b>Patient self-checks for symptoms:</b></span>
+            </div>
+            <div class="toastui-calendar-popup-body-left-location">
+              <span>${schedule.body}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    },
+    popupDelete: function () {
+      return "";
+    },
+    popupEdit: function (e) {
+      return ``;
+    }
+  }
 });
 
 $(document).ready(function () {

@@ -8,6 +8,16 @@ Custom title if need
 <!-- extra css -->
 <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
 <!-- end extra css -->
+<style>
+  .toastui-calendar-event-detail-popup-slot .toastui-calendar-popup-container {
+    position: fixed !important;
+    font-weight: normal !important;
+  }
+
+  .toastui-calendar-popup-section.toastui-calendar-section-button {
+    display: none !important;
+  }
+</style>
 @endsection
 
 
