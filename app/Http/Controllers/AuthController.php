@@ -75,19 +75,24 @@ class AuthController extends Controller
     return redirect()->route('index');
   }
 
-  public function login()
+  public function login(Request $request)
   {
     if (Auth::check()) {
       return redirect()->route('index');
     }
-    return view('web.login')->with('error', 'Username or password is not correct');
+    return view('web.login')->with('error', session("error"));
   }
 
   public function processLogin(LoginRequest $request)
   {
     $credentials = $request->getCredentials();
-
     if (Auth::attempt($credentials)) {
+      $credentials["activated"]="TRUE";
+      if (!Auth::attempt($credentials)) {
+        Session::flush();
+        Auth::logout();
+        return Redirect::route('login.show')->with('error', 'You have been blocked by an administrator');
+      }
       $user = Auth::getProvider()->retrieveByCredentials($credentials);
       Auth::login($user);
       $token = auth('api')->setTTL(240)->attempt($credentials);
@@ -100,7 +105,7 @@ class AuthController extends Controller
     } else {
       Session::flush();
       Auth::logout();
-      return Redirect::route('login.show')->with('error', 'Invalid Credentials');
+      return Redirect::route('login.show')->with('error', 'Username or password is not correct');
     }
   }
 
