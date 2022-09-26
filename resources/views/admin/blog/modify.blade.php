@@ -60,7 +60,7 @@ Custom title if need
 								<div class="col-lg-3 col-sm-12">
 									<div class="form-group">
 										<div class="form-line">
-											<input type="text" name="title" class="form-control" placeholder="Title" value="{{$blog_item->title}}">
+											<input type="text" name="title" class="form-control" placeholder="Title" value="{{$blog_item->title}}" required>
 										</div>
 									</div>
 								</div>

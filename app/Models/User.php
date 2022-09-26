@@ -98,4 +98,17 @@ class User extends Authenticatable implements JWTSubject
             'role' => $this->getRoleNames(),
         ];
     }
+
+    /**
+     * Return the cancel rate (in decimals) of a user
+     * 
+     * @return float
+     */
+    public function cancelRate()
+    {
+        $cancelled=Appointment::where("user_id",$this->id)->where("status","Cancelled")->count();
+        $total=Appointment::where("user_id",$this->id)->count();
+        if ($total==0) return 0;
+        return $cancelled*100/$total;
+    }
 }

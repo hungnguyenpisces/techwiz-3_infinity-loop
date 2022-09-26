@@ -31,6 +31,7 @@
                         <li class="side_link"> <a href="/admin/all-appointment">All Appointment</a></li>
                         <li class="side_link"> <a href="/admin/doctor-schedule">Doctor Schedule</a></li>
                         <li class="side_link"> <a href="/admin/appointment">Create Appointment</a></li>
+                        <li class="side_link"> <a href="{{ route('admin.appointment.excancels') }}">Excessive Cancels</a></li>
                     </ul>
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>

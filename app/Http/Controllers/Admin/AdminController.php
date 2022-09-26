@@ -21,7 +21,7 @@ class AdminController extends Controller
         $user = Auth::user();
         if ($user == null) {
             //inform user wrong username or password
-            return view('admin.login')->with('error', 'Username or password is not correct');
+            return view('admin.login')->with('error', session("error"));
         } else {
             if ($user->hasRole(['Super-Admin', 'Admin', 'Staff'])) {
                 return redirect()->route('admin.dashboard');
@@ -52,7 +52,8 @@ class AdminController extends Controller
             } else {
                 Session::flush();
                 Auth::logout();
-                return redirect()->route('admin.login.show')->with('error', 'You do not have permission to access this page');
+                $request->session()->flash('error', 'You do not have permission to access this page');
+                return back()->withInput();
             }
         } else {
             $request->session()->flash('error', 'Invalid account and/or password. Please check and try again.');

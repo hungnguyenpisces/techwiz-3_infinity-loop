@@ -222,4 +222,14 @@ class AppointmentManageController extends Controller
         Mail::to((string)$appointment->user->email)->send(new AppointmentNotify($appointment));
         return redirect()->route('all-appointment.index')->with('success', 'Appointment has been accepted');
     }
+
+    /**
+     * Displays the cancel rate per user in percentages
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function excessiveCancels(){
+        $users=User::all();
+        return view("admin.appointment.excessive-cancels")->with("users",$users);
+    }
 }
