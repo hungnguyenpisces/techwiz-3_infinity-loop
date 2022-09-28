@@ -77,10 +77,10 @@ class AuthController extends Controller
 
   public function login()
   {
-    if (Auth::check()) {
-      return redirect()->route('index');
+    if (!Auth::check()) {
+      return view('web.login')->with('error', 'Username or password is not correct');
     }
-    return view('web.login')->with('error', 'Username or password is not correct');
+    return redirect()->route('index');
   }
 
   public function processLogin(LoginRequest $request)

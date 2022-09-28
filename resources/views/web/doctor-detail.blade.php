@@ -27,26 +27,18 @@
                     <div class="col-12">
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-12">
-
                                 <div class="image">
                                     <img src="assets/images/doctors/detail-img.jpg" alt="#">
                                 </div>
-
-
                                 <div class="doctor-left-bar">
-
                                     <div class="single-bar">
                                         <h4>Specialty</h4>
                                         <p>Respiratory medicine (lung)</p>
                                     </div>
-
-
                                     <div class="single-bar">
                                         <h4>Conditions</h4>
                                         <p>Cystic fibrosis (children)</p>
                                     </div>
-
-
                                     <div class="single-bar">
                                         <h4>Memberships</h4>
                                         <ul class="list">
@@ -55,8 +47,6 @@
                                             <li><a href="#">Fellow Royal Society of Medicine</a></li>
                                         </ul>
                                     </div>
-
-
                                     <div class="single-bar">
                                         <h4>Doctor Schedule</h4>
                                         <ul class="opening-hour">

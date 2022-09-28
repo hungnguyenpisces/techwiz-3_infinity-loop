@@ -39,15 +39,12 @@
                     <ul class="ml-menu">
                         <li class="side_link"> <a href="/admin/doctor">All Doctors</a></li>
                         <li class="side_link"> <a href="/admin/doctor/create">Add Doctor</a></li>
-                        <li class="side_link"> <a href="/admin/doctor/doctor-profile">Doctor Profile</a></li>
                     </ul>
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
                     <ul class="ml-menu">
                         <li class="side_link"> <a href="/admin/patient">All Patients</a></li>
-                        <li class="side_link"> <a href="/admin/patient/create">Add Patient</a></li>
-                        <li class="side_link"> <a href="/admin/patient/patient-profile">Patient Profile</a></li>
-                        <!-- <li class="side_link"> <a href="#">Patient Invoice</a></li> -->
+                        <li class="side_link"> <a href="#">Patient Invoice</a></li>
                     </ul>
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-balance-wallet"></i><span>Payments</span> </a>

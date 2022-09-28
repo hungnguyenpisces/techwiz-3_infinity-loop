@@ -18,6 +18,8 @@ return new class extends Migration
             $table->bigInteger('user_id');
             $table->string('content');
             $table->string('type');
+            $table->bigInteger('app_id')->nullable();
+            $table->boolean('is_read')->default(false);
             $table->timestamps();
         });
     }

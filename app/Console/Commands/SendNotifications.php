@@ -53,16 +53,31 @@ class SendNotifications extends Command
         
 
         foreach ($appointment as $app) {
-            //check if appointment date is today
             if ($app->status == 'Accepted' && $app->date == date('Y-m-d')) {
                 $notification = new Notification();
                 $notification->user_id = $app->user_id;
-                $notification->content = 'You have an appointment with ' . $app->name . ' today';
+                $notification->content = 'You have an appointment with Dr.' . $app->name . ' today';
                 $notification->type = 2;
+                $notification->app_id= $app->id;
                 $notification->save();
             
             }
 
+            if ($app->status == 'Done' && $app->is_rated == false && $app->is_notified == false) {
+                $notification = new Notification();
+                $notification->app_id = $app->id;
+                $notification->user_id = $app->user_id;
+                $notification->content = 'You just finished appointment with Dr.' . $app->name . '. Please rate your experience for our improvement';
+                $notification->type = 4;
+                $notification->save();
+
+                DB::table('appointments')
+                    ->where('id', $app->id)
+                    ->update(['is_notified' => true]);
+
+            }
+
+         
             // if ($app->status == 'Accepted' && $app->date == date('Y-m-d', strtotime('+1 day'))) {
             //     $notification = new Notification();
             //     $notification->user_id = $app->user_id;
@@ -78,7 +93,6 @@ class SendNotifications extends Command
             ->select('health_indices.*', 'users.*')
             ->get();
 
-        //check if created_at is 7 days ago
         foreach ($health_index as $index) {
             //check if lastest health index is 7 days ago
             $lastest = DB::table('health_indices')
@@ -91,7 +105,7 @@ class SendNotifications extends Command
             $diff = (int)$diff->format('%a');
 
             if ($diff >=7) {
-                $time = $diff%7;
+                $time = $diff/7;
 
                 $notification = new Notification();
                 $notification->user_id = $index->user_id;

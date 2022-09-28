@@ -263,6 +263,9 @@ Custom title if need
                                     <div class="col-sm-12">
                                         <a href="{{route('all-appointment.index')}}" class="btn btn-primary waves-effect">Back to list</a>
                                         <button type="submit" class="btn btn-raised bg-deep-purple" onclick="updateForm()">Update</button>
+                                        @if($appointment->status == 'Accepted')
+                                        <button type="submit" class="btn btn-raised bg-green" onclick="markAsDone()">Mark as Done</button>
+                                        @endif
                                         <button type="submit" class="btn btn-raised bg-red" onclick="cancelForm()">Cancel</button>
                                     </div>
                                 </div>
@@ -292,6 +295,11 @@ Custom title if need
 
     function cancelForm() {
         document.getElementById('appointmentForm').action = "/admin/appointment/{{$appointment->id}}/reject";
+        document.getElementById('appointmentForm').method = "POST";
+    }
+
+    function markAsDone() {
+        document.getElementById('appointmentForm').action = "/admin/appointment/{{$appointment->id}}/done";
         document.getElementById('appointmentForm').method = "POST";
     }
 </script>

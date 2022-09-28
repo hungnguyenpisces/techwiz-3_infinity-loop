@@ -52,6 +52,10 @@ class HomeController extends Controller
         return view('web.hospital');
     }
 
+    public function hospitalDetail($id) {
+        $hospital = Hospital::find($id);
+        return view ('web.hospital-detail', compact('hospital'));
+    }
     public function hospitalSearch()
     {
         return view('web.hospital-search');

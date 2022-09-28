@@ -54,17 +54,17 @@ Route::group(['middleware' => ['role:Super-Admin|Admin|Staff']], function () {
     Route::post('/appointment/{id}/approve', AppointmentManageController::class . '@approve')->name('admin.appointment.approve');
     Route::post('/appointment/{id}/reject', AppointmentManageController::class . '@reject')->name('admin.appointment.reject');
     Route::post('/appointment/{id}/update', AppointmentManageController::class . '@update')->name('admin.appointment.update');
+    Route::post('/appointment/{id}/done', AppointmentManageController::class . '@done')->name('admin.appointment.done');
+
     Route::post('/createAppointment', AppointmentManageController::class.'@createAppointment')->name('admin.createAppointment');
 
     Route::get('/doctor-schedule', AppointmentManageController::class . '@doctorSchedule')->name('admin.doctor.schedule');
 
     Route::get('/doctor', [DoctorController::class, 'index'])->name('doctor.index');
     Route::get('/doctor/create', [DoctorController::class, 'create'])->name('doctor.create');
-    Route::get('/doctor/doctor-profile', [DoctorController::class, 'show'])->name('doctor.show');
 
     Route::get('/patient', [PatientController::class, 'index'])->name('patient.index');
     Route::get('/patient/create', [PatientController::class, 'create'])->name('patient.create');
-    Route::get('/patient/patient-profile', [PatientController::class, 'show'])->name('patient.show');
 
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
     Route::get('/payment/add-payment', [PaymentController::class, 'create'])->name('payment.create');

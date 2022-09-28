@@ -459,7 +459,7 @@ Create Feedback
             <div class="Scriptcontent">
                 <div class="feedback">
                     <p>Dear <b>{{Auth::user()->first_name}}</b>,<br>
-                        Thank you for getting your services in <b>{{ $check_out_histories->department_name }}</b> department at <b>{{ $check_out_histories->hospital_name }} </b>
+                        Thank you for getting your services in <b>{{ $app->department_name }}</b> department at <b>{{ $app->hospital_name }} </b>
                         hospital .
                         We would like to know how we performed.
                         Please spare some moments to give us your valuable feedback as it will help us in improving our service.</p>

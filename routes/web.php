@@ -7,6 +7,8 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HealthIndexController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MedicinePillController;
+use App\Http\Controllers\NotificationController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,6 +30,7 @@ Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
 Route::get('/doctor-search', [HomeController::class, 'doctorSearch'])->name('doctor-search');
 Route::get('/doctor-search-result', [HomeController::class, 'searchDoctorRs'])->name('doctor-searchRs');
 Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doctor-detail');
+Route::get('/hospital-detail/{id}', [HomeController::class, 'hospitalDetail'])->name('hospital-detail');
 
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
 
@@ -39,7 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('/medicine', MedicinePillController::class);
     
-    Route::get('/feedback/{id}/create', [CommentController::class,'create'])->name('feedback.create');
+    Route::get('/feedback/{id}/{notif}/create', [CommentController::class,'create'])->name('feedback.create');
     Route::get('/feedback', [CommentController::class,'index'])->name('feedback.index');
     Route::post('/feedback', [CommentController::class,'store'])->name('feedback.store');
 
@@ -50,6 +53,9 @@ Route::group(['middleware' => ['auth']], function () {
   Route::put('/appointment/{id}', [AppointmentController::class, 'update'])->name('appointment.update');
   Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
   Route::get('/user-appointment-detail/{id}', [AppointmentController::class, 'showDetail'])->name('appointment.detail');
+
+  Route::get('/user-appointment-detail/{id}/{notif}', [NotificationController::class, 'isRead2']);
+  Route::get('/user-update-info/{notif}', [NotificationController::class, 'isRead']);
 
   Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
   Route::get('/user-appointment', [AppointmentController::class, 'show'])->name('appointment.show');
@@ -66,7 +72,6 @@ Route::group(['middleware' => ['auth']], function () {
 
   Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });
-
 
 Route::get('/404', function () {
   return view('404');

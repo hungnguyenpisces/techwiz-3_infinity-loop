@@ -837,7 +837,6 @@
   });
 </script>
 <script src="/assets/bundles/libscripts.bundle.js"></script>
-<!-- <script src="/assets/js/user-get-api.js"></script> -->
 @if(session('token'))
 <script>
   const token = <?php echo json_encode(session('token')); ?>;
@@ -845,10 +844,11 @@
   sessionStorage.setItem('token', JSON.stringify(token));
 </script>
 @endif
+
 @if(!session('token') && Auth::check())
 <script>
   if (!sessionStorage.getItem('token')) {
-    window.location.href = "/login";
+    window.location.href = "/";
   } else {
     $.ajax({
       url: "/api/refresh",
@@ -863,6 +863,87 @@
       error: function(data) {
         console.log(data);
       },
+    });
+    
+    $.ajax({
+        url: "/api/user/notifications",
+        type: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization:
+                "Bearer " +
+                JSON.parse(sessionStorage.getItem("token")).access_token,
+        },
+
+        success: function(data) {
+            console.log(data);
+            var count = data.count_notif;
+            if (count > 0) {
+                $("#count").html(count);
+                $("#count").show();
+            } else {
+                $("#count").hide();
+            }
+            
+            var html = "";
+           
+            if (data.data.length > 8) {
+                $("#notif").addClass("scrollable");
+                $("#notif").css("overflow-y", "scroll");
+                $("#notif").css("height", "400px");
+                
+            }
+
+            if (data.data.length != 0) {
+                for (var i = 0; i < data.data.length; i++) {
+                  if (data.data[i].type==2) {
+                    html += `<button type="submit" onclick={window.location.href="/user-appointment-detail/1/3"} class="dropdown-item notify-item">
+                    <div class="notify-icon bg-success">
+                        <i class="mdi mdi-comment-account-outline"></i>
+                    </div>
+                    <p class="notify-details w-25">${data.data[i].content}<small class="text-muted">${data.data[i].created_at}</small></p>
+                </button>`;
+                  } else
+                  if (data.data[i].type==3) {
+                    html += `<button type="submit" onclick={window.location.href="/user-update-info/4"} class="dropdown-item notify-item">
+                    <div class="mt-5 notify-icon bg-success">
+                        <i class="mdi mdi-comment-account-outline"></i>
+                    </div>
+                    <p class="notify-details w-25">${data.data[i].content}<small class="text-muted">${data.data[i].created_at}</small></p>
+                  </button>`;                    
+                  } else if (data.data[i].type==4) {
+                     html += `<button type="submit" onclick={window.location.href="/feedback/1/2/create"} class="dropdown-item notify-item">
+                    <div class="mt-5 notify-icon bg-success">
+                        <i class="mdi mdi-comment-account-outline"></i>
+                    </div>
+                    <p class="notify-details w-25">${data.data[i].content}<small class="text-muted">${data.data[i].created_at}</small></p>
+                  </button>`;  
+                  } else {
+                    html += `<button  type="submit" class="mt-5 dropdown-item notify-item">
+                    <div class="notify-icon bg-success">
+                        <i class="mdi mdi-comment-account-outline"></i>
+                    </div>
+                    <p class="notify-details w-25">${data.data[i].content}<small class="text-muted">${data.data[i].created_at}</small></p>
+                  </button>`; 
+                  }
+                   
+                }
+              } else {
+                html += `<button type="submit" onclick={window.location.href-"/user/notifications/{id}"} class="dropdown-item notify-item">
+                    <div class="notify-icon bg-success">
+                        <i class="mdi mdi-comment-account-outline"></i>
+                    </div>
+                    <p class="notify-details">No notifications</p>
+                </button>`;
+            }
+          
+
+          $("#notif").html(html);
+           
+        },
+        error: function(data) {
+        },
+
     });
   }
 </script>

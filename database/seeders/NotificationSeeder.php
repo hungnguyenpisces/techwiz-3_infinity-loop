@@ -14,6 +14,14 @@ class NotificationSeeder extends Seeder
      */
     public function run()
     {
-        
+        $faker = Factory::create();
+        $limit = 100;
+        for ($i = 0; $i < $limit; $i++) {
+            Notification::create ([
+                'user_id' => $faker->numberBetween(1, 200),
+                'content' => $faker->numberBetween(50, 100),
+                'type' => $faker->numberBetween(1, 4),
+            ]);
+        }
     }
 }

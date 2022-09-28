@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Appointment;
+use App\Models\Notification;
 use App\Models\CheckOutHistory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,20 +37,23 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create($id, $notif)
     {
         if (!Auth::check()) {
             return redirect()->route('login');
         } else {
             $user = Auth::user();
-            $check_out_histories = CheckOutHistory::join('hospitals', 'check_out_histories.hospital_id', '=', 'hospitals.id')
-                ->join('departments', 'check_out_histories.department_id', '=', 'departments.id')
-                ->select('check_out_histories.*', 'hospitals.name as hospital_name', 'departments.name as department_name')
-                ->where('check_out_histories.user_id', $user->id)
-                ->where('check_out_histories.id', $id)
-                ->first();
+            $app = Appointment::join('hospitals', 'hospitals.id', "=", 'appointments.hospital_id')
+            ->join('departments', 'departments.id', '=', 'appointments.department_id')
+            ->select('appointments.*', 'departments.name as department_name', 'hospitals.name as hospital_name')
+            ->where('appointments.id', $id)
+            ->first();
             // dd($check_out_histories->id);
-            return view('web.feedback.feedback-create', compact('check_out_histories'));
+
+            $ntf = Notification::find($notif) ;
+            $ntf->is_read = true;
+            $ntf->save();
+            return view('web.feedback.feedback-create', compact('app', 'user'));
         }
     }
 
@@ -61,7 +66,8 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $cmt = new Comment();
-        $cmt->check_out_history_id = $request->check_out_history_id;
+        // $cmt->check_out_history_id = $request->check_out_history_id;
+        $cmt->app_id = $request->app_id;
         $cmt->doctor_rate = $request->doctor_rate;
         $cmt->hospital_rate = $request->hospital_rate;
         $cmt->department_rate = $request->department_rate;
@@ -70,7 +76,7 @@ class CommentController extends Controller
         $cmt->save();
 
         $request->session()->flash('success', 'Comment created sucessfully.');
-        return redirect(route('comment.index'));
+        return redirect(route('index'));
     }
 
     /**
@@ -115,7 +121,7 @@ class CommentController extends Controller
         $cmt->save();
 
         $request->session()->flash('success', 'Comment updated sucessfully.');
-        return redirect(route('comment.index'));
+        return redirect(route('index'));
     }
 
     /**

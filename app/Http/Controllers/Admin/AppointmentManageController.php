@@ -14,6 +14,8 @@ use App\Models\Hospital;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AppointmentManageController extends Controller
 {
@@ -25,13 +27,14 @@ class AppointmentManageController extends Controller
     public function index()
     {
         $doctors = Doctor::all();
-        if (Auth::user()->hasRole('Staff')) {
+        if (Auth::user()->hasRole('Staff') || (Auth::user()->hasRole('Super-Admin')) && ( Auth::user()->hospital_id != null)) {
             $appointments = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
             ->join('hospitals', 'appointments.hospital_id', '=', 'hospitals.id')
             ->join('departments', 'appointments.department_id', '=', 'departments.id')
             ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
             ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
             ->where('hospitals.id', Auth::user()->hospital_id)
+            ->distinct()
             ->get();
         } else {
             $appointments = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
@@ -39,7 +42,6 @@ class AppointmentManageController extends Controller
             ->join('departments', 'appointments.department_id', '=', 'departments.id')
             ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
             ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
-            
             ->get();
         }
         
@@ -66,7 +68,8 @@ class AppointmentManageController extends Controller
     public function createAppointment(Request $request) {
         $user = new User();
         $user->username=$request->username;
-        $user->password=bcrypt('12345678');
+        $randPwd = Str::random(8);
+        $user->password= $randPwd;
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->email = $request->email;
@@ -89,6 +92,10 @@ class AppointmentManageController extends Controller
         $appointment->save();
 
         Mail::to((string)$request->email)->send (new NewAccount($user));
+
+        $user->password = Hash::make($randPwd);
+        $user->save();
+
         return redirect()->route('all-appointment.index')->with('success', 'Appointment created successfully');
          
     }
@@ -221,5 +228,18 @@ class AppointmentManageController extends Controller
         $appointment->message = 'Your appointment has been accepted by Staff';
         Mail::to((string)$appointment->user->email)->send(new AppointmentNotify($appointment));
         return redirect()->route('all-appointment.index')->with('success', 'Appointment has been accepted');
+    }
+
+    public function done(Request $request, $id) {
+        $apmt = Appointment::find($id);
+        $apmt -> status = 'Done';
+        $apmt -> is_rated = true;
+        $apmt -> save();
+
+        $cmt = new Comment();
+        $cmt->save();
+
+        return redirect() -> route('all-appointment.index') -> with('success', 'Appointment is now done!');
+        
     }
 }

@@ -49,13 +49,24 @@
 
                                         <li class="nav-item d-flex">
                                             <a style="padding: 0" class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
-                                                <span class="badge rounded-pill bg-danger">
-                                                1
+                                                <span class="badge rounded-pill bg-danger" id="count">
+                                                
                                                 <span class="visually-hidden">unread messages</span></a>
-                                            <ul class="sub-menu collapse">
-                                                <li class="nav-item-customize">
-                                                    <span>12:00<strong>Wednesday</strong></span>
-                                                    <a href="#" class="text-success">Musculoskeletal</a>
+                                            
+                                            <ul class="sub-menu collapse" id="notif" style="overflow-y: scroll; width: 300px" >
+                                                <li class="nav-link-customize">
+                                                    <a href="/user-appointment" class="nav-link-customize">
+                                                        <div class="d-flex">
+                                                            <div class="me-3">
+                                                                <i class="fa-solid fa-calendar-check fs-6 fw-semibold"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-0">Appointment</p>
+                                                                <p class="mb-0">You have a new appointment</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    
                                                 </li>
 
                                             </ul>
@@ -119,3 +130,4 @@
         </div>
     </div>
 </header>
+
