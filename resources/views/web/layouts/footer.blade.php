@@ -34,7 +34,7 @@
                     <div class="single-footer f-about">
                         <div class="logo">
                             <a href="/">
-                                <img src="assets/img/favicon.png" style="width: 40px;height: 40px" alt="logo">
+                                <img src="/assets/img/favicon.svg" alt="Logo" style="height: 50px; width: 50px">
                             </a>
                         </div>
                         <p>There’s nothing in this story to make us think he was dreaming about riches.</p>
@@ -147,3 +147,4 @@
 <a href="#" class="scroll-top">
     <i class="lni lni-chevron-up"></i>
 </a>
+

@@ -8,3 +8,7 @@
 <script src="/assets/js/imagesloaded.min.js"></script>
 <script src="/assets/js/isotope.min.js"></script>
 <script src="/assets/js/main.js"></script>
+<script>
+    // Add active class to the current button (highlight it)
+
+</script>
