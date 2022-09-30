@@ -27,6 +27,7 @@
                                                aria-label="Toggle navigation" style="padding: 0;"><i class="lni lni-user"></i> {{Auth::user()->first_name}} {{Auth::user()->last_name}}</a>
                                             <ul class="sub-menu collapse" id="submenu-1-5">
                                                 <li class="nav-item"><a href="user">Profile</a></li>
+                                                <li class="nav-item"><a href="/change-password">Change Password</a></li>
                                                 <li class="nav-item"><a href="/logout">Logout</a></li>
                                             </ul>
                                         </li>
@@ -56,7 +57,7 @@
                                         <a style="padding: 0" class="page-scroll dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
                                         </a>
                                         <ul class="sub-menu collapse" id="notification">
-                                            
+
                                         </ul>
                                     </li>
                                 </ul>

@@ -3,6 +3,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
 
     <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <style>
+        .buttons {
+            width: 900px;
+            margin: 5px auto;
+        }
+
+        .action_btn {
+            display: inline-block;
+            width: calc(50% - 4px);
+            margin: 5px auto;
+        }
+    </style>
 
 @endsection
 
@@ -27,19 +39,23 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-6">
-                            <p class="mb-0 h4"><strong class="mx-5">Hosptal:</strong>{{ $check_out_histories-> hospital_name }}</p>
+                            <p class="mb-0 h4"><strong
+                                    class="mx-5">Hosptal:</strong>{{ $check_out_histories-> hospital_name }}</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0 h4"><strong class="mx-5">Department:</strong>{{ $check_out_histories-> department_name }}</p>
+                            <p class="mb-0 h4"><strong
+                                    class="mx-5">Department:</strong>{{ $check_out_histories-> department_name }}</p>
                         </div>
                     </div>
                     <hr>
                     <div class="row">
-                        <p class="mb-0 h4"><strong class="mx-5">Symptoms:</strong>{{ $check_out_histories-> symptoms }}</p>
+                        <p class="mb-0 h4"><strong class="mx-5">Symptoms:</strong>{{ $check_out_histories-> symptoms }}
+                        </p>
                     </div>
                     <hr>
                     <div class="row">
-                        <p class="mb-0 h4"><strong class="mx-5">Conclusion:</strong>Dr. {{ $check_out_histories-> conclusion }}</p>
+                        <p class="mb-0 h4"><strong
+                                class="mx-5">Conclusion:</strong>Dr. {{ $check_out_histories-> conclusion }}</p>
                     </div>
                 </div>
                 <hr>
@@ -48,21 +64,20 @@
                 </div>
                 <hr>
                 <br>
-                <div class="text-center">
-                    <a type="button" href="/user-history" class="btn btn-success">Back to list</a>
-                    <form  method="post" action="{{route('record.destroy', $check_out_histories->id)}}"
-                           onsubmit='return confirm("Sure ?")'>
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" value="Delete" class="btn btn-danger">
-                    </form>
+                <br>
+                <div class="text-center buttons">
+                    <div class="col-sm-12 action_btn">
+                        <a type="button" href="/user-history" class="btn btn-success action_btn">Back to list</a>
+                        <form method="post" action="{{route('record.destroy', $check_out_histories->id)}}"
+                              onsubmit='return confirm("Are you Sure ?")'>
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Delete" class="btn btn-danger action_btn">
+                        </form>
+                    </div>
                 </div>
-
-
             </div>
         </div>
-    </div>
-    </div>
     </div>
 @endsection
 @section('extraJs')

@@ -87,9 +87,8 @@
                                     <a class="active dd-menu collapsed" href="/" aria-label="Toggle navigation">Home</a>
                                 </li>
                                 <li class="nav-item">
-
-                                    <a class=" dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
-                                    <ul class="sub-menu collapse" id="submenu-1-2">
+                                    <a class="page-scroll dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
+                                    <ul class="sub-menu collapse" id="submenu-1-3">
                                         <li class="nav-item"><a href="hospital">Hospital</a></li>
                                         <li class="nav-item"><a href="hospital-search">Hospital Search</a></li>
 
@@ -99,7 +98,7 @@
                                     <a href="/departments" aria-label="Toggle navigation">Departments</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class=" dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Doctors</a>
+                                    <a class="page-scroll dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Doctors</a>
                                     <ul class="sub-menu collapse" id="submenu-1-3">
                                         <li class="nav-item"><a href="/doctor">Doctors</a></li>
                                         <li class="nav-item"><a href="/doctor-search">Doctor Search</a></li>
@@ -107,7 +106,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class=" dd-menu collapsed" href="/contact-us" data-bs-toggle="collapse" data-bs-target="#submenu-1-5" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >Contact</a>
+                                    <a href="/contact-us" aria-label="Toggle navigation">Contact</a>
                                 </li>
                             </ul>
                         </div>
