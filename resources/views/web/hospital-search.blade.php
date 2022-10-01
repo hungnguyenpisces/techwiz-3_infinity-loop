@@ -1,10 +1,20 @@
 @extends('web.layouts._master')
+@section('title')
+    Hospital
+@endsection
 
+@section('extraCss')
+    <!-- extra css -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
 
+    <!-- end extra css -->
+@endsection
 
-    @include('web.layouts.style')
-
-</head>
 @section('content')
     <br>
     <div class="container">
@@ -32,7 +42,20 @@
                             <a href="{{route('hospital-detail', $hospital->id)}}" class="card-link btn btn-success">view detail</a>
                         </div>
                         </div>
-                    @endforeach
+                        @foreach($searchResults as $hpt)
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="image">
+                                        <img src="assets/images/doctors/detail-img.jpg" alt="#">
+                                    </div>
+                                    <div class="content">
+                                        <h5>{{$hpt->name}}</h5>
+                                        <h3><a href="/doctor-detail">{{$hpt->location}}</a></h3>
+                                    </div>
+                                </div>
+
+                            </div>
+                        @endforeach
                     @else
                         <p class="text-center" style="font-size: 30px">No result found for query <strong>{{$search}}</strong></p>
                     @endif

@@ -3,6 +3,18 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
 
 <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+<style>
+    .buttons {
+        width: 900px;
+        margin: 5px auto;
+    }
+
+    .action_btn {
+        display: inline-block;
+        width: calc(50% - 4px);
+        margin: 5px auto;
+    }
+</style>
 
 @endsection
 
@@ -49,22 +61,21 @@
                 <hr>
                 <br>
                 <br>
-                <div class="text-center">
-                    <div class="col-sm-12">
-                        <a type="button" href="/user-appointment" class="btn btn-success">Back to list</a>
+                <div class="text-center buttons">
+                    <div class="col-sm-12 action_btn">
+                        <a type="button" href="/user-appointment" class="btn btn-success action_btn">Back to list</a>
 
                         @if($appointment->status == 'Pending')
-                            <a type="button"  class="btn btn-secondary" href="{{route("appointment.edit", $appointment->id)}}">Edit</a>
+                            <a type="button"  class="btn btn-secondary action_btn" href="{{route("appointment.edit", $appointment->id)}}">Edit</a>
                         @endif
                         <form  method="post" action="{{route('appointment.destroy', $appointment->id)}}"
-                               onsubmit='return confirm("Sure ?")'>
+                               onsubmit='return confirm("Are you Sure ?")'>
                             @csrf
                             @method('DELETE')
-                            <input type="submit" value="Delete" class="btn btn-danger">
+                            <button type="submit" value="Delete" class="btn btn-danger action_btn">Delete</button>
                         </form>
-
                     </div>
-
+                </div>
             </div>
         </div>
     </div>

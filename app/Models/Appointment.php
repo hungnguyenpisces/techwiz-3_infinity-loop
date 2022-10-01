@@ -12,6 +12,9 @@ class Appointment extends Model
     public function user(){
         return $this -> belongsTo('App\Models\User');
     }
+    public function medicine(){
+        return $this -> belongsTo('App\Models\MedicinePill');
+    }
 
     public function department(){
         return $this -> hasMany('App\Models\Department');

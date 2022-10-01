@@ -20,4 +20,5 @@ class MedicinePill extends Model
     public function checkout(){
         return $this->belongsTo('App\Models\CheckOutHistory');
     }
+
 }

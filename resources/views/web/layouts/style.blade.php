@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="/assets/css/glightbox.min.css">
 <link rel="stylesheet" href="/assets/css/main.css">
 
+
 <style>
     .nav-item-customize {
         width: 300px;

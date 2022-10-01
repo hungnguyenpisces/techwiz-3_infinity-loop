@@ -84,17 +84,16 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12">
-                <div class="nav-inner">
+                <div class="nav-inner" id="myDiv">
 
                     <nav class="navbar navbar-expand-lg">
                         <a class="navbar-brand" href="/">
-                            <img src="/assets/img/favicon.png" alt="Logo" style="height: 40px; width: 40px">
+                            <img src="/assets/img/favicon.svg" alt="Logo" style="height: 50px; width: 50px">
                         </a>
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ms-auto">
-
                                 <li class="nav-item">
-                                    <a href="/" aria-label="Toggle navigation">Home</a>
+                                    <a class="active dd-menu collapsed" href="/" aria-label="Toggle navigation">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
@@ -130,3 +129,4 @@
         </div>
     </div>
 </header>
+

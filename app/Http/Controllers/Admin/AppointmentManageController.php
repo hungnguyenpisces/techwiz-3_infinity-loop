@@ -7,8 +7,11 @@ use App\Mail\AppointmentNotify;
 use App\Mail\NewAccount;
 
 use App\Models\Appointment;
+use App\Models\CheckOutHistory;
 use App\Models\Department;
 use App\Models\Doctor;
+use App\Models\HealthIndex;
+use App\Models\MedicinePill;
 use App\Models\User;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
@@ -34,7 +37,6 @@ class AppointmentManageController extends Controller
             ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
             ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
             ->where('hospitals.id', Auth::user()->hospital_id)
-            ->distinct()
             ->get();
         } else {
             $appointments = Appointment::join('users', 'appointments.user_id', '=', 'users.id')
@@ -42,9 +44,10 @@ class AppointmentManageController extends Controller
             ->join('departments', 'appointments.department_id', '=', 'departments.id')
             ->leftJoin('doctors', 'appointments.doctor_id', '=', 'doctors.id')
             ->select('appointments.*', 'users.first_name', 'users.last_name', 'hospitals.name as hospital_name', 'departments.name as department_name', 'doctors.first_name as doctor_first_name')
+
             ->get();
         }
-        
+
         return view('admin.appointment.all-appointment', compact('appointments', 'doctors'));
     }
 
@@ -60,7 +63,7 @@ class AppointmentManageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         $departments = Department::all();
         return view('admin.appointment.book-appointment', compact('departments'));
     }
@@ -83,7 +86,7 @@ class AppointmentManageController extends Controller
         $appointment->hospital_id = Auth::user()->hospital_id;
         $appointment->department_id = $request->department_id;
         $appointment->doctor_id = $request->doctor_id;
-        $date = date('Y-m-d', strtotime($request->date));   
+        $date = date('Y-m-d', strtotime($request->date));
         $appointment->date = $date;
         $time = date('H:i:s', strtotime($request->date));
         $appointment->time = '19:00:00';
@@ -97,7 +100,7 @@ class AppointmentManageController extends Controller
         $user->save();
 
         return redirect()->route('all-appointment.index')->with('success', 'Appointment created successfully');
-         
+
     }
     /**
      * Store a newly created resource in storage.
@@ -107,7 +110,55 @@ class AppointmentManageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $medicineName = $request->input('medicineName');
+        $unitpertime = $request->input('unitpertime');
+        $timeperday = $request->input('timeperday');
+        $period = $request->input('period');
+        $note = $request->input('staff_note');
+        //        $medicineName1 = $request->input('medicineName');
+//        $unitpertime1 = $request->input('unitpertime');
+//        $timeperday1 = $request->input('timeperday');
+//        $period1 = $request->input('period');
+//        $note1 = $request->input('staff_note');
+        $this->validate($request, [
+            'details' => ['required', 'array'],
+            'details.*.name' => ['required', 'string'],
+            'details.*.time' => ['required', 'int'],
+            'details.*.day' => ['required', 'int'],
+            'details.*.peroid' => ['required', 'int'],
+        ]);
+        $user = Auth::user();
+        $checkouthistory = CheckOutHistory::all();
+        $medicine = new MedicinePill();
+
+        $medicine->details = $request->post('details'); // No need to decode as it's already an array
+        $note = $request->input('staff_note');
+        $medicine->save();
+
+//        return Redirect::to("/paste/{$paste->uuid}")
+//            ->with('success', 'Created');
+//        $detail = [];
+
+//
+//
+//        $checkouthistory = CheckOutHistory::all();
+//        $medicine = new MedicinePill();
+//        $detail []=[
+//            'name' => $medicineName,
+//            'time' => $unitpertime,
+//            'day' => $timeperday,
+//            'period' => $period,
+////            $medicineName.$unitpertime.$timeperday.$period
+//        ];
+//        $detail->json_encode($detail);
+//        $medicine->check_out_history_id = $checkouthistory->id;
+//        $medicine->details = $detail;
+//        $medicine->conclution = $note;
+//
+//        $medicine->save();
+//
+//        $request->session()->flash('success', 'created sucessfully.');
+//        return view('web.success');
     }
 
     /**
@@ -165,19 +216,45 @@ class AppointmentManageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = Auth::user();
-        $appointment = Appointment::find($id);
-        $appointment->doctor_id = $request->doctor_id;
-        $appointment->hospital_id = $request->hospital_id;
-        $appointment->department_id = $request->department_id;
-        $appointment->date = date('Y-m-d', strtotime($request->datetime));
-        $appointment->time = date('H:i:s', strtotime($request->datetime));
-        $appointment->staff_note = $request->staff_note;
-        $appointment->save();
+//        $user = Auth::user();
+//        $appointment = Appointment::find($id);
+//        $appointment->doctor_id = $request->doctor_id;
+//        $appointment->hospital_id = $request->hospital_id;
+//        $appointment->department_id = $request->department_id;
+//        $appointment->date = date('Y-m-d', strtotime($request->datetime));
+//        $appointment->time = date('H:i:s', strtotime($request->datetime));
+//        $appointment->staff_note = $request->staff_note;
+//        $appointment->save();
+//
+//        $appointment->message = 'Your appointment has been updated successfully.';
+//        Mail::to((string)$user->email)->send(new AppointmentNotify($appointment));
+//        return redirect()->route('all-appointment.index')->with('success', 'Appointment has been updated successfully.');
 
-        $appointment->message = 'Your appointment has been updated successfully.';
-        Mail::to((string)$user->email)->send(new AppointmentNotify($appointment));
-        return redirect()->route('all-appointment.index')->with('success', 'Appointment has been updated successfully.');
+        $medicineName = $request->input('medicineName');
+        $unitpertime = $request->input('unitpertime');
+        $timeperday = $request->input('timeperday');
+        $period = $request->input('period');
+        $note = $request->input('staff_note');
+        $checkouthistory = CheckOutHistory::find($id);
+        $medicine = new MedicinePill();
+        $detail []=[
+            'name' => $medicineName,
+            'time' => $unitpertime,
+            'day' => $timeperday,
+            'period' => $period,
+//            $medicineName.$unitpertime.$timeperday.$period
+        ];
+        $detail->json_encode($detail);
+        $medicine->check_out_history_id = $id;
+        $medicine->details = $detail;
+        $medicine->conclution = $note;
+
+        $medicine->save();
+
+        $request->session()->flash('success', 'created sucessfully.');
+        return view('web.success');
+
+
     }
 
     /**

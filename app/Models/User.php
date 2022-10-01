@@ -34,6 +34,10 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany('App\Models\Comment');
     }
+    public function medicine()
+    {
+        return $this->hasMany('App\Models\MedicinePill');
+    }
 
     /**
      * The attributes that are mass assignable.

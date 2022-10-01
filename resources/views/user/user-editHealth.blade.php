@@ -1,13 +1,19 @@
 @extends('user.layouts._master')
 
 @section('extraCss')
+    <style>
+        .buttons {
+            width: 160px;
+            margin: 5px auto;
+        }
+    </style>
 
 @endsection
 
 @section('content')
 
 
-    <section class="vh-100 gradient-custom">
+    <section class="vh-100 gradient-custom ">
         <div class="container py-5 h-100 form-head">
             <h3 style="max-width: 90%; margin: auto" class="mt-3 text-center"> Update Personal Health Information</h3>
 
@@ -49,9 +55,9 @@
 
                     </div>
                 </div>
-
-
-                <button type="submit" class="btn btn-success">Edit</button>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success  text-center buttons">Edit</button>
+                </div>
             </form>
 
         </div>
