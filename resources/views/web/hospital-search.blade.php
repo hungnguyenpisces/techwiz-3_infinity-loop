@@ -31,6 +31,7 @@
             </div>
         </div>
                 <div class="row d-flex justify-content-between">
+
                     @if ($hospitals->count() > 0)
                     @foreach($hospitals as $hospital)
                         <div class="card mb-5" style="width: 22rem; overflow: hidden">
@@ -41,22 +42,10 @@
                         <div class="card-body text-center">
                             <a href="{{route('hospital-detail', $hospital->id)}}" class="card-link btn btn-success">view detail</a>
                         </div>
-                        </div>
-                        @foreach($searchResults as $hpt)
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="image">
-                                        <img src="assets/images/doctors/detail-img.jpg" alt="#">
-                                    </div>
-                                    <div class="content">
-                                        <h5>{{$hpt->name}}</h5>
-                                        <h3><a href="/doctor-detail">{{$hpt->location}}</a></h3>
-                                    </div>
-                                </div>
-
-                            </div>
-                        @endforeach
-                    @else
+</div>
+                    @endforeach
+                        
+                    @else 
                         <p class="text-center" style="font-size: 30px">No result found for query <strong>{{$search}}</strong></p>
                     @endif
                 </div>
