@@ -35,7 +35,7 @@ class UserApiController extends Controller
     public function getHealthIndexChart() {
        
         $months = [];
-        for ($i = 0; $i < 13; $i++) {
+        for ($i = 0; $i < 12; $i++) {
             $months[] = date('Y-M', strtotime("-$i months"));
         }
 

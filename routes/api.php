@@ -30,10 +30,13 @@ Route::group(['middleware' => ['checkRole:Super-Admin,Admin,Staff']], function (
     Route::get('/users', [AdminDashboardApiController::class, 'countPatientAndAppointment']);
     Route::get('users/notifications', [UserApiController::class, 'getAllNotifications']);
     //getHealthIndexChart
-    Route::get('users/datachart', [UserApiController::class, 'getHealthIndexChart']);
 });
 
 
 Route::group(['middleware' => ['checkRole:Super-Admin,Admin,Staff,Patient,User']], function () {
     Route::get('user/notifications', [UserApiController::class, 'getNotificationsByUser']);
+});
+
+Route::group(['middleware' => ['checkRole:Patient, User']], function () {
+    Route::get('users/datachart', [UserApiController::class, 'getHealthIndexChart']);
 });
