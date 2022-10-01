@@ -38,6 +38,12 @@ class AdminController extends Controller
         $credentials = $request->getCredentials();
 
         if (Auth::attempt($credentials)) {
+            $credentials["activated"]="TRUE";
+            if (!Auth::attempt($credentials)) {
+              Session::flush();
+              Auth::logout();
+              return Redirect::route('admin.login.show')->with('error', 'You have been blocked by an administrator');
+            }
             $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
             if ($user->hasRole(['Super-Admin', 'Admin', 'Staff'])) {
