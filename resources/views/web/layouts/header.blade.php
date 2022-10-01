@@ -113,7 +113,9 @@
                                         <li class="nav-item"><a href="/doctor-search">Doctor Search</a></li>
                                     </ul>
                                 </li>
-
+                                <li class="nav-item">
+                                    <a href="/blog" aria-label="Toggle navigation">Blog posts</a>
+                                </li>
                                 <li class="nav-item">
                                     <a href="/contact-us" aria-label="Toggle navigation">Contact</a>
                                 </li>

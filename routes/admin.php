@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppointmentManageController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CheckOutManageController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
@@ -28,6 +29,7 @@ Route::group(['middleware' => ['role:Super-Admin|Admin|Staff']], function () {
     Route::post('/users/store', UserController::class . '@store')->name('users.store');
     Route::get('/users/{user}/show', UserController::class . '@show')->name('users.show');
     Route::get('/users/{user}/edit', UserController::class . '@edit')->name('users.edit');
+    Route::get('/users/{user}/block', UserController::class . '@block')->name('users.block');
     Route::put('/users/{user}/update', UserController::class . '@update')->name('users.update');
     Route::delete('/users/{user}/destroy', UserController::class . '@destroy')->name('users.destroy');
 
@@ -50,6 +52,7 @@ Route::group(['middleware' => ['role:Super-Admin|Admin|Staff']], function () {
 
     Route::get('/all-appointment', AppointmentManageController::class . '@index')->name('all-appointment.index');
     Route::get('/appointment', AppointmentManageController::class . '@create')->name('appointment.create');
+    Route::get('/appointment/excessivecancels', AppointmentManageController::class . '@excessiveCancels')->name('admin.appointment.excancels');
     Route::get('/appointment/{id}/detail', AppointmentManageController::class . '@show')->name('admin.appointment.detail');
     Route::get('/appointment/{id}/edit', AppointmentManageController::class . '@edit')->name('admin.appointment.edit');
     Route::post('/appointment/{id}/approve', AppointmentManageController::class . '@approve')->name('admin.appointment.approve');
@@ -74,6 +77,9 @@ Route::group(['middleware' => ['role:Super-Admin|Admin|Staff']], function () {
     Route::get('/payment/add-payment', [PaymentController::class, 'create'])->name('payment.create');
     Route::get('/payment/patient-invoice', [PaymentController::class, 'show'])->name('payment.show');
 
+    Route::resource('/blog', BlogController::class);
+    Route::post('/blog/upload', [BlogController::class, 'upload'])->name('blog.upload');
+    Route::post('/blog/ck_upload', [BlogController::class, 'ck_upload'])->name('blog.ck_upload');
     Route::get('/faq', [FaqController::class, 'index'])->name('admin.faq.index');
     Route::get('/faq/add-faq', [FaqController::class, 'create'])->name('admin.faq.create');
     Route::get('/faq/{id}/edit-faq', [FaqController::class, 'edit'])->name('admin.faq.edit');

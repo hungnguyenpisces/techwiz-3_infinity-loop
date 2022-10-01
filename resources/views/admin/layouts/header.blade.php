@@ -17,7 +17,7 @@
             <a href="#" class="bars"></a>
             <!-- if Auth logined then show this -->
             @if (Auth::check())
-            <a class="navbar-brand" href="/admin">{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}</a>
+            <a class="navbar-brand" href="/admin">Admin Dashboard</a>
             @endif
         </div>
         <ul class="nav navbar-nav navbar-right">

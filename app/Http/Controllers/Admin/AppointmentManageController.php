@@ -307,6 +307,16 @@ class AppointmentManageController extends Controller
         return redirect()->route('all-appointment.index')->with('success', 'Appointment has been accepted');
     }
 
+    /**
+     * Displays the cancel rate per user in percentages
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function excessiveCancels(){
+        $users=User::all();
+        return view("admin.appointment.excessive-cancels")->with("users",$users);
+    }
+
     public function done(Request $request, $id) {
         $apmt = Appointment::find($id);
         $apmt -> status = 'Done';

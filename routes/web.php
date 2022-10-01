@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogViewController;
 use App\Http\Controllers\CheckOutHistoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HealthIndexController;
@@ -32,6 +33,10 @@ Route::get('/doctor-search-result', [HomeController::class, 'searchDoctorRs'])->
 Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doctor-detail');
 Route::get('/hospital-detail/{id}', [HomeController::class, 'hospitalDetail'])->name('hospital-detail');
 Route::get('/feedback-done', [CommendController::class, 'feedbackDone'])->name('feedback-done');
+
+Route::get('/blog', [BlogViewController::class, 'list_blogs'])->name('view_blogs.list');
+Route::get('/blog/{id}', [BlogViewController::class, 'view_blog'])->name('view_blogs.view');
+Route::get('/blog/tag/{id}', [BlogViewController::class, 'tags_lookup'])->name('view_blogs.tags_lookup');
 
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
 

@@ -21,6 +21,13 @@ use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
+  function __construct()
+  {
+    $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index', 'store']]);
+    $this->middleware('permission:user-create', ['only' => ['create', 'store']]);
+    $this->middleware('permission:user-edit', ['only' => ['edit', 'update', 'block']]);
+    $this->middleware('permission:user-delete', ['only' => ['destroy']]);
+  }
   public function index(Request $request)
   {
 
@@ -140,6 +147,25 @@ class UserController extends Controller
     $userRole = $user->roles->pluck('name', 'name')->all();
 
     return view('admin.users.edit', compact('user', 'roles', 'userRole'));
+  }
+
+  /**
+   * Blocks a user with a given ID
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function block(Request $request, $id)
+  {
+    $user = User::find($id);
+    $user->activated=!($user->activated);
+    $user->save();
+    $notification = array(
+      'message' => "User updated successfully",
+      'alert-type' => 'success'
+    );
+    return redirect()->route('users.index')->with($notification);
   }
 
   public function update(Request $request, $id)

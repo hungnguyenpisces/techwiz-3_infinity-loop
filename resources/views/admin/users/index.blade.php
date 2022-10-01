@@ -66,7 +66,7 @@ Custom title if need
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Roles</th>
-                                <th width="200px">Action</th>
+                                <th width="250px">Action</th>
                             </tr>
                             @foreach ($users as $key => $user)
                             <tr>
@@ -85,6 +85,7 @@ Custom title if need
                                         <a class="btn btn-sm btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
                                         @can('user-edit')
                                         <a class="btn btn-sm btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
+                                        <a class="btn btn-sm btn-warning" href="{{ route('users.block',$user->id) }}">{{$user->activated?"B":"Unb"}}lock</a>
                                         @endcan
                                         @can('user-delete')
                                         @csrf

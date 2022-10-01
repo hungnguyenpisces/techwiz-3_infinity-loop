@@ -1,10 +1,9 @@
 <section>
     <aside id="leftsidebar" class="sidebar">
-
         <div class="user-info">
             <div class="admin-image"> <img src="/assets/images/random-avatar7.jpg" alt=""> </div>
             <div class="admin-action-info"> <span>Welcome</span>
-                <h3>Dr. John</h3>
+                <h3>{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}</h3>
                 <ul>
                     <li><a href="#" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
                     <li><a href="#" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
@@ -33,6 +32,7 @@
                         <li class="side_link"> <a href="/admin/all-appointment">All Appointment</a></li>
                         <li class="side_link"> <a href="/admin/doctor-schedule">Doctor Schedule</a></li>
                         <li class="side_link"> <a href="/admin/appointment">Create Appointment</a></li>
+                        <li class="side_link"> <a href="{{ route('admin.appointment.excancels') }}">Excessive Cancels</a></li>
                     </ul>
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
@@ -52,6 +52,12 @@
                         <li class="side_link"> <a href="/admin/payment">Payments</a></li>
                         <li class="side_link"> <a href="/admin/payment/add-payment">Add Payment</a></li>
                         <li class="side_link"> <a href="/admin/payment/patient-invoice">Patient Invoice</a></li>
+                    </ul>
+                </li>
+                <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-edit"></i><span>Blog posts</span> </a>
+                    <ul class="ml-menu">
+                        <li class="side_link"> <a href="{{route('blog.create')}}">Add a blog post</a></li>
+                        <li class="side_link"> <a href="{{route('blog.index')}}">Manage blog posts</a></li>
                     </ul>
                 </li>
                 <li class="side_link_parent"> <a href="#" class="menu-toggle"><i class="zmdi zmdi-help"></i><span>FAQs</span> </a>
@@ -119,10 +125,10 @@
                     <li data-theme="blue">
                         <div class="blue"></div><span>Blue</span>
                     </li>
-                    <li data-theme="cyan" class="active">
+                    <li data-theme="cyan">
                         <div class="cyan"></div><span>Cyan</span>
                     </li>
-                    <li data-theme="green">
+                    <li data-theme="green" class="active">
                         <div class="green"></div><span>Green</span>
                     </li>
                     <li data-theme="deep-orange">
