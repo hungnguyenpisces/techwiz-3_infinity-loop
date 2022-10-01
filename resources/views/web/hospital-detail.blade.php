@@ -23,11 +23,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
                     <div class="breadcrumbs-content">
-                        <h1 class="page-title">About Us</h1>
+                        <h1 class="page-title">{{$hospital->name}}</h1>
                     </div>
                     <ul class="breadcrumb-nav">
                         <li><a href="/">Home</a></li>
-                        <li>About Us</li>
+                        <li>Hospital</li>
+                        <li>{{$hospital->name}}</li>
                     </ul>
                 </div>
             </div>
@@ -211,98 +212,77 @@
 
     <section class="testimonials section">
         <div class="container">
-            <div class="row">
                 <div class="col-12">
                     <div class="section-title align-center gray-bg">
-                        <h3>testimonials</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">What People Say</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
+                        <h3>FEEDBACK</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Feedback</h2>
                     </div>
                 </div>
-            </div>
-            <div class="row testimonial-slider">
-                <div class="col-lg-4 col-md-6 col-12">
-
+                 @if ($comment->count() > 0)
+                 @foreach($comment as $cmt)
                     <div class="single-testimonial">
-                        <div class="text">
-                            <div class="quote-icon">
-                                <i class="lni lni-quotation"></i>
+                        <div class="d-flex text align-left">
+                            <div class="avatar mx-5">
+                            <!-- image rounded -->
+                                <img class="rounded-circle" src="/assets/images/testimonial/testi1.jpg" alt="#">
                             </div>
-                            <p>"It’s amazing how much easier it has been to meet new people and create instant
-                                connections."</p>
+                            <!-- date and time created of comment -->
+                           
+                            <div class="comment">
+                                <!-- <p>Ngan Ha Thi</p>
+                                <span class="date">Posted on 2020-10-10 12:00:00</span>
+                                <div class="rate">
+                                    <ul class="list-inline mt-3">
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                    </ul>
+                                </div>
+                                <p>"It’s amazing how much easier it has been to meet new people and create instant
+                                connections."</p> -->
+                                <p>{{$cmt->name}}</p>
+                                <span class="date">Posted on {{$cmt->created_at}}</span>
+                                <div class="rate">
+                                    <ul class="list-inline mt-3">
+                                        @if($cmt->rate == 1)
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        @elseif($cmt->rate == 2)
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        @elseif($cmt->rate == 3)
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        @elseif($cmt->rate == 4)
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        @elseif($cmt->rate == 5)
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        @endif
+                                    </ul>
+
+                            </div>
+                            <p>{{$cmt->content}}</p>
+                          
+                            <!-- paginate -->
+                            <div class="d-flex justify-content-center">
+                                {{$comment->links()}}
                         </div>
-                        <div class="author">
-                            <img src="assets/images/testimonial/testi1.jpg" alt="#">
-                            <h4 class="name">
-                                Jane Anderson
-                                <span class="deg">Cancer client</span>
-                            </h4>
                         </div>
                     </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-
-                    <div class="single-testimonial">
-                        <div class="text">
-                            <div class="quote-icon">
-                                <i class="lni lni-quotation"></i>
-                            </div>
-                            <p>"It’s amazing how much easier it has been to meet new people and create instant
-                                connections."</p>
-                        </div>
-                        <div class="author">
-                            <img src="assets/images/testimonial/testi2.jpg" alt="#">
-                            <h4 class="name">
-                                Paul Flavius
-                                <span class="deg">Heather</span>
-                            </h4>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-
-                    <div class="single-testimonial">
-                        <div class="text">
-                            <div class="quote-icon">
-                                <i class="lni lni-quotation"></i>
-                            </div>
-                            <p>"It’s amazing how much easier it has been to meet new people and create instant
-                                connections."</p>
-                        </div>
-                        <div class="author">
-                            <img src="assets/images/testimonial/testi3.jpg" alt="#">
-                            <h4 class="name">
-                                Harry Russel
-                                <span class="deg">Surgery client</span>
-                            </h4>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-
-                    <div class="single-testimonial">
-                        <div class="text">
-                            <div class="quote-icon">
-                                <i class="lni lni-quotation"></i>
-                            </div>
-                            <p>"It’s amazing how much easier it has been to meet new people and create instant
-                                connections."</p>
-                        </div>
-                        <div class="author">
-                            <img src="assets/images/testimonial/testi4.jpg" alt="#">
-                            <h4 class="name">
-                                Alice Williams
-                                <span class="deg">Mother</span>
-                            </h4>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+                        @endforeach
+                            @else 
+                            <h3 class="text-center text-white">There has been no feedback yet!</p>
+                            
+                        @endif
         </div>
     </section>
 

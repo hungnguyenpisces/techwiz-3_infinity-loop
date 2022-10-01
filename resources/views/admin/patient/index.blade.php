@@ -13,233 +13,82 @@ Custom title if need
 
 @section('content')
 
-<section class="content patients">
-        <div class="container-fluid">
-            <div class="block-header">
-                <h2>All Patients</h2>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <!-- <div class="block-header">
+                <h2>Appointments</h2>
                 <small class="text-muted">Welcome to Swift application</small>
+            </div> -->
+            <!-- check if session has success -->
+            @if (session('success'))
+            <div style="margin-left: 15px">
+                <p class="alert alert-success">{{ session('success') }}</p>
             </div>
-            <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card all-patients">
-                        <div class="body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="patient-profile" class="p-profile-pix"><img
-                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
-                                            class="img-thumbnail img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
-                                                class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
-                                    <address class="m-b-0">
-                                        123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
+            @endif
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <ul class="header-dropdown">
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card all-patients">
-                        <div class="body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="patient-profile" class="p-profile-pix"><img
-                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
-                                            class="img-thumbnail img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
-                                                class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
-                                    <address class="m-b-0">
-                                        123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card all-patients">
-                        <div class="body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="patient-profile" class="p-profile-pix"><img
-                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
-                                            class="img-thumbnail img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
-                                                class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
-                                    <address class="m-b-0">
-                                        123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card all-patients">
-                        <div class="body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="patient-profile" class="p-profile-pix"><img
-                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
-                                            class="img-thumbnail img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
-                                                class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
-                                    <address class="m-b-0">
-                                        123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card all-patients">
-                        <div class="body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="patient-profile" class="p-profile-pix"><img
-                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
-                                            class="img-thumbnail img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
-                                                class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
-                                    <address class="m-b-0">
-                                        123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card all-patients">
-                        <div class="body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="patient-profile" class="p-profile-pix"><img
-                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
-                                            class="img-thumbnail img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
-                                                class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
-                                    <address class="m-b-0">
-                                        123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card all-patients">
-                        <div class="body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="patient-profile" class="p-profile-pix"><img
-                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
-                                            class="img-thumbnail img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
-                                                class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
-                                    <address class="m-b-0">
-                                        123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card all-patients">
-                        <div class="body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="patient-profile" class="p-profile-pix"><img
-                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
-                                            class="img-thumbnail img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
-                                                class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
-                                    <address class="m-b-0">
-                                        123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card all-patients">
-                        <div class="body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="patient-profile" class="p-profile-pix"><img
-                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
-                                            class="img-thumbnail img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
-                                                class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
-                                    <address class="m-b-0">
-                                        123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card all-patients">
-                        <div class="body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                    <a href="patient-profile" class="p-profile-pix"><img
-                                            src="/assets/images/testimonial/testi1.jpg" alt="user"
-                                            class="img-thumbnail img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 m-b-0">
-                                    <h5 class="m-b-0">Johnathan Doe <a href="patient-profile" class="edit"><i
-                                                class="zmdi zmdi-edit"></i></a></h5> <small>Cardio</small>
-                                    <address class="m-b-0">
-                                        123 Folsom Ave, Suite 100 New York, CADGE 56824<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="body table-responsive">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Patient's name</th>
+                                    <th>Gender</th>
+                                    <th>Blood group</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <?php
+                                $i = 1;
+                                ?>
+                                @foreach($patients as $patient)
+                                <tr>
+                                    <td>{{$i++}}</td>
+                                    <td>{{ $patient->first_name }} {{$patient->last_name}}</td>
+                                    <td>{{$patient -> gender}}</td>
+                                    <td>{{$patient -> blood_group}}</td>
+                                    <td>{{$patient -> phone}}</td>
+                                    <td>{{$patient -> address}}</td>
+                                    <td>{{$patient -> email}}</td>
+                                    <td>
+                                        <a href="#"> 
+                                            <i class="material-icons">remove_red_eye</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
 @endsection
 
 
 @section('extraJs')
 <!-- extraJs -->
 
-<script>(function () { var js = "window['__CF$cv$params']={r:'738813ea6fa12390',m:'.URztseFGtVRVCjGUsSqe7WqdpEAYGIZzh3ozwoqLrA-1660127653-0-AVwznptZLMYW9/FuXEe5T04rum2lVgiJ3B1VAqD5OKHpj11bfK9xr6LJ4ceHhcPqMdKu+bPjqZNEqkxC5PTATHeWeTnasaH1rhubdbj35CtwB3dWyYY1PjYbe94RolRyAHoFK5PSM6v454aIoX9Qa4lx8JgQERSdFUAlVdbIFwCj',s:[0x24151d4b68,0xfe4c16a044],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);"; var _0xh = document.createElement('iframe'); _0xh.height = 1; _0xh.width = 1; _0xh.style.position = 'absolute'; _0xh.style.top = 0; _0xh.style.left = 0; _0xh.style.border = 'none'; _0xh.style.visibility = 'hidden'; document.body.appendChild(_0xh); function handler() { var _0xi = _0xh.contentDocument || _0xh.contentWindow.document; if (_0xi) { var _0xj = _0xi.createElement('script'); _0xj.nonce = ''; _0xj.innerHTML = js; _0xi.getElementsByTagName('head')[0].appendChild(_0xj); } } if (document.readyState !== 'loading') { handler(); } else if (window.addEventListener) { document.addEventListener('DOMContentLoaded', handler); } else { var prev = document.onreadystatechange || function () { }; document.onreadystatechange = function (e) { prev(e); if (document.readyState !== 'loading') { document.onreadystatechange = prev; handler(); } }; } })();</script>
+<script src="/assets/bundles/datatablescripts.bundle.js"></script>
+<script src="/assets/js/pages/tables/jquery-datatable.js"></script>
 <!-- end extraJs -->
 @endsection

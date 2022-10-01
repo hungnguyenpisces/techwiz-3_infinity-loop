@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppointmentManageController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CheckOutManageController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
@@ -27,6 +29,7 @@ Route::group(['middleware' => ['role:Super-Admin|Admin|Staff']], function () {
     Route::post('/users/store', UserController::class . '@store')->name('users.store');
     Route::get('/users/{user}/show', UserController::class . '@show')->name('users.show');
     Route::get('/users/{user}/edit', UserController::class . '@edit')->name('users.edit');
+    Route::get('/users/{user}/block', UserController::class . '@block')->name('users.block');
     Route::put('/users/{user}/update', UserController::class . '@update')->name('users.update');
     Route::delete('/users/{user}/destroy', UserController::class . '@destroy')->name('users.destroy');
 
@@ -49,27 +52,34 @@ Route::group(['middleware' => ['role:Super-Admin|Admin|Staff']], function () {
 
     Route::get('/all-appointment', AppointmentManageController::class . '@index')->name('all-appointment.index');
     Route::get('/appointment', AppointmentManageController::class . '@create')->name('appointment.create');
+    Route::get('/appointment/excessivecancels', AppointmentManageController::class . '@excessiveCancels')->name('admin.appointment.excancels');
     Route::get('/appointment/{id}/detail', AppointmentManageController::class . '@show')->name('admin.appointment.detail');
     Route::get('/appointment/{id}/edit', AppointmentManageController::class . '@edit')->name('admin.appointment.edit');
     Route::post('/appointment/{id}/approve', AppointmentManageController::class . '@approve')->name('admin.appointment.approve');
     Route::post('/appointment/{id}/reject', AppointmentManageController::class . '@reject')->name('admin.appointment.reject');
     Route::post('/appointment/{id}/update', AppointmentManageController::class . '@update')->name('admin.appointment.update');
+    Route::post('/appointment/{id}/done', AppointmentManageController::class . '@done')->name('admin.appointment.done');
+    
+    Route::get('/check-out/{id}', CheckOutManageController::class . '@index')->name('admin.checkout.show');
+    Route::post('/check-out/{id}/store', CheckOutManageController::class . '@store')->name('admin.checkout.store');
+
     Route::post('/createAppointment', AppointmentManageController::class.'@createAppointment')->name('admin.createAppointment');
 
     Route::get('/doctor-schedule', AppointmentManageController::class . '@doctorSchedule')->name('admin.doctor.schedule');
 
     Route::get('/doctor', [DoctorController::class, 'index'])->name('doctor.index');
     Route::get('/doctor/create', [DoctorController::class, 'create'])->name('doctor.create');
-    Route::get('/doctor/doctor-profile', [DoctorController::class, 'show'])->name('doctor.show');
 
     Route::get('/patient', [PatientController::class, 'index'])->name('patient.index');
     Route::get('/patient/create', [PatientController::class, 'create'])->name('patient.create');
-    Route::get('/patient/patient-profile', [PatientController::class, 'show'])->name('patient.show');
 
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
     Route::get('/payment/add-payment', [PaymentController::class, 'create'])->name('payment.create');
     Route::get('/payment/patient-invoice', [PaymentController::class, 'show'])->name('payment.show');
 
+    Route::resource('/blog', BlogController::class);
+    Route::post('/blog/upload', [BlogController::class, 'upload'])->name('blog.upload');
+    Route::post('/blog/ck_upload', [BlogController::class, 'ck_upload'])->name('blog.ck_upload');
     Route::get('/faq', [FaqController::class, 'index'])->name('admin.faq.index');
     Route::get('/faq/add-faq', [FaqController::class, 'create'])->name('admin.faq.create');
     Route::get('/faq/{id}/edit-faq', [FaqController::class, 'edit'])->name('admin.faq.edit');

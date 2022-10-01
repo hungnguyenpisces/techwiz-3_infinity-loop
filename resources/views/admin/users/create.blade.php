@@ -41,6 +41,8 @@ Custom title if need
                         @csrf
                         <div class="card-body">
                             <div class="row">
+                                <!-- return message -->
+
                                 <div class="col-md-6">
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="input-group flex-nowrap">
@@ -67,6 +69,17 @@ Custom title if need
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="input-group flex-nowrap">
                                             <div class="input-group-prepend">
+                                                <span class="input-group-text" id="addon-wrapping-lastname">Username:</span>
+                                            </div>
+                                            <input type="text" class="form-control border border-success pl-2" name="username" placeholder="Enter your username" value='{{ old("username") }}' aria-describedby="addon-wrapping-lastname" required>
+                                            @error('username')
+                                            <p class="mt-2 mb-0 error text-danger">{{ $message }}</p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="input-group flex-nowrap">
+                                            <div class="input-group-prepend">
                                                 <span class="input-group-text pr-5" id="addon-wrapping-email">Email:</span>
                                             </div>
                                             <input type="text" class="form-control border border-success pl-2" name="email" placeholder="Enter email" value='{{ old("email") }}' aria-describedby="addon-wrapping-email" required>
@@ -78,10 +91,10 @@ Custom title if need
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="input-group flex-nowrap">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" id="addon-wrapping-password">Password:</span>
+                                                <span class="input-group-text pr-5" id="addon-wrapping-phone">Phone:</span>
                                             </div>
-                                            <input type="password" class="form-control border border-success pl-2" name="password" placeholder="Enter Password" aria-describedby="addon-wrapping-password" required>
-                                            @error('password')
+                                            <input type="text" class="form-control border border-success pl-2" name="phone" placeholder="Enter phone number" value='{{ old("phone") }}' aria-describedby="addon-wrapping-email" required>
+                                            @error('phone')
                                             <p class="mt-2 mb-0 error text-danger">{{ $message }}</p>
                                             @enderror
                                         </div>
@@ -89,24 +102,54 @@ Custom title if need
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="input-group flex-nowrap">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" id="addon-wrapping-pwdconfirm">Confirm Password:</span>
+                                                <span class="input-group-text pr-5" id="addon-wrapping-hospital">Hospital</span>
+                                                <select name="hospital_id" class="form-control border-success pl-2 form-select show-tick border w-100" required>
+                                                @if(Auth::user()->hasRole('Super-Admin') && Auth::user()->hospital_id != null)
+                                                    @foreach($hospitals as $hospital)
+                                                        @if(Auth::user()->hospital_id == $hospital->id)
+                                                            <option value="{{ $hospital->id }}" selected disabled>{{ $hospital->name }}</option>
+                                                        @endif
+                                                    @endforeach
+                                                @else
+                                                    @foreach($hospitals as $hospital)
+                                                        <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
                                             </div>
-                                            <input type="password" class="form-control border border-success pl-2" name="confirm-password" placeholder="Confirm Password" aria-describedby="addon-wrapping-pwdconfirm" required>
-                                            @error('password')
-                                            <p class="mt-2 mb-0 error text-danger">{{ $message }}</p>
-                                            @enderror
                                         </div>
                                     </div>
+
+
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <strong>Role:</strong>
                                         <br>
-                                        @foreach($roles as $key => $role)
+                                        @if (Auth::user()->hasRole('Super-Admin') && Auth::user()->hospital_id != null)
+                                            @foreach($roles as $key => $role)
+                                                @if($key != 'Super-Admin')
+                                                    <label class="mr-3">
+                                                        <input type="checkbox" name="roles[]" value="{{$key}}" class="mr-1">
+                                                        {{$role}}
+                                                    </label>
+                                                @endif
+                                            @endforeach
+                                        @else
+                                            @foreach($roles as $key => $role)
+                                                <label class="mr-3">
+                                                    <input type="checkbox" name="roles[]" value="{{$key}}" class="mr-1">
+                                                    {{$role}}
+                                                </label>
+                                            @endforeach
+                                        @endif
+                                        
+
+                                        <!-- @foreach($roles as $key => $role)
                                         <input class="name" type="checkbox" name="roles[]" value="{{$key}}">
                                         {{ $role }}
                                         <br />
-                                        @endforeach
+                                        @endforeach -->
                                         <span class="text-danger">{{ $errors->first('roles') }}</span>
                                     </div>
                                 </div>

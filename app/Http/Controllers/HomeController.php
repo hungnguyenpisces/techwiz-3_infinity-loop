@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Department;
 use App\Models\Doctor;
 use App\Models\FAQ;
+use App\Models\Comment;
 use App\Models\Hospital;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Spatie\Searchable\Search;
 use Spatie\Searchable\ModelSearchAspect;
 use Illuminate\Support\Facades\Hash;
+
 
 
 class HomeController extends Controller
@@ -49,9 +51,34 @@ class HomeController extends Controller
 
     public function hospital()
     {
-        return view('web.hospital');
+        // search 
+        $hospitals = Hospital::all();
+        $search = request()->input('query');
+        if ($search) {
+            $search = strtolower($search);
+            $hospitals = Hospital::where('name', 'LIKE', "%{$search}%")
+                ->orWhere('location', 'LIKE', "%{$search}%")
+                ->orWhere('phone', 'LIKE', "%{$search}%")
+                ->orWhere('description', 'LIKE', "%{$search}%")
+                ->get();
+        } else {
+            $hospitals = Hospital::all();
+        }
+
+        return view('web.hospital-search', compact('hospitals', 'search'));
+        dd($hospitals);
     }
 
+    public function hospitalDetail($id) {
+        $hospital = Hospital::find($id);
+        // paginate
+
+        $comment = Comment::join('appointments', 'comments.app_id', '=', 'appointments.hospital_id')
+            ->where('appointments.hospital_id', $id)
+            ->paginate(5);
+
+        return view ('web.hospital-detail', compact('hospital', 'comment'));
+    }
     public function hospitalSearch()
     {
         return view('web.hospital-search');

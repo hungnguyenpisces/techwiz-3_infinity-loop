@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('conclusion');
             $table->bigInteger('staff_id');
             $table->bigInteger('doctor_id');
+            // total double
+            $table->double('total')->default(0);
+            $table->boolean('isPaid')->default(false);
             $table->timestamps();
         });
     }

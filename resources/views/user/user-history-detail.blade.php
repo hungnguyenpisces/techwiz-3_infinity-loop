@@ -3,6 +3,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
 
     <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <style>
+        .buttons {
+            width: 900px;
+            margin: 5px auto;
+        }
+
+        .action_btn {
+            display: inline-block;
+            width: calc(50% - 4px);
+            margin: 5px auto;
+        }
+    </style>
 
 @endsection
 

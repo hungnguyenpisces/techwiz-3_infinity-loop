@@ -20,13 +20,12 @@ class CommentSeeder extends Seeder
         $limit = 50;
         for ($i = 0; $i < $limit; $i++) {
             Comment::create([
-                // 'user_id' => rand(1, 100),
-                'check_out_history_id' => rand(1, 500),
+                'appointment_id' => rand(1, 500),
                 'doctor_rate' => rand(1, 5),
                 'hospital_rate' => rand(1, 5),
                 'department_rate' => rand(1, 5),
-                'overall_rate' => rand(1, 10),
-                'content' => $faker->sentence,
+                'overall_rate' => rand(1,5),
+                'content' => $faker->text(100),
                 'created_at' => $faker->dateTimeBetween('-1 years', '-1 days'),
                 'updated_at' => $faker->dateTimeBetween('-1 days', 'now')
             ]);

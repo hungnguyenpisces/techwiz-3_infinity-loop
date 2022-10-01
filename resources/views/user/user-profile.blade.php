@@ -25,7 +25,7 @@
             <div class="col-lg-4">
                 <div class="card mb-4">
                     <div class="card-body text-center">
-                        <img src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                        <img src="https://pickaface.net/gallery/avatar/20130319_083314_1174_admin.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                         <h5 class="my-3">{{Auth::user()->first_name}}</h5>
                         <p class="text-muted mb-1">Full Stack Developer</p>
                         <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
@@ -127,29 +127,10 @@
                     <div class="col-md-10">
                         <div class="card mb-4 mb-md-0">
                             <div class="card-body">
-                                <p class="mb-4"><span class="text-primary font-italic me-1">Yours against the standard</span>
-                                </p>
-                                <p class="mb-1" style="font-size: .77rem;">Height</p>
-                                <div class="progress rounded" style="height: 5px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p class="mt-4 mb-1" style="font-size: .77rem;">Weight</p>
-                                <div class="progress rounded" style="height: 5px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p class="mt-4 mb-1" style="font-size: .77rem;">Blood pressure</p>
-                                <div class="progress rounded" style="height: 5px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p class="mt-4 mb-1" style="font-size: .77rem;"> Heartbeat</p>
-                                <div class="progress rounded" style="height: 5px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 96%" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p class="mt-4 mb-1" style="font-size: .77rem;">Overview</p>
-                                <div class="progress rounded mb-2" style="height: 5px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-
+                               <!-- chart -->
+                                <canvas id="chart" >
+                                    
+                                </canvas>
                             </div>
                         </div>
                     </div>
@@ -160,3 +141,94 @@
     </div>
 </section>
 @endsection
+
+@section('extraJs')
+<script src="/assets/plugins/chartjs/Chart.bundle.min.js"></script>
+<script src="/assets/bundles/libscripts.bundle.js"></script>
+
+<script>
+$(document).ready(function () {
+  if (!sessionStorage.getItem("token")) {
+    window.location.href = "/logout";
+  } else {
+
+    $.ajax({
+      url: "/api/users/datachart",
+      type: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer " +
+          JSON.parse(sessionStorage.getItem("token")).access_token,
+      },
+      success: function (data) {
+        console.log(data);
+        //draw chart
+        new Chart(
+          document.getElementById("chart").getContext("2d"),
+          (config = {
+            type: "line",
+            data: {
+              labels: data.months,
+              datasets: [
+                {
+                  label: "Height",
+                  data: data.height,
+                  borderColor: "rgba(0, 188, 212, 0.75)",
+                  backgroundColor: "rgba(0, 188, 212, 0.3)",
+                  pointBorderColor: "rgba(0, 188, 212, 0)",
+                  pointBackgroundColor: "rgba(0, 188, 212, 0.9)",
+                  pointBorderWidth: 1,
+                },
+                {
+                  label: "Weight",
+                  data: data.weight,
+                  borderColor: "rgba(233, 30, 99, 0.75)",
+                  backgroundColor: "rgba(233, 30, 99, 0.3)",
+                  pointBorderColor: "rgba(233, 30, 99, 0)",
+                  pointBackgroundColor: "rgba(233, 30, 99, 0.9)",
+                  pointBorderWidth: 1,
+                },
+                {
+                  label: "Blood pressure",
+                  data: data.blood_pressure,
+                borderColor: "rgba(156, 39, 176, 0.75)",
+                backgroundColor: "rgba(156, 39, 176, 0.3)",
+                pointBorderColor: "rgba(156, 39, 176, 0)",
+                pointBackgroundColor: "rgba(156, 39, 176, 0.9)",
+                pointBorderWidth: 1,
+               
+                },
+                {
+                  label: "Heart rate",
+                  data: data.heart_rate,
+                    borderColor: "rgba(255, 152, 0, 0.75)",
+                    backgroundColor: "rgba(255, 152, 0, 0.3)",
+                    pointBorderColor: "rgba(255, 152, 0, 0)",
+                    pointBackgroundColor: "rgba(255, 152, 0, 0.9)",
+                    pointBorderWidth: 1,
+
+                  
+                },
+              ],
+            },
+            options: {
+              responsive: true, legend: true, title: {
+                display: true,
+                text: 'Your health visualization'
+                
+              }
+            },
+          })
+        );
+
+
+      },
+
+
+    });
+  }
+});
+</script>
+@endsection
+

@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('date');
             $table->string('time');
             $table->string('status');
+            $table->boolean('is_rated')->default(false);
+            $table->boolean('is_notified')->default(false);
             $table->timestamps();
         });
     }

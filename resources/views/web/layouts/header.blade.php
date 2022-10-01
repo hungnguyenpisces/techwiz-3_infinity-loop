@@ -49,13 +49,24 @@
 
                                         <li class="nav-item d-flex">
                                             <a style="padding: 0" class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-regular fa-bell fs-6 fw-semibold"></i>
-                                                <span class="badge rounded-pill bg-danger">
-                                                1
+                                                <span class="badge rounded-pill bg-danger" id="count">
+                                                
                                                 <span class="visually-hidden">unread messages</span></a>
-                                            <ul class="sub-menu collapse">
-                                                <li class="nav-item-customize">
-                                                    <span>12:00<strong>Wednesday</strong></span>
-                                                    <a href="#" class="text-success">Musculoskeletal</a>
+                                            
+                                            <ul class="sub-menu collapse" id="notif" style="overflow-y: scroll; width: 300px" >
+                                                <li class="nav-link-customize">
+                                                    <a href="/user-appointment" class="nav-link-customize">
+                                                        <div class="d-flex">
+                                                            <div class="me-3">
+                                                                <i class="fa-solid fa-calendar-check fs-6 fw-semibold"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-0">Appointment</p>
+                                                                <p class="mb-0">You have a new appointment</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    
                                                 </li>
 
                                             </ul>
@@ -73,17 +84,16 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12">
-                <div class="nav-inner">
+                <div class="nav-inner" id="myDiv">
 
                     <nav class="navbar navbar-expand-lg">
                         <a class="navbar-brand" href="/">
-                            <img src="/assets/img/favicon.png" alt="Logo" style="height: 40px; width: 40px">
+                            <img src="/assets/img/favicon.svg" alt="Logo" style="height: 50px; width: 50px">
                         </a>
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ms-auto">
-
                                 <li class="nav-item">
-                                    <a href="/" aria-label="Toggle navigation">Home</a>
+                                    <a class="active dd-menu collapsed" href="/" aria-label="Toggle navigation">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll dd-menu collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Hospital</a>
@@ -103,7 +113,9 @@
                                         <li class="nav-item"><a href="/doctor-search">Doctor Search</a></li>
                                     </ul>
                                 </li>
-
+                                <li class="nav-item">
+                                    <a href="/blog" aria-label="Toggle navigation">Blog posts</a>
+                                </li>
                                 <li class="nav-item">
                                     <a href="/contact-us" aria-label="Toggle navigation">Contact</a>
                                 </li>
@@ -119,3 +131,4 @@
         </div>
     </div>
 </header>
+

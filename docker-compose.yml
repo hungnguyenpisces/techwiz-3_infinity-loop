@@ -30,6 +30,9 @@ services:
 
     mysql:
         image: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        ports:
+            - "3306:3306"
         container_name: laravel_mysql
         volumes:
             - .docker/data/db:/var/lib/mysql

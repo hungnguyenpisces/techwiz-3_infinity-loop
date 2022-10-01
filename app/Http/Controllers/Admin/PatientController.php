@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class PatientController extends Controller
 {
@@ -14,7 +16,19 @@ class PatientController extends Controller
      */
     public function index()
     {
-        return view('admin.patient.index');
+
+        //paginate 11 rows per pages
+
+        $patients = User::join('check_out_histories', 'users.id', '=', 'check_out_histories.user_id')
+        ->join('departments', 'check_out_histories.department_id', '=', 'departments.id')
+        ->join('hospital_departments', 'departments.id', '=', 'hospital_departments.department_id')
+        ->join('hospitals', 'hospital_departments.hospital_id', '=', 'hospitals.id')
+        ->select('users.*','departments.name as department_name', 'hospitals.name as hospital_name', 'hospitals.id as hospital_id')
+        ->where('hospitals.id', Auth::user()->hospital_id)
+        ->where('users.hospital_id', null)
+        ->paginate(11);
+
+        return view('admin.patient.index') ->with('patients', $patients);
     }
 
     /**

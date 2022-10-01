@@ -29,7 +29,9 @@
                         <p>Your account created successfully. Now you can log in <strong>Infinity Loop</strong></p>
                         <p>Account information is as below</p>
                         <p><strong>Username: </strong> {{$acc->username}}</p>
-                        <p><strong>Default Password: </strong>12345678</p>
+                        <p><strong>Default Password: </strong>
+                            {{ $acc->password }}
+                        </p>
                         <div class="text-center">
                             <a href="127.0.0.1/login" class="btn btn-success mb-3">GO TO WEBSITE</a>
                         </div>

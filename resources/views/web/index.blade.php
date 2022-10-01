@@ -837,7 +837,6 @@
   });
 </script>
 <script src="/assets/bundles/libscripts.bundle.js"></script>
-<script src="/assets/js/user-get-api.js"></script>
 @if(session('token'))
 <script>
   const token = <?php echo json_encode(session('token')); ?>;
@@ -845,10 +844,11 @@
   sessionStorage.setItem('token', JSON.stringify(token));
 </script>
 @endif
-@if(!session('token')&& Auth::check())
+
+@if(!session('token') && Auth::check())
 <script>
   if (!sessionStorage.getItem('token')) {
-    window.location.href = "/index";
+    window.location.href = "/";
   } else {
     $.ajax({
       url: "/api/refresh",
@@ -864,8 +864,107 @@
         console.log(data);
       },
     });
+    
+    $.ajax({
+        url: "/api/user/notifications",
+        type: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization:
+                "Bearer " +
+                JSON.parse(sessionStorage.getItem("token")).access_token,
+        },
+
+        success: function(data) {
+            console.log(data);
+            var count = data.count_notif;
+            if (count > 0) {
+                $("#count").html(count);
+                $("#count").show();
+            } else {
+                $("#count").hide();
+            }
+            
+            var html = "";
+           
+            if (data.data.length > 8) {
+                $("#notif").addClass("scrollable");
+                $("#notif").css("overflow-y", "scroll");
+                $("#notif").css("height", "400px");
+                
+            }
+
+            if (data.data.length != 0) {
+                for (var i = 0; i < data.data.length; i++) {
+                  if (data.data[i].type==2) {
+                    html += `<button style="height: 50px; " type="submit" onclick={window.location.href="/user-appointment-detail/${data.data[i].app_id}/${data.data[i].id}"}>
+                    
+                    <div class="content w-30" style="width: 300px">
+                       ${data.data[i].content}
+                    </div>
+
+                </button>`;
+                  } else
+                  if (data.data[i].type==3) {
+                    html += `<button style="height: 50px; "  type="submit" onclick={window.location.href="/user-update-info/${data.data[i].id}"} class="dropdown-item notify-item">
+                
+                    <div class="content w-30" style="width: 300px">
+                       ${data.data[i].content}
+                    </div>
+
+                  </button>`;                    
+                  } else if (data.data[i].type==4) {
+                     html += `<button style="height: 50px; "  type="submit" onclick={window.location.href="/feedback/${data.data[i].app_id}/${data.data[i].id}/create"} class="dropdown-item notify-item">
+                    
+                    <div class="content w-30" style="width: 300px">
+                       ${data.data[i].content}
+                    </div>
+
+                  </button>`;  
+                  } else {
+                    html += `<button style="height: 50px;"  type="submit" class="mt-5 dropdown-item notify-item">
+                    <div class="content w-30" style="width: 300px">
+                       ${data.data[i].content}
+                    </div>
+
+                  </button>`; 
+                  }
+                   
+                }
+              } else {
+                html += `<button type="submit" onclick={window.location.href-"/user/notifications/{id}"} class="dropdown-item notify-item">
+                    <div class="notify-icon bg-success">
+                        <i class="mdi mdi-comment-account-outline"></i>
+                    </div>
+                    <p class="notify-details">No notifications</p>
+                </button>`;
+            }
+          
+
+          $("#notif").html(html);
+          $(".notify-item").css("border-bottom", "1px solid #e3e6f0");
+          $(".notify-item").css("padding", "10px");
+          $(".notify-item").css("border-bottom", "1px solid #e3e6f0");
+          // set width of dropdown
+          $(".dropdown-menu").css("width", "100px");
+          $(".dropdown-menu").css("overflow-y", "scroll");
+          $(".notify-item").css("text-wrap", "");
+          $(".notify-item").css("border-radius", "5px");
+          for (var i = 0; i < data.data.length; i++) {
+            if (data.data[i].is_read == 1) {
+              $(".notify-item").eq(i).css("background-color", "#e3e6f0");
+            }
+          }
+
+           
+        },
+        error: function(data) {
+        },
+
+    });
   }
 </script>
 @endif
+
 <!-- end extraJs -->
 @endsection

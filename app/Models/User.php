@@ -34,6 +34,15 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany('App\Models\Comment');
     }
+    public function medicine()
+    {
+        return $this->hasMany('App\Models\MedicinePill');
+    }
+
+    public function blog()
+    {
+        return $this->hasMany('App\Models\Blog');
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -91,6 +100,20 @@ class User extends Authenticatable implements JWTSubject
         return [
             'uid' => $this->id,
             'role' => $this->getRoleNames(),
+            'username' => $this->username,
         ];
+    }
+
+    /**
+     * Return the cancel rate (in decimals) of a user
+     * 
+     * @return float
+     */
+    public function cancelRate()
+    {
+        $cancelled=Appointment::where("user_id",$this->id)->where("status","Cancelled")->count();
+        $total=Appointment::where("user_id",$this->id)->count();
+        if ($total==0) return 0;
+        return $cancelled*100/$total;
     }
 }

@@ -459,14 +459,15 @@ Create Feedback
             <div class="Scriptcontent">
                 <div class="feedback">
                     <p>Dear <b>{{Auth::user()->first_name}}</b>,<br>
-                        Thank you for getting your services in <b>{{ $check_out_histories->department_name }}</b> department at <b>{{ $check_out_histories->hospital_name }} </b>
+                        Thank you for getting your services in <b>{{ $app->department_name }}</b> department at <b>{{ $app->hospital_name }} </b>
                         hospital .
                         We would like to know how we performed.
                         Please spare some moments to give us your valuable feedback as it will help us in improving our service.</p>
                     <h5>Please rate your service experience for the following parameters</h5>
                     <form method="post" action="/feedback">
                         @csrf
-                        
+                            <!--input appartment_id  -->
+                        <input type="hidden" name="appartment_id" value="{{ $app->id }}">
                         <!--Doctor-->
                         <label>1. Your experience with our doctor ?</label><br>
                         <span class="star-rating">
@@ -512,50 +513,50 @@ Create Feedback
                         </div>
                         <span class="scale-rating">
                             <label value="1">
-                                <input type="radio" name="rating">
+                                <input type="radio" name="rating" value=1>
                                 <label style="width:100%;"></label>
                             </label>
                             <label value="2">
-                                <input type="radio" name="rating">
+                                <input type="radio" name="rating" value=2>
                                 <label style="width:100%;"></label>
                             </label>
                             <label value="3">
-                                <input type="radio" name="rating">
+                                <input type="radio" name="rating" value=3>
                                 <label style="width:100%;"></label>
                             </label>
                             <label value="4">
-                                <input type="radio" name="rating">
+                                <input type="radio" name="rating" value=4>
                                 <label style="width:100%;"></label>
                             </label>
                             <label value="5">
-                                <input type="radio" name="rating">
+                                <input type="radio" name="rating" value=5>
                                 <label style="width:100%;"></label>
                             </label>
                             <label value="6">
-                                <input type="radio" name="rating">
+                                <input type="radio" name="rating" value=6>
                                 <label style="width:100%;"></label>
                             </label>
                             <label value="7">
-                                <input type="radio" name="rating">
+                                <input type="radio" name="rating" value=7>
                                 <label style="width:100%;"></label>
                             </label>
                             <label value="8">
-                                <input type="radio" name="rating">
+                                <input type="radio" name="rating" value=8>
                                 <label style="width:100%;"></label>
                             </label>
                             <label value="9">
-                                <input type="radio" name="rating">
+                                <input type="radio" name="rating" value=9>
                                 <label style="width:100%;"></label>
                             </label>
                             <label value="10">
-                                <input type="radio" name="rating" value="10">
+                                <input type="radio" name="rating" value=10>
                                 <label style="width:100%;"></label>
                             </label>
                         </span>
                         <div class="clear"></div>
                         <hr class="survey-hr">
                         <label for="m_3189847521540640526commentText">5. Any Other suggestions:</label><br /><br />
-                        <textarea cols="75" name="commentText" rows="5"></textarea><br>
+                        <textarea cols="75" name="content" rows="5"></textarea><br>
                         <br>
                         <div class="clear"></div>
                         <div class="button add-list-button">
@@ -579,7 +580,22 @@ Create Feedback
 
 @section('extraJs')
 <!-- extraJs -->
-
-
+<!-- go to route('feedback-done') after submit -->
+<script>
+    $(document).ready(function() {
+        $('form').submit(function() {
+            var url = $(this).attr('action');
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(this).serialize(),
+                success: function(data) {
+                    window.location.href = "{{ route('feedback-done') }}";
+                }
+            });
+            return false;
+        });
+    });
+</script>
 <!-- end extraJs -->
 @endsection

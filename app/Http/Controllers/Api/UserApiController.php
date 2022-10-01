@@ -21,12 +21,13 @@ class UserApiController extends Controller
 
     // get notification by user_id
     public function getNotificationsByUser() {
-        //get notification by user_id order by created_at desc
         $notifications = Notification::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->get();
-        $count_notifications = Notification::where('user_id', auth()->user()->id)->count();
+        $count_notifications = Notification::where('user_id', auth()->user()->id)->where('is_read', false)->count();
+       
         return response()->json(
             ['data' => $notifications,
-            'count_notif' => $count_notifications]
+            'count_notif' => $count_notifications,
+            ]
         );
     }
 
@@ -34,7 +35,7 @@ class UserApiController extends Controller
     public function getHealthIndexChart() {
        
         $months = [];
-        for ($i = 0; $i < 13; $i++) {
+        for ($i = 0; $i < 12; $i++) {
             $months[] = date('Y-M', strtotime("-$i months"));
         }
 

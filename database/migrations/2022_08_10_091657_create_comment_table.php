@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('check_out_history_id');
-            $table->bigInteger('doctor_rate');
-            $table->bigInteger('hospital_rate');
-            $table->bigInteger('department_rate');
-            $table->bigInteger('overall_rate');
+            $table->bigInteger('app_id')->nullable();
+            $table->bigInteger('doctor_rate')->nullable();
+            $table->bigInteger('hospital_rate')->nullable();
+            $table->bigInteger('department_rate')->nullable();
+            $table->bigInteger('overall_rate')->nullable();
             $table->string('content')->nullable();
             $table->timestamps();
         });
