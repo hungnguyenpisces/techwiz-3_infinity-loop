@@ -85,15 +85,38 @@ class AuthController extends Controller
 
   public function processLogin(LoginRequest $request)
   {
-    $credentials = $request->getCredentials();
+    // $credentials = $request->getCredentials();
+    // if (Auth::attempt($credentials)) {
+    //   $credentials["activated"]="TRUE";
+    //   if (!Auth::attempt($credentials)) {
+    //     Session::flush();
+    //     Auth::logout();
+    //     return Redirect::route('login.show')->with('error', 'You have been blocked by an administrator');
+    //   }
+    //   $user = Auth::getProvider()->retrieveByCredentials($credentials);
+    //   Auth::login($user);
+    //   $token = auth('api')->setTTL(240)->attempt($credentials);
+    //   $resToken = [
+    //     'access_token' => $token,
+    //     'token_type' => 'bearer',
+    //     'expires_in' => auth('api')->factory()->getTTL() * 60 * 4
+    //   ];
+    //   return Redirect::route('index')->with('token', $resToken);
+    // } else {
+    //   Session::flush();
+    //   Auth::logout();
+    //   return Redirect::route('login.show')->with('error', 'Username or password is not correct');
+    // }
+
+      $credentials = $request->getCredentials();
+
     if (Auth::attempt($credentials)) {
-      $credentials["activated"]="TRUE";
-      if (!Auth::attempt($credentials)) {
+      $user = Auth::getProvider()->retrieveByCredentials($credentials);
+      if ($user->activated == 0) {
         Session::flush();
         Auth::logout();
         return Redirect::route('login.show')->with('error', 'You have been blocked by an administrator');
       }
-      $user = Auth::getProvider()->retrieveByCredentials($credentials);
       Auth::login($user);
       $token = auth('api')->setTTL(240)->attempt($credentials);
       $resToken = [

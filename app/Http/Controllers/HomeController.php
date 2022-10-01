@@ -73,9 +73,9 @@ class HomeController extends Controller
         $hospital = Hospital::find($id);
         // paginate
 
-        $comment = Comment::join('appointments', 'comments.app_id', '=', 'appointments.hospital_id')
+        $comment = Comment::join('appointments', 'comments.app_id', '=', 'appointments.id')
             ->where('appointments.hospital_id', $id)
-            ->paginate(5);
+            ->paginate(2);
 
         return view ('web.hospital-detail', compact('hospital', 'comment'));
     }

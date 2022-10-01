@@ -218,16 +218,14 @@
                         <h2 class="wow fadeInUp" data-wow-delay=".4s">Feedback</h2>
                     </div>
                 </div>
-                 @if ($comment->count() > 0)
-                 @foreach($comment as $cmt)
+               @if ($comment->count() > 0)
+                @foreach($comment as $cmt)
                     <div class="single-testimonial">
                         <div class="d-flex text align-left">
                             <div class="avatar mx-5">
                             <!-- image rounded -->
-                                <img class="rounded-circle" src="/assets/images/testimonial/testi1.jpg" alt="#">
+                                <img class="rounded-circle" width:30px src="/assets/images/testimonial/testi1.jpg" alt="#">
                             </div>
-                            <!-- date and time created of comment -->
-                           
                             <div class="comment">
                                 <!-- <p>Ngan Ha Thi</p>
                                 <span class="date">Posted on 2020-10-10 12:00:00</span>
@@ -246,43 +244,42 @@
                                 <span class="date">Posted on {{$cmt->created_at}}</span>
                                 <div class="rate">
                                     <ul class="list-inline mt-3">
-                                        @if($cmt->rate == 1)
-                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
-                                        @elseif($cmt->rate == 2)
-                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
-                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
-                                        @elseif($cmt->rate == 3)
-                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
-                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
-                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
-                                        @elseif($cmt->rate == 4)
                                         <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
                                         <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
                                         <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
                                         <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
-                                        @elseif($cmt->rate == 5)
-                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
-                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
-                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
-                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
-                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
-                                        @endif
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
                                     </ul>
-
+                                </div>
+                                <p>{{$cmt->content}}</p>
                             </div>
-                            <p>{{$cmt->content}}</p>
-                          
-                            <!-- paginate -->
-                            <div class="d-flex justify-content-center">
-                                {{$comment->links()}}
-                        </div>
-                        </div>
-                    </div>
+</div>
                         @endforeach
-                            @else 
+                        <!-- paginate -->
+                     
+                        @else 
                             <h3 class="text-center text-white">There has been no feedback yet!</p>
-                            
                         @endif
+                            <div class="mt-3 float-right d-flex text-center" style="display: inline-block" >
+                            <!-- <li></li> -->
+                            <!-- <li> -->
+                                <li class="page-item btn btn-outline-success bg-white">
+                                    <a class="page-link" href="{{$comment->previousPageUrl()}}" aria-label="Previous">
+                                        <span aria-hidden="true"> Previous </span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <!-- display pagination -->
+                             
+                                <!-- go to last page -->
+                                <li class="page-item btn btn-outline-success bg-white" style="width: 100px">
+                                    <a class="page-link" href="{{$comment->nextPageUrl()}}" aria-label="Next">
+                                        <span aria-hidden="true"> Next</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </div>
+                        </div>
         </div>
     </section>
 
