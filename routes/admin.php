@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppointmentManageController;
+use App\Http\Controllers\Admin\CheckOutManageController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
@@ -55,6 +56,9 @@ Route::group(['middleware' => ['role:Super-Admin|Admin|Staff']], function () {
     Route::post('/appointment/{id}/reject', AppointmentManageController::class . '@reject')->name('admin.appointment.reject');
     Route::post('/appointment/{id}/update', AppointmentManageController::class . '@update')->name('admin.appointment.update');
     Route::post('/appointment/{id}/done', AppointmentManageController::class . '@done')->name('admin.appointment.done');
+    
+    Route::get('/check-out/{id}', CheckOutManageController::class . '@index')->name('admin.checkout.show');
+    Route::post('/check-out/{id}/store', CheckOutManageController::class . '@store')->name('admin.checkout.store');
 
     Route::post('/createAppointment', AppointmentManageController::class.'@createAppointment')->name('admin.createAppointment');
 

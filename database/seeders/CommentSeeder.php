@@ -25,7 +25,7 @@ class CommentSeeder extends Seeder
                 'hospital_rate' => rand(1, 5),
                 'department_rate' => rand(1, 5),
                 'overall_rate' => rand(1,5),
-                'content' => $faker->sentence,
+                'content' => $faker->text(100),
                 'created_at' => $faker->dateTimeBetween('-1 years', '-1 days'),
                 'updated_at' => $faker->dateTimeBetween('-1 days', 'now')
             ]);

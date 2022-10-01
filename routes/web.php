@@ -24,13 +24,13 @@ Route::post('/login', [AuthController::class, 'processLogin'])->name('login.perf
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/hospital', [HomeController::class, 'hospital'])->name('hospital');
-Route::get('/hospital-search', [HomeController::class, 'searchHospitalRs'])->name('hospital-searchRs');
 Route::get('/departments', [HomeController::class, 'departments'])->name('departments');
 Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
 Route::get('/doctor-search', [HomeController::class, 'doctorSearch'])->name('doctor-search');
 Route::get('/doctor-search-result', [HomeController::class, 'searchDoctorRs'])->name('doctor-searchRs');
 Route::get('/doctor-detail', [HomeController::class, 'doctorDetail'])->name('doctor-detail');
 Route::get('/hospital-detail/{id}', [HomeController::class, 'hospitalDetail'])->name('hospital-detail');
+Route::get('/feedback-done', [CommendController::class, 'feedbackDone'])->name('feedback-done');
 
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
 
@@ -53,13 +53,14 @@ Route::group(['middleware' => ['auth']], function () {
   Route::put('/appointment/{id}', [AppointmentController::class, 'update'])->name('appointment.update');
   Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy'])->name('appointment.destroy');
   Route::get('/user-appointment-detail/{id}', [AppointmentController::class, 'showDetail'])->name('appointment.detail');
-
-  Route::get('/user-appointment-detail/{id}/{notif}', [NotificationController::class, 'isRead2']);
+  
+  Route::post('/user-appointment-detail/{id}/{notif}', [NotificationController::class, 'isRead2']);
   Route::get('/user-update-info/{notif}', [NotificationController::class, 'isRead']);
 
   Route::get('/user-history', [CheckOutHistoryController::class, 'index'])->name('checkout.index');
   Route::get('/user-appointment', [AppointmentController::class, 'show'])->name('appointment.show');
   Route::get('/record-detail/{id}', [CheckOutHistoryController::class, 'showDetail'])->name('record.detail');
+  Route::get('/user-health/{notif}',[NotificationController::class, 'isRead2']);
 
   Route::get('/user', [HealthIndexController::class, 'index'])->name('user.index');
   Route::post('/user', [HealthIndexController::class, 'store'])->name('user.store');
@@ -69,6 +70,7 @@ Route::group(['middleware' => ['auth']], function () {
   Route::get('/user-bmi', [HealthIndexController::class, 'bmi'])->name('user.bmi');
   Route::get('/user-health', [HealthIndexController::class, 'health'])->name('user.health');
   Route::get('/user-update-info', [HealthIndexController::class, 'updateInfo'])->name('user.updateInfo');
+
 
   Route::get('/logout', [AuthController::class, 'logout'])->name('logout.perform');
 });

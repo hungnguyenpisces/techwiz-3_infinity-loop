@@ -236,9 +236,6 @@ class AppointmentManageController extends Controller
         $apmt -> is_rated = true;
         $apmt -> save();
 
-        $cmt = new Comment();
-        $cmt->save();
-
         return redirect() -> route('all-appointment.index') -> with('success', 'Appointment is now done!');
         
     }

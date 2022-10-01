@@ -39,7 +39,7 @@ class SendNotifications extends Command
         foreach ($medicine as $med) {
                 $notification = new Notification();
                 $notification->user_id = $med->user_id;
-                $notification->content = 'Dont forget to take your ' . $med->details . ' on time';
+                $notification->content = 'Dont forget to take your medicine on time';
                 $notification->type = 1;
                 $notification->save();
             

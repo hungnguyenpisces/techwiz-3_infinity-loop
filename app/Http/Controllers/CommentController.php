@@ -67,16 +67,20 @@ class CommentController extends Controller
     {
         $cmt = new Comment();
         // $cmt->check_out_history_id = $request->check_out_history_id;
-        $cmt->app_id = $request->app_id;
-        $cmt->doctor_rate = $request->doctor_rate;
-        $cmt->hospital_rate = $request->hospital_rate;
-        $cmt->department_rate = $request->department_rate;
-        $cmt->overall_rate = $request->overall_rate;
+        $cmt->app_id = $request->appointment_id;
+        $cmt->doctor_rate = $request->rating1;
+        $cmt->hospital_rate = $request->rating2;
+        $cmt->department_rate = $request->rating3;
+        $cmt->overall_rate = $request->rating;
         $cmt->content = $request->content;
         $cmt->save();
 
         $request->session()->flash('success', 'Comment created sucessfully.');
         return redirect(route('index'));
+    }
+
+    public function feedbackDone() {
+        return view('web.feedback.fb');
     }
 
     /**
@@ -87,7 +91,7 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

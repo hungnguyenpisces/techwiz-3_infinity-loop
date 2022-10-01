@@ -218,6 +218,8 @@
                         <h2 class="wow fadeInUp" data-wow-delay=".4s">Feedback</h2>
                     </div>
                 </div>
+                 @if ($comment->count() > 0)
+                 @foreach($comment as $cmt)
                     <div class="single-testimonial">
                         <div class="d-flex text align-left">
                             <div class="avatar mx-5">
@@ -225,8 +227,9 @@
                                 <img class="rounded-circle" src="/assets/images/testimonial/testi1.jpg" alt="#">
                             </div>
                             <!-- date and time created of comment -->
+                           
                             <div class="comment">
-                                <p>Ngan Ha Thi</p>
+                                <!-- <p>Ngan Ha Thi</p>
                                 <span class="date">Posted on 2020-10-10 12:00:00</span>
                                 <div class="rate">
                                     <ul class="list-inline mt-3">
@@ -238,10 +241,48 @@
                                     </ul>
                                 </div>
                                 <p>"It’s amazing how much easier it has been to meet new people and create instant
-                                connections."</p>
+                                connections."</p> -->
+                                <p>{{$cmt->name}}</p>
+                                <span class="date">Posted on {{$cmt->created_at}}</span>
+                                <div class="rate">
+                                    <ul class="list-inline mt-3">
+                                        @if($cmt->rate == 1)
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        @elseif($cmt->rate == 2)
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        @elseif($cmt->rate == 3)
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        @elseif($cmt->rate == 4)
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled"></i></li>
+                                        @elseif($cmt->rate == 5)
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        <li class="list-inline-item"><i class="lni lni-star-filled "></i></li>
+                                        @endif
+                                    </ul>
+
                             </div>
+                            <p>{{$cmt->content}}</p>
+                          
+                            <!-- paginate -->
+                            <div class="d-flex justify-content-center">
+                                {{$comment->links()}}
+                        </div>
                         </div>
                     </div>
+                        @endforeach
+                            @else 
+                            <h3 class="text-center text-white">There has been no feedback yet!</p>
+                            
+                        @endif
         </div>
     </section>
 

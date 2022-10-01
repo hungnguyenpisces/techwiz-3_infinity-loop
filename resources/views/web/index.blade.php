@@ -897,33 +897,36 @@
             if (data.data.length != 0) {
                 for (var i = 0; i < data.data.length; i++) {
                   if (data.data[i].type==2) {
-                    html += `<button type="submit" onclick={window.location.href="/user-appointment-detail/1/3"} class="dropdown-item notify-item">
-                    <div class="notify-icon bg-success">
-                        <i class="mdi mdi-comment-account-outline"></i>
+                    html += `<button style="height: 50px; " type="submit" onclick={window.location.href="/user-appointment-detail/${data.data[i].app_id}/${data.data[i].id}"}>
+                    
+                    <div class="content w-30" style="width: 300px">
+                       ${data.data[i].content}
                     </div>
-                    <p class="notify-details w-25">${data.data[i].content}<small class="text-muted">${data.data[i].created_at}</small></p>
+
                 </button>`;
                   } else
                   if (data.data[i].type==3) {
-                    html += `<button type="submit" onclick={window.location.href="/user-update-info/4"} class="dropdown-item notify-item">
-                    <div class="mt-5 notify-icon bg-success">
-                        <i class="mdi mdi-comment-account-outline"></i>
+                    html += `<button style="height: 50px; "  type="submit" onclick={window.location.href="/user-update-info/${data.data[i].id}"} class="dropdown-item notify-item">
+                
+                    <div class="content w-30" style="width: 300px">
+                       ${data.data[i].content}
                     </div>
-                    <p class="notify-details w-25">${data.data[i].content}<small class="text-muted">${data.data[i].created_at}</small></p>
+
                   </button>`;                    
                   } else if (data.data[i].type==4) {
-                     html += `<button type="submit" onclick={window.location.href="/feedback/1/2/create"} class="dropdown-item notify-item">
-                    <div class="mt-5 notify-icon bg-success">
-                        <i class="mdi mdi-comment-account-outline"></i>
+                     html += `<button style="height: 50px; "  type="submit" onclick={window.location.href="/feedback/${data.data[i].app_id}/${data.data[i].id}/create"} class="dropdown-item notify-item">
+                    
+                    <div class="content w-30" style="width: 300px">
+                       ${data.data[i].content}
                     </div>
-                    <p class="notify-details w-25">${data.data[i].content}<small class="text-muted">${data.data[i].created_at}</small></p>
+
                   </button>`;  
                   } else {
-                    html += `<button  type="submit" class="mt-5 dropdown-item notify-item">
-                    <div class="notify-icon bg-success">
-                        <i class="mdi mdi-comment-account-outline"></i>
+                    html += `<button style="height: 50px;"  type="submit" class="mt-5 dropdown-item notify-item">
+                    <div class="content w-30" style="width: 300px">
+                       ${data.data[i].content}
                     </div>
-                    <p class="notify-details w-25">${data.data[i].content}<small class="text-muted">${data.data[i].created_at}</small></p>
+
                   </button>`; 
                   }
                    
@@ -939,6 +942,20 @@
           
 
           $("#notif").html(html);
+          $(".notify-item").css("border-bottom", "1px solid #e3e6f0");
+          $(".notify-item").css("padding", "10px");
+          $(".notify-item").css("border-bottom", "1px solid #e3e6f0");
+          // set width of dropdown
+          $(".dropdown-menu").css("width", "100px");
+          $(".dropdown-menu").css("overflow-y", "scroll");
+          $(".notify-item").css("text-wrap", "");
+          $(".notify-item").css("border-radius", "5px");
+          for (var i = 0; i < data.data.length; i++) {
+            if (data.data[i].is_read == 1) {
+              $(".notify-item").eq(i).css("background-color", "#e3e6f0");
+            }
+          }
+
            
         },
         error: function(data) {

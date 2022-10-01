@@ -24,6 +24,12 @@ Custom title if need
             <h2>Appointment Detail</h2>
             <small class="text-muted">Welcome to Swift application</small>
         </div>
+        <!-- if session has success-check-out -->
+        @if (session('success-check-out'))
+        <div class="alert alert-success">
+            {{ session('success-check-out') }}
+        </div>
+        @endif
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 ">
                 <div class="card">
@@ -263,7 +269,11 @@ Custom title if need
                                     <div class="col-sm-12">
                                         <a href="{{route('all-appointment.index')}}" class="btn btn-primary waves-effect">Back to list</a>
                                         <button type="submit" class="btn btn-raised bg-deep-purple" onclick="updateForm()">Update</button>
-                                        @if($appointment->status == 'Accepted')
+                                        <!-- check if status is Accepted and session has success-check-out -->
+                                        @if($appointment->status == 'Accepted' && !session('success-check-out'))
+                                        <a href="{{route('admin.checkout.show', $appointment->id)}}" class="btn btn-success waves-effect">Check Out</a>
+                                        @endif
+                                        @if($appointment->status == 'Accepted' && session('success-check-out') == 'success' && $coh->isPaid == 1)
                                         <button type="submit" class="btn btn-raised bg-green" onclick="markAsDone()">Mark as Done</button>
                                         @endif
                                         <button type="submit" class="btn btn-raised bg-red" onclick="cancelForm()">Cancel</button>

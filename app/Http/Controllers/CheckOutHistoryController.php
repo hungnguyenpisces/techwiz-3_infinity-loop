@@ -145,4 +145,32 @@ class CheckOutHistoryController extends Controller
             return view('user.user-history-detail', compact('check_out_histories'));
         }
     }
+
+    public function createNew(Request $request, $id) {
+        $appointment = Appointment::find($id);
+        $user = Auth::user();
+
+        $coh = new CheckOutHistory();
+        $coh->user_id = Auth::user()->id;
+        $coh->hospital_id = $appointment->hospital_id;
+        $coh->department_id = $appointment->department_id;
+        $coh->doctor_id = $appointment->doctor_id;
+        $coh->appointment_id = $appointment->id;
+        $coh-> symptoms = $request->symptoms;
+        $coh->conclusion = $request->conclusion;
+
+        $coh->save();
+
+
+
+        $request->session()->flash('success', 'History created sucessfully.');
+        return redirect(route('admin.appointment.edit'))->compact('app', 'user');
+
+
+    }
+
+    public function showFormCheckOut() {
+        return view('admin.appointment.checkout');
+    }
+
 }

@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('medicine', function (Blueprint $table) {
             $table->id();
+            $table->string('medicine');
+            $table->bigInteger('quantity');
+            $table->string('instruction');
+            $table->bigInteger('price');
             $table->bigInteger('check_out_history_id');
-            $table->string('details');
-            $table->string('conclusion');
             $table->timestamps();
         });
     }
