@@ -445,11 +445,9 @@ input[type="checkbox"]:not(:disabled).tabbed:focus ~ .lever::after {
 }
 @font-face {
     font-family: Material-Design-Iconic-Font;
-    src: url(../fonts/Material-Design-Iconic-Font.woff2)
-            format("woff2"),
+    src: url(../fonts/Material-Design-Iconic-Font.woff2) format("woff2"),
         url(../fonts/Material-Design-Iconic-Font.woff) format("woff"),
-        url(../fonts/Material-Design-Iconic-Font.ttf)
-            format("truetype");
+        url(../fonts/Material-Design-Iconic-Font.ttf) format("truetype");
 }
 .zmdi {
     display: inline-block;
@@ -17462,7 +17460,7 @@ fieldset[disabled] .form-control {
 }
 .page-calendar .event-name {
     background: #f5f5f5;
-    padding: 10px;
+    padding: 5px;
     margin: 2px 0;
     border-left: 3px solid;
 }

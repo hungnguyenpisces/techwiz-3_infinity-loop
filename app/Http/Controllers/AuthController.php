@@ -59,9 +59,9 @@ class AuthController extends Controller
     $data = $request->validated();
 
     if (!$data) {
-      return redirect()->back()->withInput() ->withErrors($data ->errors());
+      return redirect()->back()->withInput()->withErrors($data->errors());
     }
-   
+
     $data['password'] = Hash::make($data['password']);
     $user = new User();
     $user->fill($data);
