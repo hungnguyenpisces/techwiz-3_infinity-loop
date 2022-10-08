@@ -47,6 +47,20 @@ class CheckOutManageController extends Controller
 
         $coh_id = $coh->id;
 
+        // just get the last id of the checkout history
+
+        for ($i=0; $i < count($medicine); $i++) { 
+            $mp = new MedicinePill();
+            $mp->medicine = $medicine[$i];
+            $mp->quantity = $quantity[$i];
+            $mp->price = $price[$i];
+            $mp->instruction = $instruction[$i];
+            $mp->check_out_history_id = $coh_id;
+            $mp->save();
+        }
+
+        
+
         foreach($medicine as $key => $no)
         {
             $data = array(
